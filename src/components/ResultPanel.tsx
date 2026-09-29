@@ -59,7 +59,7 @@ export function ResultPanel({ puzzle, attempts, solved, day, onNext, justFinishe
               {a.map((m, j) => (
                 <span
                   key={j}
-                  className={`h-2 w-5 rounded-sm ${m === 'correct' ? 'bg-correct' : m === 'near' ? 'bg-near' : 'bg-muted/25'}`}
+                  className={`h-2 w-5 rounded-sm ${m === 'correct' ? 'bg-correct' : m === 'near' ? 'bg-near' : 'bg-wrong'}`}
                 />
               ))}
             </div>

@@ -4,6 +4,7 @@ import { CSS } from '@dnd-kit/utilities'
 import type { Item } from '../lib/types'
 import type { Mark } from '../lib/score'
 import { TeamBadge } from './TeamBadge'
+import { MarkIcon } from './MarkIcon'
 
 type Props = {
   item: Item
@@ -22,9 +23,9 @@ type Props = {
 const MARK_STYLE: Record<Mark, string> = {
   correct: 'border-correct/70 bg-correct/10 ring-1 ring-correct/40',
   near: 'border-near/70 bg-near/10 ring-1 ring-near/40',
-  wrong: 'border-line bg-surface',
+  wrong: 'border-wrong/60 bg-wrong/10 ring-1 ring-wrong/30',
 }
-const MARK_LABEL: Record<Mark, string> = { correct: 'Correct position', near: 'One place off', wrong: 'Not close' }
+const MARK_LABEL: Record<Mark, string> = { correct: 'Right spot', near: 'One place off', wrong: 'Two or more places off' }
 
 export function Row({ item, rank, mark, pulse, revealed, revealDelay, disabled, canUp, canDown, onMove }: Props) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
@@ -64,7 +65,7 @@ export function Row({ item, rank, mark, pulse, revealed, revealDelay, disabled, 
         {revealed ? (
           <Value item={item} delay={revealDelay} />
         ) : mark ? (
-          <MarkDot mark={mark} />
+          <MarkIcon mark={mark} />
         ) : null}
         {!disabled && (
           <div
@@ -102,11 +103,6 @@ function MoveButton({ dir, enabled, onMove, label }: { dir: -1 | 1; enabled: boo
       </svg>
     </button>
   )
-}
-
-function MarkDot({ mark }: { mark: Mark }) {
-  const cls = mark === 'correct' ? 'bg-correct' : mark === 'near' ? 'bg-near' : 'bg-transparent ring-2 ring-inset ring-muted/50'
-  return <span aria-hidden className={`h-2.5 w-2.5 shrink-0 rounded-full ${cls}`} />
 }
 
 /** Revealed value; plain numbers count up, everything else ("10/53", "400*") fades in. */

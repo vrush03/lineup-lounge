@@ -12,6 +12,7 @@ import {
 import { restrictToVerticalAxis, restrictToParentElement } from '@dnd-kit/modifiers'
 import { SortableContext, arrayMove, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { Row } from './Row'
+import { MarkIcon } from './MarkIcon'
 import { ResultPanel } from './ResultPanel'
 import { FormatBadge } from './FormatBadge'
 import { isSolved, scoreGuess, solution, type Mark } from '../lib/score'
@@ -109,6 +110,8 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
       <div className="mt-3 mb-5 flex items-center justify-between gap-4">
         {over ? (
           <OutcomeBanner solved={solved} tries={attempts.length} />
+        ) : attempts.length ? (
+          <AttemptSummary marks={attempts[attempts.length - 1]} />
         ) : (
           <p className="text-sm text-muted">Press and drag, or use the arrows, to put them in order.</p>
         )}
@@ -151,7 +154,7 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
             disabled={unchanged}
             className="w-full rounded-2xl bg-pitch-deep py-3.5 font-display text-xl font-bold uppercase tracking-wider text-white shadow-lg shadow-pitch-deep/25 transition hover:bg-pitch active:scale-[0.99] disabled:opacity-40"
           >
-            {unchanged ? 'Change the order to try again' : `Lock it in · ${MAX_ATTEMPTS - attempts.length} left`}
+            {unchanged ? 'Move a player to try again' : `Lock it in · ${MAX_ATTEMPTS - attempts.length} left`}
           </button>
           <Legend />
         </div>
@@ -166,6 +169,25 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
         />
       )}
     </section>
+  )
+}
+
+function AttemptSummary({ marks }: { marks: Mark[] }) {
+  const n = (m: Mark) => marks.filter((x) => x === m).length
+  const parts: [Mark, string][] = [
+    ['correct', `${n('correct')} right`],
+    ['near', `${n('near')} one off`],
+    ['wrong', `${n('wrong')} further`],
+  ]
+  return (
+    <p role="status" className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium">
+      {parts.map(([m, text]) => (
+        <span key={m} className={`flex items-center gap-1.5 ${text.startsWith('0') ? 'text-muted' : ''}`}>
+          <MarkIcon mark={m} size={16} />
+          {text}
+        </span>
+      ))}
+    </p>
   )
 }
 
@@ -214,7 +236,7 @@ function AttemptPips({ attempts }: { attempts: Mark[][] }) {
               <span
                 key={j}
                 className={`h-[3px] w-3 rounded-full ${
-                  !a ? 'bg-line/60' : a[j] === 'correct' ? 'bg-correct' : a[j] === 'near' ? 'bg-near' : 'bg-muted/30'
+                  !a ? 'bg-line/60' : a[j] === 'correct' ? 'bg-correct' : a[j] === 'near' ? 'bg-near' : 'bg-wrong'
                 }`}
               />
             ))}
@@ -241,15 +263,15 @@ function Difficulty({ level }: { level: 'easy' | 'medium' | 'hard' }) {
 
 function Legend() {
   return (
-    <p className="mt-3 flex items-center justify-center gap-4 text-xs text-muted">
+    <p className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted">
       <span className="flex items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-correct" /> Right spot
+        <MarkIcon mark="correct" size={16} /> Right spot
       </span>
       <span className="flex items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-near" /> One off
+        <MarkIcon mark="near" size={16} /> One place off
       </span>
       <span className="flex items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full ring-2 ring-inset ring-muted/50" /> Further
+        <MarkIcon mark="wrong" size={16} /> Two or more off
       </span>
     </p>
   )

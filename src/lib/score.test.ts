@@ -44,7 +44,7 @@ describe('daily', () => {
 describe('share', () => {
   it('builds the grid', () => {
     expect(shareText('Lineup Lounge', 0, [['correct', 'near', 'wrong'], ['correct', 'correct', 'correct']], true, 5)).toBe(
-      '🏏 Lineup Lounge #1 2/5\n🟩🟨⬜\n🟩🟩🟩',
+      '🏏 Lineup Lounge #1 2/5\n🟩🟨🟥\n🟩🟩🟩',
     )
   })
 })

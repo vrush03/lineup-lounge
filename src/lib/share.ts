@@ -1,6 +1,6 @@
 import type { Mark } from './score'
 
-const EMOJI: Record<Mark, string> = { correct: '🟩', near: '🟨', wrong: '⬜' }
+const EMOJI: Record<Mark, string> = { correct: '🟩', near: '🟨', wrong: '🟥' }
 
 export function shareText(
   title: string,
