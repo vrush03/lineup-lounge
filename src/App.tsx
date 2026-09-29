@@ -212,6 +212,8 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
         <a className="underline underline-offset-2" href="https://en.wikipedia.org/" target="_blank" rel="noreferrer">
           Wikipedia
         </a>
+        <br />
+        Team names and logos are trademarks of their respective owners. Unofficial fan game.
       </footer>
 
       <StatsDialog open={statsOpen} onClose={() => setStatsOpen(false)} stats={stats} streak={streak} />

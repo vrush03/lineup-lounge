@@ -1,10 +1,12 @@
+/// <reference types="node" />
 import { describe, expect, it } from 'vitest'
 import cricket from '../data/cricket.json'
 import { z } from 'zod'
 import { puzzleSchema } from './puzzleSchema'
 import type { Puzzle } from './types'
 import { isSolved, scoreGuess } from './score'
-import { hasTeamStyle } from './teams'
+import { existsSync } from 'node:fs'
+import { hasTeamStyle, logoPaths } from './teams'
 
 const puzzles = z.array(puzzleSchema).parse(cricket) as Puzzle[]
 
@@ -23,6 +25,11 @@ describe('cricket dataset', () => {
           const d = days[j] - days[i]
           expect(Math.min(d, n - d)).toBeGreaterThanOrEqual(30)
         }
+  })
+  it('has a file for every team logo', () => {
+    const missing = logoPaths().filter((p) => !existsSync(`public${p}`))
+    expect(missing).toEqual([])
+    expect(logoPaths().length).toBeGreaterThanOrEqual(10)
   })
   it('gives every team a colour', () => {
     const missing = new Set(puzzles.flatMap((p) => p.items.map((i) => i.team)).filter((t) => t && !hasTeamStyle(t)))

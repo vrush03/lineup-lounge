@@ -1,24 +1,26 @@
 import type { Format } from './types'
 
-export type TeamStyle = { code: string; bg: string; fg: string }
+/** logo: official team logo served from /public (trademark of the team; used to identify it). */
+export type TeamStyle = { code: string; bg: string; fg: string; logo?: string }
 
-const T = (code: string, bg: string, fg = '#ffffff'): TeamStyle => ({ code, bg, fg })
+const T = (code: string, bg: string, fg = '#ffffff', logo?: string): TeamStyle => ({ code, bg, fg, logo })
+const ipl = (code: string) => `/logos/ipl/${code.toLowerCase()}.svg`
 
 const TEAMS: Record<string, TeamStyle> = {
   // IPL franchises (current names; defunct sides kept for old records)
-  'Chennai Super Kings': T('CSK', '#f6c300', '#1b2a5c'),
-  'Mumbai Indians': T('MI', '#004ba0'),
-  'Royal Challengers Bengaluru': T('RCB', '#c8102e'),
+  'Chennai Super Kings': T('CSK', '#f6c300', '#1b2a5c', ipl('CSK')),
+  'Mumbai Indians': T('MI', '#004ba0', '#ffffff', ipl('MI')),
+  'Royal Challengers Bengaluru': T('RCB', '#c8102e', '#ffffff', ipl('RCB')),
   'Royal Challengers Bangalore': T('RCB', '#c8102e'),
-  'Kolkata Knight Riders': T('KKR', '#3a225d', '#f2c14e'),
-  'Sunrisers Hyderabad': T('SRH', '#f26522', '#111111'),
-  'Rajasthan Royals': T('RR', '#e5197e'),
-  'Delhi Capitals': T('DC', '#17479e'),
+  'Kolkata Knight Riders': T('KKR', '#3a225d', '#f2c14e', ipl('KKR')),
+  'Sunrisers Hyderabad': T('SRH', '#f26522', '#111111', ipl('SRH')),
+  'Rajasthan Royals': T('RR', '#e5197e', '#ffffff', ipl('RR')),
+  'Delhi Capitals': T('DC', '#17479e', '#ffffff', ipl('DC')),
   'Delhi Daredevils': T('DD', '#17479e'),
-  'Punjab Kings': T('PBKS', '#d71920'),
+  'Punjab Kings': T('PBKS', '#d71920', '#ffffff', ipl('PBKS')),
   'Kings XI Punjab': T('KXIP', '#d71920'),
-  'Lucknow Super Giants': T('LSG', '#0f67b1'),
-  'Gujarat Titans': T('GT', '#1b2133', '#d8b46a'),
+  'Lucknow Super Giants': T('LSG', '#0f67b1', '#ffffff', ipl('LSG')),
+  'Gujarat Titans': T('GT', '#1b2133', '#d8b46a', ipl('GT')),
   'Deccan Chargers': T('DEC', '#2d3e6e', '#d9d9d9'),
   'Rising Pune Supergiant': T('RPS', '#6f2c91'),
   'Pune Warriors': T('PWI', '#2f9bd6'),
@@ -74,6 +76,9 @@ const TEAMS: Record<string, TeamStyle> = {
 
 /** Whether a team has its own colours (anything else falls back to a neutral badge). */
 export const hasTeamStyle = (team: string) => team in TEAMS
+
+/** Every logo path referenced above (checked in tests). */
+export const logoPaths = () => Object.values(TEAMS).flatMap((t) => (t.logo ? [t.logo] : []))
 
 export function teamStyle(team?: string, fallbackLabel?: string): TeamStyle {
   if (team && TEAMS[team]) return TEAMS[team]

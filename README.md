@@ -21,6 +21,7 @@ npm run build
 | [Cricsheet](https://cricsheet.org/) ball-by-ball data + register | IPL puzzles (complete, 2008 onward), player names and countries | [ODC-By 1.0](https://opendatacommons.org/licenses/by/1-0/) |
 | Wikipedia record lists | International career/match records, World Cup timelines | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Wikidata | Full names for the few players Cricsheet only lists by initials | CC0 |
+| Wikipedia (non-free files) | IPL franchise logos in `public/logos/ipl/` | Trademarks of their owners; used only to identify the teams |
 
 Cricsheet is missing some international matches (withheld or not yet covered), so international
 puzzles come from Wikipedia's maintained record tables, not from Cricsheet aggregates.
