@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Mark } from '../lib/score'
 import { shareText } from '../lib/share'
 import { dayNumber } from '../lib/daily'
@@ -7,11 +7,31 @@ import { MAX_ATTEMPTS } from './Game'
 
 const HEADLINES = ['Clean sweep!', 'Straight drive!', 'Well played!', 'Just made it!', 'Last-ball finish!']
 
-type Props = { puzzle: Puzzle; attempts: Mark[][]; solved: boolean; day?: number; onNext?: () => void }
+type Props = {
+  puzzle: Puzzle
+  attempts: Mark[][]
+  solved: boolean
+  day?: number
+  onNext?: () => void
+  /** True when the game ended just now (not restored from a save), so we can scroll and focus. */
+  justFinished?: boolean
+}
 
-export function ResultPanel({ puzzle, attempts, solved, day, onNext }: Props) {
+export function ResultPanel({ puzzle, attempts, solved, day, onNext, justFinished }: Props) {
   const [copied, setCopied] = useState(false)
   const daily = day !== undefined
+  const panel = useRef<HTMLDivElement>(null)
+  const next = useRef<HTMLButtonElement>(null)
+
+  // Bring the result into view once the reveal has played, and focus "Next" so Enter moves on.
+  useEffect(() => {
+    if (!justFinished) return
+    const t = setTimeout(() => {
+      next.current?.focus({ preventScroll: true })
+      panel.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }, 650)
+    return () => clearTimeout(t)
+  }, [justFinished])
 
   async function share() {
     const text = shareText('Lineup Lounge', day ?? 0, attempts, solved, MAX_ATTEMPTS, daily ? undefined : puzzle.prompt)
@@ -25,10 +45,10 @@ export function ResultPanel({ puzzle, attempts, solved, day, onNext }: Props) {
   }
 
   return (
-    <div className="mt-6 animate-rise overflow-hidden rounded-3xl border border-line bg-surface shadow-[var(--shadow)]" style={{ animationDelay: '500ms' }}>
+    <div ref={panel} className="mt-6 animate-rise scroll-mb-6 overflow-hidden rounded-3xl border border-line bg-surface shadow-[var(--shadow)]" style={{ animationDelay: '500ms' }}>
       <div className={`px-5 pt-5 pb-4 ${solved ? 'bg-correct/10' : 'bg-leather/8'}`}>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-          {solved ? `Solved in ${attempts.length} of ${MAX_ATTEMPTS}` : 'Out of attempts'}
+        <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${solved ? 'text-correct-ink' : 'text-muted'}`}>
+          {solved ? `Correct! Solved in ${attempts.length} of ${MAX_ATTEMPTS}` : 'Out of attempts'}
         </p>
         <p className="mt-1 font-display text-3xl font-extrabold uppercase">
           {solved ? HEADLINES[attempts.length - 1] : 'Bowled out'}
@@ -46,21 +66,23 @@ export function ResultPanel({ puzzle, attempts, solved, day, onNext }: Props) {
           ))}
         </div>
       </div>
-      <div className="flex gap-2 p-4">
-        <button
-          onClick={share}
-          className="flex-1 rounded-xl bg-ink py-3 font-display text-lg font-bold uppercase tracking-wider text-bg transition active:scale-[0.99]"
-        >
-          {copied ? 'Copied' : 'Share'}
-        </button>
+      <div className="flex flex-col gap-2 p-4">
         {onNext && (
           <button
+            ref={next}
             onClick={onNext}
-            className="flex-1 rounded-xl bg-pitch-deep py-3 font-display text-lg font-bold uppercase tracking-wider text-white transition hover:bg-pitch active:scale-[0.99]"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-pitch-deep py-3.5 font-display text-xl font-bold uppercase tracking-wider text-white shadow-lg shadow-pitch-deep/25 transition hover:bg-pitch active:scale-[0.99]"
           >
-            {daily ? 'Practice' : 'Next puzzle'}
+            {daily ? 'Keep playing in practice' : 'Next question'}
+            <span aria-hidden>→</span>
           </button>
         )}
+        <button
+          onClick={share}
+          className="w-full rounded-xl border border-line py-2.5 font-display text-base font-bold uppercase tracking-wider text-muted transition hover:text-ink active:scale-[0.99]"
+        >
+          {copied ? 'Copied to clipboard' : 'Share result'}
+        </button>
       </div>
       {daily && <Countdown day={day} />}
       {puzzle.source && (

@@ -11,6 +11,8 @@
   --ink: #13201a;
   --muted: #5b6a62;
   --line: #e2dccd;
+  --correct-ink: #11613c;
+  --wrong-ink: #9a1b23;
   --shadow: 0 1px 0 rgb(19 32 26 / 0.04), 0 8px 24px -12px rgb(19 32 26 / 0.18);
   color-scheme: light;
 }
@@ -23,6 +25,8 @@
     --ink: #edf3ef;
     --muted: #8ea39a;
     --line: #1f3a2f;
+    --correct-ink: #6fdca6;
+    --wrong-ink: #ff9a9a;
     --shadow: 0 1px 0 rgb(0 0 0 / 0.3), 0 10px 30px -12px rgb(0 0 0 / 0.6);
     color-scheme: dark;
   }
@@ -35,6 +39,8 @@
   --ink: #edf3ef;
   --muted: #8ea39a;
   --line: #1f3a2f;
+  --correct-ink: #6fdca6;
+  --wrong-ink: #ff9a9a;
   --shadow: 0 1px 0 rgb(0 0 0 / 0.3), 0 10px 30px -12px rgb(0 0 0 / 0.6);
   color-scheme: dark;
 }
@@ -49,6 +55,8 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-correct-ink: var(--correct-ink);
+  --color-wrong-ink: var(--wrong-ink);
 
   --color-pitch: #1d8a5a;
   --color-pitch-deep: #0f5a3a;

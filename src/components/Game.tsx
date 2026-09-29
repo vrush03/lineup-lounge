@@ -48,6 +48,7 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
   const [order, setOrder] = useState(() => initialOrder(puzzle, saved?.labels))
   const [attempts, setAttempts] = useState<Mark[][]>(saved?.attempts ?? [])
   const [lastGuess, setLastGuess] = useState<string[]>(() => saved?.guess ?? [])
+  const [justFinished, setJustFinished] = useState(false)
 
   const solved = attempts.length > 0 && isSolved(attempts[attempts.length - 1])
   const over = solved || attempts.length >= MAX_ATTEMPTS
@@ -87,7 +88,10 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
     const next = [...attempts, marks]
     setLastGuess(order.map((i) => i.label))
     setAttempts(next)
-    if (isSolved(marks) || next.length >= MAX_ATTEMPTS) onFinish?.(isSolved(marks), next.length)
+    if (isSolved(marks) || next.length >= MAX_ATTEMPTS) {
+      setJustFinished(true)
+      onFinish?.(isSolved(marks), next.length)
+    }
   }
 
   const [top, bottom] = railLabels(puzzle)
@@ -103,9 +107,11 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
         {puzzle.prompt}
       </h2>
       <div className="mt-3 mb-5 flex items-center justify-between gap-4">
-        <p className="text-sm text-muted">
-          {over ? 'Final order' : 'Press and drag, or use the arrows, to put them in order.'}
-        </p>
+        {over ? (
+          <OutcomeBanner solved={solved} tries={attempts.length} />
+        ) : (
+          <p className="text-sm text-muted">Press and drag, or use the arrows, to put them in order.</p>
+        )}
         <AttemptPips attempts={attempts} />
       </div>
 
@@ -150,9 +156,39 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
           <Legend />
         </div>
       ) : (
-        <ResultPanel puzzle={puzzle} attempts={attempts} solved={solved} day={day} onNext={onNext} />
+        <ResultPanel
+          puzzle={puzzle}
+          attempts={attempts}
+          solved={solved}
+          day={day}
+          onNext={onNext}
+          justFinished={justFinished}
+        />
       )}
     </section>
+  )
+}
+
+function OutcomeBanner({ solved, tries }: { solved: boolean; tries: number }) {
+  return (
+    <p
+      role="status"
+      className={`flex animate-pop items-center gap-2 rounded-full px-3.5 py-2 text-[15px] font-semibold ${
+        solved ? 'bg-correct/15 text-correct-ink' : 'bg-leather/12 text-wrong-ink'
+      }`}
+    >
+      <span
+        aria-hidden
+        className={`grid h-5 w-5 shrink-0 place-items-center rounded-full text-xs text-white ${solved ? 'bg-correct' : 'bg-leather'}`}
+      >
+        {solved ? '✓' : '✕'}
+      </span>
+      {solved
+        ? tries === 1
+          ? 'Spot on! Right first time.'
+          : `Spot on! You got it in ${tries} tries.`
+        : 'Out of tries. Here’s the right order.'}
+    </p>
   )
 }
 

@@ -45,7 +45,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   const [statsOpen, setStatsOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(() => loadPref('theme', 'system'))
   const [filter, setFilter] = useState<Format | 'All'>(() => loadPref('filter', 'All'))
-  const [practice, setPractice] = useState<{ puzzle: Puzzle; round: number } | null>(null)
+  const [practice, setPractice] = useState<{ puzzle: Puzzle; round: number; done: boolean } | null>(null)
   const [seen] = useState(() => new Set<string>([daily.id]))
 
   useEffect(() => {
@@ -73,7 +73,8 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     }
     const puzzle = pickRandom(fresh)
     seen.add(puzzle.id)
-    setPractice((prev) => ({ puzzle, round: (prev?.round ?? 0) + 1 }))
+    setPractice((prev) => ({ puzzle, round: (prev?.round ?? 0) + 1, done: false }))
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function goPractice() {
@@ -183,14 +184,21 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
               ))}
             </div>
             {practice && (
-              <Game key={`practice:${practice.round}`} puzzle={practice.puzzle} onNext={() => nextPractice()} />
+              <Game
+                key={`practice:${practice.round}`}
+                puzzle={practice.puzzle}
+                onFinish={() => setPractice((p) => p && { ...p, done: true })}
+                onNext={() => nextPractice()}
+              />
             )}
-            <button
-              onClick={() => nextPractice()}
-              className="mt-4 w-full py-2 text-sm font-semibold text-muted underline-offset-4 hover:text-ink hover:underline"
-            >
-              Skip this one · {pool.length} puzzles in {filter === 'All' ? 'all formats' : filter}
-            </button>
+            {!practice?.done && (
+              <button
+                onClick={() => nextPractice()}
+                className="mt-4 w-full py-2 text-sm font-semibold text-muted underline-offset-4 hover:text-ink hover:underline"
+              >
+                Skip this one · {pool.length} puzzles in {filter === 'All' ? 'all formats' : filter}
+              </button>
+            )}
           </>
         )}
       </main>
