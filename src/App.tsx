@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { useEffect, useState } from 'react'
 import { Home, type ModeCard } from './components/Home'
 import { LineupMode } from './components/LineupMode'
@@ -67,6 +68,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   const day = dayNumber(today)
   const daily = puzzles[puzzleIndex(puzzles.length, today)]
   const route = useRoute()
+  const page = route === 'home' ? '/' : `/${route}`
   const [stats, setStats] = useState(loadStats)
   const [quizStats, setQuizStats] = useState(loadQuizStats)
   const [statsOpen, setStatsOpen] = useState(false)
@@ -202,6 +204,9 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
         <br />
         Team names and logos are trademarks of their respective owners. Unofficial fan game.
       </footer>
+
+      {/* Hash routes don't change the path, so report each game as its own page. */}
+      <Analytics route={page} path={page} />
 
       {route === 'quiz' ? (
         <StatsDialog
