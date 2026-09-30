@@ -11,6 +11,9 @@ import type { Puzzle } from './lib/types'
 
 type Theme = 'system' | 'light' | 'dark'
 
+/** Buy Me a Coffee page for tips; the footer button is hidden while this is empty. */
+const TIP_URL = 'https://buymeacoffee.com/lineuplounge'
+
 export default function App() {
   const [puzzles, setPuzzles] = useState<Puzzle[] | null>(null)
   const [failed, setFailed] = useState(false)
@@ -171,6 +174,18 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
       </main>
 
       <footer className="mt-10 text-center text-xs text-muted">
+        {TIP_URL && (
+          <div className="mb-4">
+            <a
+              href={TIP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-4 py-2 text-sm font-semibold text-ink transition hover:border-muted"
+            >
+              <span aria-hidden>🍵</span> Buy me a tea
+            </a>
+          </div>
+        )}
         Stats from{' '}
         <a className="underline underline-offset-2" href="https://cricsheet.org/" target="_blank" rel="noreferrer">
           Cricsheet
