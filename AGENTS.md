@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Lineup Lounge is a daily cricket ranking puzzle: a React 19 + TypeScript + Vite single-page app
+Lineup Lounge is a set of daily cricket games (Lineup: ranking; Quiz: typed answers): a React 19 + TypeScript + Vite single-page app
 with no backend. All state lives in the browser's `localStorage`. See `README.md` for the game
 and the data sources.
 
@@ -19,14 +19,20 @@ same three on every PR and on `main`. Node version is pinned in `.nvmrc`.
 
 ## Layout
 
-- `src/App.tsx`: picks today's puzzle, practice mode, stats and streak.
-- `src/components/`: UI. `Game.tsx` owns a single round (drag to order, submit, marks).
+- `src/App.tsx`: the shell. Hash routes (`#lineup`, `#quiz`, none = home), header, per-mode stats.
+- `src/components/`: UI. `Home.tsx` is the mode catalogue; each mode has a `*Mode.tsx` container
+  (daily/practice tabs) and a round component: `Game.tsx` for Lineup (drag to order, submit,
+  marks), `Quiz.tsx` for Quiz (`AnswerInput.tsx` is its autocomplete box).
 - `src/lib/`: pure logic, kept free of React so it is easy to test.
   - `score.ts`: marks each row `correct` / `near` (one place off) / `wrong`.
+  - `quiz.ts`: answer matching, quiz marks (`near` = right after the hint), daily question picks,
+    autocomplete.
   - `daily.ts`: maps the local calendar date to a puzzle index.
   - `storage.ts`: every `localStorage` read and write goes through here.
   - `puzzleSchema.ts` (zod) and `types.ts`: the puzzle shape.
 - `src/data/cricket.json`: the generated puzzle set, loaded as its own lazy chunk.
+- `src/data/quiz.json`: quiz questions, hand-written for now (a generator is planned).
+  Autocomplete names come from `cricket.json` labels plus the quiz answers.
 - `scripts/data/`: Python pipeline that builds `cricket.json` from raw downloads in `data-raw/`
   (git-ignored).
 
@@ -38,9 +44,10 @@ same three on every PR and on `main`. Node version is pinned in `.nvmrc`.
 - **The daily puzzle is `dayNumber % puzzles.length`.** Adding, removing or reordering puzzles
   changes which puzzle every future (and the current) day shows. Treat dataset changes as
   releases, not tweaks. `puzzles.test.ts` also enforces that puzzles sharing a prompt are at least
-  30 days apart in the rotation.
-- **Saved games are player data.** Daily saves are keyed `game:cricket:<day>:<puzzleId>`; stats and
-  streaks live alongside them. If you change a saved shape, make `storage.ts` discard or migrate old
+  30 days apart in the rotation. The daily quiz is the same idea: `dailyQuestions` takes five
+  consecutive questions starting at `day * 5`, so editing `quiz.json` changes future daily quizzes.
+- **Saved games are player data.** Daily Lineup saves are keyed `game:cricket:<day>:<puzzleId>`
+  with stats in `stats`; daily quiz saves are `quiz:cricket:<day>` with stats in `stats:quiz`. If you change a saved shape, make `storage.ts` discard or migrate old
   values instead of crashing (see how `loadGame` rejects old boolean marks).
 - Wrap any new storage access in the existing `read` / `write` helpers; storage can be unavailable
   and the game must still work.

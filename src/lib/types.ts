@@ -25,3 +25,18 @@ export type Puzzle = {
   source?: { name: string; url: string; license: string }
   asOf?: string | null
 }
+
+/** A quiz question with a typed answer (a player or team name). */
+export type Question = {
+  id: string
+  prompt: string
+  answer: string
+  /** Other spellings that also count, e.g. a surname or nickname. */
+  accept?: string[]
+  /** Shown after the first wrong guess. */
+  hint: string
+  /** Shown once the question is over, e.g. "15,921 runs in 200 Tests". */
+  fact?: string
+  format?: Format
+  source?: { name: string; url: string; license: string }
+}

@@ -7,7 +7,7 @@ const STYLE: Record<Mark, { cls: string; symbol: string }> = {
   wrong: { cls: 'bg-wrong text-white', symbol: '✕' },
 }
 
-export function MarkIcon({ mark, size = 22 }: { mark: Mark; size?: number }) {
+export function MarkIcon({ mark, size = 22, symbol }: { mark: Mark; size?: number; symbol?: string }) {
   const s = STYLE[mark]
   return (
     <span
@@ -15,7 +15,7 @@ export function MarkIcon({ mark, size = 22 }: { mark: Mark; size?: number }) {
       className={`grid shrink-0 place-items-center rounded-full font-bold leading-none ${s.cls}`}
       style={{ width: size, height: size, fontSize: size * 0.55 }}
     >
-      {s.symbol}
+      {symbol ?? s.symbol}
     </span>
   )
 }

@@ -25,3 +25,14 @@ export const puzzleSchema = z.object({
   source: z.object({ name: z.string(), url: z.string(), license: z.string() }).optional(),
   asOf: z.string().nullable().optional(),
 })
+
+export const questionSchema = z.object({
+  id: z.string(),
+  prompt: z.string(),
+  answer: z.string().min(1),
+  accept: z.array(z.string().min(1)).optional(),
+  hint: z.string().min(1),
+  fact: z.string().optional(),
+  format: z.enum(FORMATS).optional(),
+  source: z.object({ name: z.string(), url: z.string(), license: z.string() }).optional(),
+})

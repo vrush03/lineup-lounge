@@ -1,0 +1,51 @@
+[
+ {
+  "id": "q-test-most-runs",
+  "prompt": "Who has scored the most runs in Test cricket?",
+  "answer": "Sachin Tendulkar",
+  "accept": ["Tendulkar", "Sachin"],
+  "hint": "Indian batter known as the Little Master",
+  "fact": "15,921 runs in 200 Tests, 1989–2013",
+  "format": "Test",
+  "source": { "name": "Wikipedia: List of Test cricket records", "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records", "license": "CC BY-SA 4.0" }
+ },
+ {
+  "id": "q-ipl-most-runs",
+  "prompt": "Who has scored the most runs in IPL history?",
+  "answer": "Virat Kohli",
+  "accept": ["Kohli"],
+  "hint": "Has played every IPL season for Royal Challengers Bengaluru",
+  "fact": "9,336 runs in 275 innings (Cricsheet data to May 2026)",
+  "format": "IPL",
+  "source": { "name": "Cricsheet ball-by-ball data", "url": "https://cricsheet.org/", "license": "ODC-By 1.0" }
+ },
+ {
+  "id": "q-t20wc-2007-champions",
+  "prompt": "Which team won the first T20 World Cup, in 2007?",
+  "answer": "India",
+  "hint": "They beat Pakistan in the final in Johannesburg",
+  "fact": "India beat Pakistan by 5 runs in the final",
+  "format": "T20 World Cup",
+  "source": { "name": "Wikipedia: ICC Men's T20 World Cup", "url": "https://en.wikipedia.org/wiki/ICC_Men%27s_T20_World_Cup", "license": "CC BY-SA 4.0" }
+ },
+ {
+  "id": "q-test-most-wickets",
+  "prompt": "Who has taken the most wickets in Test cricket?",
+  "answer": "Muttiah Muralitharan",
+  "accept": ["Muralitharan", "Murali"],
+  "hint": "Sri Lankan off-spinner",
+  "fact": "800 wickets in 133 Tests, 1992–2010",
+  "format": "Test",
+  "source": { "name": "Wikipedia: List of Test cricket records", "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records", "license": "CC BY-SA 4.0" }
+ },
+ {
+  "id": "q-test-highest-score",
+  "prompt": "Who holds the record for the highest individual score in a Test innings?",
+  "answer": "Brian Lara",
+  "accept": ["Lara"],
+  "hint": "West Indies left-hander who also made 375 against the same team",
+  "fact": "400 not out against England in Antigua, 2004",
+  "format": "Test",
+  "source": { "name": "Wikipedia: List of Test cricket records", "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records", "license": "CC BY-SA 4.0" }
+ }
+]

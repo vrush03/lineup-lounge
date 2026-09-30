@@ -1,12 +1,14 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Game } from './components/Game'
+import { useEffect, useState } from 'react'
+import { Home, type ModeCard } from './components/Home'
+import { LineupMode } from './components/LineupMode'
+import { QuizMode } from './components/QuizMode'
 import { StatsDialog } from './components/StatsDialog'
 import { dayNumber, puzzleIndex } from './lib/daily'
 import { loadPuzzles } from './lib/puzzles'
-import { liveStreak, loadPref, loadStats, recordResult, savePref } from './lib/storage'
-import { FORMATS, type Format, type Puzzle } from './lib/types'
+import { QUIZ_LENGTH } from './lib/quiz'
+import { liveStreak, loadPref, loadQuizStats, loadStats, quizLiveStreak, recordQuiz, recordResult, savePref } from './lib/storage'
+import type { Puzzle } from './lib/types'
 
-type Mode = 'daily' | 'practice'
 type Theme = 'system' | 'light' | 'dark'
 
 export default function App() {
@@ -35,18 +37,37 @@ export default function App() {
   )
 }
 
+type Route = 'home' | 'lineup' | 'quiz'
+
+function routeFromHash(): Route {
+  const h = location.hash.slice(1)
+  return h === 'lineup' || h === 'quiz' ? h : 'home'
+}
+
+/** Hash routes (#lineup, #quiz) so the browser back button returns to the mode list. */
+function useRoute(): Route {
+  const [route, setRoute] = useState(routeFromHash)
+  useEffect(() => {
+    const onChange = () => {
+      setRoute(routeFromHash())
+      window.scrollTo({ top: 0 })
+    }
+    window.addEventListener('hashchange', onChange)
+    return () => window.removeEventListener('hashchange', onChange)
+  }, [])
+  return route
+}
+
 function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   // Fixed at load so a tab left open past midnight doesn't swap the puzzle mid-game.
   const [today] = useState(() => new Date())
   const day = dayNumber(today)
   const daily = puzzles[puzzleIndex(puzzles.length, today)]
-  const [mode, setMode] = useState<Mode>('daily')
+  const route = useRoute()
   const [stats, setStats] = useState(loadStats)
+  const [quizStats, setQuizStats] = useState(loadQuizStats)
   const [statsOpen, setStatsOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(() => loadPref('theme', 'system'))
-  const [filter, setFilter] = useState<Format | 'All'>(() => loadPref('filter', 'All'))
-  const [practice, setPractice] = useState<{ puzzle: Puzzle; round: number; done: boolean } | null>(null)
-  const [seen] = useState(() => new Set<string>([daily.id]))
 
   useEffect(() => {
     if (theme === 'system') delete document.documentElement.dataset.theme
@@ -54,66 +75,58 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     savePref('theme', theme)
   }, [theme])
 
-  const pool = useMemo(
-    () => puzzles.filter((p) => p.id !== daily.id && (filter === 'All' || p.format === filter)),
-    [puzzles, filter, daily.id],
-  )
-  const counts = useMemo(() => {
-    const c = new Map<string, number>()
-    for (const p of puzzles) if (p.format) c.set(p.format, (c.get(p.format) ?? 0) + 1)
-    return c
-  }, [puzzles])
-
-  function nextPractice(f = filter) {
-    const candidates = puzzles.filter((p) => p.id !== daily.id && (f === 'All' || p.format === f))
-    let fresh = candidates.filter((p) => !seen.has(p.id))
-    if (!fresh.length) {
-      candidates.forEach((p) => seen.delete(p.id))
-      fresh = candidates
-    }
-    const puzzle = pickRandom(fresh)
-    seen.add(puzzle.id)
-    setPractice((prev) => ({ puzzle, round: (prev?.round ?? 0) + 1, done: false }))
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  function goPractice() {
-    setMode('practice')
-    if (!practice) nextPractice()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  function pickFilter(f: Format | 'All') {
-    setFilter(f)
-    savePref('filter', f)
-    nextPractice(f)
-  }
-
-  const streak = liveStreak(stats, day)
+  const lineupStreak = liveStreak(stats, day)
+  const quizStreak = quizLiveStreak(quizStats, day)
+  const streak = route === 'quiz' ? quizStreak : lineupStreak
   const dateLabel = today.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' })
+
+  const modes: ModeCard[] = [
+    {
+      href: '#lineup',
+      name: 'Lineup',
+      tagline: 'Rank five players, teams or records in order.',
+      status: stats.lastPlayedDay === day ? (stats.lastWonDay === day ? 'solved' : 'bowled out') : null,
+      streak: lineupStreak,
+      icon: <LineupIcon />,
+    },
+    {
+      href: '#quiz',
+      name: 'Quiz',
+      tagline: 'Five cricket questions. Type the answer.',
+      status: quizStats.lastPlayedDay === day ? `${quizStats.lastScore ?? 0}/${QUIZ_LENGTH}` : null,
+      streak: quizStreak,
+      icon: <QuizIcon />,
+    },
+  ]
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-[560px] flex-col px-4 pt-[max(env(safe-area-inset-top),16px)] pb-10">
       <header className="flex items-center justify-between gap-3">
-        <div className="flex min-w-0 items-center gap-2">
+        <a href="#" className="flex min-w-0 items-center gap-2" aria-label="Lineup Lounge: all games">
           <Ball />
           <div>
             <h1 className="whitespace-nowrap font-display text-[22px] font-extrabold uppercase leading-none tracking-wide sm:text-[26px]">Lineup Lounge</h1>
-            <p className="mt-0.5 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.2em] text-muted sm:text-[11px]">Daily cricket rankings</p>
+            <p className="mt-0.5 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.2em] text-muted sm:text-[11px]">
+              {route === 'home' ? 'Daily cricket games' : route === 'quiz' ? 'Quiz' : 'Lineup'}
+            </p>
           </div>
-        </div>
+        </a>
         <div className="flex shrink-0 items-center gap-1">
-          <span
-            title="Current streak"
-            className="flex h-8 items-center gap-1 rounded-full border border-line bg-surface px-2.5 font-display text-lg font-bold tabular-nums sm:h-9"
-          >
-            <span aria-hidden>🔥</span>
-            <span className="sr-only">Streak </span>
-            {streak}
-          </span>
-          <IconButton label="Stats" onClick={() => setStatsOpen(true)}>
-            <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
-          </IconButton>
+          {route !== 'home' && (
+            <>
+              <span
+                title="Current streak"
+                className="flex h-8 items-center gap-1 rounded-full border border-line bg-surface px-2.5 font-display text-lg font-bold tabular-nums sm:h-9"
+              >
+                <span aria-hidden>🔥</span>
+                <span className="sr-only">Streak </span>
+                {streak}
+              </span>
+              <IconButton label="Stats" onClick={() => setStatsOpen(true)}>
+                <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+              </IconButton>
+            </>
+          )}
           <IconButton
             label={`Theme: ${theme}`}
             onClick={() => setTheme(theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system')}
@@ -136,70 +149,24 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
         </div>
       </header>
 
-      <nav className="mt-5 grid grid-cols-2 rounded-2xl border border-line bg-surface-2 p-1" aria-label="Mode">
-        {(['daily', 'practice'] as Mode[]).map((m) => (
-          <button
-            key={m}
-            onClick={() => (m === 'practice' ? goPractice() : setMode('daily'))}
-            aria-pressed={mode === m}
-            className={`rounded-xl py-2 font-display text-base font-bold uppercase tracking-wider transition ${
-              mode === m ? 'bg-surface text-ink shadow-[var(--shadow)]' : 'text-muted hover:text-ink'
-            }`}
-          >
-            {m === 'daily' ? `Daily #${day + 1}` : 'Practice'}
-          </button>
-        ))}
-      </nav>
-
-      <main className="mt-6 flex-1">
-        {mode === 'daily' ? (
-          <>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted">{dateLabel}</p>
-            <Game
-              key={`daily:${day}:${daily.id}`}
-              puzzle={daily}
-              storageKey={`cricket:${day}:${daily.id}`}
-              day={day}
-              onFinish={(solved, n) => setStats(recordResult(day, solved, n))}
-              onNext={goPractice}
-            />
-          </>
+      <main className="mt-5 flex-1">
+        {route !== 'home' && (
+          <a href="#" className="mb-4 inline-flex items-center gap-1 text-sm font-semibold text-muted hover:text-ink">
+            <span aria-hidden>←</span> All games
+          </a>
+        )}
+        {route === 'home' ? (
+          <Home modes={modes} />
+        ) : route === 'lineup' ? (
+          <LineupMode
+            puzzles={puzzles}
+            daily={daily}
+            day={day}
+            dateLabel={dateLabel}
+            onFinishDaily={(solved, n) => setStats(recordResult(day, solved, n))}
+          />
         ) : (
-          <>
-            <div className="-mx-4 mb-5 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
-              {(['All', ...FORMATS] as const).map((f) => (
-                <button
-                  key={f}
-                  onClick={() => pickFilter(f)}
-                  aria-pressed={filter === f}
-                  className={`shrink-0 rounded-full border px-3.5 py-1.5 text-sm font-semibold transition ${
-                    filter === f ? 'border-ink bg-ink text-bg' : 'border-line bg-surface text-muted hover:text-ink'
-                  }`}
-                >
-                  {f}
-                  {f !== 'All' && (
-                    <span className="ml-1.5 text-xs opacity-60">{counts.get(f) ?? 0}</span>
-                  )}
-                </button>
-              ))}
-            </div>
-            {practice && (
-              <Game
-                key={`practice:${practice.round}`}
-                puzzle={practice.puzzle}
-                onFinish={() => setPractice((p) => p && { ...p, done: true })}
-                onNext={() => nextPractice()}
-              />
-            )}
-            {!practice?.done && (
-              <button
-                onClick={() => nextPractice()}
-                className="mt-4 w-full py-2 text-sm font-semibold text-muted underline-offset-4 hover:text-ink hover:underline"
-              >
-                Skip this one · {pool.length} puzzles in {filter === 'All' ? 'all formats' : filter}
-              </button>
-            )}
-          </>
+          <QuizMode puzzles={puzzles} day={day} dateLabel={dateLabel} onFinishDaily={(score) => setQuizStats(recordQuiz(day, score))} />
         )}
       </main>
 
@@ -216,13 +183,39 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
         Team names and logos are trademarks of their respective owners. Unofficial fan game.
       </footer>
 
-      <StatsDialog open={statsOpen} onClose={() => setStatsOpen(false)} stats={stats} streak={streak} />
+      {route === 'quiz' ? (
+        <StatsDialog
+          open={statsOpen}
+          onClose={() => setStatsOpen(false)}
+          title="Quiz stats"
+          tiles={[
+            ['Played', quizStats.played],
+            ['Avg', quizStats.played ? Math.round((10 * quizStats.dist.reduce((a, n, i) => a + n * i, 0)) / quizStats.played) / 10 : 0],
+            ['Streak', quizStreak],
+            ['Best', quizStats.maxStreak],
+          ]}
+          distTitle="Daily scores"
+          dist={quizStats.dist.map((n, i) => [String(i), n] as [string, number]).reverse()}
+          note="Daily quizzes count towards your stats; practice rounds don’t. The streak counts days you finish the quiz."
+        />
+      ) : (
+        <StatsDialog
+          open={statsOpen}
+          onClose={() => setStatsOpen(false)}
+          title="Lineup stats"
+          tiles={[
+            ['Played', stats.played],
+            ['Win %', stats.played ? Math.round((100 * stats.won) / stats.played) : 0],
+            ['Streak', lineupStreak],
+            ['Best', stats.maxStreak],
+          ]}
+          distTitle="Attempts to solve"
+          dist={stats.dist.map((n, i) => [String(i + 1), n] as [string, number])}
+          note="Daily puzzles count towards your stats; practice rounds don’t."
+        />
+      )}
     </div>
   )
-}
-
-function pickRandom<T>(items: T[]): T {
-  return items[Math.floor(Math.random() * items.length)]
 }
 
 function IconButton({ label, onClick, children }: { label: string; onClick: () => void; children: React.ReactNode }) {
@@ -246,6 +239,25 @@ function Ball() {
       <circle cx="32" cy="32" r="28" fill="#b3202a" />
       <circle cx="24" cy="22" r="10" fill="#fff" opacity="0.12" />
       <path d="M14 13c9 9 9 29 0 38M50 13c-9 9-9 29 0 38" fill="none" stroke="#f6efe2" strokeWidth="2.5" strokeDasharray="3 3" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function LineupIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+      <path d="M9 6h11M9 12h11M9 18h11" />
+      <path d="M4 5v2M3.5 11h1.5l-1.5 2h1.5M3.5 17h1.5v2h-1.5" strokeWidth="1.5" />
+    </svg>
+  )
+}
+
+function QuizIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6" />
+      <path d="M12 17h.01" />
     </svg>
   )
 }

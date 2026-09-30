@@ -1,9 +1,13 @@
 # Lineup Lounge
 
-A daily cricket ranking puzzle: put five players, teams or records in order. Five attempts; each
-attempt marks every row as in the right spot (green), one place off (amber) or further away.
-There's one daily puzzle (counts towards your streak) and an unlimited practice mode filtered by
-format (IPL, Test, ODI, T20I, World Cup, T20 World Cup).
+Daily cricket games. The home screen lists the modes; each has a daily round (its own stats and
+streak) and a practice mode.
+
+- **Lineup**: put five players, teams or records in order. Five attempts; each attempt marks every
+  row as in the right spot (green), one place off (amber) or further away. Practice is unlimited
+  and filtered by format (IPL, Test, ODI, T20I, World Cup, T20 World Cup).
+- **Quiz**: five questions, answered by typing a player or team name (with autocomplete). Two tries
+  per question; a hint appears after the first miss.
 
 ```bash
 npm install
@@ -14,7 +18,8 @@ npm run build
 
 ## Data
 
-`src/data/cricket.json` is generated; don't edit it by hand. Sources:
+`src/data/cricket.json` is generated; don't edit it by hand. `src/data/quiz.json` (quiz questions)
+is hand-written for now. Sources:
 
 | Source | Used for | Licence |
 |---|---|---|

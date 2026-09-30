@@ -1,7 +1,17 @@
 import { useEffect, useRef } from 'react'
-import type { Stats } from '../lib/storage'
 
-export function StatsDialog({ open, onClose, stats, streak }: { open: boolean; onClose: () => void; stats: Stats; streak: number }) {
+type Props = {
+  open: boolean
+  onClose: () => void
+  title: string
+  tiles: [string, number][]
+  distTitle: string
+  /** One bar per row: [label, count]. */
+  dist: [string, number][]
+  note: string
+}
+
+export function StatsDialog({ open, onClose, title, tiles, distTitle, dist, note }: Props) {
   const ref = useRef<HTMLDialogElement>(null)
   useEffect(() => {
     const d = ref.current
@@ -10,8 +20,7 @@ export function StatsDialog({ open, onClose, stats, streak }: { open: boolean; o
     if (!open && d.open) d.close()
   }, [open])
 
-  const maxDist = Math.max(1, ...stats.dist)
-  const winPct = stats.played ? Math.round((100 * stats.won) / stats.played) : 0
+  const maxDist = Math.max(1, ...dist.map(([, n]) => n))
 
   return (
     <dialog
@@ -22,29 +31,24 @@ export function StatsDialog({ open, onClose, stats, streak }: { open: boolean; o
     >
       <div className="p-6">
         <div className="flex items-center justify-between">
-          <h2 className="font-display text-2xl font-extrabold uppercase tracking-wide">Your stats</h2>
+          <h2 className="font-display text-2xl font-extrabold uppercase tracking-wide">{title}</h2>
           <button onClick={onClose} aria-label="Close" className="grid h-8 w-8 place-items-center rounded-full text-muted hover:bg-ink/5 hover:text-ink">
             ✕
           </button>
         </div>
         <div className="mt-5 grid grid-cols-4 gap-2 text-center">
-          {[
-            ['Played', stats.played],
-            ['Win %', winPct],
-            ['Streak', streak],
-            ['Best', stats.maxStreak],
-          ].map(([k, v]) => (
+          {tiles.map(([k, v]) => (
             <div key={k} className="rounded-2xl bg-surface-2 py-3">
               <p className="font-display text-3xl font-bold tabular-nums">{v}</p>
               <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">{k}</p>
             </div>
           ))}
         </div>
-        <h3 className="mt-6 mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted">Attempts to solve</h3>
+        <h3 className="mt-6 mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted">{distTitle}</h3>
         <div className="space-y-1.5">
-          {stats.dist.map((n, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="w-3 font-display font-bold tabular-nums">{i + 1}</span>
+          {dist.map(([label, n]) => (
+            <div key={label} className="flex items-center gap-2">
+              <span className="w-3 font-display font-bold tabular-nums">{label}</span>
               <div className="h-6 flex-1 rounded-md bg-surface-2">
                 <div
                   className="flex h-full min-w-7 items-center justify-end rounded-md bg-pitch px-2 text-xs font-bold text-white tabular-nums"
@@ -57,7 +61,7 @@ export function StatsDialog({ open, onClose, stats, streak }: { open: boolean; o
           ))}
         </div>
         <p className="mt-6 text-xs leading-relaxed text-muted">
-          Daily puzzles count towards your stats; practice rounds don’t. Data from{' '}
+          {note} Data from{' '}
           <a className="underline" href="https://cricsheet.org/" target="_blank" rel="noreferrer">Cricsheet</a> (ODC-By) and{' '}
           <a className="underline" href="https://en.wikipedia.org/" target="_blank" rel="noreferrer">Wikipedia</a> (CC BY-SA).
         </p>

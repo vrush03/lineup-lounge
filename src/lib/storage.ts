@@ -75,3 +75,56 @@ export function liveStreak(s: Stats, today: number): number {
 
 export const loadPref = <T,>(key: string, fallback: T): T => read<T>(`pref:${key}`) ?? fallback
 export const savePref = (key: string, v: unknown) => write(`pref:${key}`, v)
+
+/** A daily quiz in progress: the question ids it was dealt and every guess so far ('' = passed). */
+export type QuizSaved = { ids: string[]; guesses: string[][] }
+
+const strings = (a: unknown): a is string[] => Array.isArray(a) && a.every((x) => typeof x === 'string')
+
+export function loadQuiz(key: string): QuizSaved | null {
+  const s = read<QuizSaved>(`quiz:${key}`)
+  if (!s || !strings(s.ids) || !Array.isArray(s.guesses) || !s.guesses.every(strings)) return null
+  return s
+}
+export const saveQuiz = (key: string, s: QuizSaved) => write(`quiz:${key}`, s)
+
+export type QuizStats = {
+  played: number
+  /** Consecutive days with the daily quiz finished, whatever the score. */
+  streak: number
+  maxStreak: number
+  lastPlayedDay: number | null
+  lastScore: number | null
+  /** dist[n] = daily quizzes that scored n */
+  dist: number[]
+}
+const QUIZ_DIST = 6
+const emptyQuizStats: QuizStats = { played: 0, streak: 0, maxStreak: 0, lastPlayedDay: null, lastScore: null, dist: Array(QUIZ_DIST).fill(0) }
+
+export function loadQuizStats(): QuizStats {
+  const s = read<Partial<QuizStats>>('stats:quiz') ?? {}
+  return { ...emptyQuizStats, ...s, dist: s.dist?.length === QUIZ_DIST ? s.dist : [...emptyQuizStats.dist] }
+}
+
+/** Record a finished daily quiz. Recording the same day twice is ignored. */
+export function recordQuiz(day: number, score: number): QuizStats {
+  const s = loadQuizStats()
+  if (s.lastPlayedDay === day) return s
+  const streak = s.lastPlayedDay === day - 1 ? s.streak + 1 : 1
+  const dist = [...s.dist]
+  dist[Math.max(0, Math.min(QUIZ_DIST - 1, score))] += 1
+  const next: QuizStats = {
+    played: s.played + 1,
+    streak,
+    maxStreak: Math.max(s.maxStreak, streak),
+    lastPlayedDay: day,
+    lastScore: score,
+    dist,
+  }
+  write('stats:quiz', next)
+  return next
+}
+
+export function quizLiveStreak(s: QuizStats, today: number): number {
+  return s.lastPlayedDay !== null && s.lastPlayedDay >= today - 1 ? s.streak : 0
+}
