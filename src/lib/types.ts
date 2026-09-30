@@ -45,7 +45,7 @@ export type NameQuestion = QuestionBase & {
   accept?: string[]
 }
 
-/** A ballpark estimate: any guess within `margin` of `answer` counts. */
+/** A ballpark estimate, scored by closeness: exact is 100 points, `margin` off is 75, three margins off is 0. */
 export type NumberQuestion = QuestionBase & {
   kind: 'number'
   answer: number

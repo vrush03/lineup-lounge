@@ -3,6 +3,8 @@ import type { NumberQuestion, Puzzle, Question } from './types'
 
 export const QUIZ_LENGTH = 5
 export const MAX_GUESSES = 2
+/** Points for a question; a daily quiz is out of QUIZ_LENGTH * MAX_POINTS. */
+export const MAX_POINTS = 100
 /** A guess of '' means the player gave up on the question. */
 export const PASS = ''
 
@@ -35,12 +37,34 @@ export function isAnswer(q: Question, guess: string): boolean {
   return !!g && [q.answer, ...(q.accept ?? [])].some((a) => normalize(a) === g)
 }
 
-/** For a missed number guess: which way the answer lies. */
-export function direction(q: Question, guess: string): 'higher' | 'lower' | null {
-  if (q.kind !== 'number') return null
+/** How far off counts as "one margin" when scoring; exact-answer questions fall back to 10% of the answer. */
+export const scale = (q: NumberQuestion) => q.margin || Math.max(1, Math.abs(q.answer) * 0.1)
+
+/**
+ * Points for a number guess: 100 when exact, 75 at the edge of the margin, then down to 0 at three
+ * margins off. A pass or an unreadable guess scores 0.
+ */
+export function numberPoints(q: NumberQuestion, guess: string): number {
   const n = parseNumber(guess)
-  return n === null ? null : n < q.answer ? 'higher' : 'lower'
+  if (n === null) return 0
+  const r = Math.abs(n - q.answer) / scale(q)
+  return Math.round(r <= 1 ? 100 - 25 * r : r < 3 ? (75 * (3 - r)) / 2 : 0)
 }
+
+/** Number questions get one guess; name questions a second after the hint. */
+export const guessLimit = (q: Question) => (q.kind === 'number' ? 1 : MAX_GUESSES)
+
+/** Points for a finished question (null while it is still open). Names: 100 first try, 50 with the hint. */
+export function questionPoints(q: Question, guesses: string[]): number | null {
+  if (q.kind === 'number') return guesses.length ? numberPoints(q, guesses[0]) : null
+  const hit = guesses.findIndex((g) => isAnswer(q, g))
+  if (hit === 0) return MAX_POINTS
+  if (hit > 0) return MAX_POINTS / 2
+  return guesses.length >= MAX_GUESSES || guesses.includes(PASS) ? 0 : null
+}
+
+/** Colour band for a question's points: 75+ is inside the margin (or a first-try name). */
+export const pointsMark = (points: number): Mark => (points >= 75 ? 'correct' : points >= 25 ? 'near' : 'wrong')
 
 const withUnit = (n: string, unit?: string) => (!unit ? n : unit === '%' ? `${n}%` : `${n} ${unit}`)
 
@@ -54,10 +78,16 @@ export function answerText(q: Question): string {
   return q.kind === 'number' ? withUnit(formatNumber(q.answer, q.margin, q.plain), q.unit) : q.answer
 }
 
-/** How close a guess must be, e.g. "±20 km" or "±8 points" (for a percentage). */
-export function marginText(q: NumberQuestion): string {
-  const m = formatNumber(q.margin, q.margin)
-  return q.unit === '%' ? `±${m} points` : withUnit(`±${m}`, q.unit)
+/** How far a guess was from the answer, e.g. "Off by 82 balls · 14% low" or "Off by 5.2 points · too high". */
+export function offByText(q: NumberQuestion, guess: string): string {
+  const n = parseNumber(guess)
+  if (n === null) return 'No guess'
+  const diff = n - q.answer
+  if (!diff) return 'Spot on!'
+  const gap = Math.abs(diff).toLocaleString('en', { maximumFractionDigits: 1, useGrouping: !q.plain })
+  const way = diff < 0 ? 'low' : 'high'
+  const pct = !q.plain && q.unit !== '%' && q.answer ? `${Math.round((100 * Math.abs(diff)) / Math.abs(q.answer))}% ${way}` : `too ${way}`
+  return `Off by ${q.unit === '%' ? `${gap} points` : withUnit(gap, q.unit)} · ${pct}`
 }
 
 /** A guess as the player should see it again, e.g. "7k" -> "7,000 runs". */
@@ -67,15 +97,14 @@ export function guessText(q: Question, guess: string): string {
   return n === null ? guess : withUnit(n.toLocaleString('en', { maximumFractionDigits: 2, useGrouping: !q.plain }), q.unit)
 }
 
-/** correct = first guess, near = after the hint, wrong = missed or passed; null while still open. */
+/** The colour band of a finished question; null while still open. */
 export function questionMark(q: Question, guesses: string[]): Mark | null {
-  const hit = guesses.findIndex((g) => isAnswer(q, g))
-  if (hit === 0) return 'correct'
-  if (hit > 0) return 'near'
-  return guesses.length >= MAX_GUESSES || guesses.includes(PASS) ? 'wrong' : null
+  const p = questionPoints(q, guesses)
+  return p === null ? null : pointsMark(p)
 }
 
-export const quizScore = (marks: (Mark | null)[]) => marks.filter((m) => m === 'correct' || m === 'near').length
+/** A round's total; open questions count as 0. */
+export const quizPoints = (points: (number | null)[]) => points.reduce<number>((a, p) => a + (p ?? 0), 0)
 
 /** The day's questions: consecutive runs through the list, so every question comes up before any repeats. */
 export function dailyQuestions(questions: Question[], day: number): Question[] {

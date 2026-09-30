@@ -125,7 +125,8 @@ export function AnswerInput({ names, unit, note, onSubmit, shake, tries }: Props
         )}
       </div>
       <p className="mt-2 text-xs text-muted">
-        {tries === 1 ? 'Last try.' : '2 tries per question.'} {note}
+        {!numeric && (tries === 1 ? 'Last try. ' : '2 tries per question. ')}
+        {note}
       </p>
     </form>
   )

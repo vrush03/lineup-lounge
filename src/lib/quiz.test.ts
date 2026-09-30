@@ -7,20 +7,23 @@ import type { Puzzle, Question } from './types'
 import {
   answerText,
   dailyQuestions,
-  direction,
   guessText,
   isAnswer,
-  marginText,
   nameDictionary,
   normalize,
+  numberPoints,
+  offByText,
   parseNumber,
   PASS,
+  pointsMark,
   QUIZ_LENGTH,
   questionMark,
-  quizScore,
+  questionPoints,
+  quizPoints,
   randomQuestions,
   suggest,
 } from './quiz'
+import { quizShareText } from './share'
 
 const questions = z.array(questionSchema).parse(quiz) as Question[]
 const q: Question = { id: 'x', prompt: 'Most Test wickets?', answer: 'Muttiah Muralitharan', accept: ['Murali'], hint: 'Sri Lankan' }
@@ -46,16 +49,38 @@ describe('number answers', () => {
     expect(parseNumber('.5')).toBe(0.5)
     expect(parseNumber('lots')).toBeNull()
   })
-  it('counts anything within the margin, and says which way to go', () => {
-    expect(isAnswer(km, '100')).toBe(true)
-    expect(isAnswer(km, '61.75')).toBe(true)
-    expect(isAnswer(km, '102')).toBe(false)
-    expect(isAnswer(km, 'far')).toBe(false)
-    expect(direction(km, '40')).toBe('higher')
-    expect(direction(km, '150')).toBe('lower')
-    expect(questionMark(km, ['40', '90'])).toBe('near')
+  it('scores 100 when exact, 75 at the edge of the margin, and 0 from three margins off', () => {
+    if (km.kind !== 'number') throw new Error()
+    expect(numberPoints(km, '81.75')).toBe(100)
+    expect(numberPoints(km, '91.75')).toBe(88)
+    expect(numberPoints(km, '61.75')).toBe(75)
+    expect(numberPoints(km, '121.75')).toBe(38)
+    expect(numberPoints(km, '141.75')).toBe(0)
+    expect(numberPoints(km, '1000')).toBe(0)
+    expect(numberPoints(km, 'far')).toBe(0)
+    expect(numberPoints(km, PASS)).toBe(0)
   })
-  it('formats answers, guesses and margins with the unit', () => {
+  it('falls back to 10% of the answer (at least 1) when the margin is 0', () => {
+    const exact: Question = { id: 'e', kind: 'number', prompt: 'How many?', answer: 4, margin: 0, hint: 'h' }
+    if (exact.kind !== 'number') throw new Error()
+    expect(numberPoints(exact, '4')).toBe(100)
+    expect(numberPoints(exact, '3')).toBe(75)
+    expect(numberPoints(exact, '7')).toBe(0)
+  })
+  it('gives number questions one guess', () => {
+    expect(questionPoints(km, [])).toBeNull()
+    expect(questionPoints(km, ['40'])).toBe(34)
+    expect(questionPoints(km, ['40', '82'])).toBe(34)
+    expect(questionMark(km, ['82'])).toBe('correct')
+  })
+  it('says how far off a guess was', () => {
+    if (km.kind !== 'number') throw new Error()
+    expect(offByText(km, '81.75')).toBe('Spot on!')
+    expect(offByText(km, '60')).toBe('Off by 21.8 km · 27% low')
+    expect(offByText({ ...km, answer: 58, unit: '%' }, '63')).toBe('Off by 5 points · too high')
+    expect(offByText({ ...km, answer: 1877, unit: undefined, plain: true }, '1900')).toBe('Off by 23 · too high')
+  })
+  it('formats answers and guesses with the unit', () => {
     expect(answerText(km)).toBe('82 km')
     expect(answerText({ ...km, answer: 16.7, margin: 3, unit: undefined })).toBe('16.7')
     expect(answerText({ ...km, answer: 58, margin: 8, unit: '%' })).toBe('58%')
@@ -63,19 +88,29 @@ describe('number answers', () => {
     const year: Question = { id: 'y', kind: 'number', prompt: 'When?', answer: 1877, margin: 10, plain: true, hint: 'h' }
     expect(answerText(year)).toBe('1877')
     expect(guessText(year, '1900')).toBe('1900')
-    if (km.kind === 'number') expect(marginText(km)).toBe('±20 km')
   })
 })
 
-describe('questionMark', () => {
-  it('is correct on the first guess, near on the second, wrong after two misses or a pass', () => {
-    expect(questionMark(q, [])).toBeNull()
-    expect(questionMark(q, ['Murali'])).toBe('correct')
-    expect(questionMark(q, ['Warne'])).toBeNull()
+describe('name questions', () => {
+  it('score 100 on the first guess, 50 on the second, 0 after two misses or a pass', () => {
+    expect(questionPoints(q, [])).toBeNull()
+    expect(questionPoints(q, ['Murali'])).toBe(100)
+    expect(questionPoints(q, ['Warne'])).toBeNull()
+    expect(questionPoints(q, ['Warne', 'Murali'])).toBe(50)
+    expect(questionPoints(q, ['Warne', 'Kumble'])).toBe(0)
+    expect(questionPoints(q, [PASS])).toBe(0)
+  })
+})
+
+describe('points', () => {
+  it('bands points into marks and totals a round', () => {
+    expect([100, 75, 74, 50, 25, 24, 0].map(pointsMark)).toEqual(['correct', 'correct', 'near', 'near', 'near', 'wrong', 'wrong'])
     expect(questionMark(q, ['Warne', 'Murali'])).toBe('near')
-    expect(questionMark(q, ['Warne', 'Kumble'])).toBe('wrong')
-    expect(questionMark(q, [PASS])).toBe('wrong')
-    expect(quizScore(['correct', 'near', 'wrong', null])).toBe(2)
+    expect(quizPoints([100, 50, 0, null, 72])).toBe(222)
+  })
+  it('shares the total and a square per question', () => {
+    expect(quizShareText('Quiz', [100, 50, 10, 80, 0], 11)).toBe('🏏 Quiz #12 240/500\n🟩🟨🟥🟩🟥')
+    expect(quizShareText('Quiz', [100, 100, 100, 100, 100])).toBe('🏏 Quiz (practice) 500/500\n🟩🟩🟩🟩🟩')
   })
 })
 
@@ -109,7 +144,7 @@ describe('quiz dataset', () => {
   })
   it.each(questions.map((x) => [x.id, x] as const))('%s has a reachable answer', (_, x) => {
     if (x.kind === 'number') {
-      expect(isAnswer(x, String(x.answer))).toBe(true)
+      expect(numberPoints(x, String(x.answer))).toBe(100)
       expect(x.margin).toBeLessThan(Math.abs(x.answer))
     } else {
       expect(suggest(dictionary, x.answer, 50)).toContain(x.answer)

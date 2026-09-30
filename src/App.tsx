@@ -5,7 +5,7 @@ import { QuizMode } from './components/QuizMode'
 import { StatsDialog } from './components/StatsDialog'
 import { dayNumber, puzzleIndex } from './lib/daily'
 import { loadPuzzles } from './lib/puzzles'
-import { QUIZ_LENGTH } from './lib/quiz'
+import { MAX_POINTS, QUIZ_LENGTH } from './lib/quiz'
 import { liveStreak, loadPref, loadQuizStats, loadStats, quizLiveStreak, recordQuiz, recordResult, savePref } from './lib/storage'
 import type { Puzzle } from './lib/types'
 
@@ -95,8 +95,13 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     {
       href: '#quiz',
       name: 'Quiz',
-      tagline: 'Five cricket questions. Type the answer.',
-      status: quizStats.lastPlayedDay === day ? `${quizStats.lastScore ?? 0}/${QUIZ_LENGTH}` : null,
+      tagline: 'Five cricket questions, up to 100 points each.',
+      status:
+        quizStats.lastPlayedDay !== day
+          ? null
+          : quizStats.lastPoints !== null
+            ? `${quizStats.lastPoints}/${QUIZ_LENGTH * MAX_POINTS}`
+            : `${quizStats.lastScore ?? 0}/${QUIZ_LENGTH}`,
       streak: quizStreak,
       icon: <QuizIcon />,
     },
@@ -169,7 +174,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
             onFinishDaily={(solved, n) => setStats(recordResult(day, solved, n))}
           />
         ) : (
-          <QuizMode puzzles={puzzles} day={day} dateLabel={dateLabel} onFinishDaily={(score) => setQuizStats(recordQuiz(day, score))} />
+          <QuizMode puzzles={puzzles} day={day} dateLabel={dateLabel} onFinishDaily={(points) => setQuizStats(recordQuiz(day, points))} />
         )}
       </main>
 
@@ -205,13 +210,13 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           title="Quiz stats"
           tiles={[
             ['Played', quizStats.played],
-            ['Avg', quizStats.played ? Math.round((10 * quizStats.dist.reduce((a, n, i) => a + n * i, 0)) / quizStats.played) / 10 : 0],
+            ['Avg', quizStats.pointsPlayed ? Math.round(quizStats.totalPoints / quizStats.pointsPlayed) : 0],
             ['Streak', quizStreak],
-            ['Best', quizStats.maxStreak],
+            ['Best', quizStats.bestPoints],
           ]}
-          distTitle="Daily scores"
-          dist={quizStats.dist.map((n, i) => [String(i), n] as [string, number]).reverse()}
-          note="Daily quizzes count towards your stats; practice rounds don’t. The streak counts days you finish the quiz."
+          distTitle="Daily points"
+          dist={quizStats.pointsDist.map((n, i) => [`${i * 100}+`, n] as [string, number]).reverse()}
+          note="Each question scores up to 100 points, so a daily quiz is out of 500. Daily quizzes count towards your stats; practice rounds don’t. The streak counts days you finish the quiz."
         />
       ) : (
         <StatsDialog

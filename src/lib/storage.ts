@@ -94,32 +94,71 @@ export type QuizStats = {
   streak: number
   maxStreak: number
   lastPlayedDay: number | null
+  /** Right answers out of 5, from before quizzes were scored in points; kept for old days. */
   lastScore: number | null
-  /** dist[n] = daily quizzes that scored n */
+  /** dist[n] = daily quizzes that scored n right (old right/wrong scoring) */
   dist: number[]
+  /** Points (out of 500) for the last daily quiz; null if it was played before points. */
+  lastPoints: number | null
+  bestPoints: number
+  totalPoints: number
+  /** Daily quizzes scored in points (older ones only have `dist`). */
+  pointsPlayed: number
+  /** pointsDist[n] = daily quizzes that scored n*100 to n*100+99 (500 goes in the last bucket) */
+  pointsDist: number[]
 }
 const QUIZ_DIST = 6
-const emptyQuizStats: QuizStats = { played: 0, streak: 0, maxStreak: 0, lastPlayedDay: null, lastScore: null, dist: Array(QUIZ_DIST).fill(0) }
+const POINTS_DIST = 5
+const emptyQuizStats: QuizStats = {
+  played: 0,
+  streak: 0,
+  maxStreak: 0,
+  lastPlayedDay: null,
+  lastScore: null,
+  dist: Array(QUIZ_DIST).fill(0),
+  lastPoints: null,
+  bestPoints: 0,
+  totalPoints: 0,
+  pointsPlayed: 0,
+  pointsDist: Array(POINTS_DIST).fill(0),
+}
+
+const num = (x: unknown, fallback: number) => (typeof x === 'number' && Number.isFinite(x) ? x : fallback)
+const counts = (a: unknown, n: number) => (Array.isArray(a) && a.length === n && a.every((x) => typeof x === 'number') ? a : Array(n).fill(0))
 
 export function loadQuizStats(): QuizStats {
   const s = read<Partial<QuizStats>>('stats:quiz') ?? {}
-  return { ...emptyQuizStats, ...s, dist: s.dist?.length === QUIZ_DIST ? s.dist : [...emptyQuizStats.dist] }
+  return {
+    ...emptyQuizStats,
+    ...s,
+    dist: counts(s.dist, QUIZ_DIST),
+    lastPoints: typeof s.lastPoints === 'number' ? s.lastPoints : null,
+    bestPoints: num(s.bestPoints, 0),
+    totalPoints: num(s.totalPoints, 0),
+    pointsPlayed: num(s.pointsPlayed, 0),
+    pointsDist: counts(s.pointsDist, POINTS_DIST),
+  }
 }
 
-/** Record a finished daily quiz. Recording the same day twice is ignored. */
-export function recordQuiz(day: number, score: number): QuizStats {
+/** Record a finished daily quiz's points (out of 500). Recording the same day twice is ignored. */
+export function recordQuiz(day: number, points: number): QuizStats {
   const s = loadQuizStats()
   if (s.lastPlayedDay === day) return s
   const streak = s.lastPlayedDay === day - 1 ? s.streak + 1 : 1
-  const dist = [...s.dist]
-  dist[Math.max(0, Math.min(QUIZ_DIST - 1, score))] += 1
+  const pointsDist = [...s.pointsDist]
+  pointsDist[Math.max(0, Math.min(POINTS_DIST - 1, Math.floor(points / 100)))] += 1
   const next: QuizStats = {
+    ...s,
     played: s.played + 1,
     streak,
     maxStreak: Math.max(s.maxStreak, streak),
     lastPlayedDay: day,
-    lastScore: score,
-    dist,
+    lastScore: null,
+    lastPoints: points,
+    bestPoints: Math.max(s.bestPoints, points),
+    totalPoints: s.totalPoints + points,
+    pointsPlayed: s.pointsPlayed + 1,
+    pointsDist,
   }
   write('stats:quiz', next)
   return next

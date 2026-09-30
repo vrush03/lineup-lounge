@@ -6,10 +6,11 @@ streak) and a practice mode.
 - **Lineup**: put five players, teams or records in order. Five attempts; each attempt marks every
   row as in the right spot (green), one place off (amber) or further away. Practice is unlimited
   and filtered by format (IPL, Test, ODI, T20I, World Cup, T20 World Cup).
-- **Quiz**: five questions a day. Some want a player or team name (typed, with autocomplete); others
-  want a ballpark number ("how many km has Kohli run between the wickets?") where anything within a
-  stated margin counts. Two tries per question; a miss earns a hint (and "higher"/"lower" for
-  numbers).
+- **Quiz**: five questions a day, each worth up to 100 points, so a day is out of 500. Some want a
+  player or team name (typed, with autocomplete): 100 on the first try, or 50 on a second try after
+  a hint. Others want a ballpark number ("how many km has Kohli run between the wickets?"): one
+  guess, scored by how close it is (100 if exact, 75 at the question's margin, 0 from three margins
+  off), with a number line showing where it landed.
 
 ```bash
 npm install

@@ -21,6 +21,7 @@ export function StatsDialog({ open, onClose, title, tiles, distTitle, dist, note
   }, [open])
 
   const maxDist = Math.max(1, ...dist.map(([, n]) => n))
+  const wide = dist.some(([label]) => label.length > 1)
 
   return (
     <dialog
@@ -48,7 +49,7 @@ export function StatsDialog({ open, onClose, title, tiles, distTitle, dist, note
         <div className="space-y-1.5">
           {dist.map(([label, n]) => (
             <div key={label} className="flex items-center gap-2">
-              <span className="w-3 font-display font-bold tabular-nums">{label}</span>
+              <span className={`${wide ? 'w-9' : 'w-3'} font-display font-bold tabular-nums`}>{label}</span>
               <div className="h-6 flex-1 rounded-md bg-surface-2">
                 <div
                   className="flex h-full min-w-7 items-center justify-end rounded-md bg-pitch px-2 text-xs font-bold text-white tabular-nums"
