@@ -2,19 +2,25 @@ import { useId, useMemo, useState } from 'react'
 import { suggest } from '../lib/quiz'
 
 type Props = {
-  names: string[]
+  /** Names to suggest; omit for a number answer. */
+  names?: string[]
+  /** For a number answer: its unit, shown in the field. */
+  unit?: string
+  /** Footer text under the field, e.g. how close a number must be. */
+  note: string
   onSubmit: (guess: string) => void
   /** Bumped after a wrong guess to shake the field. */
   shake: number
   tries: number
 }
 
-/** Free-text answer box with name suggestions (ARIA combobox). */
-export function AnswerInput({ names, onSubmit, shake, tries }: Props) {
+/** Answer box: free text with name suggestions (ARIA combobox), or a number. */
+export function AnswerInput({ names, unit, note, onSubmit, shake, tries }: Props) {
+  const numeric = !names
   const [text, setText] = useState('')
   const [active, setActive] = useState(-1)
   const [open, setOpen] = useState(true)
-  const options = useMemo(() => (open ? suggest(names, text) : []), [names, text, open])
+  const options = useMemo(() => (open && names ? suggest(names, text) : []), [names, text, open])
   const list = useId()
 
   function submit(guess: string) {
@@ -49,29 +55,41 @@ export function AnswerInput({ names, onSubmit, shake, tries }: Props) {
     >
       <div className="relative">
         <div key={shake} className={`flex gap-2 ${shake ? 'animate-shake' : ''}`}>
-          <input
-            autoFocus
-            value={text}
-            onChange={(e) => {
-              setText(e.target.value)
-              setActive(-1)
-              setOpen(true)
-            }}
-            onKeyDown={onKeyDown}
-            onBlur={() => setOpen(false)}
-            onFocus={() => setOpen(true)}
-            role="combobox"
-            aria-label="Your answer"
-            aria-expanded={options.length > 0}
-            aria-controls={list}
-            aria-autocomplete="list"
-            aria-activedescendant={active >= 0 ? `${list}-${active}` : undefined}
-            autoComplete="off"
-            autoCapitalize="words"
-            spellCheck={false}
-            placeholder="Type a player or team"
-            className="min-w-0 flex-1 rounded-2xl border border-line bg-surface px-4 py-3.5 text-base font-medium shadow-[var(--shadow)] outline-none placeholder:text-muted/70 focus:border-pitch"
-          />
+          <div className="relative min-w-0 flex-1">
+            <input
+              autoFocus
+              value={text}
+              onChange={(e) => {
+                setText(e.target.value)
+                setActive(-1)
+                setOpen(true)
+              }}
+              onKeyDown={onKeyDown}
+              onBlur={() => setOpen(false)}
+              onFocus={() => setOpen(true)}
+              {...(numeric
+                ? { inputMode: 'decimal' as const, placeholder: 'Your estimate' }
+                : {
+                    role: 'combobox',
+                    'aria-expanded': options.length > 0,
+                    'aria-controls': list,
+                    'aria-autocomplete': 'list' as const,
+                    'aria-activedescendant': active >= 0 ? `${list}-${active}` : undefined,
+                    autoCapitalize: 'words',
+                    placeholder: 'Type a player or team',
+                  })}
+              aria-label={numeric ? `Your estimate${unit ? ` in ${unit}` : ''}` : 'Your answer'}
+              autoComplete="off"
+              spellCheck={false}
+              className="w-full rounded-2xl border border-line bg-surface px-4 py-3.5 text-base font-medium shadow-[var(--shadow)] outline-none placeholder:text-muted/70 focus:border-pitch"
+              style={unit ? { paddingRight: `${unit.length * 0.55 + 1.75}em` } : undefined}
+            />
+            {unit && (
+              <span aria-hidden className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-sm font-semibold text-muted">
+                {unit}
+              </span>
+            )}
+          </div>
           <button
             type="submit"
             disabled={!text.trim()}
@@ -107,7 +125,7 @@ export function AnswerInput({ names, onSubmit, shake, tries }: Props) {
         )}
       </div>
       <p className="mt-2 text-xs text-muted">
-        {tries === 1 ? 'Last try.' : '2 tries per question.'} Pick a suggestion or type the name.
+        {tries === 1 ? 'Last try.' : '2 tries per question.'} {note}
       </p>
     </form>
   )

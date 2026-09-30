@@ -1,5 +1,5 @@
 import type { Mark } from './score'
-import type { Puzzle, Question } from './types'
+import type { NumberQuestion, Puzzle, Question } from './types'
 
 export const QUIZ_LENGTH = 5
 export const MAX_GUESSES = 2
@@ -17,9 +17,54 @@ export function normalize(s: string): string {
     .trim()
 }
 
+const SCALE: Record<string, number> = { k: 1e3, thousand: 1e3, lakh: 1e5, lakhs: 1e5, m: 1e6, mn: 1e6, million: 1e6, cr: 1e7, crore: 1e7 }
+
+/** "7,275", "7.3k", "1.5 lakh", "82 km" -> a number; null if there isn't one. */
+export function parseNumber(s: string): number | null {
+  const m = s.replace(/,/g, '').trim().toLowerCase().match(/^(-?\d*\.?\d+)\s*([a-z]*)/)
+  if (!m) return null
+  return Number(m[1]) * (SCALE[m[2]] ?? 1)
+}
+
 export function isAnswer(q: Question, guess: string): boolean {
+  if (q.kind === 'number') {
+    const n = parseNumber(guess)
+    return n !== null && Math.abs(n - q.answer) <= q.margin
+  }
   const g = normalize(guess)
   return !!g && [q.answer, ...(q.accept ?? [])].some((a) => normalize(a) === g)
+}
+
+/** For a missed number guess: which way the answer lies. */
+export function direction(q: Question, guess: string): 'higher' | 'lower' | null {
+  if (q.kind !== 'number') return null
+  const n = parseNumber(guess)
+  return n === null ? null : n < q.answer ? 'higher' : 'lower'
+}
+
+const withUnit = (n: string, unit?: string) => (!unit ? n : unit === '%' ? `${n}%` : `${n} ${unit}`)
+
+/** Round to what the margin makes meaningful: 81.75 ± 20 -> "82", 16.7 ± 3 -> "16.7". */
+export function formatNumber(n: number, margin: number): string {
+  const digits = margin > 0 && margin < 5 && !Number.isInteger(n) ? 1 : 0
+  return n.toLocaleString('en', { maximumFractionDigits: digits })
+}
+
+export function answerText(q: Question): string {
+  return q.kind === 'number' ? withUnit(formatNumber(q.answer, q.margin), q.unit) : q.answer
+}
+
+/** How close a guess must be, e.g. "±20 km" or "±8 points" (for a percentage). */
+export function marginText(q: NumberQuestion): string {
+  const m = formatNumber(q.margin, q.margin)
+  return q.unit === '%' ? `±${m} points` : withUnit(`±${m}`, q.unit)
+}
+
+/** A guess as the player should see it again, e.g. "7k" -> "7,000 runs". */
+export function guessText(q: Question, guess: string): string {
+  if (q.kind !== 'number') return guess
+  const n = parseNumber(guess)
+  return n === null ? guess : withUnit(n.toLocaleString('en', { maximumFractionDigits: 2 }), q.unit)
 }
 
 /** correct = first guess, near = after the hint, wrong = missed or passed; null while still open. */
@@ -65,7 +110,7 @@ export function nameDictionary(puzzles: Puzzle[], questions: Question[]): string
       add(i.label)
       add(i.team)
     }
-  for (const q of questions) add(q.answer)
+  for (const q of questions) if (q.kind !== 'number') add(q.answer)
   return [...names.values()].sort((a, b) => a.localeCompare(b))
 }
 

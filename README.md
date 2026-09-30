@@ -6,8 +6,10 @@ streak) and a practice mode.
 - **Lineup**: put five players, teams or records in order. Five attempts; each attempt marks every
   row as in the right spot (green), one place off (amber) or further away. Practice is unlimited
   and filtered by format (IPL, Test, ODI, T20I, World Cup, T20 World Cup).
-- **Quiz**: five questions, answered by typing a player or team name (with autocomplete). Two tries
-  per question; a hint appears after the first miss.
+- **Quiz**: five questions a day. Some want a player or team name (typed, with autocomplete); others
+  want a ballpark number ("how many km has Kohli run between the wickets?") where anything within a
+  stated margin counts. Two tries per question; a miss earns a hint (and "higher"/"lower" for
+  numbers).
 
 ```bash
 npm install
@@ -18,8 +20,7 @@ npm run build
 
 ## Data
 
-`src/data/cricket.json` is generated; don't edit it by hand. `src/data/quiz.json` (quiz questions)
-is hand-written for now. Sources:
+`src/data/cricket.json` and `src/data/quiz.json` are generated; don't edit them by hand. Sources:
 
 | Source | Used for | Licence |
 |---|---|---|
@@ -50,9 +51,17 @@ python3 scripts/data/parse_cricsheet.py   # per-match / per-player-match records
 python3 scripts/data/gen_ipl.py           # ranked IPL lists
 python3 scripts/data/gen_wiki.py          # Wikipedia record puzzles + tournament lists
 python3 scripts/data/build.py             # pick 5 items per list, shuffle, validate -> src/data/cricket.json
+python3 scripts/data/gen_quiz.py          # IPL questions from Cricsheet + scripts/data/quiz_manual.json -> src/data/quiz.json
 npm test
 ```
 
 `build.py` refuses to write a dataset with tied values, duplicate labels, a puzzle that starts
 already solved, or a player name still in initials form. For the last one, add the full name to
 `scripts/data/name_overrides.json` (keyed by Cricsheet identifier) after checking it.
+
+`gen_quiz.py` computes the IPL questions (so the numbers refresh with each season) and takes the
+international ones from `scripts/data/quiz_manual.json`, where they're written by hand from settled
+records. It deals them into daily sets of five: two name questions and three numbers, mixing IPL and
+international, and never two questions that share a `topic` (so one can't give away another's
+answer). It fails if the IPL leaders change under a hand-written hint, or if the questions can't
+fill whole days.

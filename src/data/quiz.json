@@ -1,23 +1,117 @@
 [
  {
+  "id": "q-dhoni-2011-six",
+  "prompt": "Who hit the six that won the 2011 World Cup final?",
+  "answer": "MS Dhoni",
+  "accept": [
+   "Dhoni",
+   "Mahendra Singh Dhoni"
+  ],
+  "hint": "India's captain, who promoted himself up the order",
+  "fact": "Off Nuwan Kulasekara at the Wankhede, finishing on 91 not out",
+  "format": "World Cup",
+  "source": {
+   "name": "Wikipedia: 2011 Cricket World Cup final",
+   "url": "https://en.wikipedia.org/wiki/2011_Cricket_World_Cup_final",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-ipl-kohli-km",
+  "kind": "number",
+  "prompt": "Virat Kohli has 9,336 IPL runs. Counting only the runs he actually ran (not boundaries), how many kilometres is that at 22 yards a run?",
+  "answer": 81.8,
+  "margin": 20,
+  "unit": "km",
+  "hint": "Fewer than half of his runs were run: 4,064 of them",
+  "fact": "4,064 runs × 22 yards ≈ 82 km, about 1.9 marathons (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-bradman-hollies",
+  "prompt": "Who bowled Don Bradman for a duck in his final Test innings?",
+  "answer": "Eric Hollies",
+  "accept": [
+   "Hollies"
+  ],
+  "hint": "An English leg-spinner from Warwickshire",
+  "fact": "Bowled by a googly, second ball, at The Oval in 1948",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Don Bradman",
+   "url": "https://en.wikipedia.org/wiki/Don_Bradman",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-sachin-pitch-lengths",
+  "kind": "number",
+  "prompt": "Sachin Tendulkar scored 15,921 Test runs. Leaving out boundaries, how many times did he run the length of the pitch?",
+  "answer": 7275,
+  "margin": 1500,
+  "unit": "runs",
+  "hint": "Take away his 2,058 fours and 69 sixes",
+  "fact": "7,275 runs run at 22 yards each is about 146 km, more than three marathons (ignoring all-run fours and overthrows)",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Sachin Tendulkar",
+   "url": "https://en.wikipedia.org/wiki/Sachin_Tendulkar",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-murali-strike-rate",
+  "kind": "number",
+  "prompt": "Muttiah Muralitharan took 800 Test wickets. On average, how many balls did he bowl for each one?",
+  "answer": 55,
+  "margin": 10,
+  "unit": "balls",
+  "hint": "Less than ten overs' worth",
+  "fact": "44,039 balls for 800 wickets: a wicket every 55 balls",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Muttiah Muralitharan",
+   "url": "https://en.wikipedia.org/wiki/Muttiah_Muralitharan",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
   "id": "q-test-most-runs",
   "prompt": "Who has scored the most runs in Test cricket?",
   "answer": "Sachin Tendulkar",
-  "accept": ["Tendulkar", "Sachin"],
+  "accept": [
+   "Tendulkar",
+   "Sachin"
+  ],
   "hint": "Indian batter known as the Little Master",
   "fact": "15,921 runs in 200 Tests, 1989–2013",
   "format": "Test",
-  "source": { "name": "Wikipedia: List of Test cricket records", "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records", "license": "CC BY-SA 4.0" }
+  "source": {
+   "name": "Wikipedia: List of Test cricket records",
+   "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records",
+   "license": "CC BY-SA 4.0"
+  }
  },
  {
-  "id": "q-ipl-most-runs",
-  "prompt": "Who has scored the most runs in IPL history?",
-  "answer": "Virat Kohli",
-  "accept": ["Kohli"],
-  "hint": "Has played every IPL season for Royal Challengers Bengaluru",
-  "fact": "9,336 runs in 275 innings (Cricsheet data to May 2026)",
+  "id": "q-ipl-total-km",
+  "kind": "number",
+  "prompt": "Add up every run actually run between the wickets in IPL history (not boundaries). At 22 yards a run, how many kilometres is that?",
+  "answer": 3000,
+  "margin": 750,
+  "unit": "km",
+  "hint": "149,109 runs were run",
+  "fact": "About 3,000 km: roughly the length of India from north to south (to the end of IPL 2026)",
   "format": "IPL",
-  "source": { "name": "Cricsheet ball-by-ball data", "url": "https://cricsheet.org/", "license": "ODC-By 1.0" }
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
  },
  {
   "id": "q-t20wc-2007-champions",
@@ -26,26 +120,364 @@
   "hint": "They beat Pakistan in the final in Johannesburg",
   "fact": "India beat Pakistan by 5 runs in the final",
   "format": "T20 World Cup",
-  "source": { "name": "Wikipedia: ICC Men's T20 World Cup", "url": "https://en.wikipedia.org/wiki/ICC_Men%27s_T20_World_Cup", "license": "CC BY-SA 4.0" }
+  "source": {
+   "name": "Wikipedia: ICC Men's T20 World Cup",
+   "url": "https://en.wikipedia.org/wiki/ICC_Men%27s_T20_World_Cup",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-lara-400-balls",
+  "kind": "number",
+  "prompt": "Brian Lara made 400 not out against England in 2004. How many balls did he face?",
+  "answer": 582,
+  "margin": 100,
+  "unit": "balls",
+  "hint": "He batted for about 13 hours",
+  "fact": "582 balls and 778 minutes, with 43 fours and 4 sixes",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Brian Lara",
+   "url": "https://en.wikipedia.org/wiki/Brian_Lara",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-rohit-264-boundaries",
+  "kind": "number",
+  "prompt": "Rohit Sharma's 264 against Sri Lanka in 2014 is the highest ODI score. How many of those runs came in fours and sixes?",
+  "answer": 186,
+  "margin": 25,
+  "unit": "runs",
+  "hint": "More than two-thirds of them",
+  "fact": "33 fours and 9 sixes: 186 runs, off 173 balls in all",
+  "format": "ODI",
+  "source": {
+   "name": "Wikipedia: Rohit Sharma",
+   "url": "https://en.wikipedia.org/wiki/Rohit_Sharma",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-ipl-most-wickets",
+  "prompt": "Who has taken the most wickets in IPL history?",
+  "answer": "Yuzvendra Chahal",
+  "accept": [
+   "Chahal"
+  ],
+  "hint": "An Indian leg-spinner who played chess for India as a junior",
+  "fact": "233 wickets (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-ipl-super-overs",
+  "kind": "number",
+  "prompt": "How many IPL matches have gone to a Super Over (to the end of IPL 2026)?",
+  "answer": 16,
+  "margin": 4,
+  "unit": "matches",
+  "hint": "Fewer than one a season, across 19 seasons",
+  "fact": "16 of 1,243 matches",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
  },
  {
   "id": "q-test-most-wickets",
   "prompt": "Who has taken the most wickets in Test cricket?",
   "answer": "Muttiah Muralitharan",
-  "accept": ["Muralitharan", "Murali"],
+  "accept": [
+   "Muralitharan",
+   "Murali"
+  ],
   "hint": "Sri Lankan off-spinner",
   "fact": "800 wickets in 133 Tests, 1992–2010",
   "format": "Test",
-  "source": { "name": "Wikipedia: List of Test cricket records", "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records", "license": "CC BY-SA 4.0" }
+  "source": {
+   "name": "Wikipedia: List of Test cricket records",
+   "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-ipl-boundary-share",
+  "kind": "number",
+  "prompt": "What percentage of all IPL runs have come from fours and sixes?",
+  "answer": 57.8,
+  "margin": 8,
+  "unit": "%",
+  "hint": "More than half",
+  "fact": "34,399 fours and 15,755 sixes out of 401,423 runs (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-ipl-dhoni-20th-over",
+  "kind": "number",
+  "prompt": "MS Dhoni is the IPL’s great finisher. How many IPL runs has he scored in the 20th over alone?",
+  "answer": 844,
+  "margin": 210,
+  "unit": "runs",
+  "hint": "About 16% of his 5,439 IPL runs",
+  "fact": "844 runs including 72 sixes, the most by anyone in the last over (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-ipl-highest-score-opponent",
+  "prompt": "Chris Gayle’s 175 not out in 2013 is the highest IPL score. Which team was it against?",
+  "answer": "Pune Warriors",
+  "accept": [
+   "Pune Warriors India",
+   "PWI",
+   "Pune"
+  ],
+  "hint": "A franchise that only played three seasons",
+  "fact": "175* off 66 balls with 17 sixes, for Royal Challengers Bangalore",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-sachin-debut-age",
+  "kind": "number",
+  "prompt": "How old was Sachin Tendulkar when he made his Test debut?",
+  "answer": 16,
+  "margin": 1,
+  "unit": "years",
+  "hint": "Still too young to vote",
+  "fact": "16 years 205 days, against Pakistan in Karachi, November 1989",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Sachin Tendulkar",
+   "url": "https://en.wikipedia.org/wiki/Sachin_Tendulkar",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-all-ten-third",
+  "prompt": "Jim Laker and Anil Kumble took all ten wickets in a Test innings. Who is the only other bowler to do it?",
+  "answer": "Ajaz Patel",
+  "accept": [
+   "Ajaz"
+  ],
+  "hint": "A Mumbai-born New Zealand spinner, who did it in Mumbai",
+  "fact": "10/119 against India at the Wankhede, December 2021",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: List of Test cricket records",
+   "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-first-test-year",
+  "kind": "number",
+  "prompt": "In what year was the first ever Test match played?",
+  "answer": 1877,
+  "margin": 10,
+  "hint": "Queen Victoria was on the throne",
+  "fact": "Australia v England at the MCG, March 1877. Australia won by 45 runs",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Test cricket",
+   "url": "https://en.wikipedia.org/wiki/Test_cricket",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-ipl-watch-every-ball",
+  "kind": "number",
+  "prompt": "If each ball took 40 seconds, how many days non-stop would it take to watch every legal delivery in IPL history?",
+  "answer": 132,
+  "margin": 33,
+  "unit": "days",
+  "hint": "There have been 284,465 legal deliveries",
+  "fact": "284,465 balls × 40 s ≈ 132 days (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-yuvraj-six-sixes",
+  "prompt": "Yuvraj Singh hit six sixes in an over at the 2007 T20 World Cup. Who was the bowler?",
+  "answer": "Stuart Broad",
+  "accept": [
+   "Broad"
+  ],
+  "hint": "An English fast bowler who went on to take 600 Test wickets",
+  "fact": "Durban, September 2007. Yuvraj reached 50 off 12 balls",
+  "format": "T20 World Cup",
+  "source": {
+   "name": "Wikipedia: Yuvraj Singh",
+   "url": "https://en.wikipedia.org/wiki/Yuvraj_Singh",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-kapil-175",
+  "kind": "number",
+  "prompt": "India were 17 for 5 against Zimbabwe at the 1983 World Cup. How many did captain Kapil Dev score to rescue them?",
+  "answer": 175,
+  "margin": 20,
+  "unit": "runs",
+  "hint": "It was an ODI record at the time",
+  "fact": "175 not out off 138 balls at Tunbridge Wells. India won by 31 runs, and went on to win the Cup",
+  "format": "World Cup",
+  "source": {
+   "name": "Wikipedia: Kapil Dev",
+   "url": "https://en.wikipedia.org/wiki/Kapil_Dev",
+   "license": "CC BY-SA 4.0"
+  }
  },
  {
   "id": "q-test-highest-score",
   "prompt": "Who holds the record for the highest individual score in a Test innings?",
   "answer": "Brian Lara",
-  "accept": ["Lara"],
+  "accept": [
+   "Lara"
+  ],
   "hint": "West Indies left-hander who also made 375 against the same team",
   "fact": "400 not out against England in Antigua, 2004",
   "format": "Test",
-  "source": { "name": "Wikipedia: List of Test cricket records", "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records", "license": "CC BY-SA 4.0" }
+  "source": {
+   "name": "Wikipedia: List of Test cricket records",
+   "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-ipl-total-sixes",
+  "kind": "number",
+  "prompt": "How many sixes have been hit in IPL history (to the end of IPL 2026)?",
+  "answer": 15755,
+  "margin": 3200,
+  "unit": "sixes",
+  "hint": "About 13 a match, over 1,243 matches",
+  "fact": "15,755 sixes in 1,243 matches",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-bradman-at-sachin-length",
+  "kind": "number",
+  "prompt": "Bradman averaged 99.94. At that average, how many Test runs would he have scored if he'd been dismissed as often as Sachin Tendulkar (296 times)?",
+  "answer": 29582,
+  "margin": 5000,
+  "unit": "runs",
+  "hint": "Nearly double Sachin's 15,921",
+  "fact": "99.94 × 296 = 29,582. Bradman actually made 6,996 runs in 52 Tests",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Don Bradman",
+   "url": "https://en.wikipedia.org/wiki/Don_Bradman",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-ipl-most-sixes",
+  "prompt": "Who has hit the most sixes in IPL history?",
+  "answer": "Chris Gayle",
+  "accept": [
+   "Gayle"
+  ],
+  "hint": "A West Indian opener who called himself the Universe Boss",
+  "fact": "357 sixes (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-ipl-dot-ball-innings",
+  "kind": "number",
+  "prompt": "Bhuvneshwar Kumar has bowled the most dot balls in the IPL: 2,004. How many complete 20-over innings could those dots fill?",
+  "answer": 16.7,
+  "margin": 3,
+  "unit": "innings",
+  "hint": "An innings is 120 balls",
+  "fact": "2,004 dots = 334 overs without a run off the bat (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-ipl-most-runs",
+  "prompt": "Who has scored the most runs in IPL history?",
+  "answer": "Virat Kohli",
+  "accept": [
+   "Kohli"
+  ],
+  "hint": "A batter who has played every IPL season for one franchise",
+  "fact": "9,336 runs (to the end of IPL 2026)",
+  "format": "IPL",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  }
+ },
+ {
+  "id": "q-laker-19",
+  "kind": "number",
+  "prompt": "In the 1956 Old Trafford Test, England's Jim Laker took how many of Australia's 20 wickets?",
+  "answer": 19,
+  "margin": 1,
+  "unit": "wickets",
+  "hint": "Almost all of them",
+  "fact": "9/37 and 10/53. Tony Lock took the other one",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Jim Laker",
+   "url": "https://en.wikipedia.org/wiki/Jim_Laker",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ {
+  "id": "q-bradman-needed",
+  "kind": "number",
+  "prompt": "Don Bradman walked out for his final Test innings needing how many runs to finish with a batting average of exactly 100?",
+  "answer": 4,
+  "margin": 0,
+  "unit": "runs",
+  "hint": "A single boundary would have done it",
+  "fact": "He was out second ball for a duck at The Oval in 1948, finishing on 99.94",
+  "format": "Test",
+  "source": {
+   "name": "Wikipedia: Don Bradman",
+   "url": "https://en.wikipedia.org/wiki/Don_Bradman",
+   "license": "CC BY-SA 4.0"
+  }
  }
 ]

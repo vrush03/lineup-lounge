@@ -1,0 +1,238 @@
+{
+ "_comment": "Hand-written quiz questions (international cricket, settled facts only). gen_quiz.py merges these with questions computed from Cricsheet IPL data. 'topic' (a string or a list) keeps related questions on different days and is stripped from the output.",
+ "questions": [
+  {
+   "id": "q-test-most-runs",
+   "topic": "sachin",
+   "prompt": "Who has scored the most runs in Test cricket?",
+   "answer": "Sachin Tendulkar",
+   "accept": [
+    "Tendulkar",
+    "Sachin"
+   ],
+   "hint": "Indian batter known as the Little Master",
+   "fact": "15,921 runs in 200 Tests, 1989–2013",
+   "format": "Test",
+   "source": "wiki:List_of_Test_cricket_records"
+  },
+  {
+   "id": "q-sachin-pitch-lengths",
+   "topic": "sachin",
+   "kind": "number",
+   "prompt": "Sachin Tendulkar scored 15,921 Test runs. Leaving out boundaries, how many times did he run the length of the pitch?",
+   "answer": 7275,
+   "margin": 1500,
+   "unit": "runs",
+   "hint": "Take away his 2,058 fours and 69 sixes",
+   "fact": "7,275 runs run at 22 yards each is about 146 km, more than three marathons (ignoring all-run fours and overthrows)",
+   "format": "Test",
+   "source": "wiki:Sachin_Tendulkar"
+  },
+  {
+   "id": "q-sachin-debut-age",
+   "topic": "sachin",
+   "kind": "number",
+   "prompt": "How old was Sachin Tendulkar when he made his Test debut?",
+   "answer": 16,
+   "margin": 1,
+   "unit": "years",
+   "hint": "Still too young to vote",
+   "fact": "16 years 205 days, against Pakistan in Karachi, November 1989",
+   "format": "Test",
+   "source": "wiki:Sachin_Tendulkar"
+  },
+  {
+   "id": "q-bradman-needed",
+   "topic": "bradman",
+   "kind": "number",
+   "prompt": "Don Bradman walked out for his final Test innings needing how many runs to finish with a batting average of exactly 100?",
+   "answer": 4,
+   "margin": 0,
+   "unit": "runs",
+   "hint": "A single boundary would have done it",
+   "fact": "He was out second ball for a duck at The Oval in 1948, finishing on 99.94",
+   "format": "Test",
+   "source": "wiki:Don_Bradman"
+  },
+  {
+   "id": "q-bradman-hollies",
+   "topic": "bradman",
+   "prompt": "Who bowled Don Bradman for a duck in his final Test innings?",
+   "answer": "Eric Hollies",
+   "accept": [
+    "Hollies"
+   ],
+   "hint": "An English leg-spinner from Warwickshire",
+   "fact": "Bowled by a googly, second ball, at The Oval in 1948",
+   "format": "Test",
+   "source": "wiki:Don_Bradman"
+  },
+  {
+   "id": "q-bradman-at-sachin-length",
+   "topic": ["bradman", "sachin"],
+   "kind": "number",
+   "prompt": "Bradman averaged 99.94. At that average, how many Test runs would he have scored if he'd been dismissed as often as Sachin Tendulkar (296 times)?",
+   "answer": 29582,
+   "margin": 5000,
+   "unit": "runs",
+   "hint": "Nearly double Sachin's 15,921",
+   "fact": "99.94 × 296 = 29,582. Bradman actually made 6,996 runs in 52 Tests",
+   "format": "Test",
+   "source": "wiki:Don_Bradman"
+  },
+  {
+   "id": "q-test-most-wickets",
+   "topic": "murali",
+   "prompt": "Who has taken the most wickets in Test cricket?",
+   "answer": "Muttiah Muralitharan",
+   "accept": [
+    "Muralitharan",
+    "Murali"
+   ],
+   "hint": "Sri Lankan off-spinner",
+   "fact": "800 wickets in 133 Tests, 1992–2010",
+   "format": "Test",
+   "source": "wiki:List_of_Test_cricket_records"
+  },
+  {
+   "id": "q-murali-strike-rate",
+   "topic": "murali",
+   "kind": "number",
+   "prompt": "Muttiah Muralitharan took 800 Test wickets. On average, how many balls did he bowl for each one?",
+   "answer": 55,
+   "margin": 10,
+   "unit": "balls",
+   "hint": "Less than ten overs' worth",
+   "fact": "44,039 balls for 800 wickets: a wicket every 55 balls",
+   "format": "Test",
+   "source": "wiki:Muttiah_Muralitharan"
+  },
+  {
+   "id": "q-test-highest-score",
+   "topic": "lara",
+   "prompt": "Who holds the record for the highest individual score in a Test innings?",
+   "answer": "Brian Lara",
+   "accept": [
+    "Lara"
+   ],
+   "hint": "West Indies left-hander who also made 375 against the same team",
+   "fact": "400 not out against England in Antigua, 2004",
+   "format": "Test",
+   "source": "wiki:List_of_Test_cricket_records"
+  },
+  {
+   "id": "q-lara-400-balls",
+   "topic": "lara",
+   "kind": "number",
+   "prompt": "Brian Lara made 400 not out against England in 2004. How many balls did he face?",
+   "answer": 582,
+   "margin": 100,
+   "unit": "balls",
+   "hint": "He batted for about 13 hours",
+   "fact": "582 balls and 778 minutes, with 43 fours and 4 sixes",
+   "format": "Test",
+   "source": "wiki:Brian_Lara"
+  },
+  {
+   "id": "q-first-test-year",
+   "topic": "history",
+   "kind": "number",
+   "prompt": "In what year was the first ever Test match played?",
+   "answer": 1877,
+   "margin": 10,
+   "hint": "Queen Victoria was on the throne",
+   "fact": "Australia v England at the MCG, March 1877. Australia won by 45 runs",
+   "format": "Test",
+   "source": "wiki:Test_cricket"
+  },
+  {
+   "id": "q-all-ten-third",
+   "topic": "all-ten",
+   "prompt": "Jim Laker and Anil Kumble took all ten wickets in a Test innings. Who is the only other bowler to do it?",
+   "answer": "Ajaz Patel",
+   "accept": [
+    "Ajaz"
+   ],
+   "hint": "A Mumbai-born New Zealand spinner, who did it in Mumbai",
+   "fact": "10/119 against India at the Wankhede, December 2021",
+   "format": "Test",
+   "source": "wiki:List_of_Test_cricket_records"
+  },
+  {
+   "id": "q-laker-19",
+   "topic": "all-ten",
+   "kind": "number",
+   "prompt": "In the 1956 Old Trafford Test, England's Jim Laker took how many of Australia's 20 wickets?",
+   "answer": 19,
+   "margin": 1,
+   "unit": "wickets",
+   "hint": "Almost all of them",
+   "fact": "9/37 and 10/53. Tony Lock took the other one",
+   "format": "Test",
+   "source": "wiki:Jim_Laker"
+  },
+  {
+   "id": "q-rohit-264-boundaries",
+   "topic": "rohit",
+   "kind": "number",
+   "prompt": "Rohit Sharma's 264 against Sri Lanka in 2014 is the highest ODI score. How many of those runs came in fours and sixes?",
+   "answer": 186,
+   "margin": 25,
+   "unit": "runs",
+   "hint": "More than two-thirds of them",
+   "fact": "33 fours and 9 sixes: 186 runs, off 173 balls in all",
+   "format": "ODI",
+   "source": "wiki:Rohit_Sharma"
+  },
+  {
+   "id": "q-kapil-175",
+   "topic": "kapil",
+   "kind": "number",
+   "prompt": "India were 17 for 5 against Zimbabwe at the 1983 World Cup. How many did captain Kapil Dev score to rescue them?",
+   "answer": 175,
+   "margin": 20,
+   "unit": "runs",
+   "hint": "It was an ODI record at the time",
+   "fact": "175 not out off 138 balls at Tunbridge Wells. India won by 31 runs, and went on to win the Cup",
+   "format": "World Cup",
+   "source": "wiki:Kapil_Dev"
+  },
+  {
+   "id": "q-dhoni-2011-six",
+   "topic": "dhoni",
+   "prompt": "Who hit the six that won the 2011 World Cup final?",
+   "answer": "MS Dhoni",
+   "accept": [
+    "Dhoni",
+    "Mahendra Singh Dhoni"
+   ],
+   "hint": "India's captain, who promoted himself up the order",
+   "fact": "Off Nuwan Kulasekara at the Wankhede, finishing on 91 not out",
+   "format": "World Cup",
+   "source": "wiki:2011_Cricket_World_Cup_final"
+  },
+  {
+   "id": "q-t20wc-2007-champions",
+   "topic": "t20wc-2007",
+   "prompt": "Which team won the first T20 World Cup, in 2007?",
+   "answer": "India",
+   "hint": "They beat Pakistan in the final in Johannesburg",
+   "fact": "India beat Pakistan by 5 runs in the final",
+   "format": "T20 World Cup",
+   "source": "wiki:ICC_Men's_T20_World_Cup"
+  },
+  {
+   "id": "q-yuvraj-six-sixes",
+   "topic": "t20wc-2007",
+   "prompt": "Yuvraj Singh hit six sixes in an over at the 2007 T20 World Cup. Who was the bowler?",
+   "answer": "Stuart Broad",
+   "accept": [
+    "Broad"
+   ],
+   "hint": "An English fast bowler who went on to take 600 Test wickets",
+   "fact": "Durban, September 2007. Yuvraj reached 50 off 12 balls",
+   "format": "T20 World Cup",
+   "source": "wiki:Yuvraj_Singh"
+  }
+ ]
+}

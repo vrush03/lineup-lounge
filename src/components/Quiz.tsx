@@ -3,7 +3,7 @@ import { AnswerInput } from './AnswerInput'
 import { FormatBadge } from './FormatBadge'
 import { MarkIcon } from './MarkIcon'
 import { Countdown } from './ResultPanel'
-import { MAX_GUESSES, PASS, isAnswer, normalize, questionMark, quizScore } from '../lib/quiz'
+import { MAX_GUESSES, PASS, answerText, direction, guessText, marginText, isAnswer, normalize, parseNumber, questionMark, quizScore } from '../lib/quiz'
 import type { Mark } from '../lib/score'
 import { quizShareText } from '../lib/share'
 import { loadQuiz, saveQuiz } from '../lib/storage'
@@ -46,7 +46,10 @@ export function Quiz({ questions, names, storageKey, day, onFinish, onNext }: Pr
   function guess(text: string) {
     const q = questions[pos]
     const mine = guesses[pos]
-    if (mine.some((g) => normalize(g) === normalize(text))) {
+    const same = (a: string, b: string) =>
+      q.kind === 'number' ? parseNumber(a) === parseNumber(b) : normalize(a) === normalize(b)
+    // Not a number, or a repeat of a wrong guess: shake without using up a try.
+    if ((q.kind === 'number' && text !== PASS && parseNumber(text) === null) || mine.some((g) => same(g, text))) {
       setShake((s) => s + 1)
       return
     }
@@ -124,6 +127,7 @@ type CardProps = {
 
 function QuestionCard({ n, total, question: q, guesses, mark, names, shake, last, onGuess, onNext }: CardProps) {
   const misses = guesses.filter((g) => g !== PASS && !isAnswer(q, g))
+  const way = misses.length ? direction(q, misses[misses.length - 1]) : null
   const next = useRef<HTMLButtonElement>(null)
   useEffect(() => {
     if (mark) next.current?.focus({ preventScroll: true })
@@ -144,21 +148,39 @@ function QuestionCard({ n, total, question: q, guesses, mark, names, shake, last
       {misses.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-2" aria-label="Wrong guesses">
           {misses.map((g) => (
-            <li key={g} className="flex items-center gap-1.5 rounded-full bg-leather/10 px-3 py-1 text-sm font-medium text-wrong-ink line-through decoration-1">
-              {g}
+            <li key={g} className="flex items-center gap-1.5 rounded-full bg-leather/10 px-3 py-1 text-sm font-medium text-wrong-ink">
+              <span className="line-through decoration-1">{guessText(q, g)}</span>
+              {direction(q, g) && <span aria-label={direction(q, g)!}>{direction(q, g) === 'higher' ? '↑' : '↓'}</span>}
             </li>
           ))}
         </ul>
       )}
       {!mark && misses.length > 0 && (
         <p role="status" className="mt-3 animate-rise rounded-2xl border border-near/40 bg-near/10 px-4 py-3 text-[15px]">
+          {way && <span className="mr-1.5 font-display text-lg font-bold uppercase">{way === 'higher' ? 'Higher ↑' : 'Lower ↓'}</span>}
           <span className="font-semibold">Hint:</span> {q.hint}
         </p>
       )}
 
       {!mark ? (
         <div className="mt-5">
-          <AnswerInput names={names} onSubmit={onGuess} shake={shake} tries={MAX_GUESSES - guesses.length} />
+          {q.kind === 'number' ? (
+            <AnswerInput
+              unit={q.unit}
+              note={q.margin ? `Ballpark: anything within ${marginText(q)} counts.` : 'Needs the exact number.'}
+              onSubmit={onGuess}
+              shake={shake}
+              tries={MAX_GUESSES - guesses.length}
+            />
+          ) : (
+            <AnswerInput
+              names={names}
+              note="Pick a suggestion or type the name."
+              onSubmit={onGuess}
+              shake={shake}
+              tries={MAX_GUESSES - guesses.length}
+            />
+          )}
           <button
             onClick={() => onGuess(PASS)}
             className="mt-3 w-full py-2 text-sm font-semibold text-muted underline-offset-4 hover:text-ink hover:underline"
@@ -179,7 +201,7 @@ function QuestionCard({ n, total, question: q, guesses, mark, names, shake, last
               <p className={`text-sm font-semibold ${mark === 'wrong' ? 'text-wrong-ink' : 'text-correct-ink'}`}>
                 {mark === 'correct' ? 'Correct!' : mark === 'near' ? 'Got it with the hint' : 'The answer was'}
               </p>
-              <p className="font-display text-2xl font-bold uppercase leading-tight">{q.answer}</p>
+              <p className="font-display text-2xl font-bold uppercase leading-tight">{answerText(q)}</p>
               {q.fact && <p className="mt-0.5 text-sm text-muted">{q.fact}</p>}
             </div>
           </div>
@@ -240,7 +262,7 @@ function Summary({ questions, marks, day, onNext, justFinished }: SummaryProps) 
             <MarkIcon mark={marks[i]} symbol={marks[i] === 'near' ? '✓' : undefined} size={20} />
             <div className="min-w-0">
               <p className="text-sm text-muted">{q.prompt}</p>
-              <p className="font-semibold">{q.answer}</p>
+              <p className="font-semibold">{answerText(q)}</p>
             </div>
           </li>
         ))}
