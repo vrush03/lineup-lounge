@@ -52,6 +52,8 @@ export type NumberQuestion = QuestionBase & {
   margin: number
   /** Shown after numbers, e.g. "km" or "%". */
   unit?: string
+  /** Print without thousands separators, e.g. a year. */
+  plain?: boolean
 }
 
 export type Question = NameQuestion | NumberQuestion

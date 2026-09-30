@@ -1,5 +1,5 @@
 {
- "_comment": "Hand-written quiz questions (international cricket, settled facts only). gen_quiz.py merges these with questions computed from Cricsheet IPL data. 'topic' (a string or a list) keeps related questions on different days and is stripped from the output.",
+ "_comment": "Hand-written quiz questions (international cricket). gen_quiz.py merges these with questions computed from Cricsheet IPL data. Every number and claim here, hints and facts included, must be checked against a source (the linked Wikipedia page or ESPNcricinfo Statsguru) before it goes in. 'topic' (a string or a list) keeps related questions on different days and is stripped from the output.",
  "questions": [
   {
    "id": "q-test-most-runs",
@@ -14,19 +14,6 @@
    "fact": "15,921 runs in 200 Tests, 1989–2013",
    "format": "Test",
    "source": "wiki:List_of_Test_cricket_records"
-  },
-  {
-   "id": "q-sachin-pitch-lengths",
-   "topic": "sachin",
-   "kind": "number",
-   "prompt": "Sachin Tendulkar scored 15,921 Test runs. Leaving out boundaries, how many times did he run the length of the pitch?",
-   "answer": 7275,
-   "margin": 1500,
-   "unit": "runs",
-   "hint": "Take away his 2,058 fours and 69 sixes",
-   "fact": "7,275 runs run at 22 yards each is about 146 km, more than three marathons (ignoring all-run fours and overthrows)",
-   "format": "Test",
-   "source": "wiki:Sachin_Tendulkar"
   },
   {
    "id": "q-sachin-debut-age",
@@ -50,7 +37,7 @@
    "margin": 0,
    "unit": "runs",
    "hint": "A single boundary would have done it",
-   "fact": "He was out second ball for a duck at The Oval in 1948, finishing on 99.94",
+   "fact": "He was bowled second ball for a duck by a googly in 1948, finishing on 99.94",
    "format": "Test",
    "source": "wiki:Don_Bradman"
   },
@@ -63,13 +50,16 @@
     "Hollies"
    ],
    "hint": "An English leg-spinner from Warwickshire",
-   "fact": "Bowled by a googly, second ball, at The Oval in 1948",
+   "fact": "Bowled by a googly, second ball, in Bradman's final Test innings (1948)",
    "format": "Test",
    "source": "wiki:Don_Bradman"
   },
   {
    "id": "q-bradman-at-sachin-length",
-   "topic": ["bradman", "sachin"],
+   "topic": [
+    "bradman",
+    "sachin"
+   ],
    "kind": "number",
    "prompt": "Bradman averaged 99.94. At that average, how many Test runs would he have scored if he'd been dismissed as often as Sachin Tendulkar (296 times)?",
    "answer": 29582,
@@ -143,7 +133,8 @@
    "hint": "Queen Victoria was on the throne",
    "fact": "Australia v England at the MCG, March 1877. Australia won by 45 runs",
    "format": "Test",
-   "source": "wiki:Test_cricket"
+   "source": "wiki:Test_cricket",
+   "plain": true
   },
   {
    "id": "q-all-ten-third",
@@ -153,8 +144,8 @@
    "accept": [
     "Ajaz"
    ],
-   "hint": "A Mumbai-born New Zealand spinner, who did it in Mumbai",
-   "fact": "10/119 against India at the Wankhede, December 2021",
+   "hint": "A Mumbai-born New Zealand spinner",
+   "fact": "10 for 119 against India, December 2021",
    "format": "Test",
    "source": "wiki:List_of_Test_cricket_records"
   },
@@ -167,7 +158,7 @@
    "margin": 1,
    "unit": "wickets",
    "hint": "Almost all of them",
-   "fact": "9/37 and 10/53. Tony Lock took the other one",
+   "fact": "Nineteen for 90, including all ten in the second innings (10 for 53): still a first-class record",
    "format": "Test",
    "source": "wiki:Jim_Laker"
   },
@@ -233,6 +224,257 @@
    "fact": "Durban, September 2007. Yuvraj reached 50 off 12 balls",
    "format": "T20 World Cup",
    "source": "wiki:Yuvraj_Singh"
+  },
+  {
+   "id": "q-sachin-odi-pitch-lengths",
+   "topic": "sachin",
+   "kind": "number",
+   "prompt": "Sachin Tendulkar scored 18,426 ODI runs. Leaving out boundaries, how many times did he run the length of the pitch?",
+   "answer": 9192,
+   "margin": 1800,
+   "unit": "runs",
+   "hint": "Take away his 2,016 fours and 195 sixes",
+   "fact": "9,192 runs run at 22 yards each is about 185 km, more than four marathons (ignoring all-run fours and overthrows)",
+   "format": "ODI",
+   "source": "wiki:Sachin_Tendulkar"
+  },
+  {
+   "id": "q-murali-800th",
+   "topic": "murali",
+   "prompt": "Muttiah Muralitharan took his 800th Test wicket with the last ball of his Test career. Who was the batter?",
+   "answer": "Pragyan Ojha",
+   "accept": [
+    "Ojha"
+   ],
+   "hint": "India's last man in",
+   "fact": "Muralitharan retired as the only bowler to reach 800 Test wickets",
+   "format": "Test",
+   "source": "wiki:Pragyan_Ojha"
+  },
+  {
+   "id": "q-ball-of-the-century",
+   "topic": "warne",
+   "prompt": "Who bowled the 'Ball of the Century' to Mike Gatting in 1993?",
+   "answer": "Shane Warne",
+   "accept": [
+    "Warne"
+   ],
+   "hint": "An Australian leg-spinner, bowling his first ball in an Ashes Test",
+   "fact": "Old Trafford, 4 June 1993: it drifted outside leg stump and turned to clip the off bail",
+   "format": "Test",
+   "source": "wiki:Ball_of_the_Century"
+  },
+  {
+   "id": "q-first-to-10000",
+   "topic": "gavaskar",
+   "prompt": "Who was the first batter to pass 10,000 runs in Test cricket?",
+   "answer": "Sunil Gavaskar",
+   "accept": [
+    "Gavaskar"
+   ],
+   "hint": "An Indian opener who played from 1971 to 1987",
+   "fact": "Widely regarded as one of the greatest opening batters of all time",
+   "format": "Test",
+   "source": "wiki:Sunil_Gavaskar"
+  },
+  {
+   "id": "q-wc-1975-champions",
+   "topic": "wc-1975",
+   "prompt": "Which team won the first men's Cricket World Cup, in 1975?",
+   "answer": "West Indies",
+   "accept": [
+    "Windies",
+    "WI"
+   ],
+   "hint": "They beat Australia in the final at Lord's",
+   "fact": "By 17 runs, in 60-over-a-side matches",
+   "format": "World Cup",
+   "source": "wiki:1975_Cricket_World_Cup"
+  },
+  {
+   "id": "q-malinga-four-in-four",
+   "topic": "malinga",
+   "prompt": "Who is the only bowler to take four wickets in four balls twice in international cricket?",
+   "answer": "Lasith Malinga",
+   "accept": [
+    "Malinga"
+   ],
+   "hint": "A Sri Lankan fast bowler; the first time was against South Africa at the 2007 World Cup",
+   "fact": "He was also the first bowler to take two T20I hat-tricks",
+   "format": "ODI",
+   "source": "wiki:Lasith_Malinga"
+  },
+  {
+   "id": "q-maxwell-201",
+   "topic": "maxwell",
+   "prompt": "Who made 201 not out to beat Afghanistan at the 2023 World Cup, after his team had slumped to 91 for 7?",
+   "answer": "Glenn Maxwell",
+   "accept": [
+    "Maxwell"
+   ],
+   "hint": "An Australian all-rounder",
+   "fact": "Chasing 292 at the Wankhede, with 201 still needed when the seventh wicket fell",
+   "format": "World Cup",
+   "source": "wiki:Glenn_Maxwell"
+  },
+  {
+   "id": "q-head-2023-final",
+   "topic": "wc-2023",
+   "prompt": "Who scored 137 as Australia won the 2023 World Cup final against India?",
+   "answer": "Travis Head",
+   "accept": [
+    "Head"
+   ],
+   "hint": "He was out with Australia two runs from victory",
+   "fact": "Australia's sixth World Cup title, and Head was Player of the Final",
+   "format": "World Cup",
+   "source": "wiki:2023_Cricket_World_Cup_final"
+  },
+  {
+   "id": "q-first-odi-double-century",
+   "topic": "belinda",
+   "prompt": "Who made the first double century in ODI cricket, men's or women's?",
+   "answer": "Belinda Clark",
+   "accept": [
+    "Clark"
+   ],
+   "hint": "An Australian, playing against Denmark in 1997",
+   "fact": "229 not out against Denmark at the 1997 Women's World Cup",
+   "format": "ODI",
+   "source": "wiki:Belinda_Clark"
+  },
+  {
+   "id": "q-abd-fastest-hundred",
+   "topic": "abd",
+   "kind": "number",
+   "prompt": "AB de Villiers hit the fastest ODI hundred. How many balls did he need?",
+   "answer": 31,
+   "margin": 6,
+   "unit": "balls",
+   "hint": "Fewer than 40",
+   "fact": "Against West Indies in Johannesburg, January 2015, on his way to 149",
+   "format": "ODI",
+   "source": "wiki:AB_de_Villiers"
+  },
+  {
+   "id": "q-eng-498",
+   "topic": "eng-498",
+   "kind": "number",
+   "prompt": "England made the highest ODI total, against the Netherlands in 2022. How many runs?",
+   "answer": 498,
+   "margin": 30,
+   "unit": "runs",
+   "hint": "Their innings included a record 26 sixes",
+   "fact": "498 for 4 in Amstelveen, June 2022",
+   "format": "ODI",
+   "source": "wiki:List_of_One_Day_International_cricket_records"
+  },
+  {
+   "id": "q-nz-26",
+   "topic": "nz-26",
+   "kind": "number",
+   "prompt": "What is the lowest total in Test cricket, made by New Zealand against England in 1954–55?",
+   "answer": 26,
+   "margin": 5,
+   "unit": "runs",
+   "hint": "Fewer than 30",
+   "fact": "All out for 26 in Auckland. The next lowest is West Indies' 27 against Australia",
+   "format": "Test",
+   "source": "wiki:List_of_Test_cricket_records"
+  },
+  {
+   "id": "q-2019-final-boundaries",
+   "topic": "wc-2019",
+   "kind": "number",
+   "prompt": "England won the 2019 World Cup final on boundary count after the match and the Super Over were both tied. How many boundaries did England hit?",
+   "answer": 26,
+   "margin": 4,
+   "unit": "boundaries",
+   "hint": "New Zealand hit 17",
+   "fact": "26 to 17: England's first men's World Cup",
+   "format": "World Cup",
+   "source": "wiki:2019_Cricket_World_Cup_final"
+  },
+  {
+   "id": "q-hanif-337-hours",
+   "topic": "hanif",
+   "kind": "number",
+   "prompt": "Hanif Mohammad made 337 against West Indies at Bridgetown in 1957–58, after Pakistan followed on. Roughly how many hours did he bat?",
+   "answer": 16.2,
+   "margin": 3,
+   "unit": "hours",
+   "hint": "Well over 900 minutes",
+   "fact": "970 minutes. Still the highest score by a player in an away Test",
+   "format": "Test",
+   "source": "wiki:Hanif_Mohammad"
+  },
+  {
+   "id": "q-rhodes-oldest",
+   "topic": "rhodes",
+   "kind": "number",
+   "prompt": "Wilfred Rhodes is the oldest man to play Test cricket. How old was he in his final Test, in 1930?",
+   "answer": 52,
+   "margin": 3,
+   "unit": "years",
+   "hint": "Older than 50",
+   "fact": "52 years and 165 days. He'd made his England debut in 1899",
+   "format": "Test",
+   "source": "wiki:Wilfred_Rhodes"
+  },
+  {
+   "id": "q-anderson-704",
+   "topic": "anderson",
+   "kind": "number",
+   "prompt": "How many Test wickets did James Anderson take, the most by any fast bowler?",
+   "answer": 704,
+   "margin": 60,
+   "unit": "wickets",
+   "hint": "His international total across all formats was 991",
+   "fact": "704 Test wickets; he played for England from 2002 to 2024",
+   "format": "Test",
+   "source": "wiki:James_Anderson_(cricketer)"
+  },
+  {
+   "id": "q-maxwell-40-balls",
+   "topic": "maxwell",
+   "kind": "number",
+   "prompt": "Glenn Maxwell hit the fastest World Cup hundred, against the Netherlands in 2023. How many balls did it take?",
+   "answer": 40,
+   "margin": 8,
+   "unit": "balls",
+   "hint": "It's the fourth-fastest hundred in all ODIs",
+   "fact": "40 balls, at the 2023 World Cup",
+   "format": "World Cup",
+   "source": "wiki:Glenn_Maxwell"
+  },
+  {
+   "id": "q-kumble-ten-runs",
+   "topic": [
+    "all-ten",
+    "kumble"
+   ],
+   "kind": "number",
+   "prompt": "Anil Kumble took all ten wickets in an innings against Pakistan in 1999. How many runs did he concede?",
+   "answer": 74,
+   "margin": 15,
+   "unit": "runs",
+   "hint": "He did it in Delhi, in the second Test",
+   "fact": "10 for 74, the second bowler after Jim Laker to take all ten",
+   "format": "Test",
+   "source": "wiki:Anil_Kumble"
+  },
+  {
+   "id": "q-sachin-100-hundreds",
+   "topic": "sachin",
+   "kind": "number",
+   "prompt": "How many international centuries did Sachin Tendulkar score across Tests and ODIs?",
+   "answer": 100,
+   "margin": 5,
+   "unit": "centuries",
+   "hint": "51 of them came in Tests",
+   "fact": "51 in Tests and 49 in ODIs: he's the only batter to make 100",
+   "format": "ODI",
+   "source": "wiki:Sachin_Tendulkar"
   }
  ]
 }

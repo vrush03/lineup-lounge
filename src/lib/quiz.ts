@@ -45,13 +45,13 @@ export function direction(q: Question, guess: string): 'higher' | 'lower' | null
 const withUnit = (n: string, unit?: string) => (!unit ? n : unit === '%' ? `${n}%` : `${n} ${unit}`)
 
 /** Round to what the margin makes meaningful: 81.75 ± 20 -> "82", 16.7 ± 3 -> "16.7". */
-export function formatNumber(n: number, margin: number): string {
+export function formatNumber(n: number, margin: number, plain = false): string {
   const digits = margin > 0 && margin < 5 && !Number.isInteger(n) ? 1 : 0
-  return n.toLocaleString('en', { maximumFractionDigits: digits })
+  return n.toLocaleString('en', { maximumFractionDigits: digits, useGrouping: !plain })
 }
 
 export function answerText(q: Question): string {
-  return q.kind === 'number' ? withUnit(formatNumber(q.answer, q.margin), q.unit) : q.answer
+  return q.kind === 'number' ? withUnit(formatNumber(q.answer, q.margin, q.plain), q.unit) : q.answer
 }
 
 /** How close a guess must be, e.g. "±20 km" or "±8 points" (for a percentage). */
@@ -64,7 +64,7 @@ export function marginText(q: NumberQuestion): string {
 export function guessText(q: Question, guess: string): string {
   if (q.kind !== 'number') return guess
   const n = parseNumber(guess)
-  return n === null ? guess : withUnit(n.toLocaleString('en', { maximumFractionDigits: 2 }), q.unit)
+  return n === null ? guess : withUnit(n.toLocaleString('en', { maximumFractionDigits: 2, useGrouping: !q.plain }), q.unit)
 }
 
 /** correct = first guess, near = after the hint, wrong = missed or passed; null while still open. */

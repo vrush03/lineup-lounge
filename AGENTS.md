@@ -48,8 +48,12 @@ same three on every PR and on `main`. Node version is pinned in `.nvmrc`.
   releases, not tweaks. `puzzles.test.ts` also enforces that puzzles sharing a prompt are at least
   30 days apart in the rotation. The daily quiz is the same idea: `dailyQuestions` takes five
   consecutive questions starting at `day * 5`, and `gen_quiz.py` orders them into those days, so
-  any quiz change reshuffles future daily quizzes. Only add a hand-written question when you're
-  sure of the fact.
+  any quiz change reshuffles future daily quizzes. Keep the counts at two name and three number
+  questions per day (the script says what's missing).
+- **Hand-written quiz facts must be sourced.** Check every number and claim in
+  `quiz_manual.json` (prompt, hint and fact) against the linked page or Statsguru before adding it;
+  don't rely on memory. IPL questions should derive their numbers and hints from the data, with
+  an assert for anything the wording takes for granted.
 - **Saved games are player data.** Daily Lineup saves are keyed `game:cricket:<day>:<puzzleId>`
   with stats in `stats`; daily quiz saves are `quiz:cricket:<day>` with stats in `stats:quiz`. If you change a saved shape, make `storage.ts` discard or migrate old
   values instead of crashing (see how `loadGame` rejects old boolean marks).

@@ -42,6 +42,7 @@ export const questionSchema = z.union([
     answer: z.number(),
     margin: z.number().nonnegative(),
     unit: z.string().optional(),
+    plain: z.boolean().optional(),
   }),
   z.strictObject({
     ...questionBase,

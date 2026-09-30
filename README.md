@@ -60,8 +60,12 @@ already solved, or a player name still in initials form. For the last one, add t
 `scripts/data/name_overrides.json` (keyed by Cricsheet identifier) after checking it.
 
 `gen_quiz.py` computes the IPL questions (so the numbers refresh with each season) and takes the
-international ones from `scripts/data/quiz_manual.json`, where they're written by hand from settled
-records. It deals them into daily sets of five: two name questions and three numbers, mixing IPL and
-international, and never two questions that share a `topic` (so one can't give away another's
-answer). It fails if the IPL leaders change under a hand-written hint, or if the questions can't
-fill whole days.
+international ones from `scripts/data/quiz_manual.json`. Every number and claim in that file, hints
+and facts included, is checked against its linked Wikipedia page or ESPNcricinfo Statsguru before it
+goes in; if a fact can't be sourced, the question is reworded around one that can (Sachin's Test
+fours aren't recorded anywhere checkable, so the "pitch lengths" question uses his ODI career).
+
+The script deals questions into daily sets of five: two name questions and three numbers, mixing IPL
+and international, never two that share a `topic`, and never a day where one question's prompt,
+hint or earlier fact contains another's answer. It fails if the data moves under a hint (a new IPL
+leader, a "not out" that no longer holds), or if the questions can't fill whole days.

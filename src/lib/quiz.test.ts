@@ -60,6 +60,9 @@ describe('number answers', () => {
     expect(answerText({ ...km, answer: 16.7, margin: 3, unit: undefined })).toBe('16.7')
     expect(answerText({ ...km, answer: 58, margin: 8, unit: '%' })).toBe('58%')
     expect(guessText(km, '1.5k')).toBe('1,500 km')
+    const year: Question = { id: 'y', kind: 'number', prompt: 'When?', answer: 1877, margin: 10, plain: true, hint: 'h' }
+    expect(answerText(year)).toBe('1877')
+    expect(guessText(year, '1900')).toBe('1900')
     if (km.kind === 'number') expect(marginText(km)).toBe('±20 km')
   })
 })
