@@ -180,9 +180,9 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
               href={TIP_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-4 py-2 text-sm font-semibold text-ink transition hover:border-muted"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-[#1b1406] shadow-lg shadow-gold/25 transition hover:-translate-y-0.5 hover:brightness-110 hover:shadow-gold/40"
             >
-              <span aria-hidden>🍵</span> Buy me a tea
+              <span aria-hidden className="text-base">🍵</span> Buy me a tea
             </a>
           </div>
         )}
