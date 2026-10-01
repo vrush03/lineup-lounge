@@ -1,11 +1,26 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { PlayerCard, type CardResult } from './PlayerCard'
-import { compare, cpuPick, deal, HAND, isGame, playRound, statText, winner, type Game, type Outcome } from '../lib/showdown'
+import {
+  compare,
+  cpuPick,
+  deal,
+  isGame,
+  playRound,
+  POINTS,
+  roundOf,
+  ROUNDS,
+  score,
+  statText,
+  turnOf,
+  winner,
+  type Game,
+  type Outcome,
+} from '../lib/showdown'
 import { clearShowdown, loadShowdown, saveShowdown } from '../lib/storage'
 import type { Card, Deck } from '../lib/types'
 
 /** The round on the table: the two cards played, the stat named and who took it. */
-type Played = { you: Card; cpu: Card; stat: string; outcome: Outcome; by: 'you' | 'cpu'; pot: number }
+type Played = { you: Card; cpu: Card; stat: string; outcome: Outcome }
 
 type Props = {
   deck: Deck
@@ -16,7 +31,7 @@ type Props = {
 
 const CPU_THINKS_MS = 1100
 
-/** One game against the computer: play top cards until one side holds them all. */
+/** One game against the computer: 15 rounds, 10 points a round, most points wins. */
 export function Showdown({ deck, onFinish, onNewGame }: Props) {
   const byId = useMemo(() => new Map(deck.cards.map((c) => [c.id, c])), [deck])
   const [game, setGame] = useState<Game>(() => {
@@ -26,7 +41,7 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
   const [played, setPlayed] = useState<Played | null>(null)
   const next = useRef<HTMLButtonElement>(null)
   const result = winner(game)
-  const cpuToPick = !played && !result && game.turn === 'cpu'
+  const cpuToPick = !played && !result && turnOf(game) === 'cpu'
 
   function play(stat: string) {
     if (played || result) return
@@ -34,7 +49,7 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
     const cpu = byId.get(game.cpu[0])!
     const outcome = compare(you, cpu, stat)
     const after = playRound(game, outcome)
-    setPlayed({ you, cpu, stat, outcome, by: game.turn, pot: game.pot.length })
+    setPlayed({ you, cpu, stat, outcome })
     setGame(after)
     // Saved as soon as the stat is named, so a reload can't replay a lost round.
     const end = winner(after)
@@ -51,7 +66,7 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
     return () => clearTimeout(t)
     // Runs once per computer turn; `play` and the top card are read fresh from that render.
     // oxlint-disable-next-line react-hooks/exhaustive-deps
-  }, [cpuToPick, game.round])
+  }, [cpuToPick, game.log.length])
 
   useEffect(() => {
     if (played) next.current?.focus({ preventScroll: true })
@@ -63,7 +78,8 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
   const mine: CardResult | null = played ? (played.outcome === 'tie' ? 'tie' : played.outcome === 'you' ? 'win' : 'lose') : null
   const other: CardResult | null = played ? (played.outcome === 'tie' ? 'tie' : played.outcome === 'cpu' ? 'win' : 'lose') : null
   // `game` has already moved on to the next round while the played cards are on the table.
-  const round = played ? game.round - 1 : game.round
+  const round = played ? roundOf(game) - 1 : roundOf(game)
+  const points = score(game)
 
   return (
     <div className="animate-rise">
@@ -77,18 +93,16 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
             </span>
             <span className="mt-1 block">
               {stat.label}: {statText(played.you, stat)} v {statText(played.cpu, stat)}
-              {played.outcome === 'tie'
-                ? '. Both cards go to the pot.'
-                : played.pot
-                  ? `, plus ${played.pot} from the pot.`
-                  : '.'}
+              {played.outcome === 'tie' ? `. ${POINTS / 2} points each.` : `. ${POINTS} points to ${played.outcome === 'you' ? 'you' : 'the computer'}.`}
             </span>
           </span>
         ) : cpuToPick ? (
           <span className="animate-pulse font-display text-xl font-bold uppercase tracking-wide text-ink">Computer is choosing a stat…</span>
         ) : (
           <span>
-            <span className="block font-display text-2xl font-extrabold uppercase leading-none tracking-wide text-ink">Your pick</span>
+            <span className="block font-display text-2xl font-extrabold uppercase leading-none tracking-wide text-ink">
+              {round === ROUNDS ? 'Last round: your pick' : 'Your pick'}
+            </span>
             <span className="mt-1 block">Tap the stat you think beats the computer’s card.</span>
           </span>
         )}
@@ -105,7 +119,7 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
                 owner="Your card"
                 chosen={played?.stat}
                 result={mine}
-                onPick={!played && !result && game.turn === 'you' ? play : undefined}
+                onPick={!played && !result && turnOf(game) === 'you' ? play : undefined}
               />
             </div>
           )}
@@ -132,19 +146,21 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
 
       {result && (
         <div className="mt-5 animate-rise overflow-hidden rounded-3xl border border-line bg-surface shadow-[var(--shadow)]">
-          <div className={`px-5 pt-5 pb-4 ${result === 'you' ? 'bg-correct/10' : 'bg-leather/8'}`}>
+          <div className={`px-5 pt-5 pb-4 text-center ${result === 'you' ? 'bg-correct/10' : result === 'cpu' ? 'bg-leather/8' : 'bg-near/10'}`}>
             <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${result === 'you' ? 'text-correct-ink' : 'text-muted'}`}>
-              {deck.format} showdown · {round} rounds
+              {deck.format} showdown · final score
             </p>
-            <p className="mt-1 font-display text-3xl font-extrabold uppercase">
-              {result === 'you' ? 'You win the lot!' : result === 'cpu' ? 'Cleaned out' : 'Honours even'}
+            <p className="mt-1 font-display text-4xl font-extrabold uppercase">
+              {result === 'you' ? 'You win!' : result === 'cpu' ? 'Computer wins' : 'It’s a draw'}
             </p>
-            <p className="mt-1 text-sm text-muted">
-              {result === 'you'
-                ? `All ${2 * HAND} cards are yours.`
-                : result === 'cpu'
-                  ? 'The computer holds every card.'
-                  : 'The last two cards tied, so nobody takes the pot.'}
+            <div className="mt-3 flex items-end justify-center gap-5 font-display font-extrabold leading-none">
+              <Total label="You" points={points.you} tone={result === 'you' ? 'text-pitch' : 'text-ink'} />
+              <span className="pb-5 text-2xl text-muted">–</span>
+              <Total label="Computer" points={points.cpu} tone={result === 'cpu' ? 'text-leather' : 'text-ink'} />
+            </div>
+            <p className="mt-3 text-sm text-muted">
+              You took {count(game, 'you')} of {ROUNDS} rounds, the computer {count(game, 'cpu')}
+              {count(game, 'tie') > 0 && `, with ${count(game, 'tie')} tied`}.
             </p>
           </div>
           <div className="p-4">
@@ -162,35 +178,47 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
   )
 }
 
+const count = (game: Game, outcome: Outcome) => game.log.filter((o) => o === outcome).length
+
+function Total({ label, points, tone }: { label: string; points: number; tone: string }) {
+  return (
+    <span>
+      <span className={`block text-6xl tabular-nums ${tone}`}>{points}</span>
+      <span className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">{label}</span>
+    </span>
+  )
+}
+
 function Label({ children }: { children: React.ReactNode }) {
   return <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">{children}</p>
 }
 
-/** Card counts as a tug of war: your share from the left, the computer's from the right, the pot between. */
+const PIP: Record<Outcome, string> = { you: 'bg-pitch', cpu: 'bg-leather', tie: 'bg-near' }
+
+/** Points for each side, with one pip per round: green yours, red the computer's, amber tied. */
 function Scoreboard({ game, round }: { game: Game; round: number }) {
-  const total = game.you.length + game.cpu.length + game.pot.length
+  const points = score(game)
   return (
     <div className="rounded-2xl border border-line bg-surface px-4 py-3 shadow-[var(--shadow)]">
       <div className="flex items-end justify-between font-display font-bold uppercase leading-none tracking-wide">
         <span className="text-pitch">
-          <span className="text-3xl tabular-nums">{game.you.length}</span> <span className="text-sm text-muted">you</span>
+          <span className="text-3xl tabular-nums">{points.you}</span> <span className="text-sm text-muted">you</span>
         </span>
         <span className="text-xs tracking-[0.18em] text-muted">
-          Round {round}
-          {game.pot.length > 0 && <span className="text-near-ink"> · pot {game.pot.length}</span>}
+          Round {Math.min(round, ROUNDS)} of {ROUNDS}
         </span>
         <span className="text-leather">
-          <span className="text-sm text-muted">computer</span> <span className="text-3xl tabular-nums">{game.cpu.length}</span>
+          <span className="text-sm text-muted">computer</span> <span className="text-3xl tabular-nums">{points.cpu}</span>
         </span>
       </div>
       <div
-        className="mt-2 flex h-2.5 overflow-hidden rounded-full bg-surface-2"
+        className="mt-2.5 flex gap-1"
         role="img"
-        aria-label={`You hold ${game.you.length} cards, the computer ${game.cpu.length}${game.pot.length ? `, ${game.pot.length} in the pot` : ''}`}
+        aria-label={`You have ${points.you} points, the computer ${points.cpu}, after ${game.log.length} of ${ROUNDS} rounds`}
       >
-        <div className="bg-pitch transition-[width] duration-500" style={{ width: `${(100 * game.you.length) / total}%` }} />
-        <div className="bg-near transition-[width] duration-500" style={{ width: `${(100 * game.pot.length) / total}%` }} />
-        <div className="bg-leather transition-[width] duration-500" style={{ width: `${(100 * game.cpu.length) / total}%` }} />
+        {Array.from({ length: ROUNDS }, (_, i) => (
+          <span key={i} className={`h-2 flex-1 rounded-full transition-colors duration-500 ${game.log[i] ? PIP[game.log[i]] : 'bg-surface-2'}`} />
+        ))}
       </div>
     </div>
   )

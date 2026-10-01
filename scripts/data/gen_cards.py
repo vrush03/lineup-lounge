@@ -30,7 +30,7 @@ PUBLIC = os.path.join(HERE, '..', '..', 'public')
 OUT = os.path.join(HERE, '..', '..', 'src', 'data', 'cards.json')
 PLAYERS = os.path.join(HERE, 'cards_players.json')
 UA = {'User-Agent': 'LineupLounge/0.1 (cricket puzzle dataset build)'}
-DECK_SIZE = 30  # cards dealt per game (15 a side); a deck needs at least this many
+DECK_SIZE = 30  # cards dealt per game (15 a side, one per round); a deck needs at least this many
 
 STAT = {
     'matches': {'key': 'matches', 'label': 'Matches', 'short': 'Mat'},

@@ -3,13 +3,15 @@ import type { Card, Deck, StatDef } from './types'
 export type Side = 'you' | 'cpu'
 export type Outcome = Side | 'tie'
 
-/** Piles are card ids, top card first. `turn` is who names the stat for the next round. */
-export type Game = { you: string[]; cpu: string[]; pot: string[]; turn: Side; round: number }
+/** Hands are card ids, next card first. `log` is who took each round played so far. */
+export type Game = { you: string[]; cpu: string[]; log: Outcome[] }
 
-/** Cards each side starts with. */
-export const HAND = 15
+/** Rounds in a game, and so cards in each hand: every card is played once. */
+export const ROUNDS = 15
+/** Points for winning a round; a tied round splits them. */
+export const POINTS = 10
 /** How often the computer plays its card's strongest stat instead of a random one. */
-const CPU_SHARP = 0.75
+const CPU_SHARP = 0.35
 
 export function shuffle<T>(items: T[], rng: () => number = Math.random): T[] {
   const a = [...items]
@@ -20,13 +22,19 @@ export function shuffle<T>(items: T[], rng: () => number = Math.random): T[] {
   return a
 }
 
-/** Draw two hands' worth of cards from the deck at random and split them evenly. You name the first stat. */
+/** Draw two hands from the deck at random. */
 export function deal(deck: Deck, rng: () => number = Math.random): Game {
   const ids = shuffle(deck.cards, rng)
-    .slice(0, 2 * HAND)
+    .slice(0, 2 * ROUNDS)
     .map((c) => c.id)
-  return { you: ids.slice(0, HAND), cpu: ids.slice(HAND), pot: [], turn: 'you', round: 1 }
+  return { you: ids.slice(0, ROUNDS), cpu: ids.slice(ROUNDS), log: [] }
 }
+
+/** The round about to be played, from 1. */
+export const roundOf = (g: Game) => g.log.length + 1
+
+/** Who names the stat: you on the odd rounds, the computer on the even ones. */
+export const turnOf = (g: Game): Side => (g.log.length % 2 === 0 ? 'you' : 'cpu')
 
 export function compare(you: Card, cpu: Card, stat: string): Outcome {
   const a = you.stats[stat]
@@ -34,23 +42,21 @@ export function compare(you: Card, cpu: Card, stat: string): Outcome {
   return a > b ? 'you' : b > a ? 'cpu' : 'tie'
 }
 
-/**
- * Play the two top cards. The winner takes both, and anything in the pot, to the bottom of their
- * pile; a tie sends both cards to the pot for the next winner. The pick then passes to the other side.
- */
+/** Play the two top cards: both are used up and the outcome goes on the log. */
 export function playRound(g: Game, outcome: Outcome): Game {
-  const [mine, ...you] = g.you
-  const [theirs, ...cpu] = g.cpu
-  const next = { turn: g.turn === 'you' ? 'cpu' : 'you', round: g.round + 1 } as const
-  if (outcome === 'tie') return { you, cpu, pot: [...g.pot, mine, theirs], ...next }
-  if (outcome === 'you') return { you: [...you, mine, theirs, ...g.pot], cpu, pot: [], ...next }
-  return { you, cpu: [...cpu, theirs, mine, ...g.pot], pot: [], ...next }
+  return { you: g.you.slice(1), cpu: g.cpu.slice(1), log: [...g.log, outcome] }
 }
 
-/** Whoever still has cards once the other side has none; a draw if a tie emptied both piles. */
+export function score(g: Game): Record<Side, number> {
+  const points = (side: Side) => g.log.reduce((n, o) => n + (o === side ? POINTS : o === 'tie' ? POINTS / 2 : 0), 0)
+  return { you: points('you'), cpu: points('cpu') }
+}
+
+/** Once every round is played, whoever has more points; null while the game is still going. */
 export function winner(g: Game): Side | 'draw' | null {
-  if (g.you.length && g.cpu.length) return null
-  return g.you.length ? 'you' : g.cpu.length ? 'cpu' : 'draw'
+  if (g.log.length < ROUNDS) return null
+  const { you, cpu } = score(g)
+  return you > cpu ? 'you' : cpu > you ? 'cpu' : 'draw'
 }
 
 /** Share of the deck that a card beats on one stat: 1 = nobody is better, 0 = everybody is. */
@@ -59,7 +65,7 @@ export function strength(card: Card, stat: string, deck: Deck): number {
   return others.filter((c) => c.stats[stat] < card.stats[stat]).length / Math.max(1, others.length)
 }
 
-/** The computer's choice: usually the stat its card is strongest on, sometimes any stat. */
+/** The computer's choice: sometimes the stat its card is strongest on, more often any stat. */
 export function cpuPick(card: Card, deck: Deck, rng: () => number = Math.random): string {
   const keys = deck.stats.map((s) => s.key)
   if (rng() >= CPU_SHARP) return keys[Math.floor(rng() * keys.length)]
@@ -73,19 +79,20 @@ export function statText(card: Card, stat: StatDef): string {
   return stat.key === 'highest' && card.hsNotOut ? `${text}*` : text
 }
 
-/** A saved game is only good if it still holds a full deal of different cards that exist in the deck. */
+/** A saved game is only good if its hands are different cards from the deck and match the rounds played. */
 export function isGame(g: unknown, deck: Deck): g is Game {
   if (!g || typeof g !== 'object') return false
-  const { you, cpu, pot, turn, round } = g as Record<string, unknown>
-  const piles = [you, cpu, pot]
-  if (!piles.every((p): p is string[] => Array.isArray(p) && p.every((x) => typeof x === 'string'))) return false
-  const ids = piles.flat()
+  const { you, cpu, log } = g as Record<string, unknown>
+  const strings = (p: unknown): p is string[] => Array.isArray(p) && p.every((x) => typeof x === 'string')
+  if (!strings(you) || !strings(cpu) || !strings(log)) return false
+  const ids = [...you, ...cpu]
   const known = new Set(deck.cards.map((c) => c.id))
   return (
-    ids.length === 2 * HAND &&
+    log.length <= ROUNDS &&
+    log.every((o) => o === 'you' || o === 'cpu' || o === 'tie') &&
+    you.length === ROUNDS - log.length &&
+    cpu.length === you.length &&
     new Set(ids).size === ids.length &&
-    ids.every((id) => known.has(id)) &&
-    (turn === 'you' || turn === 'cpu') &&
-    typeof round === 'number'
+    ids.every((id) => known.has(id))
   )
 }

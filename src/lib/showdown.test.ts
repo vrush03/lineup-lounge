@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { z } from 'zod'
 import cards from '../data/cards.json'
 import { deckSchema } from './puzzleSchema'
-import { compare, cpuPick, deal, HAND, isGame, playRound, shuffle, statText, strength, winner, type Game } from './showdown'
+import { compare, cpuPick, deal, isGame, playRound, POINTS, roundOf, ROUNDS, score, shuffle, statText, strength, turnOf, winner, type Game } from './showdown'
 import { hasTeamStyle } from './teams'
 import { SHOWDOWN_FORMATS, type Card, type Deck } from './types'
 
@@ -29,7 +29,7 @@ const tiny: Deck = {
   ],
   cards: [card('a', 100, 0), card('b', 50, 9), card('c', 100, 5), card('d', 10, 1)],
 }
-const game = (g: Partial<Game>): Game => ({ you: [], cpu: [], pot: [], turn: 'you', round: 1, ...g })
+const game = (g: Partial<Game>): Game => ({ you: [], cpu: [], log: [], ...g })
 
 describe('a round', () => {
   it('goes to the higher number, or nobody on a tie', () => {
@@ -38,21 +38,24 @@ describe('a round', () => {
     expect(compare(a, b, 'wickets')).toBe('cpu')
     expect(compare(a, c, 'runs')).toBe('tie')
   })
-  it('sends both cards to the bottom of the winner’s pile and passes the pick', () => {
-    const g = playRound(game({ you: ['a', 'x'], cpu: ['b', 'y'] }), 'you')
-    expect(g).toEqual({ you: ['x', 'a', 'b'], cpu: ['y'], pot: [], turn: 'cpu', round: 2 })
-    expect(playRound(g, 'cpu')).toEqual({ you: ['a', 'b'], cpu: ['y', 'x'], pot: [], turn: 'you', round: 3 })
+  it('uses up both cards, logs the outcome and passes the pick', () => {
+    const g = game({ you: ['a', 'x'], cpu: ['b', 'y'] })
+    expect(turnOf(g)).toBe('you')
+    const next = playRound(g, 'you')
+    expect(next).toEqual({ you: ['x'], cpu: ['y'], log: ['you'] })
+    expect(turnOf(next)).toBe('cpu')
+    expect(roundOf(next)).toBe(2)
   })
-  it('holds tied cards in the pot for the next winner', () => {
-    const tied = playRound(game({ you: ['a', 'x'], cpu: ['c', 'y'] }), 'tie')
-    expect(tied).toMatchObject({ you: ['x'], cpu: ['y'], pot: ['a', 'c'], turn: 'cpu' })
-    expect(playRound(tied, 'cpu')).toMatchObject({ you: [], cpu: ['y', 'x', 'a', 'c'], pot: [] })
+  it('scores 10 for a round won and splits a tie', () => {
+    expect(score(game({ log: ['you', 'you', 'cpu', 'tie'] }))).toEqual({ you: 2 * POINTS + POINTS / 2, cpu: POINTS + POINTS / 2 })
+    expect(score(game({}))).toEqual({ you: 0, cpu: 0 })
   })
-  it('ends when a pile is empty', () => {
-    expect(winner(game({ you: ['a'], cpu: ['b'] }))).toBeNull()
-    expect(winner(game({ you: ['a', 'b'] }))).toBe('you')
-    expect(winner(game({ cpu: ['a'], pot: ['b', 'c'] }))).toBe('cpu')
-    expect(winner(game({ pot: ['a', 'b'] }))).toBe('draw')
+  it('is decided on points once every round is played', () => {
+    const log = (you: number, cpu: number) => [...Array(you).fill('you'), ...Array(cpu).fill('cpu'), ...Array(ROUNDS - you - cpu).fill('tie')]
+    expect(winner(game({ you: ['a'], cpu: ['b'], log: log(8, 6).slice(1) }))).toBeNull()
+    expect(winner(game({ log: log(8, 7) }))).toBe('you')
+    expect(winner(game({ log: log(5, 9) }))).toBe('cpu')
+    expect(winner(game({ log: log(7, 7) }))).toBe('draw')
   })
 })
 
@@ -65,6 +68,11 @@ describe('the computer', () => {
     expect(cpuPick(tiny.cards[1], tiny, () => 0)).toBe('wickets')
     expect(cpuPick(tiny.cards[0], tiny, () => 0)).toBe('runs')
     expect(cpuPick(tiny.cards[0], tiny, () => 0.99)).toBe('wickets')
+    // Mostly random, so it is beatable: its best stat comes up well under half the time on purpose.
+    const rng = seeded(3)
+    const sharp = Array.from({ length: 400 }, () => cpuPick(tiny.cards[1], tiny, rng)).filter((k) => k === 'wickets').length
+    expect(sharp).toBeGreaterThan(200)
+    expect(sharp).toBeLessThan(320)
   })
 })
 
@@ -84,7 +92,9 @@ describe('formatting and saves', () => {
     expect(isGame({ ...g, you: g.you.slice(1) }, deck)).toBe(false)
     expect(isGame({ ...g, you: ['nobody', ...g.you.slice(1)] }, deck)).toBe(false)
     expect(isGame({ ...g, cpu: g.you }, deck)).toBe(false)
-    expect(isGame({ ...g, turn: 'me' }, deck)).toBe(false)
+    expect(isGame({ ...g, log: ['me'] }, deck)).toBe(false)
+    // The winner-takes-the-cards version saved piles, a pot and a turn.
+    expect(isGame({ you: g.you, cpu: g.cpu, pot: [], turn: 'you', round: 1 }, deck)).toBe(false)
   })
 })
 
@@ -93,7 +103,7 @@ describe('card decks', () => {
     expect(decks.map((d) => d.format).sort()).toEqual([...SHOWDOWN_FORMATS].sort())
   })
   it.each(decks.map((d) => [d.format, d] as const))('%s deck is complete', (_, deck) => {
-    expect(deck.cards.length).toBeGreaterThanOrEqual(2 * HAND)
+    expect(deck.cards.length).toBeGreaterThanOrEqual(2 * ROUNDS)
     expect(new Set(deck.cards.map((c) => c.id)).size).toBe(deck.cards.length)
     expect(new Set(deck.cards.map((c) => c.name)).size).toBe(deck.cards.length)
     const keys = deck.stats.map((s) => s.key).sort()
@@ -109,25 +119,29 @@ describe('card decks', () => {
 })
 
 describe('whole games', () => {
-  /** Both sides play like the computer; returns the rounds it took. */
+  /** You pick at random, the computer plays as it does in the app; returns the final points. */
   function play(deck: Deck, seed: number) {
     const rng = seeded(seed)
     const byId = new Map(deck.cards.map((c) => [c.id, c]))
     let g = deal(deck, rng)
-    expect(g.you).toHaveLength(HAND)
-    expect(new Set([...g.you, ...g.cpu]).size).toBe(2 * HAND)
-    while (!winner(g) && g.round < 20000) {
+    expect(g.you).toHaveLength(ROUNDS)
+    expect(new Set([...g.you, ...g.cpu]).size).toBe(2 * ROUNDS)
+    while (!winner(g)) {
       const you = byId.get(g.you[0])!
       const cpu = byId.get(g.cpu[0])!
-      g = playRound(g, compare(you, cpu, cpuPick(g.turn === 'you' ? you : cpu, deck, rng)))
-      expect(g.you.length + g.cpu.length + g.pot.length).toBe(2 * HAND)
+      const stat = turnOf(g) === 'cpu' ? cpuPick(cpu, deck, rng) : deck.stats[Math.floor(rng() * deck.stats.length)].key
+      g = playRound(g, compare(you, cpu, stat))
     }
-    expect(winner(g)).not.toBeNull()
-    return g.round - 1
+    expect(g.log).toHaveLength(ROUNDS)
+    expect(g.you).toEqual([])
+    return score(g)
   }
 
-  it.each(decks.map((d) => [d.format, d] as const))('%s games always finish', (_, deck) => {
-    for (let seed = 1; seed <= 100; seed++) expect(play(deck, seed)).toBeGreaterThanOrEqual(HAND)
+  it.each(decks.map((d) => [d.format, d] as const))('%s games last 15 rounds and share out 150 points', (_, deck) => {
+    for (let seed = 1; seed <= 100; seed++) {
+      const { you, cpu } = play(deck, seed)
+      expect(you + cpu).toBe(ROUNDS * POINTS)
+    }
   })
 
   it('shuffles without losing cards', () => {

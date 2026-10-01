@@ -12,9 +12,9 @@ own stats and streak) and a practice mode, and Showdown is free play.
   guess, scored by how close it is (100 if exact, 75 at the question's margin, 0 from three margins
   off), with a number line showing where it landed.
 - **Showdown**: stat cards against the computer. Pick a format (ODI, T20I, Test or IPL); 30 cards
-  from that format's deck (64 to 100 players) are dealt 15 each. You and the computer take turns
-  naming a stat, the higher number takes both cards, and a tie leaves them in a pot for the next
-  winner. Whoever ends up with all 30 wins. A game in progress is saved per format.
+  from that format's deck (64 to 100 players) are dealt 15 each. Each round both sides play a card;
+  you and the computer take turns naming a stat, and the higher number scores 10 points (5 each on
+  a tie). Most points after 15 rounds wins. A game in progress is saved per format.
 
 ```bash
 npm install

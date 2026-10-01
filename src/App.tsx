@@ -8,7 +8,7 @@ import { StatsDialog } from './components/StatsDialog'
 import { dayNumber, puzzleIndex } from './lib/daily'
 import { loadPuzzles } from './lib/puzzles'
 import { MAX_POINTS, QUIZ_LENGTH } from './lib/quiz'
-import { HAND } from './lib/showdown'
+import { ROUNDS } from './lib/showdown'
 import {
   liveStreak,
   loadPref,
@@ -126,7 +126,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     {
       href: '#showdown',
       name: 'Showdown',
-      tagline: `Stat cards against the computer. Win all ${2 * HAND} to take the game.`,
+      tagline: `Stat cards against the computer. ${ROUNDS} rounds, most points wins.`,
       status: null,
       pill: showdownStats.played ? `Won ${showdownStats.won} of ${showdownStats.played}` : 'Play any time',
       streak: showdownStats.streak,
@@ -264,7 +264,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           ]}
           distTitle="Wins by format"
           dist={SHOWDOWN_FORMATS.map((f) => [f, showdownStats.wins[f] ?? 0] as [string, number])}
-          note={`A game counts once one side holds all ${2 * HAND} cards. The streak is games won in a row.`}
+          note={`A game counts once all ${ROUNDS} rounds are played. The streak is games won in a row; a draw ends it.`}
         />
       ) : (
         <StatsDialog

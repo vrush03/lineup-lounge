@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Showdown } from './Showdown'
 import { loadDecks } from '../lib/puzzles'
-import { HAND, isGame } from '../lib/showdown'
+import { isGame, POINTS, ROUNDS, score, winner } from '../lib/showdown'
 import { clearShowdown, loadShowdown } from '../lib/storage'
 import { FORMAT_STYLE, teamStyle } from '../lib/teams'
 import { SHOWDOWN_FORMATS, type Deck, type ShowdownFormat } from '../lib/types'
@@ -15,7 +15,7 @@ const BLURB: Record<ShowdownFormat, string> = {
   IPL: 'Franchise stars since 2008.',
 }
 
-/** Stat-card battle against the computer: pick a format, then play for all 20 cards. */
+/** Stat-card battle against the computer: pick a format, then play 15 rounds for points. */
 export function ShowdownMode({ onFinish }: Props) {
   const [decks, setDecks] = useState<Deck[] | null>(null)
   const [failed, setFailed] = useState(false)
@@ -38,7 +38,7 @@ export function ShowdownMode({ onFinish }: Props) {
       <div className="animate-rise">
         <h2 className="font-display text-3xl font-extrabold uppercase leading-none tracking-wide">Pick your format</h2>
         <p className="mt-2 text-sm text-muted">
-          You and the computer get {HAND} cards each. Take turns naming a stat: the higher number wins both cards. Hold all {2 * HAND} to win.
+          You and the computer get {ROUNDS} cards each. Take turns naming a stat: the higher number wins the round and {POINTS} points. Most points after {ROUNDS} rounds wins.
         </p>
         <ul className="mt-5 grid grid-cols-2 gap-3">
           {SHOWDOWN_FORMATS.flatMap((f) => decks.filter((d) => d.format === f)).map((d) => (
@@ -68,7 +68,7 @@ export function ShowdownMode({ onFinish }: Props) {
       </div>
       <Showdown key={`${deck.format}:${deal}`} deck={deck} onFinish={(won) => onFinish(deck.format, won)} onNewGame={restart} />
       <p className="mt-6 text-center text-xs text-muted">
-        {deck.cards.length} players in the {deck.format} deck, {2 * HAND} dealt at random each game. Stats from{' '}
+        {deck.cards.length} players in the {deck.format} deck, {2 * ROUNDS} dealt at random each game. Stats from{' '}
         <a className="underline decoration-line underline-offset-2 hover:text-ink" href={deck.source.url} target="_blank" rel="noreferrer">
           {deck.source.name}
         </a>{' '}
@@ -81,7 +81,7 @@ export function ShowdownMode({ onFinish }: Props) {
 function FormatTile({ deck, onPick }: { deck: Deck; onPick: () => void }) {
   const style = FORMAT_STYLE[deck.format]
   const saved = loadShowdown(deck.format)
-  const live = isGame(saved, deck) ? saved : null
+  const live = isGame(saved, deck) && !winner(saved) ? saved : null
   return (
     <button
       onClick={onPick}
@@ -105,7 +105,7 @@ function FormatTile({ deck, onPick }: { deck: Deck; onPick: () => void }) {
       <span className="block font-display text-4xl font-extrabold uppercase leading-none tracking-wide">{deck.format}</span>
       <span className="mt-1.5 block text-xs leading-snug opacity-80">{BLURB[deck.format]}</span>
       <span className="mt-3 inline-block rounded-full bg-black/20 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider">
-        {live ? `Resume · ${live.you.length} v ${live.cpu.length}` : `${deck.cards.length} players`}
+        {live ? `Resume · ${score(live).you} v ${score(live).cpu}` : `${deck.cards.length} players`}
       </span>
     </button>
   )

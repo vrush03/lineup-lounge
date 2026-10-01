@@ -28,7 +28,8 @@ same three on every PR and on `main`. Node version is pinned in `.nvmrc`.
   - `score.ts`: marks each row `correct` / `near` (one place off) / `wrong`.
   - `quiz.ts`: answer matching, points (closeness for numbers; 100/50/0 for names) and their
     colour bands, daily question picks, autocomplete.
-  - `showdown.ts`: the card game: deal, round outcome, pot, the computer's pick, saved-game check.
+  - `showdown.ts`: the card game: deal, round outcome, points (`ROUNDS` rounds of `POINTS`), the
+    computer's pick, saved-game check.
   - `daily.ts`: maps the local calendar date to a puzzle index.
   - `storage.ts`: every `localStorage` read and write goes through here.
   - `puzzleSchema.ts` (zod) and `types.ts`: the puzzle shape.
