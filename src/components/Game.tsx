@@ -77,6 +77,8 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
   const [attempts, setAttempts] = useState<Mark[][]>(saved?.attempts ?? [])
   const [lastGuess, setLastGuess] = useState<string[]>(() => saved?.guess ?? [])
   const [justFinished, setJustFinished] = useState(false)
+  // Marks pop or shake once when a guess is submitted, not again each time a row is moved.
+  const [fresh, setFresh] = useState(false)
 
   const solved = attempts.length > 0 && isSolved(attempts[attempts.length - 1])
   const over = solved || attempts.length >= MAX_ATTEMPTS
@@ -111,10 +113,12 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
 
   function onDragEnd({ active, over: target }: DragEndEvent) {
     if (!target || active.id === target.id) return
+    setFresh(false)
     setOrder((o) => moveAround(o, locked, o.findIndex((i) => i.label === active.id), o.findIndex((i) => i.label === target.id)))
   }
 
   function move(index: number, dir: -1 | 1) {
+    setFresh(false)
     setOrder((o) => moveAround(o, locked, index, freeSlot(o.length, locked, index, dir)))
   }
 
@@ -123,6 +127,7 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
     const next = [...attempts, marks]
     setLastGuess(order.map((i) => i.label))
     setAttempts(next)
+    setFresh(true)
     if (isSolved(marks) || next.length >= MAX_ATTEMPTS) {
       setJustFinished(true)
       onFinish?.(isSolved(marks), next.length)
@@ -168,6 +173,7 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
                 rank={i + 1}
                 mark={over ? undefined : markByLabel.get(item.label)}
                 pulse={attempts.length}
+                animate={fresh}
                 revealed={over}
                 revealDelay={i * 90}
                 disabled={over || locked.has(i)}

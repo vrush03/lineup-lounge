@@ -12,6 +12,8 @@ type Props = {
   mark?: Mark
   /** Bumped after each submit so marks re-animate. */
   pulse: number
+  /** Play the mark's pop or shake; off once rows start moving, as reordering would replay it. */
+  animate: boolean
   revealed: boolean
   revealDelay: number
   disabled: boolean
@@ -27,13 +29,13 @@ const MARK_STYLE: Record<Mark, string> = {
 }
 const MARK_LABEL: Record<Mark, string> = { correct: 'Right spot', near: 'One place off', wrong: 'Two or more places off' }
 
-export function Row({ item, rank, mark, pulse, revealed, revealDelay, disabled, canUp, canDown, onMove }: Props) {
+export function Row({ item, rank, mark, pulse, animate, revealed, revealDelay, disabled, canUp, canDown, onMove }: Props) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: item.label,
     disabled,
   })
   const tone = mark ? MARK_STYLE[mark] : 'border-line bg-surface'
-  const anim = mark === 'correct' ? 'animate-pop' : mark === 'wrong' ? 'animate-shake' : ''
+  const anim = !animate ? '' : mark === 'correct' ? 'animate-pop' : mark === 'wrong' ? 'animate-shake' : ''
   // Before the reveal show who they played for (not for team rows, where it would just repeat the name).
   const meta = revealed ? item.note : item.team && !item.label.includes(item.team) ? item.team : undefined
 
