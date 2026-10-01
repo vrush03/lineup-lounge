@@ -10,13 +10,14 @@ import {
   type DragEndEvent,
 } from '@dnd-kit/core'
 import { restrictToVerticalAxis, restrictToParentElement } from '@dnd-kit/modifiers'
-import { SortableContext, arrayMove, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable'
+import { SortableContext, sortableKeyboardCoordinates, type SortingStrategy } from '@dnd-kit/sortable'
 import { Row } from './Row'
 import { MarkIcon } from './MarkIcon'
 import { ResultPanel } from './ResultPanel'
 import { FormatBadge } from './FormatBadge'
 import { isSolved, scoreGuess, solution, type Mark } from '../lib/score'
-import { loadGame, saveGame } from '../lib/storage'
+import { freeSlot, moveAround } from '../lib/reorder'
+import { loadGame, saveGame, type Saved } from '../lib/storage'
 import type { Item, Puzzle } from '../lib/types'
 
 export const MAX_ATTEMPTS = 5
@@ -30,13 +31,39 @@ type Props = {
   onNext?: () => void
 }
 
-function initialOrder(puzzle: Puzzle, saved: string[] | undefined): Item[] {
+function initialOrder(puzzle: Puzzle, saved: Saved | null): Item[] {
   if (saved) {
     const byLabel = new Map(puzzle.items.map((i) => [i.label, i]))
-    const restored = saved.map((l) => byLabel.get(l)).filter((i): i is Item => !!i)
-    if (restored.length === puzzle.items.length) return restored
+    const restore = (labels: string[]) => {
+      const items = labels.map((l) => byLabel.get(l)).filter((i): i is Item => !!i)
+      return items.length === puzzle.items.length ? items : null
+    }
+    const restored = restore(saved.labels)
+    // Right answers are locked in place now; a game saved before that may have moved one, so put it back.
+    const last = saved.attempts[saved.attempts.length - 1]
+    const guess = saved.guess
+    const moved = restored && guess && last?.some((m, i) => m === 'correct' && restored[i].label !== guess[i])
+    const order = moved ? restore(guess) : restored
+    if (order) return order
   }
   return [...puzzle.items]
+}
+
+/**
+ * Like dnd-kit's vertical list strategy, but the rows make way around the locked slots
+ * instead of pushing them along.
+ */
+function sortingAround(locked: ReadonlySet<number>): SortingStrategy {
+  return ({ rects, activeIndex, overIndex, index }) => {
+    if (rects.length < 2 || rects.some((r) => !r)) return null
+    const gap = rects[1].top - rects[0].top - rects[0].height
+    let top = rects[0].top
+    for (const i of moveAround(rects.map((_, k) => k), locked, activeIndex, overIndex)) {
+      if (i === index) break
+      top += rects[i].height + gap
+    }
+    return { x: 0, y: top - rects[index].top, scaleX: 1, scaleY: 1 }
+  }
 }
 
 function railLabels(p: Puzzle): [string, string] {
@@ -46,7 +73,7 @@ function railLabels(p: Puzzle): [string, string] {
 
 export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
   const saved = useMemo(() => (storageKey ? loadGame(storageKey) : null), [storageKey])
-  const [order, setOrder] = useState(() => initialOrder(puzzle, saved?.labels))
+  const [order, setOrder] = useState(() => initialOrder(puzzle, saved))
   const [attempts, setAttempts] = useState<Mark[][]>(saved?.attempts ?? [])
   const [lastGuess, setLastGuess] = useState<string[]>(() => saved?.guess ?? [])
   const [justFinished, setJustFinished] = useState(false)
@@ -64,6 +91,13 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
     return m
   }, [attempts, lastGuess])
 
+  // A row marked right stays where it is for the rest of the round.
+  const locked = useMemo(
+    () => new Set(order.flatMap((item, i) => (lastGuess[i] === item.label && markByLabel.get(item.label) === 'correct' ? [i] : []))),
+    [order, lastGuess, markByLabel],
+  )
+  const strategy = useMemo(() => sortingAround(locked), [locked])
+
   useEffect(() => {
     if (storageKey) saveGame(storageKey, { labels: order.map((i) => i.label), attempts, guess: lastGuess })
   }, [storageKey, order, attempts, lastGuess])
@@ -77,11 +111,11 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
 
   function onDragEnd({ active, over: target }: DragEndEvent) {
     if (!target || active.id === target.id) return
-    setOrder((o) => arrayMove(o, o.findIndex((i) => i.label === active.id), o.findIndex((i) => i.label === target.id)))
+    setOrder((o) => moveAround(o, locked, o.findIndex((i) => i.label === active.id), o.findIndex((i) => i.label === target.id)))
   }
 
   function move(index: number, dir: -1 | 1) {
-    setOrder((o) => arrayMove(o, index, index + dir))
+    setOrder((o) => moveAround(o, locked, index, freeSlot(o.length, locked, index, dir)))
   }
 
   function submit() {
@@ -125,7 +159,7 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
         onDragEnd={onDragEnd}
         modifiers={[restrictToVerticalAxis, restrictToParentElement]}
       >
-        <SortableContext items={shown.map((i) => i.label)} strategy={verticalListSortingStrategy}>
+        <SortableContext items={shown.map((i) => i.label)} strategy={strategy}>
           <ol className="my-2 space-y-2">
             {shown.map((item, i) => (
               <Row
@@ -136,9 +170,9 @@ export function Game({ puzzle, storageKey, day, onFinish, onNext }: Props) {
                 pulse={attempts.length}
                 revealed={over}
                 revealDelay={i * 90}
-                disabled={over}
-                canUp={i > 0}
-                canDown={i < shown.length - 1}
+                disabled={over || locked.has(i)}
+                canUp={freeSlot(shown.length, locked, i, -1) >= 0}
+                canDown={freeSlot(shown.length, locked, i, 1) >= 0}
                 onMove={(d) => move(i, d)}
               />
             ))}
