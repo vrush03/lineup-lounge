@@ -1,0 +1,5469 @@
+[
+ {
+  "format": "Test",
+  "asOf": "2026-10-01",
+  "source": {
+   "name": "Wikipedia player infoboxes",
+   "url": "https://en.wikipedia.org/wiki/Category:Cricketers",
+   "license": "CC BY-SA 4.0"
+  },
+  "stats": [
+   {
+    "key": "matches",
+    "label": "Matches",
+    "short": "Mat"
+   },
+   {
+    "key": "runs",
+    "label": "Runs",
+    "short": "Runs"
+   },
+   {
+    "key": "average",
+    "label": "Batting average",
+    "short": "Avg",
+    "decimals": 2
+   },
+   {
+    "key": "hundreds",
+    "label": "Hundreds",
+    "short": "100s"
+   },
+   {
+    "key": "highest",
+    "label": "Highest score",
+    "short": "HS"
+   },
+   {
+    "key": "wickets",
+    "label": "Wickets",
+    "short": "Wkts"
+   },
+   {
+    "key": "catches",
+    "label": "Catches",
+    "short": "Ct"
+   }
+  ],
+  "cards": [
+   {
+    "id": "sachin-tendulkar",
+    "name": "Sachin Tendulkar",
+    "team": "India",
+    "stats": {
+     "matches": 200,
+     "runs": 15921,
+     "average": 53.78,
+     "hundreds": 51,
+     "highest": 248,
+     "wickets": 46,
+     "catches": 115
+    },
+    "photo": "/players/sachin-tendulkar.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ricky-ponting",
+    "name": "Ricky Ponting",
+    "team": "Australia",
+    "stats": {
+     "matches": 168,
+     "runs": 13378,
+     "average": 51.85,
+     "hundreds": 41,
+     "highest": 257,
+     "wickets": 5,
+     "catches": 196
+    },
+    "photo": "/players/ricky-ponting.jpg"
+   },
+   {
+    "id": "jacques-kallis",
+    "name": "Jacques Kallis",
+    "team": "South Africa",
+    "stats": {
+     "matches": 166,
+     "runs": 13289,
+     "average": 55.37,
+     "hundreds": 45,
+     "highest": 224,
+     "wickets": 292,
+     "catches": 200
+    },
+    "photo": "/players/jacques-kallis.jpg"
+   },
+   {
+    "id": "rahul-dravid",
+    "name": "Rahul Dravid",
+    "team": "India",
+    "stats": {
+     "matches": 164,
+     "runs": 13288,
+     "average": 52.31,
+     "hundreds": 36,
+     "highest": 270,
+     "wickets": 1,
+     "catches": 210
+    },
+    "photo": "/players/rahul-dravid.jpg"
+   },
+   {
+    "id": "alastair-cook",
+    "name": "Alastair Cook",
+    "team": "England",
+    "stats": {
+     "matches": 161,
+     "runs": 12472,
+     "average": 45.35,
+     "hundreds": 33,
+     "highest": 294,
+     "wickets": 1,
+     "catches": 175
+    },
+    "photo": "/players/alastair-cook.jpg"
+   },
+   {
+    "id": "kumar-sangakkara",
+    "name": "Kumar Sangakkara",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 134,
+     "runs": 12400,
+     "average": 57.4,
+     "hundreds": 38,
+     "highest": 319,
+     "wickets": 0,
+     "catches": 182
+    },
+    "photo": "/players/kumar-sangakkara.jpg"
+   },
+   {
+    "id": "brian-lara",
+    "name": "Brian Lara",
+    "team": "West Indies",
+    "stats": {
+     "matches": 131,
+     "runs": 11953,
+     "average": 52.88,
+     "hundreds": 34,
+     "highest": 400,
+     "wickets": 0,
+     "catches": 164
+    },
+    "photo": "/players/brian-lara.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "joe-root",
+    "name": "Joe Root",
+    "team": "England",
+    "stats": {
+     "matches": 169,
+     "runs": 14278,
+     "average": 50.45,
+     "hundreds": 41,
+     "highest": 262,
+     "wickets": 74,
+     "catches": 220
+    },
+    "photo": "/players/joe-root.webp"
+   },
+   {
+    "id": "steve-smith",
+    "name": "Steve Smith",
+    "team": "Australia",
+    "stats": {
+     "matches": 125,
+     "runs": 10920,
+     "average": 56.0,
+     "hundreds": 37,
+     "highest": 239,
+     "wickets": 19,
+     "catches": 219
+    },
+    "photo": "/players/steve-smith.jpg"
+   },
+   {
+    "id": "virat-kohli",
+    "name": "Virat Kohli",
+    "team": "India",
+    "stats": {
+     "matches": 123,
+     "runs": 9230,
+     "average": 46.85,
+     "hundreds": 30,
+     "highest": 254,
+     "wickets": 0,
+     "catches": 121
+    },
+    "photo": "/players/virat-kohli.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kane-williamson",
+    "name": "Kane Williamson",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 110,
+     "runs": 9515,
+     "average": 54.06,
+     "hundreds": 33,
+     "highest": 251,
+     "wickets": 30,
+     "catches": 96
+    },
+    "photo": "/players/kane-williamson.jpg"
+   },
+   {
+    "id": "younis-khan",
+    "name": "Younis Khan",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 118,
+     "runs": 10099,
+     "average": 52.05,
+     "hundreds": 34,
+     "highest": 313,
+     "wickets": 9,
+     "catches": 139
+    },
+    "photo": "/players/younis-khan.jpg"
+   },
+   {
+    "id": "sunil-gavaskar",
+    "name": "Sunil Gavaskar",
+    "team": "India",
+    "stats": {
+     "matches": 125,
+     "runs": 10122,
+     "average": 51.12,
+     "hundreds": 34,
+     "highest": 236,
+     "wickets": 1,
+     "catches": 108
+    },
+    "photo": "/players/sunil-gavaskar.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "viv-richards",
+    "name": "Viv Richards",
+    "team": "West Indies",
+    "stats": {
+     "matches": 121,
+     "runs": 8540,
+     "average": 50.23,
+     "hundreds": 24,
+     "highest": 291,
+     "wickets": 32,
+     "catches": 122
+    },
+    "photo": "/players/viv-richards.jpg"
+   },
+   {
+    "id": "don-bradman",
+    "name": "Don Bradman",
+    "team": "Australia",
+    "stats": {
+     "matches": 52,
+     "runs": 6996,
+     "average": 99.94,
+     "hundreds": 29,
+     "highest": 334,
+     "wickets": 2,
+     "catches": 32
+    },
+    "photo": "/players/don-bradman.jpg"
+   },
+   {
+    "id": "mahela-jayawardene",
+    "name": "Mahela Jayawardene",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 149,
+     "runs": 11814,
+     "average": 49.84,
+     "hundreds": 34,
+     "highest": 374,
+     "wickets": 6,
+     "catches": 205
+    },
+    "photo": "/players/mahela-jayawardene.jpg"
+   },
+   {
+    "id": "shivnarine-chanderpaul",
+    "name": "Shivnarine Chanderpaul",
+    "team": "West Indies",
+    "stats": {
+     "matches": 164,
+     "runs": 11867,
+     "average": 51.37,
+     "hundreds": 30,
+     "highest": 203,
+     "wickets": 9,
+     "catches": 66
+    },
+    "photo": "/players/shivnarine-chanderpaul.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "allan-border",
+    "name": "Allan Border",
+    "team": "Australia",
+    "stats": {
+     "matches": 156,
+     "runs": 11174,
+     "average": 50.56,
+     "hundreds": 27,
+     "highest": 205,
+     "wickets": 39,
+     "catches": 156
+    },
+    "photo": "/players/allan-border.jpg"
+   },
+   {
+    "id": "steve-waugh",
+    "name": "Steve Waugh",
+    "team": "Australia",
+    "stats": {
+     "matches": 168,
+     "runs": 10927,
+     "average": 51.06,
+     "hundreds": 32,
+     "highest": 200,
+     "wickets": 92,
+     "catches": 112
+    },
+    "photo": "/players/steve-waugh.jpg"
+   },
+   {
+    "id": "hashim-amla",
+    "name": "Hashim Amla",
+    "team": "South Africa",
+    "stats": {
+     "matches": 124,
+     "runs": 9282,
+     "average": 46.64,
+     "hundreds": 28,
+     "highest": 311,
+     "wickets": 0,
+     "catches": 108
+    },
+    "photo": "/players/hashim-amla.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "graeme-smith",
+    "name": "Graeme Smith",
+    "team": "South Africa",
+    "stats": {
+     "matches": 117,
+     "runs": 9265,
+     "average": 48.25,
+     "hundreds": 27,
+     "highest": 277,
+     "wickets": 8,
+     "catches": 169
+    },
+    "photo": "/players/graeme-smith.jpg"
+   },
+   {
+    "id": "ab-de-villiers",
+    "name": "AB de Villiers",
+    "team": "South Africa",
+    "stats": {
+     "matches": 114,
+     "runs": 8765,
+     "average": 50.66,
+     "hundreds": 22,
+     "highest": 278,
+     "wickets": 2,
+     "catches": 222
+    },
+    "photo": "/players/ab-de-villiers.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "virender-sehwag",
+    "name": "Virender Sehwag",
+    "team": "India",
+    "stats": {
+     "matches": 104,
+     "runs": 8586,
+     "average": 49.34,
+     "hundreds": 23,
+     "highest": 319,
+     "wickets": 40,
+     "catches": 91
+    },
+    "photo": "/players/virender-sehwag.jpg"
+   },
+   {
+    "id": "vvs-laxman",
+    "name": "VVS Laxman",
+    "team": "India",
+    "stats": {
+     "matches": 134,
+     "runs": 8781,
+     "average": 45.97,
+     "hundreds": 17,
+     "highest": 281,
+     "wickets": 2,
+     "catches": 135
+    },
+    "photo": "/players/vvs-laxman.jpg"
+   },
+   {
+    "id": "matthew-hayden",
+    "name": "Matthew Hayden",
+    "team": "Australia",
+    "stats": {
+     "matches": 103,
+     "runs": 8625,
+     "average": 50.73,
+     "hundreds": 30,
+     "highest": 380,
+     "wickets": 0,
+     "catches": 128
+    },
+    "photo": "/players/matthew-hayden.jpg"
+   },
+   {
+    "id": "kevin-pietersen",
+    "name": "Kevin Pietersen",
+    "team": "England",
+    "stats": {
+     "matches": 104,
+     "runs": 8181,
+     "average": 47.28,
+     "hundreds": 23,
+     "highest": 227,
+     "wickets": 10,
+     "catches": 62
+    },
+    "photo": "/players/kevin-pietersen.jpg"
+   },
+   {
+    "id": "david-warner",
+    "name": "David Warner",
+    "team": "Australia",
+    "stats": {
+     "matches": 112,
+     "runs": 8786,
+     "average": 44.59,
+     "hundreds": 26,
+     "highest": 335,
+     "wickets": 4,
+     "catches": 91
+    },
+    "photo": "/players/david-warner.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "inzamam-ul-haq",
+    "name": "Inzamam-ul-Haq",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 120,
+     "runs": 8830,
+     "average": 49.6,
+     "hundreds": 25,
+     "highest": 329,
+     "wickets": 0,
+     "catches": 81
+    },
+    "photo": "/players/inzamam-ul-haq.jpg"
+   },
+   {
+    "id": "javed-miandad",
+    "name": "Javed Miandad",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 124,
+     "runs": 8832,
+     "average": 52.57,
+     "hundreds": 23,
+     "highest": 280,
+     "wickets": 17,
+     "catches": 93
+    },
+    "photo": "/players/javed-miandad.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "graham-gooch",
+    "name": "Graham Gooch",
+    "team": "England",
+    "stats": {
+     "matches": 118,
+     "runs": 8900,
+     "average": 42.58,
+     "hundreds": 20,
+     "highest": 333,
+     "wickets": 23,
+     "catches": 103
+    },
+    "photo": "/players/graham-gooch.jpg"
+   },
+   {
+    "id": "garfield-sobers",
+    "name": "Garfield Sobers",
+    "team": "West Indies",
+    "stats": {
+     "matches": 93,
+     "runs": 8032,
+     "average": 57.78,
+     "hundreds": 26,
+     "highest": 365,
+     "wickets": 235,
+     "catches": 109
+    },
+    "photo": "/players/garfield-sobers.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "adam-gilchrist",
+    "name": "Adam Gilchrist",
+    "team": "Australia",
+    "stats": {
+     "matches": 96,
+     "runs": 5570,
+     "average": 47.6,
+     "hundreds": 17,
+     "highest": 204,
+     "wickets": 0,
+     "catches": 379
+    },
+    "photo": "/players/adam-gilchrist.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "sourav-ganguly",
+    "name": "Sourav Ganguly",
+    "team": "India",
+    "stats": {
+     "matches": 113,
+     "runs": 7212,
+     "average": 42.17,
+     "hundreds": 16,
+     "highest": 239,
+     "wickets": 32,
+     "catches": 71
+    },
+    "photo": "/players/sourav-ganguly.jpg"
+   },
+   {
+    "id": "cheteshwar-pujara",
+    "name": "Cheteshwar Pujara",
+    "team": "India",
+    "stats": {
+     "matches": 103,
+     "runs": 7195,
+     "average": 43.6,
+     "hundreds": 19,
+     "highest": 206,
+     "wickets": 0,
+     "catches": 66
+    },
+    "photo": "/players/cheteshwar-pujara.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ross-taylor",
+    "name": "Ross Taylor",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 112,
+     "runs": 7683,
+     "average": 44.66,
+     "hundreds": 19,
+     "highest": 290,
+     "wickets": 3,
+     "catches": 163
+    },
+    "photo": "/players/ross-taylor.jpg"
+   },
+   {
+    "id": "angelo-mathews",
+    "name": "Angelo Mathews",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 119,
+     "runs": 8214,
+     "average": 44.4,
+     "hundreds": 16,
+     "highest": 200,
+     "wickets": 33,
+     "catches": 78
+    },
+    "photo": "/players/angelo-mathews.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "justin-langer",
+    "name": "Justin Langer",
+    "team": "Australia",
+    "stats": {
+     "matches": 105,
+     "runs": 7696,
+     "average": 45.27,
+     "hundreds": 23,
+     "highest": 250,
+     "wickets": 0,
+     "catches": 73
+    },
+    "photo": "/players/justin-langer.jpg"
+   },
+   {
+    "id": "mark-waugh",
+    "name": "Mark Waugh",
+    "team": "Australia",
+    "stats": {
+     "matches": 128,
+     "runs": 8029,
+     "average": 41.81,
+     "hundreds": 20,
+     "highest": 153,
+     "wickets": 59,
+     "catches": 181
+    },
+    "photo": "/players/mark-waugh.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "greg-chappell",
+    "name": "Greg Chappell",
+    "team": "Australia",
+    "stats": {
+     "matches": 87,
+     "runs": 7110,
+     "average": 53.86,
+     "hundreds": 24,
+     "highest": 247,
+     "wickets": 47,
+     "catches": 122
+    },
+    "photo": "/players/greg-chappell.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "clive-lloyd",
+    "name": "Clive Lloyd",
+    "team": "West Indies",
+    "stats": {
+     "matches": 110,
+     "runs": 7515,
+     "average": 46.67,
+     "hundreds": 19,
+     "highest": 242,
+     "wickets": 10,
+     "catches": 90
+    },
+    "photo": "/players/clive-lloyd.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "gordon-greenidge",
+    "name": "Gordon Greenidge",
+    "team": "West Indies",
+    "stats": {
+     "matches": 108,
+     "runs": 7558,
+     "average": 44.72,
+     "hundreds": 19,
+     "highest": 226,
+     "wickets": 0,
+     "catches": 96
+    }
+   },
+   {
+    "id": "desmond-haynes",
+    "name": "Desmond Haynes",
+    "team": "West Indies",
+    "stats": {
+     "matches": 116,
+     "runs": 7487,
+     "average": 42.29,
+     "hundreds": 18,
+     "highest": 184,
+     "wickets": 1,
+     "catches": 65
+    },
+    "photo": "/players/desmond-haynes.jpg"
+   },
+   {
+    "id": "david-gower",
+    "name": "David Gower",
+    "team": "England",
+    "stats": {
+     "matches": 117,
+     "runs": 8231,
+     "average": 44.25,
+     "hundreds": 18,
+     "highest": 215,
+     "wickets": 1,
+     "catches": 74
+    },
+    "photo": "/players/david-gower.jpg"
+   },
+   {
+    "id": "geoffrey-boycott",
+    "name": "Geoffrey Boycott",
+    "team": "England",
+    "stats": {
+     "matches": 108,
+     "runs": 8114,
+     "average": 47.72,
+     "hundreds": 22,
+     "highest": 246,
+     "wickets": 7,
+     "catches": 33
+    },
+    "photo": "/players/geoffrey-boycott.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "len-hutton",
+    "name": "Len Hutton",
+    "team": "England",
+    "stats": {
+     "matches": 79,
+     "runs": 6971,
+     "average": 56.67,
+     "hundreds": 19,
+     "highest": 364,
+     "wickets": 3,
+     "catches": 57
+    },
+    "photo": "/players/len-hutton.jpg"
+   },
+   {
+    "id": "wally-hammond",
+    "name": "Wally Hammond",
+    "team": "England",
+    "stats": {
+     "matches": 85,
+     "runs": 7249,
+     "average": 58.45,
+     "hundreds": 22,
+     "highest": 336,
+     "wickets": 83,
+     "catches": 110
+    },
+    "photo": "/players/wally-hammond.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jack-hobbs",
+    "name": "Jack Hobbs",
+    "team": "England",
+    "stats": {
+     "matches": 61,
+     "runs": 5410,
+     "average": 56.94,
+     "hundreds": 15,
+     "highest": 211,
+     "wickets": 1,
+     "catches": 17
+    },
+    "photo": "/players/jack-hobbs.jpg"
+   },
+   {
+    "id": "michael-hussey",
+    "name": "Michael Hussey",
+    "team": "Australia",
+    "stats": {
+     "matches": 79,
+     "runs": 6235,
+     "average": 51.52,
+     "hundreds": 19,
+     "highest": 195,
+     "wickets": 7,
+     "catches": 85
+    },
+    "photo": "/players/michael-hussey.jpg"
+   },
+   {
+    "id": "andrew-strauss",
+    "name": "Andrew Strauss",
+    "team": "England",
+    "stats": {
+     "matches": 100,
+     "runs": 7037,
+     "average": 40.91,
+     "hundreds": 21,
+     "highest": 177,
+     "wickets": 0,
+     "catches": 121
+    },
+    "photo": "/players/andrew-strauss.jpg"
+   },
+   {
+    "id": "chris-gayle",
+    "name": "Chris Gayle",
+    "team": "West Indies",
+    "stats": {
+     "matches": 103,
+     "runs": 7214,
+     "average": 42.18,
+     "hundreds": 15,
+     "highest": 333,
+     "wickets": 73,
+     "catches": 96
+    },
+    "photo": "/players/chris-gayle.jpg"
+   },
+   {
+    "id": "brendon-mccullum",
+    "name": "Brendon McCullum",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 101,
+     "runs": 6453,
+     "average": 38.64,
+     "hundreds": 12,
+     "highest": 302,
+     "wickets": 1,
+     "catches": 198
+    },
+    "photo": "/players/brendon-mccullum.jpg"
+   },
+   {
+    "id": "ms-dhoni",
+    "name": "MS Dhoni",
+    "team": "India",
+    "stats": {
+     "matches": 90,
+     "runs": 4876,
+     "average": 38.09,
+     "hundreds": 6,
+     "highest": 224,
+     "wickets": 0,
+     "catches": 256
+    },
+    "photo": "/players/ms-dhoni.jpg"
+   },
+   {
+    "id": "babar-azam",
+    "name": "Babar Azam",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 66,
+     "runs": 4771,
+     "average": 42.98,
+     "hundreds": 9,
+     "highest": 196,
+     "wickets": 2,
+     "catches": 54
+    },
+    "photo": "/players/babar-azam.jpg"
+   },
+   {
+    "id": "rohit-sharma",
+    "name": "Rohit Sharma",
+    "team": "India",
+    "stats": {
+     "matches": 67,
+     "runs": 4301,
+     "average": 40.57,
+     "hundreds": 12,
+     "highest": 212,
+     "wickets": 2,
+     "catches": 68
+    },
+    "photo": "/players/rohit-sharma.jpg"
+   },
+   {
+    "id": "marnus-labuschagne",
+    "name": "Marnus Labuschagne",
+    "team": "Australia",
+    "stats": {
+     "matches": 65,
+     "runs": 4730,
+     "average": 43.79,
+     "hundreds": 11,
+     "highest": 215,
+     "wickets": 14,
+     "catches": 52
+    },
+    "photo": "/players/marnus-labuschagne.jpg"
+   },
+   {
+    "id": "travis-head",
+    "name": "Travis Head",
+    "team": "Australia",
+    "stats": {
+     "matches": 67,
+     "runs": 4653,
+     "average": 43.08,
+     "hundreds": 12,
+     "highest": 175,
+     "wickets": 16,
+     "catches": 35
+    },
+    "photo": "/players/travis-head.jpg"
+   },
+   {
+    "id": "rishabh-pant",
+    "name": "Rishabh Pant",
+    "team": "India",
+    "stats": {
+     "matches": 48,
+     "runs": 3662,
+     "average": 43.5,
+     "hundreds": 8,
+     "highest": 159,
+     "wickets": 0,
+     "catches": 158
+    },
+    "photo": "/players/rishabh-pant.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ajinkya-rahane",
+    "name": "Ajinkya Rahane",
+    "team": "India",
+    "stats": {
+     "matches": 85,
+     "runs": 5077,
+     "average": 38.46,
+     "hundreds": 12,
+     "highest": 188,
+     "wickets": 0,
+     "catches": 102
+    },
+    "photo": "/players/ajinkya-rahane.jpg"
+   },
+   {
+    "id": "martin-crowe",
+    "name": "Martin Crowe",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 77,
+     "runs": 5444,
+     "average": 45.36,
+     "hundreds": 17,
+     "highest": 299,
+     "wickets": 14,
+     "catches": 71
+    },
+    "photo": "/players/martin-crowe.jpg"
+   },
+   {
+    "id": "andy-flower",
+    "name": "Andy Flower",
+    "team": "Zimbabwe",
+    "stats": {
+     "matches": 63,
+     "runs": 4794,
+     "average": 51.54,
+     "hundreds": 12,
+     "highest": 232,
+     "wickets": 0,
+     "catches": 151
+    },
+    "photo": "/players/andy-flower.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "aravinda-de-silva",
+    "name": "Aravinda de Silva",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 93,
+     "runs": 6361,
+     "average": 42.97,
+     "hundreds": 20,
+     "highest": 267,
+     "wickets": 29,
+     "catches": 43
+    },
+    "photo": "/players/aravinda-de-silva.jpg"
+   },
+   {
+    "id": "mohammad-azharuddin",
+    "name": "Mohammad Azharuddin",
+    "team": "India",
+    "stats": {
+     "matches": 99,
+     "runs": 6215,
+     "average": 45.03,
+     "hundreds": 22,
+     "highest": 199,
+     "wickets": 0,
+     "catches": 105
+    },
+    "photo": "/players/mohammad-azharuddin.jpg"
+   },
+   {
+    "id": "dilip-vengsarkar",
+    "name": "Dilip Vengsarkar",
+    "team": "India",
+    "stats": {
+     "matches": 116,
+     "runs": 6868,
+     "average": 42.13,
+     "hundreds": 17,
+     "highest": 166,
+     "wickets": 0,
+     "catches": 78
+    },
+    "photo": "/players/dilip-vengsarkar.jpg"
+   },
+   {
+    "id": "sanath-jayasuriya",
+    "name": "Sanath Jayasuriya",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 110,
+     "runs": 6973,
+     "average": 40.07,
+     "hundreds": 14,
+     "highest": 340,
+     "wickets": 98,
+     "catches": 78
+    },
+    "photo": "/players/sanath-jayasuriya.jpg"
+   },
+   {
+    "id": "shane-warne",
+    "name": "Shane Warne",
+    "team": "Australia",
+    "stats": {
+     "matches": 145,
+     "runs": 3154,
+     "average": 17.32,
+     "hundreds": 0,
+     "highest": 99,
+     "wickets": 708,
+     "catches": 125
+    },
+    "photo": "/players/shane-warne.jpg"
+   },
+   {
+    "id": "muttiah-muralitharan",
+    "name": "Muttiah Muralitharan",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 133,
+     "runs": 1256,
+     "average": 11.67,
+     "hundreds": 0,
+     "highest": 67,
+     "wickets": 800,
+     "catches": 72
+    },
+    "photo": "/players/muttiah-muralitharan.jpg"
+   },
+   {
+    "id": "james-anderson",
+    "name": "James Anderson",
+    "team": "England",
+    "stats": {
+     "matches": 188,
+     "runs": 1353,
+     "average": 8.96,
+     "hundreds": 0,
+     "highest": 81,
+     "wickets": 704,
+     "catches": 107
+    },
+    "photo": "/players/james-anderson.jpg"
+   },
+   {
+    "id": "anil-kumble",
+    "name": "Anil Kumble",
+    "team": "India",
+    "stats": {
+     "matches": 132,
+     "runs": 2506,
+     "average": 17.77,
+     "hundreds": 1,
+     "highest": 110,
+     "wickets": 619,
+     "catches": 60
+    },
+    "photo": "/players/anil-kumble.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "glenn-mcgrath",
+    "name": "Glenn McGrath",
+    "team": "Australia",
+    "stats": {
+     "matches": 124,
+     "runs": 641,
+     "average": 7.36,
+     "hundreds": 0,
+     "highest": 61,
+     "wickets": 563,
+     "catches": 38
+    },
+    "photo": "/players/glenn-mcgrath.jpg"
+   },
+   {
+    "id": "stuart-broad",
+    "name": "Stuart Broad",
+    "team": "England",
+    "stats": {
+     "matches": 167,
+     "runs": 3662,
+     "average": 18.03,
+     "hundreds": 1,
+     "highest": 169,
+     "wickets": 604,
+     "catches": 55
+    },
+    "photo": "/players/stuart-broad.jpg"
+   },
+   {
+    "id": "courtney-walsh",
+    "name": "Courtney Walsh",
+    "team": "West Indies",
+    "stats": {
+     "matches": 132,
+     "runs": 936,
+     "average": 7.54,
+     "hundreds": 0,
+     "highest": 30,
+     "wickets": 519,
+     "catches": 29
+    },
+    "photo": "/players/courtney-walsh.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "nathan-lyon",
+    "name": "Nathan Lyon",
+    "team": "Australia",
+    "stats": {
+     "matches": 143,
+     "runs": 1705,
+     "average": 12.81,
+     "hundreds": 0,
+     "highest": 47,
+     "wickets": 571,
+     "catches": 66
+    },
+    "photo": "/players/nathan-lyon.jpg"
+   },
+   {
+    "id": "ravichandran-ashwin",
+    "name": "Ravichandran Ashwin",
+    "team": "India",
+    "stats": {
+     "matches": 106,
+     "runs": 3503,
+     "average": 25.92,
+     "hundreds": 6,
+     "highest": 124,
+     "wickets": 537,
+     "catches": 36
+    },
+    "photo": "/players/ravichandran-ashwin.jpg"
+   },
+   {
+    "id": "dale-steyn",
+    "name": "Dale Steyn",
+    "team": "South Africa",
+    "stats": {
+     "matches": 93,
+     "runs": 1251,
+     "average": 13.59,
+     "hundreds": 0,
+     "highest": 76,
+     "wickets": 439,
+     "catches": 26
+    },
+    "photo": "/players/dale-steyn.jpg"
+   },
+   {
+    "id": "kapil-dev",
+    "name": "Kapil Dev",
+    "team": "India",
+    "stats": {
+     "matches": 131,
+     "runs": 5248,
+     "average": 31.05,
+     "hundreds": 8,
+     "highest": 163,
+     "wickets": 434,
+     "catches": 64
+    },
+    "photo": "/players/kapil-dev.jpg"
+   },
+   {
+    "id": "richard-hadlee",
+    "name": "Richard Hadlee",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 86,
+     "runs": 3124,
+     "average": 27.16,
+     "hundreds": 2,
+     "highest": 151,
+     "wickets": 431,
+     "catches": 39
+    },
+    "photo": "/players/richard-hadlee.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "wasim-akram",
+    "name": "Wasim Akram",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 104,
+     "runs": 2898,
+     "average": 22.64,
+     "hundreds": 3,
+     "highest": 257,
+     "wickets": 414,
+     "catches": 44
+    },
+    "photo": "/players/wasim-akram.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "waqar-younis",
+    "name": "Waqar Younis",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 87,
+     "runs": 1010,
+     "average": 10.2,
+     "hundreds": 0,
+     "highest": 45,
+     "wickets": 373,
+     "catches": 18
+    },
+    "photo": "/players/waqar-younis.jpg"
+   },
+   {
+    "id": "curtly-ambrose",
+    "name": "Curtly Ambrose",
+    "team": "West Indies",
+    "stats": {
+     "matches": 98,
+     "runs": 1439,
+     "average": 12.4,
+     "hundreds": 0,
+     "highest": 53,
+     "wickets": 405,
+     "catches": 18
+    },
+    "photo": "/players/curtly-ambrose.jpg"
+   },
+   {
+    "id": "malcolm-marshall",
+    "name": "Malcolm Marshall",
+    "team": "West Indies",
+    "stats": {
+     "matches": 81,
+     "runs": 1810,
+     "average": 18.85,
+     "hundreds": 0,
+     "highest": 92,
+     "wickets": 376,
+     "catches": 25
+    },
+    "photo": "/players/malcolm-marshall.jpg"
+   },
+   {
+    "id": "imran-khan",
+    "name": "Imran Khan",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 88,
+     "runs": 3807,
+     "average": 37.69,
+     "hundreds": 6,
+     "highest": 136,
+     "wickets": 362,
+     "catches": 28
+    },
+    "photo": "/players/imran-khan.jpg"
+   },
+   {
+    "id": "ian-botham",
+    "name": "Ian Botham",
+    "team": "England",
+    "stats": {
+     "matches": 102,
+     "runs": 5200,
+     "average": 33.54,
+     "hundreds": 14,
+     "highest": 208,
+     "wickets": 383,
+     "catches": 120
+    },
+    "photo": "/players/ian-botham.jpg"
+   },
+   {
+    "id": "dennis-lillee",
+    "name": "Dennis Lillee",
+    "team": "Australia",
+    "stats": {
+     "matches": 70,
+     "runs": 905,
+     "average": 13.71,
+     "hundreds": 0,
+     "highest": 73,
+     "wickets": 355,
+     "catches": 23
+    },
+    "photo": "/players/dennis-lillee.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shaun-pollock",
+    "name": "Shaun Pollock",
+    "team": "South Africa",
+    "stats": {
+     "matches": 108,
+     "runs": 3781,
+     "average": 32.31,
+     "hundreds": 2,
+     "highest": 111,
+     "wickets": 421,
+     "catches": 72
+    },
+    "photo": "/players/shaun-pollock.jpg"
+   },
+   {
+    "id": "harbhajan-singh",
+    "name": "Harbhajan Singh",
+    "team": "India",
+    "stats": {
+     "matches": 103,
+     "runs": 2224,
+     "average": 18.23,
+     "hundreds": 2,
+     "highest": 115,
+     "wickets": 417,
+     "catches": 42
+    },
+    "photo": "/players/harbhajan-singh.jpg"
+   },
+   {
+    "id": "rangana-herath",
+    "name": "Rangana Herath",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 93,
+     "runs": 1699,
+     "average": 14.52,
+     "hundreds": 0,
+     "highest": 80,
+     "wickets": 433,
+     "catches": 24
+    },
+    "photo": "/players/rangana-herath.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "daniel-vettori",
+    "name": "Daniel Vettori",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 113,
+     "runs": 4531,
+     "average": 30.0,
+     "hundreds": 6,
+     "highest": 140,
+     "wickets": 362,
+     "catches": 58
+    },
+    "photo": "/players/daniel-vettori.jpg"
+   },
+   {
+    "id": "tim-southee",
+    "name": "Tim Southee",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 107,
+     "runs": 2245,
+     "average": 15.48,
+     "hundreds": 0,
+     "highest": 77,
+     "wickets": 391,
+     "catches": 86
+    },
+    "photo": "/players/tim-southee.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "mitchell-starc",
+    "name": "Mitchell Starc",
+    "team": "Australia",
+    "stats": {
+     "matches": 107,
+     "runs": 2498,
+     "average": 20.3,
+     "hundreds": 0,
+     "highest": 99,
+     "wickets": 445,
+     "catches": 50
+    },
+    "photo": "/players/mitchell-starc.jpg"
+   },
+   {
+    "id": "pat-cummins",
+    "name": "Pat Cummins",
+    "team": "Australia",
+    "stats": {
+     "matches": 74,
+     "runs": 1584,
+     "average": 16.32,
+     "hundreds": 0,
+     "highest": 64,
+     "wickets": 322,
+     "catches": 36
+    },
+    "photo": "/players/pat-cummins.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kagiso-rabada",
+    "name": "Kagiso Rabada",
+    "team": "South Africa",
+    "stats": {
+     "matches": 73,
+     "runs": 1102,
+     "average": 12.24,
+     "hundreds": 0,
+     "highest": 71,
+     "wickets": 340,
+     "catches": 34
+    },
+    "photo": "/players/kagiso-rabada.jpg"
+   },
+   {
+    "id": "jasprit-bumrah",
+    "name": "Jasprit Bumrah",
+    "team": "India",
+    "stats": {
+     "matches": 52,
+     "runs": 348,
+     "average": 6.56,
+     "hundreds": 0,
+     "highest": 34,
+     "wickets": 234,
+     "catches": 17
+    },
+    "photo": "/players/jasprit-bumrah.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ravindra-jadeja",
+    "name": "Ravindra Jadeja",
+    "team": "India",
+    "stats": {
+     "matches": 89,
+     "runs": 4095,
+     "average": 38.27,
+     "hundreds": 6,
+     "highest": 175,
+     "wickets": 348,
+     "catches": 49
+    },
+    "photo": "/players/ravindra-jadeja.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ben-stokes",
+    "name": "Ben Stokes",
+    "team": "England",
+    "stats": {
+     "matches": 122,
+     "runs": 7273,
+     "average": 34.46,
+     "hundreds": 14,
+     "highest": 258,
+     "wickets": 252,
+     "catches": 115
+    },
+    "photo": "/players/ben-stokes.jpg"
+   },
+   {
+    "id": "shakib-al-hasan",
+    "name": "Shakib Al Hasan",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 71,
+     "runs": 4609,
+     "average": 37.77,
+     "hundreds": 5,
+     "highest": 217,
+     "wickets": 246,
+     "catches": 29
+    },
+    "photo": "/players/shakib-al-hasan.jpg"
+   },
+   {
+    "id": "zaheer-khan",
+    "name": "Zaheer Khan",
+    "team": "India",
+    "stats": {
+     "matches": 92,
+     "runs": 1231,
+     "average": 11.94,
+     "hundreds": 0,
+     "highest": 75,
+     "wickets": 311,
+     "catches": 19
+    },
+    "photo": "/players/zaheer-khan.jpg"
+   },
+   {
+    "id": "trent-boult",
+    "name": "Trent Boult",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 78,
+     "runs": 759,
+     "average": 15.81,
+     "hundreds": 0,
+     "highest": 52,
+     "wickets": 317,
+     "catches": 43
+    },
+    "photo": "/players/trent-boult.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "andrew-flintoff",
+    "name": "Andrew Flintoff",
+    "team": "England",
+    "stats": {
+     "matches": 79,
+     "runs": 3845,
+     "average": 31.77,
+     "hundreds": 5,
+     "highest": 167,
+     "wickets": 226,
+     "catches": 52
+    },
+    "photo": "/players/andrew-flintoff.jpg"
+   },
+   {
+    "id": "brett-lee",
+    "name": "Brett Lee",
+    "team": "Australia",
+    "stats": {
+     "matches": 76,
+     "runs": 1451,
+     "average": 20.15,
+     "hundreds": 0,
+     "highest": 64,
+     "wickets": 310,
+     "catches": 23
+    },
+    "photo": "/players/brett-lee.jpg"
+   },
+   {
+    "id": "allan-donald",
+    "name": "Allan Donald",
+    "team": "South Africa",
+    "stats": {
+     "matches": 72,
+     "runs": 652,
+     "average": 10.68,
+     "hundreds": 0,
+     "highest": 37,
+     "wickets": 330,
+     "catches": 18
+    },
+    "photo": "/players/allan-donald.jpg"
+   }
+  ]
+ },
+ {
+  "format": "ODI",
+  "asOf": "2026-10-01",
+  "source": {
+   "name": "Wikipedia player infoboxes",
+   "url": "https://en.wikipedia.org/wiki/Category:Cricketers",
+   "license": "CC BY-SA 4.0"
+  },
+  "stats": [
+   {
+    "key": "matches",
+    "label": "Matches",
+    "short": "Mat"
+   },
+   {
+    "key": "runs",
+    "label": "Runs",
+    "short": "Runs"
+   },
+   {
+    "key": "average",
+    "label": "Batting average",
+    "short": "Avg",
+    "decimals": 2
+   },
+   {
+    "key": "hundreds",
+    "label": "Hundreds",
+    "short": "100s"
+   },
+   {
+    "key": "highest",
+    "label": "Highest score",
+    "short": "HS"
+   },
+   {
+    "key": "wickets",
+    "label": "Wickets",
+    "short": "Wkts"
+   },
+   {
+    "key": "catches",
+    "label": "Catches",
+    "short": "Ct"
+   }
+  ],
+  "cards": [
+   {
+    "id": "sachin-tendulkar",
+    "name": "Sachin Tendulkar",
+    "team": "India",
+    "stats": {
+     "matches": 463,
+     "runs": 18426,
+     "average": 44.83,
+     "hundreds": 49,
+     "highest": 200,
+     "wickets": 154,
+     "catches": 140
+    },
+    "photo": "/players/sachin-tendulkar.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "virat-kohli",
+    "name": "Virat Kohli",
+    "team": "India",
+    "stats": {
+     "matches": 315,
+     "runs": 15080,
+     "average": 59.13,
+     "hundreds": 55,
+     "highest": 183,
+     "wickets": 5,
+     "catches": 169
+    },
+    "photo": "/players/virat-kohli.jpg"
+   },
+   {
+    "id": "ricky-ponting",
+    "name": "Ricky Ponting",
+    "team": "Australia",
+    "stats": {
+     "matches": 375,
+     "runs": 13704,
+     "average": 42.03,
+     "hundreds": 30,
+     "highest": 164,
+     "wickets": 3,
+     "catches": 160
+    },
+    "photo": "/players/ricky-ponting.jpg"
+   },
+   {
+    "id": "kumar-sangakkara",
+    "name": "Kumar Sangakkara",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 404,
+     "runs": 14234,
+     "average": 41.98,
+     "hundreds": 25,
+     "highest": 169,
+     "wickets": 0,
+     "catches": 403
+    },
+    "photo": "/players/kumar-sangakkara.jpg"
+   },
+   {
+    "id": "sanath-jayasuriya",
+    "name": "Sanath Jayasuriya",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 445,
+     "runs": 13430,
+     "average": 32.36,
+     "hundreds": 28,
+     "highest": 189,
+     "wickets": 323,
+     "catches": 123
+    },
+    "photo": "/players/sanath-jayasuriya.jpg"
+   },
+   {
+    "id": "mahela-jayawardene",
+    "name": "Mahela Jayawardene",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 448,
+     "runs": 12650,
+     "average": 33.37,
+     "hundreds": 19,
+     "highest": 144,
+     "wickets": 8,
+     "catches": 218
+    },
+    "photo": "/players/mahela-jayawardene.jpg"
+   },
+   {
+    "id": "inzamam-ul-haq",
+    "name": "Inzamam-ul-Haq",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 378,
+     "runs": 11739,
+     "average": 39.53,
+     "hundreds": 10,
+     "highest": 137,
+     "wickets": 3,
+     "catches": 113
+    },
+    "photo": "/players/inzamam-ul-haq.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jacques-kallis",
+    "name": "Jacques Kallis",
+    "team": "South Africa",
+    "stats": {
+     "matches": 329,
+     "runs": 11579,
+     "average": 44.36,
+     "hundreds": 17,
+     "highest": 139,
+     "wickets": 273,
+     "catches": 131
+    },
+    "photo": "/players/jacques-kallis.jpg"
+   },
+   {
+    "id": "sourav-ganguly",
+    "name": "Sourav Ganguly",
+    "team": "India",
+    "stats": {
+     "matches": 311,
+     "runs": 11363,
+     "average": 41.02,
+     "hundreds": 22,
+     "highest": 183,
+     "wickets": 100,
+     "catches": 100
+    },
+    "photo": "/players/sourav-ganguly.jpg"
+   },
+   {
+    "id": "rahul-dravid",
+    "name": "Rahul Dravid",
+    "team": "India",
+    "stats": {
+     "matches": 344,
+     "runs": 10889,
+     "average": 39.16,
+     "hundreds": 12,
+     "highest": 153,
+     "wickets": 4,
+     "catches": 196
+    },
+    "photo": "/players/rahul-dravid.jpg"
+   },
+   {
+    "id": "rohit-sharma",
+    "name": "Rohit Sharma",
+    "team": "India",
+    "stats": {
+     "matches": 288,
+     "runs": 12096,
+     "average": 48.95,
+     "hundreds": 35,
+     "highest": 264,
+     "wickets": 9,
+     "catches": 110
+    },
+    "photo": "/players/rohit-sharma.jpg"
+   },
+   {
+    "id": "ms-dhoni",
+    "name": "MS Dhoni",
+    "team": "India",
+    "stats": {
+     "matches": 350,
+     "runs": 10773,
+     "average": 50.57,
+     "hundreds": 10,
+     "highest": 183,
+     "wickets": 1,
+     "catches": 321
+    },
+    "photo": "/players/ms-dhoni.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ab-de-villiers",
+    "name": "AB de Villiers",
+    "team": "South Africa",
+    "stats": {
+     "matches": 228,
+     "runs": 9577,
+     "average": 53.5,
+     "hundreds": 25,
+     "highest": 176,
+     "wickets": 7,
+     "catches": 176
+    },
+    "photo": "/players/ab-de-villiers.jpg"
+   },
+   {
+    "id": "chris-gayle",
+    "name": "Chris Gayle",
+    "team": "West Indies",
+    "stats": {
+     "matches": 301,
+     "runs": 10480,
+     "average": 37.83,
+     "hundreds": 25,
+     "highest": 215,
+     "wickets": 167,
+     "catches": 124
+    },
+    "photo": "/players/chris-gayle.jpg"
+   },
+   {
+    "id": "brian-lara",
+    "name": "Brian Lara",
+    "team": "West Indies",
+    "stats": {
+     "matches": 299,
+     "runs": 10405,
+     "average": 40.48,
+     "hundreds": 19,
+     "highest": 169,
+     "wickets": 4,
+     "catches": 120
+    },
+    "photo": "/players/brian-lara.jpg"
+   },
+   {
+    "id": "viv-richards",
+    "name": "Viv Richards",
+    "team": "West Indies",
+    "stats": {
+     "matches": 187,
+     "runs": 6721,
+     "average": 47.0,
+     "hundreds": 11,
+     "highest": 189,
+     "wickets": 118,
+     "catches": 100
+    },
+    "photo": "/players/viv-richards.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "babar-azam",
+    "name": "Babar Azam",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 143,
+     "runs": 6626,
+     "average": 53.43,
+     "hundreds": 20,
+     "highest": 158,
+     "wickets": 0,
+     "catches": 63
+    },
+    "photo": "/players/babar-azam.jpg"
+   },
+   {
+    "id": "tillakaratne-dilshan",
+    "name": "Tillakaratne Dilshan",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 330,
+     "runs": 10290,
+     "average": 39.27,
+     "hundreds": 22,
+     "highest": 161,
+     "wickets": 106,
+     "catches": 123
+    },
+    "photo": "/players/tillakaratne-dilshan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ross-taylor",
+    "name": "Ross Taylor",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 236,
+     "runs": 8607,
+     "average": 47.55,
+     "hundreds": 21,
+     "highest": 181,
+     "wickets": 0,
+     "catches": 142
+    },
+    "photo": "/players/ross-taylor.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "hashim-amla",
+    "name": "Hashim Amla",
+    "team": "South Africa",
+    "stats": {
+     "matches": 181,
+     "runs": 8113,
+     "average": 49.46,
+     "hundreds": 27,
+     "highest": 159,
+     "wickets": 0,
+     "catches": 87
+    },
+    "photo": "/players/hashim-amla.jpg"
+   },
+   {
+    "id": "tamim-iqbal",
+    "name": "Tamim Iqbal",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 243,
+     "runs": 8357,
+     "average": 36.65,
+     "hundreds": 14,
+     "highest": 158,
+     "wickets": 0,
+     "catches": 68
+    },
+    "photo": "/players/tamim-iqbal.jpg"
+   },
+   {
+    "id": "joe-root",
+    "name": "Joe Root",
+    "team": "England",
+    "stats": {
+     "matches": 195,
+     "runs": 7903,
+     "average": 50.66,
+     "hundreds": 20,
+     "highest": 166,
+     "wickets": 31,
+     "catches": 93
+    },
+    "photo": "/players/joe-root.webp",
+    "hsNotOut": true
+   },
+   {
+    "id": "kane-williamson",
+    "name": "Kane Williamson",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 175,
+     "runs": 7256,
+     "average": 48.69,
+     "hundreds": 15,
+     "highest": 148,
+     "wickets": 37,
+     "catches": 76
+    },
+    "photo": "/players/kane-williamson.jpg"
+   },
+   {
+    "id": "martin-guptill",
+    "name": "Martin Guptill",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 198,
+     "runs": 7346,
+     "average": 41.73,
+     "hundreds": 18,
+     "highest": 237,
+     "wickets": 4,
+     "catches": 104
+    },
+    "photo": "/players/martin-guptill.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "mushfiqur-rahim",
+    "name": "Mushfiqur Rahim",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 274,
+     "runs": 7795,
+     "average": 36.42,
+     "hundreds": 9,
+     "highest": 144,
+     "wickets": 0,
+     "catches": 243
+    },
+    "photo": "/players/mushfiqur-rahim.jpg"
+   },
+   {
+    "id": "quinton-de-kock",
+    "name": "Quinton de Kock",
+    "team": "South Africa",
+    "stats": {
+     "matches": 163,
+     "runs": 7152,
+     "average": 46.14,
+     "hundreds": 23,
+     "highest": 178,
+     "wickets": 0,
+     "catches": 213
+    },
+    "photo": "/players/quinton-de-kock.jpg"
+   },
+   {
+    "id": "eoin-morgan",
+    "name": "Eoin Morgan",
+    "team": "England",
+    "stats": {
+     "matches": 248,
+     "runs": 7701,
+     "average": 39.29,
+     "hundreds": 14,
+     "highest": 148,
+     "wickets": 0,
+     "catches": 87
+    },
+    "photo": "/players/eoin-morgan.jpg"
+   },
+   {
+    "id": "yuvraj-singh",
+    "name": "Yuvraj Singh",
+    "team": "India",
+    "stats": {
+     "matches": 304,
+     "runs": 8701,
+     "average": 36.55,
+     "hundreds": 14,
+     "highest": 150,
+     "wickets": 111,
+     "catches": 94
+    },
+    "photo": "/players/yuvraj-singh.jpg"
+   },
+   {
+    "id": "shikhar-dhawan",
+    "name": "Shikhar Dhawan",
+    "team": "India",
+    "stats": {
+     "matches": 167,
+     "runs": 6793,
+     "average": 44.11,
+     "hundreds": 17,
+     "highest": 143,
+     "wickets": 0,
+     "catches": 83
+    },
+    "photo": "/players/shikhar-dhawan.jpg"
+   },
+   {
+    "id": "shakib-al-hasan",
+    "name": "Shakib Al Hasan",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 247,
+     "runs": 7570,
+     "average": 37.29,
+     "hundreds": 9,
+     "highest": 134,
+     "wickets": 317,
+     "catches": 60
+    },
+    "photo": "/players/shakib-al-hasan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "david-warner",
+    "name": "David Warner",
+    "team": "Australia",
+    "stats": {
+     "matches": 161,
+     "runs": 6932,
+     "average": 45.3,
+     "hundreds": 22,
+     "highest": 179,
+     "wickets": 0,
+     "catches": 71
+    },
+    "photo": "/players/david-warner.jpg"
+   },
+   {
+    "id": "saeed-anwar",
+    "name": "Saeed Anwar",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 247,
+     "runs": 8824,
+     "average": 39.21,
+     "hundreds": 20,
+     "highest": 194,
+     "wickets": 6,
+     "catches": 42
+    },
+    "photo": "/players/saeed-anwar.jpg"
+   },
+   {
+    "id": "desmond-haynes",
+    "name": "Desmond Haynes",
+    "team": "West Indies",
+    "stats": {
+     "matches": 238,
+     "runs": 8648,
+     "average": 41.27,
+     "hundreds": 17,
+     "highest": 152,
+     "wickets": 0,
+     "catches": 59
+    },
+    "photo": "/players/desmond-haynes.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "mark-waugh",
+    "name": "Mark Waugh",
+    "team": "Australia",
+    "stats": {
+     "matches": 244,
+     "runs": 8500,
+     "average": 39.35,
+     "hundreds": 18,
+     "highest": 173,
+     "wickets": 85,
+     "catches": 108
+    },
+    "photo": "/players/mark-waugh.jpg"
+   },
+   {
+    "id": "steve-waugh",
+    "name": "Steve Waugh",
+    "team": "Australia",
+    "stats": {
+     "matches": 325,
+     "runs": 7569,
+     "average": 32.9,
+     "hundreds": 3,
+     "highest": 120,
+     "wickets": 195,
+     "catches": 111
+    },
+    "photo": "/players/steve-waugh.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "aravinda-de-silva",
+    "name": "Aravinda de Silva",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 308,
+     "runs": 9284,
+     "average": 34.9,
+     "hundreds": 11,
+     "highest": 145,
+     "wickets": 106,
+     "catches": 95
+    },
+    "photo": "/players/aravinda-de-silva.jpg"
+   },
+   {
+    "id": "mohammad-azharuddin",
+    "name": "Mohammad Azharuddin",
+    "team": "India",
+    "stats": {
+     "matches": 334,
+     "runs": 9378,
+     "average": 36.92,
+     "hundreds": 7,
+     "highest": 153,
+     "wickets": 12,
+     "catches": 156
+    },
+    "photo": "/players/mohammad-azharuddin.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "virender-sehwag",
+    "name": "Virender Sehwag",
+    "team": "India",
+    "stats": {
+     "matches": 251,
+     "runs": 8273,
+     "average": 35.05,
+     "hundreds": 15,
+     "highest": 219,
+     "wickets": 96,
+     "catches": 93
+    },
+    "photo": "/players/virender-sehwag.jpg"
+   },
+   {
+    "id": "adam-gilchrist",
+    "name": "Adam Gilchrist",
+    "team": "Australia",
+    "stats": {
+     "matches": 287,
+     "runs": 9619,
+     "average": 35.89,
+     "hundreds": 16,
+     "highest": 172,
+     "wickets": 0,
+     "catches": 417
+    },
+    "photo": "/players/adam-gilchrist.jpg"
+   },
+   {
+    "id": "herschelle-gibbs",
+    "name": "Herschelle Gibbs",
+    "team": "South Africa",
+    "stats": {
+     "matches": 248,
+     "runs": 8094,
+     "average": 36.13,
+     "hundreds": 21,
+     "highest": 175,
+     "wickets": 0,
+     "catches": 108
+    },
+    "photo": "/players/herschelle-gibbs.jpg"
+   },
+   {
+    "id": "gary-kirsten",
+    "name": "Gary Kirsten",
+    "team": "South Africa",
+    "stats": {
+     "matches": 185,
+     "runs": 6798,
+     "average": 40.95,
+     "hundreds": 13,
+     "highest": 188,
+     "wickets": 0,
+     "catches": 61
+    },
+    "photo": "/players/gary-kirsten.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "stephen-fleming",
+    "name": "Stephen Fleming",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 280,
+     "runs": 8037,
+     "average": 32.4,
+     "hundreds": 8,
+     "highest": 134,
+     "wickets": 1,
+     "catches": 133
+    },
+    "photo": "/players/stephen-fleming.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shivnarine-chanderpaul",
+    "name": "Shivnarine Chanderpaul",
+    "team": "West Indies",
+    "stats": {
+     "matches": 268,
+     "runs": 8778,
+     "average": 41.6,
+     "hundreds": 11,
+     "highest": 150,
+     "wickets": 14,
+     "catches": 73
+    },
+    "photo": "/players/shivnarine-chanderpaul.jpg"
+   },
+   {
+    "id": "matthew-hayden",
+    "name": "Matthew Hayden",
+    "team": "Australia",
+    "stats": {
+     "matches": 161,
+     "runs": 6133,
+     "average": 43.8,
+     "hundreds": 10,
+     "highest": 181,
+     "wickets": 0,
+     "catches": 68
+    },
+    "photo": "/players/matthew-hayden.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "michael-bevan",
+    "name": "Michael Bevan",
+    "team": "Australia",
+    "stats": {
+     "matches": 232,
+     "runs": 6912,
+     "average": 53.58,
+     "hundreds": 6,
+     "highest": 108,
+     "wickets": 36,
+     "catches": 69
+    },
+    "photo": "/players/michael-bevan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "michael-hussey",
+    "name": "Michael Hussey",
+    "team": "Australia",
+    "stats": {
+     "matches": 185,
+     "runs": 5442,
+     "average": 48.15,
+     "hundreds": 3,
+     "highest": 109,
+     "wickets": 2,
+     "catches": 105
+    },
+    "photo": "/players/michael-hussey.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "andrew-symonds",
+    "name": "Andrew Symonds",
+    "team": "Australia",
+    "stats": {
+     "matches": 198,
+     "runs": 5088,
+     "average": 39.75,
+     "hundreds": 6,
+     "highest": 156,
+     "wickets": 133,
+     "catches": 82
+    },
+    "photo": "/players/andrew-symonds.jpg"
+   },
+   {
+    "id": "shane-watson",
+    "name": "Shane Watson",
+    "team": "Australia",
+    "stats": {
+     "matches": 190,
+     "runs": 5757,
+     "average": 40.54,
+     "hundreds": 9,
+     "highest": 185,
+     "wickets": 168,
+     "catches": 64
+    },
+    "photo": "/players/shane-watson.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "aaron-finch",
+    "name": "Aaron Finch",
+    "team": "Australia",
+    "stats": {
+     "matches": 146,
+     "runs": 5406,
+     "average": 38.89,
+     "hundreds": 17,
+     "highest": 153,
+     "wickets": 4,
+     "catches": 71
+    },
+    "photo": "/players/aaron-finch.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "steve-smith",
+    "name": "Steve Smith",
+    "team": "Australia",
+    "stats": {
+     "matches": 170,
+     "runs": 5800,
+     "average": 43.28,
+     "hundreds": 12,
+     "highest": 164,
+     "wickets": 28,
+     "catches": 90
+    },
+    "photo": "/players/steve-smith.jpg"
+   },
+   {
+    "id": "glenn-maxwell",
+    "name": "Glenn Maxwell",
+    "team": "Australia",
+    "stats": {
+     "matches": 149,
+     "runs": 3990,
+     "average": 33.81,
+     "hundreds": 4,
+     "highest": 201,
+     "wickets": 77,
+     "catches": 91
+    },
+    "photo": "/players/glenn-maxwell.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jos-buttler",
+    "name": "Jos Buttler",
+    "team": "England",
+    "stats": {
+     "matches": 204,
+     "runs": 5678,
+     "average": 39.15,
+     "hundreds": 11,
+     "highest": 162,
+     "wickets": 0,
+     "catches": 242
+    },
+    "photo": "/players/jos-buttler.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ben-stokes",
+    "name": "Ben Stokes",
+    "team": "England",
+    "stats": {
+     "matches": 114,
+     "runs": 3463,
+     "average": 41.22,
+     "hundreds": 5,
+     "highest": 182,
+     "wickets": 74,
+     "catches": 55
+    },
+    "photo": "/players/ben-stokes.jpg"
+   },
+   {
+    "id": "kevin-pietersen",
+    "name": "Kevin Pietersen",
+    "team": "England",
+    "stats": {
+     "matches": 136,
+     "runs": 4440,
+     "average": 40.73,
+     "hundreds": 9,
+     "highest": 130,
+     "wickets": 7,
+     "catches": 40
+    },
+    "photo": "/players/kevin-pietersen.jpg"
+   },
+   {
+    "id": "faf-du-plessis",
+    "name": "Faf du Plessis",
+    "team": "South Africa",
+    "stats": {
+     "matches": 143,
+     "runs": 5507,
+     "average": 47.47,
+     "hundreds": 12,
+     "highest": 185,
+     "wickets": 2,
+     "catches": 81
+    },
+    "photo": "/players/faf-du-plessis.jpg"
+   },
+   {
+    "id": "graeme-smith",
+    "name": "Graeme Smith",
+    "team": "South Africa",
+    "stats": {
+     "matches": 197,
+     "runs": 6989,
+     "average": 37.98,
+     "hundreds": 10,
+     "highest": 141,
+     "wickets": 18,
+     "catches": 105
+    },
+    "photo": "/players/graeme-smith.jpg"
+   },
+   {
+    "id": "david-miller",
+    "name": "David Miller",
+    "team": "South Africa",
+    "stats": {
+     "matches": 180,
+     "runs": 4762,
+     "average": 42.9,
+     "hundreds": 8,
+     "highest": 142,
+     "wickets": 0,
+     "catches": 89
+    },
+    "photo": "/players/david-miller.jpg"
+   },
+   {
+    "id": "brendon-mccullum",
+    "name": "Brendon McCullum",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 260,
+     "runs": 6083,
+     "average": 30.41,
+     "hundreds": 5,
+     "highest": 166,
+     "wickets": 0,
+     "catches": 262
+    },
+    "photo": "/players/brendon-mccullum.jpg"
+   },
+   {
+    "id": "shoaib-malik",
+    "name": "Shoaib Malik",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 287,
+     "runs": 7534,
+     "average": 34.5,
+     "hundreds": 9,
+     "highest": 143,
+     "wickets": 158,
+     "catches": 96
+    },
+    "photo": "/players/shoaib-malik.jpg"
+   },
+   {
+    "id": "javed-miandad",
+    "name": "Javed Miandad",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 233,
+     "runs": 7381,
+     "average": 41.7,
+     "hundreds": 8,
+     "highest": 119,
+     "wickets": 7,
+     "catches": 71
+    },
+    "photo": "/players/javed-miandad.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kl-rahul",
+    "name": "KL Rahul",
+    "team": "India",
+    "stats": {
+     "matches": 97,
+     "runs": 3412,
+     "average": 49.45,
+     "hundreds": 8,
+     "highest": 112,
+     "wickets": 0,
+     "catches": 84
+    },
+    "photo": "/players/kl-rahul.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shubman-gill",
+    "name": "Shubman Gill",
+    "team": "India",
+    "stats": {
+     "matches": 69,
+     "runs": 3712,
+     "average": 65.12,
+     "hundreds": 11,
+     "highest": 223,
+     "wickets": 0,
+     "catches": 41
+    },
+    "photo": "/players/shubman-gill.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "arjuna-ranatunga",
+    "name": "Arjuna Ranatunga",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 269,
+     "runs": 7456,
+     "average": 35.84,
+     "hundreds": 4,
+     "highest": 131,
+     "wickets": 79,
+     "catches": 63
+    },
+    "photo": "/players/arjuna-ranatunga.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "paul-stirling",
+    "name": "Paul Stirling",
+    "team": "Ireland",
+    "stats": {
+     "matches": 174,
+     "runs": 6080,
+     "average": 37.3,
+     "hundreds": 14,
+     "highest": 177,
+     "wickets": 43,
+     "catches": 69
+    },
+    "photo": "/players/paul-stirling.jpg"
+   },
+   {
+    "id": "andy-flower",
+    "name": "Andy Flower",
+    "team": "Zimbabwe",
+    "stats": {
+     "matches": 213,
+     "runs": 6786,
+     "average": 35.34,
+     "hundreds": 4,
+     "highest": 145,
+     "wickets": 0,
+     "catches": 141
+    },
+    "photo": "/players/andy-flower.jpg"
+   },
+   {
+    "id": "wasim-akram",
+    "name": "Wasim Akram",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 356,
+     "runs": 3717,
+     "average": 16.52,
+     "hundreds": 0,
+     "highest": 86,
+     "wickets": 502,
+     "catches": 88
+    },
+    "photo": "/players/wasim-akram.jpg"
+   },
+   {
+    "id": "waqar-younis",
+    "name": "Waqar Younis",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 262,
+     "runs": 969,
+     "average": 10.3,
+     "hundreds": 0,
+     "highest": 37,
+     "wickets": 416,
+     "catches": 35
+    },
+    "photo": "/players/waqar-younis.jpg"
+   },
+   {
+    "id": "muttiah-muralitharan",
+    "name": "Muttiah Muralitharan",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 350,
+     "runs": 674,
+     "average": 6.8,
+     "hundreds": 0,
+     "highest": 33,
+     "wickets": 534,
+     "catches": 130
+    },
+    "photo": "/players/muttiah-muralitharan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "glenn-mcgrath",
+    "name": "Glenn McGrath",
+    "team": "Australia",
+    "stats": {
+     "matches": 250,
+     "runs": 115,
+     "average": 3.83,
+     "hundreds": 0,
+     "highest": 11,
+     "wickets": 381,
+     "catches": 37
+    },
+    "photo": "/players/glenn-mcgrath.jpg"
+   },
+   {
+    "id": "shane-warne",
+    "name": "Shane Warne",
+    "team": "Australia",
+    "stats": {
+     "matches": 194,
+     "runs": 1018,
+     "average": 13.05,
+     "hundreds": 0,
+     "highest": 55,
+     "wickets": 293,
+     "catches": 80
+    },
+    "photo": "/players/shane-warne.jpg"
+   },
+   {
+    "id": "shahid-afridi",
+    "name": "Shahid Afridi",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 398,
+     "runs": 8064,
+     "average": 23.57,
+     "hundreds": 6,
+     "highest": 124,
+     "wickets": 395,
+     "catches": 127
+    },
+    "photo": "/players/shahid-afridi.jpg"
+   },
+   {
+    "id": "brett-lee",
+    "name": "Brett Lee",
+    "team": "Australia",
+    "stats": {
+     "matches": 221,
+     "runs": 1176,
+     "average": 17.81,
+     "hundreds": 0,
+     "highest": 59,
+     "wickets": 380,
+     "catches": 54
+    },
+    "photo": "/players/brett-lee.jpg"
+   },
+   {
+    "id": "lasith-malinga",
+    "name": "Lasith Malinga",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 226,
+     "runs": 567,
+     "average": 6.83,
+     "hundreds": 0,
+     "highest": 56,
+     "wickets": 338,
+     "catches": 31
+    },
+    "photo": "/players/lasith-malinga.jpg"
+   },
+   {
+    "id": "kapil-dev",
+    "name": "Kapil Dev",
+    "team": "India",
+    "stats": {
+     "matches": 225,
+     "runs": 3783,
+     "average": 23.79,
+     "hundreds": 1,
+     "highest": 175,
+     "wickets": 253,
+     "catches": 71
+    },
+    "photo": "/players/kapil-dev.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shaun-pollock",
+    "name": "Shaun Pollock",
+    "team": "South Africa",
+    "stats": {
+     "matches": 303,
+     "runs": 3519,
+     "average": 26.45,
+     "hundreds": 1,
+     "highest": 130,
+     "wickets": 393,
+     "catches": 108
+    },
+    "photo": "/players/shaun-pollock.jpg"
+   },
+   {
+    "id": "chaminda-vaas",
+    "name": "Chaminda Vaas",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 322,
+     "runs": 2025,
+     "average": 13.68,
+     "hundreds": 0,
+     "highest": 50,
+     "wickets": 400,
+     "catches": 60
+    },
+    "photo": "/players/chaminda-vaas.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "anil-kumble",
+    "name": "Anil Kumble",
+    "team": "India",
+    "stats": {
+     "matches": 271,
+     "runs": 938,
+     "average": 10.53,
+     "hundreds": 0,
+     "highest": 26,
+     "wickets": 337,
+     "catches": 85
+    },
+    "photo": "/players/anil-kumble.jpg"
+   },
+   {
+    "id": "javagal-srinath",
+    "name": "Javagal Srinath",
+    "team": "India",
+    "stats": {
+     "matches": 229,
+     "runs": 883,
+     "average": 10.63,
+     "hundreds": 0,
+     "highest": 53,
+     "wickets": 315,
+     "catches": 32
+    },
+    "photo": "/players/javagal-srinath.jpg"
+   },
+   {
+    "id": "daniel-vettori",
+    "name": "Daniel Vettori",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 295,
+     "runs": 2253,
+     "average": 17.33,
+     "hundreds": 0,
+     "highest": 83,
+     "wickets": 305,
+     "catches": 88
+    },
+    "photo": "/players/daniel-vettori.jpg"
+   },
+   {
+    "id": "allan-donald",
+    "name": "Allan Donald",
+    "team": "South Africa",
+    "stats": {
+     "matches": 164,
+     "runs": 95,
+     "average": 4.31,
+     "hundreds": 0,
+     "highest": 13,
+     "wickets": 272,
+     "catches": 28
+    },
+    "photo": "/players/allan-donald.jpg"
+   },
+   {
+    "id": "shoaib-akhtar",
+    "name": "Shoaib Akhtar",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 163,
+     "runs": 394,
+     "average": 8.95,
+     "hundreds": 0,
+     "highest": 43,
+     "wickets": 247,
+     "catches": 20
+    },
+    "photo": "/players/shoaib-akhtar.jpg"
+   },
+   {
+    "id": "saqlain-mushtaq",
+    "name": "Saqlain Mushtaq",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 169,
+     "runs": 711,
+     "average": 11.85,
+     "hundreds": 0,
+     "highest": 37,
+     "wickets": 288,
+     "catches": 40
+    },
+    "photo": "/players/saqlain-mushtaq.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "mitchell-starc",
+    "name": "Mitchell Starc",
+    "team": "Australia",
+    "stats": {
+     "matches": 131,
+     "runs": 599,
+     "average": 11.74,
+     "hundreds": 0,
+     "highest": 52,
+     "wickets": 247,
+     "catches": 47
+    },
+    "photo": "/players/mitchell-starc.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "trent-boult",
+    "name": "Trent Boult",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 114,
+     "runs": 216,
+     "average": 9.0,
+     "hundreds": 0,
+     "highest": 21,
+     "wickets": 211,
+     "catches": 43
+    },
+    "photo": "/players/trent-boult.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "tim-southee",
+    "name": "Tim Southee",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 161,
+     "runs": 740,
+     "average": 12.13,
+     "hundreds": 0,
+     "highest": 55,
+     "wickets": 221,
+     "catches": 44
+    },
+    "photo": "/players/tim-southee.jpg"
+   },
+   {
+    "id": "dale-steyn",
+    "name": "Dale Steyn",
+    "team": "South Africa",
+    "stats": {
+     "matches": 125,
+     "runs": 365,
+     "average": 9.35,
+     "hundreds": 0,
+     "highest": 60,
+     "wickets": 196,
+     "catches": 28
+    },
+    "photo": "/players/dale-steyn.jpg"
+   },
+   {
+    "id": "zaheer-khan",
+    "name": "Zaheer Khan",
+    "team": "India",
+    "stats": {
+     "matches": 200,
+     "runs": 792,
+     "average": 12.0,
+     "hundreds": 0,
+     "highest": 34,
+     "wickets": 282,
+     "catches": 43
+    },
+    "photo": "/players/zaheer-khan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "harbhajan-singh",
+    "name": "Harbhajan Singh",
+    "team": "India",
+    "stats": {
+     "matches": 236,
+     "runs": 1237,
+     "average": 13.3,
+     "hundreds": 0,
+     "highest": 49,
+     "wickets": 269,
+     "catches": 71
+    },
+    "photo": "/players/harbhajan-singh.jpg"
+   },
+   {
+    "id": "ravindra-jadeja",
+    "name": "Ravindra Jadeja",
+    "team": "India",
+    "stats": {
+     "matches": 210,
+     "runs": 2905,
+     "average": 32.27,
+     "hundreds": 0,
+     "highest": 87,
+     "wickets": 232,
+     "catches": 79
+    },
+    "photo": "/players/ravindra-jadeja.jpg"
+   },
+   {
+    "id": "jasprit-bumrah",
+    "name": "Jasprit Bumrah",
+    "team": "India",
+    "stats": {
+     "matches": 91,
+     "runs": 111,
+     "average": 9.25,
+     "hundreds": 0,
+     "highest": 20,
+     "wickets": 151,
+     "catches": 19
+    },
+    "photo": "/players/jasprit-bumrah.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "rashid-khan",
+    "name": "Rashid Khan",
+    "team": "Afghanistan",
+    "stats": {
+     "matches": 123,
+     "runs": 1469,
+     "average": 18.83,
+     "hundreds": 0,
+     "highest": 60,
+     "wickets": 226,
+     "catches": 38
+    },
+    "photo": "/players/rashid-khan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "imran-khan",
+    "name": "Imran Khan",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 175,
+     "runs": 3709,
+     "average": 33.41,
+     "hundreds": 1,
+     "highest": 102,
+     "wickets": 182,
+     "catches": 36
+    },
+    "photo": "/players/imran-khan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ian-botham",
+    "name": "Ian Botham",
+    "team": "England",
+    "stats": {
+     "matches": 116,
+     "runs": 2113,
+     "average": 23.21,
+     "hundreds": 0,
+     "highest": 79,
+     "wickets": 145,
+     "catches": 36
+    },
+    "photo": "/players/ian-botham.jpg"
+   },
+   {
+    "id": "richard-hadlee",
+    "name": "Richard Hadlee",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 115,
+     "runs": 1751,
+     "average": 21.61,
+     "hundreds": 0,
+     "highest": 79,
+     "wickets": 158,
+     "catches": 27
+    },
+    "photo": "/players/richard-hadlee.jpg"
+   },
+   {
+    "id": "curtly-ambrose",
+    "name": "Curtly Ambrose",
+    "team": "West Indies",
+    "stats": {
+     "matches": 176,
+     "runs": 639,
+     "average": 10.65,
+     "hundreds": 0,
+     "highest": 31,
+     "wickets": 225,
+     "catches": 45
+    },
+    "photo": "/players/curtly-ambrose.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "courtney-walsh",
+    "name": "Courtney Walsh",
+    "team": "West Indies",
+    "stats": {
+     "matches": 205,
+     "runs": 321,
+     "average": 6.97,
+     "hundreds": 0,
+     "highest": 30,
+     "wickets": 227,
+     "catches": 27
+    },
+    "photo": "/players/courtney-walsh.jpg"
+   },
+   {
+    "id": "adil-rashid",
+    "name": "Adil Rashid",
+    "team": "England",
+    "stats": {
+     "matches": 164,
+     "runs": 972,
+     "average": 16.47,
+     "hundreds": 0,
+     "highest": 69,
+     "wickets": 243,
+     "catches": 54
+    },
+    "photo": "/players/adil-rashid.webp"
+   },
+   {
+    "id": "lance-klusener",
+    "name": "Lance Klusener",
+    "team": "South Africa",
+    "stats": {
+     "matches": 171,
+     "runs": 3576,
+     "average": 41.1,
+     "hundreds": 2,
+     "highest": 103,
+     "wickets": 192,
+     "catches": 35
+    },
+    "photo": "/players/lance-klusener.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kagiso-rabada",
+    "name": "Kagiso Rabada",
+    "team": "South Africa",
+    "stats": {
+     "matches": 106,
+     "runs": 401,
+     "average": 14.85,
+     "hundreds": 0,
+     "highest": 31,
+     "wickets": 168,
+     "catches": 41
+    },
+    "photo": "/players/kagiso-rabada.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shaheen-afridi",
+    "name": "Shaheen Afridi",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 77,
+     "runs": 332,
+     "average": 13.28,
+     "hundreds": 0,
+     "highest": 37,
+     "wickets": 146,
+     "catches": 20
+    },
+    "photo": "/players/shaheen-afridi.jpg"
+   }
+  ]
+ },
+ {
+  "format": "T20I",
+  "asOf": "2026-10-01",
+  "source": {
+   "name": "Wikipedia player infoboxes",
+   "url": "https://en.wikipedia.org/wiki/Category:Cricketers",
+   "license": "CC BY-SA 4.0"
+  },
+  "stats": [
+   {
+    "key": "matches",
+    "label": "Matches",
+    "short": "Mat"
+   },
+   {
+    "key": "runs",
+    "label": "Runs",
+    "short": "Runs"
+   },
+   {
+    "key": "average",
+    "label": "Batting average",
+    "short": "Avg",
+    "decimals": 2
+   },
+   {
+    "key": "fifties",
+    "label": "Fifties",
+    "short": "50s"
+   },
+   {
+    "key": "highest",
+    "label": "Highest score",
+    "short": "HS"
+   },
+   {
+    "key": "wickets",
+    "label": "Wickets",
+    "short": "Wkts"
+   },
+   {
+    "key": "catches",
+    "label": "Catches",
+    "short": "Ct"
+   }
+  ],
+  "cards": [
+   {
+    "id": "babar-azam",
+    "name": "Babar Azam",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 145,
+     "runs": 4596,
+     "average": 38.94,
+     "fifties": 39,
+     "highest": 122,
+     "wickets": 0,
+     "catches": 68
+    },
+    "photo": "/players/babar-azam.jpg"
+   },
+   {
+    "id": "jos-buttler",
+    "name": "Jos Buttler",
+    "team": "England",
+    "stats": {
+     "matches": 163,
+     "runs": 4384,
+     "average": 34.79,
+     "fifties": 30,
+     "highest": 131,
+     "wickets": 0,
+     "catches": 100
+    },
+    "photo": "/players/jos-buttler.jpg"
+   },
+   {
+    "id": "rohit-sharma",
+    "name": "Rohit Sharma",
+    "team": "India",
+    "stats": {
+     "matches": 159,
+     "runs": 4231,
+     "average": 32.05,
+     "fifties": 32,
+     "highest": 121,
+     "wickets": 1,
+     "catches": 65
+    },
+    "photo": "/players/rohit-sharma.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "virat-kohli",
+    "name": "Virat Kohli",
+    "team": "India",
+    "stats": {
+     "matches": 125,
+     "runs": 4188,
+     "average": 48.69,
+     "fifties": 38,
+     "highest": 122,
+     "wickets": 4,
+     "catches": 54
+    },
+    "photo": "/players/virat-kohli.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "martin-guptill",
+    "name": "Martin Guptill",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 122,
+     "runs": 3531,
+     "average": 31.81,
+     "fifties": 20,
+     "highest": 105,
+     "wickets": 0,
+     "catches": 68
+    },
+    "photo": "/players/martin-guptill.jpg"
+   },
+   {
+    "id": "david-warner",
+    "name": "David Warner",
+    "team": "Australia",
+    "stats": {
+     "matches": 110,
+     "runs": 3277,
+     "average": 33.43,
+     "fifties": 28,
+     "highest": 100,
+     "wickets": 0,
+     "catches": 62
+    },
+    "photo": "/players/david-warner.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "suryakumar-yadav",
+    "name": "Suryakumar Yadav",
+    "team": "India",
+    "stats": {
+     "matches": 113,
+     "runs": 3272,
+     "average": 36.35,
+     "fifties": 25,
+     "highest": 117,
+     "wickets": 2,
+     "catches": 58
+    },
+    "photo": "/players/suryakumar-yadav.jpg"
+   },
+   {
+    "id": "paul-stirling",
+    "name": "Paul Stirling",
+    "team": "Ireland",
+    "stats": {
+     "matches": 163,
+     "runs": 3895,
+     "average": 26.31,
+     "fifties": 24,
+     "highest": 115,
+     "wickets": 20,
+     "catches": 44
+    },
+    "photo": "/players/paul-stirling.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "aaron-finch",
+    "name": "Aaron Finch",
+    "team": "Australia",
+    "stats": {
+     "matches": 103,
+     "runs": 3120,
+     "average": 34.28,
+     "fifties": 19,
+     "highest": 172,
+     "wickets": 0,
+     "catches": 50
+    },
+    "photo": "/players/aaron-finch.jpg"
+   },
+   {
+    "id": "quinton-de-kock",
+    "name": "Quinton de Kock",
+    "team": "South Africa",
+    "stats": {
+     "matches": 110,
+     "runs": 3095,
+     "average": 30.95,
+     "fifties": 19,
+     "highest": 115,
+     "wickets": 0,
+     "catches": 98
+    },
+    "photo": "/players/quinton-de-kock.jpg"
+   },
+   {
+    "id": "sikandar-raza",
+    "name": "Sikandar Raza",
+    "team": "Zimbabwe",
+    "stats": {
+     "matches": 144,
+     "runs": 3244,
+     "average": 25.54,
+     "fifties": 17,
+     "highest": 133,
+     "wickets": 114,
+     "catches": 61
+    },
+    "photo": "/players/sikandar-raza.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "glenn-maxwell",
+    "name": "Glenn Maxwell",
+    "team": "Australia",
+    "stats": {
+     "matches": 130,
+     "runs": 2897,
+     "average": 28.97,
+     "fifties": 12,
+     "highest": 145,
+     "wickets": 51,
+     "catches": 62
+    },
+    "photo": "/players/glenn-maxwell.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "david-miller",
+    "name": "David Miller",
+    "team": "South Africa",
+    "stats": {
+     "matches": 140,
+     "runs": 2804,
+     "average": 33.78,
+     "fifties": 9,
+     "highest": 106,
+     "wickets": 0,
+     "catches": 87
+    },
+    "photo": "/players/david-miller.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "pathum-nissanka",
+    "name": "Pathum Nissanka",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 91,
+     "runs": 2648,
+     "average": 31.15,
+     "fifties": 19,
+     "highest": 107,
+     "wickets": 0,
+     "catches": 21
+    },
+    "photo": "/players/pathum-nissanka.webp"
+   },
+   {
+    "id": "kane-williamson",
+    "name": "Kane Williamson",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 93,
+     "runs": 2575,
+     "average": 33.44,
+     "fifties": 18,
+     "highest": 95,
+     "wickets": 6,
+     "catches": 45
+    },
+    "photo": "/players/kane-williamson.jpg"
+   },
+   {
+    "id": "kusal-mendis",
+    "name": "Kusal Mendis",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 90,
+     "runs": 2198,
+     "average": 25.55,
+     "fifties": 17,
+     "highest": 86,
+     "wickets": 0,
+     "catches": 39
+    },
+    "photo": "/players/kusal-mendis.webp"
+   },
+   {
+    "id": "reeza-hendricks",
+    "name": "Reeza Hendricks",
+    "team": "South Africa",
+    "stats": {
+     "matches": 88,
+     "runs": 2491,
+     "average": 29.3,
+     "fifties": 18,
+     "highest": 117,
+     "wickets": 0,
+     "catches": 41
+    },
+    "photo": "/players/reeza-hendricks.jpg"
+   },
+   {
+    "id": "liton-das",
+    "name": "Liton Das",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 122,
+     "runs": 2702,
+     "average": 23.49,
+     "fifties": 16,
+     "highest": 83,
+     "wickets": 0,
+     "catches": 79
+    },
+    "photo": "/players/liton-das.jpg"
+   },
+   {
+    "id": "mohammad-hafeez",
+    "name": "Mohammad Hafeez",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 119,
+     "runs": 2514,
+     "average": 26.46,
+     "fifties": 14,
+     "highest": 99,
+     "wickets": 61,
+     "catches": 30
+    },
+    "photo": "/players/mohammad-hafeez.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "eoin-morgan",
+    "name": "Eoin Morgan",
+    "team": "England",
+    "stats": {
+     "matches": 115,
+     "runs": 2458,
+     "average": 28.58,
+     "fifties": 14,
+     "highest": 91,
+     "wickets": 0,
+     "catches": 46
+    },
+    "photo": "/players/eoin-morgan.jpg"
+   },
+   {
+    "id": "shoaib-malik",
+    "name": "Shoaib Malik",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 124,
+     "runs": 2435,
+     "average": 31.21,
+     "fifties": 9,
+     "highest": 75,
+     "wickets": 28,
+     "catches": 50
+    },
+    "photo": "/players/shoaib-malik.jpg"
+   },
+   {
+    "id": "rovman-powell",
+    "name": "Rovman Powell",
+    "team": "West Indies",
+    "stats": {
+     "matches": 107,
+     "runs": 2068,
+     "average": 25.85,
+     "fifties": 9,
+     "highest": 107,
+     "wickets": 5,
+     "catches": 53
+    },
+    "photo": "/players/rovman-powell.webp"
+   },
+   {
+    "id": "kusal-perera",
+    "name": "Kusal Perera",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 88,
+     "runs": 2276,
+     "average": 27.42,
+     "fifties": 16,
+     "highest": 101,
+     "wickets": 0,
+     "catches": 25
+    },
+    "photo": "/players/kusal-perera.webp"
+   },
+   {
+    "id": "shakib-al-hasan",
+    "name": "Shakib Al Hasan",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 129,
+     "runs": 2551,
+     "average": 23.19,
+     "fifties": 13,
+     "highest": 84,
+     "wickets": 149,
+     "catches": 31
+    },
+    "photo": "/players/shakib-al-hasan.jpg"
+   },
+   {
+    "id": "mitchell-marsh",
+    "name": "Mitchell Marsh",
+    "team": "Australia",
+    "stats": {
+     "matches": 88,
+     "runs": 2313,
+     "average": 33.52,
+     "fifties": 14,
+     "highest": 103,
+     "wickets": 17,
+     "catches": 41
+    },
+    "photo": "/players/mitchell-marsh.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "mahmudullah",
+    "name": "Mahmudullah",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 141,
+     "runs": 2444,
+     "average": 23.5,
+     "fifties": 8,
+     "highest": 64,
+     "wickets": 41,
+     "catches": 51
+    },
+    "photo": "/players/mahmudullah.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "hardik-pandya",
+    "name": "Hardik Pandya",
+    "team": "India",
+    "stats": {
+     "matches": 131,
+     "runs": 2128,
+     "average": 29.15,
+     "fifties": 8,
+     "highest": 71,
+     "wickets": 107,
+     "catches": 60
+    },
+    "photo": "/players/hardik-pandya.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "nicholas-pooran",
+    "name": "Nicholas Pooran",
+    "team": "West Indies",
+    "stats": {
+     "matches": 106,
+     "runs": 2275,
+     "average": 26.14,
+     "fifties": 13,
+     "highest": 98,
+     "wickets": 0,
+     "catches": 63
+    },
+    "photo": "/players/nicholas-pooran.jpg"
+   },
+   {
+    "id": "brendon-mccullum",
+    "name": "Brendon McCullum",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 71,
+     "runs": 2140,
+     "average": 35.66,
+     "fifties": 13,
+     "highest": 123,
+     "wickets": 0,
+     "catches": 36
+    },
+    "photo": "/players/brendon-mccullum.jpg"
+   },
+   {
+    "id": "kl-rahul",
+    "name": "KL Rahul",
+    "team": "India",
+    "stats": {
+     "matches": 72,
+     "runs": 2265,
+     "average": 37.75,
+     "fifties": 22,
+     "highest": 110,
+     "wickets": 0,
+     "catches": 23
+    },
+    "photo": "/players/kl-rahul.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "andrew-balbirnie",
+    "name": "Andrew Balbirnie",
+    "team": "Ireland",
+    "stats": {
+     "matches": 110,
+     "runs": 2392,
+     "average": 23.45,
+     "fifties": 12,
+     "highest": 83,
+     "wickets": 0,
+     "catches": 39
+    },
+    "photo": "/players/andrew-balbirnie.jpg"
+   },
+   {
+    "id": "alex-hales",
+    "name": "Alex Hales",
+    "team": "England",
+    "stats": {
+     "matches": 75,
+     "runs": 2074,
+     "average": 30.95,
+     "fifties": 12,
+     "highest": 116,
+     "wickets": 0,
+     "catches": 39
+    },
+    "photo": "/players/alex-hales.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "dasun-shanaka",
+    "name": "Dasun Shanaka",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 131,
+     "runs": 1912,
+     "average": 20.55,
+     "fifties": 8,
+     "highest": 76,
+     "wickets": 46,
+     "catches": 40
+    },
+    "photo": "/players/dasun-shanaka.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ross-taylor",
+    "name": "Ross Taylor",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 106,
+     "runs": 1954,
+     "average": 26.05,
+     "fifties": 7,
+     "highest": 63,
+     "wickets": 0,
+     "catches": 49
+    },
+    "photo": "/players/ross-taylor.jpg"
+   },
+   {
+    "id": "aiden-markram",
+    "name": "Aiden Markram",
+    "team": "South Africa",
+    "stats": {
+     "matches": 77,
+     "runs": 1966,
+     "average": 31.7,
+     "fifties": 14,
+     "highest": 86,
+     "wickets": 16,
+     "catches": 47
+    },
+    "photo": "/players/aiden-markram.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "chris-gayle",
+    "name": "Chris Gayle",
+    "team": "West Indies",
+    "stats": {
+     "matches": 79,
+     "runs": 1899,
+     "average": 27.92,
+     "fifties": 14,
+     "highest": 117,
+     "wickets": 20,
+     "catches": 20
+    },
+    "photo": "/players/chris-gayle.jpg"
+   },
+   {
+    "id": "jp-duminy",
+    "name": "JP Duminy",
+    "team": "South Africa",
+    "stats": {
+     "matches": 81,
+     "runs": 1934,
+     "average": 38.68,
+     "fifties": 11,
+     "highest": 96,
+     "wickets": 21,
+     "catches": 35
+    },
+    "photo": "/players/jp-duminy.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "dawid-malan",
+    "name": "Dawid Malan",
+    "team": "England",
+    "stats": {
+     "matches": 62,
+     "runs": 1892,
+     "average": 36.38,
+     "fifties": 16,
+     "highest": 103,
+     "wickets": 1,
+     "catches": 22
+    },
+    "photo": "/players/dawid-malan.webp",
+    "hsNotOut": true
+   },
+   {
+    "id": "phil-salt",
+    "name": "Phil Salt",
+    "team": "England",
+    "stats": {
+     "matches": 65,
+     "runs": 1852,
+     "average": 34.94,
+     "fifties": 10,
+     "highest": 141,
+     "wickets": 0,
+     "catches": 38
+    },
+    "photo": "/players/phil-salt.webp",
+    "hsNotOut": true
+   },
+   {
+    "id": "devon-conway",
+    "name": "Devon Conway",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 69,
+     "runs": 1839,
+     "average": 35.36,
+     "fifties": 13,
+     "highest": 99,
+     "wickets": 0,
+     "catches": 44
+    },
+    "photo": "/players/devon-conway.webp",
+    "hsNotOut": true
+   },
+   {
+    "id": "shikhar-dhawan",
+    "name": "Shikhar Dhawan",
+    "team": "India",
+    "stats": {
+     "matches": 68,
+     "runs": 1759,
+     "average": 27.92,
+     "fifties": 11,
+     "highest": 92,
+     "wickets": 0,
+     "catches": 19
+    },
+    "photo": "/players/shikhar-dhawan.jpg"
+   },
+   {
+    "id": "tillakaratne-dilshan",
+    "name": "Tillakaratne Dilshan",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 80,
+     "runs": 1889,
+     "average": 28.19,
+     "fifties": 13,
+     "highest": 104,
+     "wickets": 9,
+     "catches": 31
+    },
+    "photo": "/players/tillakaratne-dilshan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shai-hope",
+    "name": "Shai Hope",
+    "team": "West Indies",
+    "stats": {
+     "matches": 70,
+     "runs": 1743,
+     "average": 30.05,
+     "fifties": 12,
+     "highest": 102,
+     "wickets": 0,
+     "catches": 29
+    },
+    "photo": "/players/shai-hope.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jonny-bairstow",
+    "name": "Jonny Bairstow",
+    "team": "England",
+    "stats": {
+     "matches": 80,
+     "runs": 1671,
+     "average": 29.83,
+     "fifties": 10,
+     "highest": 90,
+     "wickets": 0,
+     "catches": 46
+    },
+    "photo": "/players/jonny-bairstow.webp"
+   },
+   {
+    "id": "ab-de-villiers",
+    "name": "AB de Villiers",
+    "team": "South Africa",
+    "stats": {
+     "matches": 78,
+     "runs": 1672,
+     "average": 26.12,
+     "fifties": 10,
+     "highest": 79,
+     "wickets": 0,
+     "catches": 65
+    },
+    "photo": "/players/ab-de-villiers.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ms-dhoni",
+    "name": "MS Dhoni",
+    "team": "India",
+    "stats": {
+     "matches": 98,
+     "runs": 1617,
+     "average": 37.6,
+     "fifties": 2,
+     "highest": 56,
+     "wickets": 0,
+     "catches": 57
+    },
+    "photo": "/players/ms-dhoni.jpg"
+   },
+   {
+    "id": "suresh-raina",
+    "name": "Suresh Raina",
+    "team": "India",
+    "stats": {
+     "matches": 78,
+     "runs": 1605,
+     "average": 29.18,
+     "fifties": 5,
+     "highest": 101,
+     "wickets": 13,
+     "catches": 42
+    },
+    "photo": "/players/suresh-raina.jpg"
+   },
+   {
+    "id": "kieron-pollard",
+    "name": "Kieron Pollard",
+    "team": "West Indies",
+    "stats": {
+     "matches": 101,
+     "runs": 1569,
+     "average": 25.3,
+     "fifties": 6,
+     "highest": 75,
+     "wickets": 42,
+     "catches": 42
+    },
+    "photo": "/players/kieron-pollard.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jason-roy",
+    "name": "Jason Roy",
+    "team": "England",
+    "stats": {
+     "matches": 64,
+     "runs": 1522,
+     "average": 24.15,
+     "fifties": 8,
+     "highest": 78,
+     "wickets": 0,
+     "catches": 19
+    },
+    "photo": "/players/jason-roy.jpg"
+   },
+   {
+    "id": "faf-du-plessis",
+    "name": "Faf du Plessis",
+    "team": "South Africa",
+    "stats": {
+     "matches": 50,
+     "runs": 1528,
+     "average": 35.53,
+     "fifties": 10,
+     "highest": 119,
+     "wickets": 0,
+     "catches": 24
+    },
+    "photo": "/players/faf-du-plessis.jpg"
+   },
+   {
+    "id": "shane-watson",
+    "name": "Shane Watson",
+    "team": "Australia",
+    "stats": {
+     "matches": 58,
+     "runs": 1462,
+     "average": 29.24,
+     "fifties": 10,
+     "highest": 124,
+     "wickets": 48,
+     "catches": 20
+    },
+    "photo": "/players/shane-watson.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "travis-head",
+    "name": "Travis Head",
+    "team": "Australia",
+    "stats": {
+     "matches": 53,
+     "runs": 1335,
+     "average": 28.4,
+     "fifties": 6,
+     "highest": 91,
+     "wickets": 1,
+     "catches": 9
+    },
+    "photo": "/players/travis-head.jpg"
+   },
+   {
+    "id": "yuvraj-singh",
+    "name": "Yuvraj Singh",
+    "team": "India",
+    "stats": {
+     "matches": 58,
+     "runs": 1177,
+     "average": 28.02,
+     "fifties": 8,
+     "highest": 77,
+     "wickets": 29,
+     "catches": 12
+    },
+    "photo": "/players/yuvraj-singh.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kumar-sangakkara",
+    "name": "Kumar Sangakkara",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 56,
+     "runs": 1382,
+     "average": 31.4,
+     "fifties": 8,
+     "highest": 78,
+     "wickets": 0,
+     "catches": 25
+    },
+    "photo": "/players/kumar-sangakkara.jpg"
+   },
+   {
+    "id": "adil-rashid",
+    "name": "Adil Rashid",
+    "team": "England",
+    "stats": {
+     "matches": 153,
+     "runs": 163,
+     "average": 7.4,
+     "fifties": 0,
+     "highest": 22,
+     "wickets": 171,
+     "catches": 42
+    },
+    "photo": "/players/adil-rashid.webp"
+   },
+   {
+    "id": "ish-sodhi",
+    "name": "Ish Sodhi",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 142,
+     "runs": 243,
+     "average": 8.67,
+     "fifties": 0,
+     "highest": 33,
+     "wickets": 165,
+     "catches": 41
+    },
+    "photo": "/players/ish-sodhi.jpg"
+   },
+   {
+    "id": "tim-southee",
+    "name": "Tim Southee",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 126,
+     "runs": 303,
+     "average": 11.22,
+     "fifties": 0,
+     "highest": 39,
+     "wickets": 164,
+     "catches": 65
+    },
+    "photo": "/players/tim-southee.jpg"
+   },
+   {
+    "id": "wanindu-hasaranga",
+    "name": "Wanindu Hasaranga",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 98,
+     "runs": 831,
+     "average": 13.4,
+     "fifties": 2,
+     "highest": 71,
+     "wickets": 161,
+     "catches": 39
+    },
+    "photo": "/players/wanindu-hasaranga.jpg"
+   },
+   {
+    "id": "mustafizur-rahman",
+    "name": "Mustafizur Rahman",
+    "team": "Bangladesh",
+    "stats": {
+     "matches": 128,
+     "runs": 119,
+     "average": 5.66,
+     "fifties": 0,
+     "highest": 15,
+     "wickets": 160,
+     "catches": 29
+    },
+    "photo": "/players/mustafizur-rahman.jpg"
+   },
+   {
+    "id": "adam-zampa",
+    "name": "Adam Zampa",
+    "team": "Australia",
+    "stats": {
+     "matches": 118,
+     "runs": 80,
+     "average": 4.7,
+     "fifties": 0,
+     "highest": 13,
+     "wickets": 153,
+     "catches": 16
+    },
+    "photo": "/players/adam-zampa.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shaheen-afridi",
+    "name": "Shaheen Afridi",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 103,
+     "runs": 345,
+     "average": 14.37,
+     "fifties": 0,
+     "highest": 33,
+     "wickets": 136,
+     "catches": 30
+    },
+    "photo": "/players/shaheen-afridi.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jasprit-bumrah",
+    "name": "Jasprit Bumrah",
+    "team": "India",
+    "stats": {
+     "matches": 95,
+     "runs": 12,
+     "average": 2.0,
+     "fifties": 0,
+     "highest": 7,
+     "wickets": 121,
+     "catches": 15
+    },
+    "photo": "/players/jasprit-bumrah.jpg"
+   },
+   {
+    "id": "lasith-malinga",
+    "name": "Lasith Malinga",
+    "team": "Sri Lanka",
+    "stats": {
+     "matches": 84,
+     "runs": 136,
+     "average": 3.47,
+     "fifties": 0,
+     "highest": 27,
+     "wickets": 107,
+     "catches": 20
+    },
+    "photo": "/players/lasith-malinga.jpg"
+   },
+   {
+    "id": "yuzvendra-chahal",
+    "name": "Yuzvendra Chahal",
+    "team": "India",
+    "stats": {
+     "matches": 80,
+     "runs": 6,
+     "average": 3.0,
+     "fifties": 0,
+     "highest": 3,
+     "wickets": 96,
+     "catches": 14
+    },
+    "photo": "/players/yuzvendra-chahal.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shahid-afridi",
+    "name": "Shahid Afridi",
+    "team": "Pakistan",
+    "stats": {
+     "matches": 99,
+     "runs": 1416,
+     "average": 17.92,
+     "fifties": 4,
+     "highest": 54,
+     "wickets": 98,
+     "catches": 30
+    },
+    "photo": "/players/shahid-afridi.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kuldeep-yadav",
+    "name": "Kuldeep Yadav",
+    "team": "India",
+    "stats": {
+     "matches": 54,
+     "runs": 48,
+     "average": 8,
+     "fifties": 0,
+     "highest": 23,
+     "wickets": 95,
+     "catches": 14
+    },
+    "photo": "/players/kuldeep-yadav.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "bhuvneshwar-kumar",
+    "name": "Bhuvneshwar Kumar",
+    "team": "India",
+    "stats": {
+     "matches": 87,
+     "runs": 67,
+     "average": 8.37,
+     "fifties": 0,
+     "highest": 16,
+     "wickets": 90,
+     "catches": 15
+    },
+    "photo": "/players/bhuvneshwar-kumar.jpg"
+   },
+   {
+    "id": "mitchell-starc",
+    "name": "Mitchell Starc",
+    "team": "Australia",
+    "stats": {
+     "matches": 65,
+     "runs": 98,
+     "average": 9.8,
+     "fifties": 0,
+     "highest": 14,
+     "wickets": 79,
+     "catches": 22
+    },
+    "photo": "/players/mitchell-starc.jpg"
+   },
+   {
+    "id": "trent-boult",
+    "name": "Trent Boult",
+    "team": "New Zealand",
+    "stats": {
+     "matches": 61,
+     "runs": 58,
+     "average": 8.28,
+     "fifties": 0,
+     "highest": 16,
+     "wickets": 83,
+     "catches": 22
+    },
+    "photo": "/players/trent-boult.jpg"
+   },
+   {
+    "id": "dwayne-bravo",
+    "name": "Dwayne Bravo",
+    "team": "West Indies",
+    "stats": {
+     "matches": 91,
+     "runs": 1255,
+     "average": 22.01,
+     "fifties": 4,
+     "highest": 66,
+     "wickets": 78,
+     "catches": 44
+    },
+    "photo": "/players/dwayne-bravo.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kagiso-rabada",
+    "name": "Kagiso Rabada",
+    "team": "South Africa",
+    "stats": {
+     "matches": 78,
+     "runs": 184,
+     "average": 15.33,
+     "fifties": 0,
+     "highest": 22,
+     "wickets": 82,
+     "catches": 26
+    },
+    "photo": "/players/kagiso-rabada.jpg"
+   },
+   {
+    "id": "pat-cummins",
+    "name": "Pat Cummins",
+    "team": "Australia",
+    "stats": {
+     "matches": 57,
+     "runs": 158,
+     "average": 10.53,
+     "fifties": 0,
+     "highest": 28,
+     "wickets": 66,
+     "catches": 16
+    },
+    "photo": "/players/pat-cummins.jpg"
+   },
+   {
+    "id": "rashid-khan",
+    "name": "Rashid Khan",
+    "team": "Afghanistan",
+    "stats": {
+     "matches": 115,
+     "runs": 622,
+     "average": 14.8,
+     "fifties": 0,
+     "highest": 48,
+     "wickets": 193,
+     "catches": 45
+    },
+    "photo": "/players/rashid-khan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "mohammad-nabi",
+    "name": "Mohammad Nabi",
+    "team": "Afghanistan",
+    "stats": {
+     "matches": 152,
+     "runs": 2448,
+     "average": 22.25,
+     "fifties": 7,
+     "highest": 89,
+     "wickets": 109,
+     "catches": 82
+    },
+    "photo": "/players/mohammad-nabi.jpg"
+   },
+   {
+    "id": "andre-russell",
+    "name": "Andre Russell",
+    "team": "West Indies",
+    "stats": {
+     "matches": 86,
+     "runs": 1122,
+     "average": 22.0,
+     "fifties": 3,
+     "highest": 71,
+     "wickets": 61,
+     "catches": 21
+    },
+    "photo": "/players/andre-russell.jpg"
+   },
+   {
+    "id": "stuart-broad",
+    "name": "Stuart Broad",
+    "team": "England",
+    "stats": {
+     "matches": 56,
+     "runs": 118,
+     "average": 7.37,
+     "fifties": 0,
+     "highest": 18,
+     "wickets": 65,
+     "catches": 21
+    },
+    "photo": "/players/stuart-broad.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "dale-steyn",
+    "name": "Dale Steyn",
+    "team": "South Africa",
+    "stats": {
+     "matches": 47,
+     "runs": 21,
+     "average": 3.5,
+     "fifties": 0,
+     "highest": 5,
+     "wickets": 64,
+     "catches": 12
+    },
+    "photo": "/players/dale-steyn.jpg"
+   },
+   {
+    "id": "ravindra-jadeja",
+    "name": "Ravindra Jadeja",
+    "team": "India",
+    "stats": {
+     "matches": 74,
+     "runs": 515,
+     "average": 21.45,
+     "fifties": 0,
+     "highest": 46,
+     "wickets": 54,
+     "catches": 28
+    },
+    "photo": "/players/ravindra-jadeja.jpg",
+    "hsNotOut": true
+   }
+  ]
+ },
+ {
+  "format": "IPL",
+  "asOf": "2026-05-31",
+  "source": {
+   "name": "Cricsheet ball-by-ball data",
+   "url": "https://cricsheet.org/",
+   "license": "ODC-By 1.0"
+  },
+  "stats": [
+   {
+    "key": "matches",
+    "label": "Matches",
+    "short": "Mat"
+   },
+   {
+    "key": "runs",
+    "label": "Runs",
+    "short": "Runs"
+   },
+   {
+    "key": "strikeRate",
+    "label": "Strike rate",
+    "short": "SR",
+    "decimals": 2
+   },
+   {
+    "key": "sixes",
+    "label": "Sixes",
+    "short": "6s"
+   },
+   {
+    "key": "highest",
+    "label": "Highest score",
+    "short": "HS"
+   },
+   {
+    "key": "wickets",
+    "label": "Wickets",
+    "short": "Wkts"
+   },
+   {
+    "key": "catches",
+    "label": "Catches",
+    "short": "Ct"
+   }
+  ],
+  "cards": [
+   {
+    "id": "virat-kohli",
+    "name": "Virat Kohli",
+    "team": "Royal Challengers Bengaluru",
+    "stats": {
+     "matches": 282,
+     "runs": 9336,
+     "strikeRate": 134.8,
+     "sixes": 316,
+     "highest": 113,
+     "wickets": 4,
+     "catches": 126
+    },
+    "photo": "/players/virat-kohli.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "rohit-sharma",
+    "name": "Rohit Sharma",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 281,
+     "runs": 7329,
+     "strikeRate": 132.92,
+     "sixes": 323,
+     "highest": 109,
+     "wickets": 15,
+     "catches": 102
+    },
+    "photo": "/players/rohit-sharma.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ms-dhoni",
+    "name": "MS Dhoni",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 277,
+     "runs": 5439,
+     "strikeRate": 137.45,
+     "sixes": 264,
+     "highest": 84,
+     "wickets": 0,
+     "catches": 158
+    },
+    "photo": "/players/ms-dhoni.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ravindra-jadeja",
+    "name": "Ravindra Jadeja",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 267,
+     "runs": 3526,
+     "strikeRate": 130.64,
+     "sixes": 122,
+     "highest": 77,
+     "wickets": 180,
+     "catches": 110
+    },
+    "photo": "/players/ravindra-jadeja.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shikhar-dhawan",
+    "name": "Shikhar Dhawan",
+    "team": "Sunrisers Hyderabad",
+    "stats": {
+     "matches": 222,
+     "runs": 6769,
+     "strikeRate": 127.14,
+     "sixes": 152,
+     "highest": 106,
+     "wickets": 4,
+     "catches": 99
+    },
+    "photo": "/players/shikhar-dhawan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ravichandran-ashwin",
+    "name": "Ravichandran Ashwin",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 219,
+     "runs": 833,
+     "strikeRate": 118.16,
+     "sixes": 29,
+     "highest": 50,
+     "wickets": 187,
+     "catches": 51
+    },
+    "photo": "/players/ravichandran-ashwin.jpg"
+   },
+   {
+    "id": "ajinkya-rahane",
+    "name": "Ajinkya Rahane",
+    "team": "Rajasthan Royals",
+    "stats": {
+     "matches": 212,
+     "runs": 5367,
+     "strikeRate": 125.6,
+     "sixes": 141,
+     "highest": 105,
+     "wickets": 1,
+     "catches": 83
+    },
+    "photo": "/players/ajinkya-rahane.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "bhuvneshwar-kumar",
+    "name": "Bhuvneshwar Kumar",
+    "team": "Sunrisers Hyderabad",
+    "stats": {
+     "matches": 206,
+     "runs": 354,
+     "strikeRate": 93.9,
+     "sixes": 4,
+     "highest": 27,
+     "wickets": 226,
+     "catches": 39
+    },
+    "photo": "/players/bhuvneshwar-kumar.jpg"
+   },
+   {
+    "id": "robin-uthappa",
+    "name": "Robin Uthappa",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 205,
+     "runs": 4952,
+     "strikeRate": 130.35,
+     "sixes": 182,
+     "highest": 88,
+     "wickets": 0,
+     "catches": 92
+    },
+    "photo": "/players/robin-uthappa.jpg"
+   },
+   {
+    "id": "suresh-raina",
+    "name": "Suresh Raina",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 204,
+     "runs": 5528,
+     "strikeRate": 136.73,
+     "sixes": 203,
+     "highest": 100,
+     "wickets": 25,
+     "catches": 109
+    },
+    "photo": "/players/suresh-raina.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "sunil-narine",
+    "name": "Sunil Narine",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 201,
+     "runs": 1820,
+     "strikeRate": 165.3,
+     "sixes": 120,
+     "highest": 109,
+     "wickets": 207,
+     "catches": 39
+    },
+    "photo": "/players/sunil-narine.jpg"
+   },
+   {
+    "id": "sanju-samson",
+    "name": "Sanju Samson",
+    "team": "Rajasthan Royals",
+    "stats": {
+     "matches": 190,
+     "runs": 5181,
+     "strikeRate": 141.13,
+     "sixes": 243,
+     "highest": 119,
+     "wickets": 0,
+     "catches": 90
+    },
+    "photo": "/players/sanju-samson.jpg"
+   },
+   {
+    "id": "yuzvendra-chahal",
+    "name": "Yuzvendra Chahal",
+    "team": "Royal Challengers Bengaluru",
+    "stats": {
+     "matches": 189,
+     "runs": 37,
+     "strikeRate": 43.02,
+     "sixes": 0,
+     "highest": 8,
+     "wickets": 233,
+     "catches": 35
+    },
+    "photo": "/players/yuzvendra-chahal.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kieron-pollard",
+    "name": "Kieron Pollard",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 189,
+     "runs": 3412,
+     "strikeRate": 147.32,
+     "sixes": 223,
+     "highest": 87,
+     "wickets": 69,
+     "catches": 103
+    },
+    "photo": "/players/kieron-pollard.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "david-warner",
+    "name": "David Warner",
+    "team": "Sunrisers Hyderabad",
+    "stats": {
+     "matches": 184,
+     "runs": 6565,
+     "strikeRate": 139.77,
+     "sixes": 236,
+     "highest": 126,
+     "wickets": 0,
+     "catches": 86
+    },
+    "photo": "/players/david-warner.jpg"
+   },
+   {
+    "id": "ab-de-villiers",
+    "name": "AB de Villiers",
+    "team": "Royal Challengers Bengaluru",
+    "stats": {
+     "matches": 183,
+     "runs": 5162,
+     "strikeRate": 151.69,
+     "sixes": 251,
+     "highest": 133,
+     "wickets": 0,
+     "catches": 118
+    },
+    "photo": "/players/ab-de-villiers.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "suryakumar-yadav",
+    "name": "Suryakumar Yadav",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 179,
+     "runs": 4581,
+     "strikeRate": 148.59,
+     "sixes": 178,
+     "highest": 103,
+     "wickets": 0,
+     "catches": 77
+    },
+    "photo": "/players/suryakumar-yadav.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "harbhajan-singh",
+    "name": "Harbhajan Singh",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 163,
+     "runs": 833,
+     "strikeRate": 137.91,
+     "sixes": 42,
+     "highest": 64,
+     "wickets": 150,
+     "catches": 49
+    },
+    "photo": "/players/harbhajan-singh.jpg"
+   },
+   {
+    "id": "hardik-pandya",
+    "name": "Hardik Pandya",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 162,
+     "runs": 2955,
+     "strikeRate": 146.29,
+     "sixes": 155,
+     "highest": 91,
+     "wickets": 82,
+     "catches": 74
+    },
+    "photo": "/players/hardik-pandya.jpg"
+   },
+   {
+    "id": "amit-mishra",
+    "name": "Amit Mishra",
+    "team": "Delhi Capitals",
+    "stats": {
+     "matches": 162,
+     "runs": 381,
+     "strikeRate": 90.93,
+     "sixes": 5,
+     "highest": 31,
+     "wickets": 174,
+     "catches": 23
+    },
+    "photo": "/players/amit-mishra.jpg"
+   },
+   {
+    "id": "dwayne-bravo",
+    "name": "Dwayne Bravo",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 160,
+     "runs": 1560,
+     "strikeRate": 129.57,
+     "sixes": 66,
+     "highest": 70,
+     "wickets": 183,
+     "catches": 80
+    },
+    "photo": "/players/dwayne-bravo.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kl-rahul",
+    "name": "KL Rahul",
+    "team": "Punjab Kings",
+    "stats": {
+     "matches": 160,
+     "runs": 5815,
+     "strikeRate": 139.15,
+     "sixes": 239,
+     "highest": 152,
+     "wickets": 0,
+     "catches": 83
+    },
+    "photo": "/players/kl-rahul.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jasprit-bumrah",
+    "name": "Jasprit Bumrah",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 158,
+     "runs": 75,
+     "strikeRate": 87.21,
+     "sixes": 1,
+     "highest": 16,
+     "wickets": 187,
+     "catches": 19
+    },
+    "photo": "/players/jasprit-bumrah.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "gautam-gambhir",
+    "name": "Gautam Gambhir",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 154,
+     "runs": 4217,
+     "strikeRate": 123.88,
+     "sixes": 59,
+     "highest": 93,
+     "wickets": 0,
+     "catches": 28
+    },
+    "photo": "/players/gautam-gambhir.jpg"
+   },
+   {
+    "id": "faf-du-plessis",
+    "name": "Faf du Plessis",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 154,
+     "runs": 4773,
+     "strikeRate": 135.79,
+     "sixes": 174,
+     "highest": 96,
+     "wickets": 0,
+     "catches": 85
+    },
+    "photo": "/players/faf-du-plessis.jpg"
+   },
+   {
+    "id": "rashid-khan",
+    "name": "Rashid Khan",
+    "team": "Gujarat Titans",
+    "stats": {
+     "matches": 153,
+     "runs": 635,
+     "strikeRate": 156.4,
+     "sixes": 43,
+     "highest": 79,
+     "wickets": 179,
+     "catches": 53
+    },
+    "photo": "/players/rashid-khan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "david-miller",
+    "name": "David Miller",
+    "team": "Punjab Kings",
+    "stats": {
+     "matches": 152,
+     "runs": 3288,
+     "strikeRate": 139.5,
+     "sixes": 152,
+     "highest": 101,
+     "wickets": 0,
+     "catches": 87
+    },
+    "photo": "/players/david-miller.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shane-watson",
+    "name": "Shane Watson",
+    "team": "Rajasthan Royals",
+    "stats": {
+     "matches": 145,
+     "runs": 3874,
+     "strikeRate": 137.91,
+     "sixes": 190,
+     "highest": 117,
+     "wickets": 92,
+     "catches": 40
+    },
+    "photo": "/players/shane-watson.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "chris-gayle",
+    "name": "Chris Gayle",
+    "team": "Royal Challengers Bengaluru",
+    "stats": {
+     "matches": 141,
+     "runs": 4965,
+     "strikeRate": 148.96,
+     "sixes": 357,
+     "highest": 175,
+     "wickets": 18,
+     "catches": 29
+    },
+    "photo": "/players/chris-gayle.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "glenn-maxwell",
+    "name": "Glenn Maxwell",
+    "team": "Punjab Kings",
+    "stats": {
+     "matches": 141,
+     "runs": 2819,
+     "strikeRate": 155.15,
+     "sixes": 161,
+     "highest": 95,
+     "wickets": 41,
+     "catches": 52
+    },
+    "photo": "/players/glenn-maxwell.jpg"
+   },
+   {
+    "id": "rishabh-pant",
+    "name": "Rishabh Pant",
+    "team": "Delhi Capitals",
+    "stats": {
+     "matches": 139,
+     "runs": 3865,
+     "strikeRate": 146.79,
+     "sixes": 181,
+     "highest": 128,
+     "wickets": 0,
+     "catches": 90
+    },
+    "photo": "/players/rishabh-pant.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "andre-russell",
+    "name": "Andre Russell",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 139,
+     "runs": 2651,
+     "strikeRate": 174.18,
+     "sixes": 223,
+     "highest": 88,
+     "wickets": 123,
+     "catches": 41
+    },
+    "photo": "/players/andre-russell.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jos-buttler",
+    "name": "Jos Buttler",
+    "team": "Rajasthan Royals",
+    "stats": {
+     "matches": 138,
+     "runs": 4646,
+     "strikeRate": 149.73,
+     "sixes": 211,
+     "highest": 124,
+     "wickets": 0,
+     "catches": 88
+    },
+    "photo": "/players/jos-buttler.jpg"
+   },
+   {
+    "id": "shubman-gill",
+    "name": "Shubman Gill",
+    "team": "Gujarat Titans",
+    "stats": {
+     "matches": 134,
+     "runs": 4598,
+     "strikeRate": 142.09,
+     "sixes": 152,
+     "highest": 129,
+     "wickets": 0,
+     "catches": 57
+    },
+    "photo": "/players/shubman-gill.jpg"
+   },
+   {
+    "id": "yuvraj-singh",
+    "name": "Yuvraj Singh",
+    "team": "Punjab Kings",
+    "stats": {
+     "matches": 132,
+     "runs": 2750,
+     "strikeRate": 129.72,
+     "sixes": 149,
+     "highest": 83,
+     "wickets": 36,
+     "catches": 31
+    },
+    "photo": "/players/yuvraj-singh.jpg"
+   },
+   {
+    "id": "mohammed-shami",
+    "name": "Mohammed Shami",
+    "team": "Punjab Kings",
+    "stats": {
+     "matches": 132,
+     "runs": 115,
+     "strikeRate": 103.6,
+     "sixes": 5,
+     "highest": 21,
+     "wickets": 145,
+     "catches": 24
+    },
+    "photo": "/players/mohammed-shami.jpg"
+   },
+   {
+    "id": "trent-boult",
+    "name": "Trent Boult",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 124,
+     "runs": 93,
+     "strikeRate": 109.41,
+     "sixes": 4,
+     "highest": 17,
+     "wickets": 145,
+     "catches": 36
+    },
+    "photo": "/players/trent-boult.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "lasith-malinga",
+    "name": "Lasith Malinga",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 122,
+     "runs": 88,
+     "strikeRate": 88.89,
+     "sixes": 5,
+     "highest": 17,
+     "wickets": 170,
+     "catches": 21
+    },
+    "photo": "/players/lasith-malinga.jpg"
+   },
+   {
+    "id": "quinton-de-kock",
+    "name": "Quinton de Kock",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 118,
+     "runs": 3441,
+     "strikeRate": 134.94,
+     "sixes": 143,
+     "highest": 140,
+     "wickets": 0,
+     "catches": 75
+    },
+    "photo": "/players/quinton-de-kock.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "ishant-sharma",
+    "name": "Ishant Sharma",
+    "team": "Delhi Capitals",
+    "stats": {
+     "matches": 117,
+     "runs": 57,
+     "strikeRate": 82.61,
+     "sixes": 2,
+     "highest": 10,
+     "wickets": 96,
+     "catches": 20
+    },
+    "photo": "/players/ishant-sharma.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kuldeep-yadav",
+    "name": "Kuldeep Yadav",
+    "team": "Delhi Capitals",
+    "stats": {
+     "matches": 111,
+     "runs": 210,
+     "strikeRate": 83.0,
+     "sixes": 3,
+     "highest": 35,
+     "wickets": 112,
+     "catches": 22
+    },
+    "photo": "/players/kuldeep-yadav.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "brendon-mccullum",
+    "name": "Brendon McCullum",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 109,
+     "runs": 2880,
+     "strikeRate": 131.75,
+     "sixes": 130,
+     "highest": 158,
+     "wickets": 0,
+     "catches": 37
+    },
+    "photo": "/players/brendon-mccullum.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "nicholas-pooran",
+    "name": "Nicholas Pooran",
+    "team": "Lucknow Super Giants",
+    "stats": {
+     "matches": 104,
+     "runs": 2527,
+     "strikeRate": 164.09,
+     "sixes": 186,
+     "highest": 87,
+     "wickets": 0,
+     "catches": 45
+    },
+    "photo": "/players/nicholas-pooran.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "virender-sehwag",
+    "name": "Virender Sehwag",
+    "team": "Delhi Capitals",
+    "stats": {
+     "matches": 104,
+     "runs": 2728,
+     "strikeRate": 155.44,
+     "sixes": 106,
+     "highest": 122,
+     "wickets": 6,
+     "catches": 34
+    },
+    "photo": "/players/virender-sehwag.jpg"
+   },
+   {
+    "id": "steve-smith",
+    "name": "Steve Smith",
+    "team": "Rajasthan Royals",
+    "stats": {
+     "matches": 103,
+     "runs": 2485,
+     "strikeRate": 128.09,
+     "sixes": 60,
+     "highest": 101,
+     "wickets": 0,
+     "catches": 53
+    },
+    "photo": "/players/steve-smith.jpg"
+   },
+   {
+    "id": "kagiso-rabada",
+    "name": "Kagiso Rabada",
+    "team": "Delhi Capitals",
+    "stats": {
+     "matches": 101,
+     "runs": 262,
+     "strikeRate": 109.62,
+     "sixes": 11,
+     "highest": 44,
+     "wickets": 148,
+     "catches": 37
+    },
+    "photo": "/players/kagiso-rabada.jpg"
+   },
+   {
+    "id": "zaheer-khan",
+    "name": "Zaheer Khan",
+    "team": "Royal Challengers Bengaluru",
+    "stats": {
+     "matches": 99,
+     "runs": 117,
+     "strikeRate": 82.98,
+     "sixes": 2,
+     "highest": 23,
+     "wickets": 102,
+     "catches": 21
+    },
+    "photo": "/players/zaheer-khan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jacques-kallis",
+    "name": "Jacques Kallis",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 98,
+     "runs": 2427,
+     "strikeRate": 109.23,
+     "sixes": 44,
+     "highest": 89,
+     "wickets": 65,
+     "catches": 31
+    },
+    "photo": "/players/jacques-kallis.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "dale-steyn",
+    "name": "Dale Steyn",
+    "team": "Sunrisers Hyderabad",
+    "stats": {
+     "matches": 95,
+     "runs": 167,
+     "strikeRate": 104.38,
+     "sixes": 3,
+     "highest": 19,
+     "wickets": 97,
+     "catches": 24
+    },
+    "photo": "/players/dale-steyn.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "aaron-finch",
+    "name": "Aaron Finch",
+    "team": "Gujarat Lions",
+    "stats": {
+     "matches": 92,
+     "runs": 2091,
+     "strikeRate": 128.2,
+     "sixes": 78,
+     "highest": 88,
+     "wickets": 1,
+     "catches": 28
+    },
+    "photo": "/players/aaron-finch.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "rahul-dravid",
+    "name": "Rahul Dravid",
+    "team": "Rajasthan Royals",
+    "stats": {
+     "matches": 89,
+     "runs": 2174,
+     "strikeRate": 115.52,
+     "sixes": 28,
+     "highest": 75,
+     "wickets": 0,
+     "catches": 18
+    },
+    "photo": "/players/rahul-dravid.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "eoin-morgan",
+    "name": "Eoin Morgan",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 83,
+     "runs": 1405,
+     "strikeRate": 122.6,
+     "sixes": 64,
+     "highest": 68,
+     "wickets": 0,
+     "catches": 36
+    },
+    "photo": "/players/eoin-morgan.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "jp-duminy",
+    "name": "JP Duminy",
+    "team": "Delhi Capitals",
+    "stats": {
+     "matches": 83,
+     "runs": 2029,
+     "strikeRate": 124.02,
+     "sixes": 79,
+     "highest": 78,
+     "wickets": 23,
+     "catches": 30
+    },
+    "photo": "/players/jp-duminy.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "pat-cummins",
+    "name": "Pat Cummins",
+    "team": "Sunrisers Hyderabad",
+    "stats": {
+     "matches": 80,
+     "runs": 642,
+     "strikeRate": 152.49,
+     "sixes": 44,
+     "highest": 66,
+     "wickets": 87,
+     "catches": 22
+    },
+    "photo": "/players/pat-cummins.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "adam-gilchrist",
+    "name": "Adam Gilchrist",
+    "team": "Deccan Chargers",
+    "stats": {
+     "matches": 80,
+     "runs": 2069,
+     "strikeRate": 138.39,
+     "sixes": 92,
+     "highest": 109,
+     "wickets": 1,
+     "catches": 51
+    },
+    "photo": "/players/adam-gilchrist.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "mahela-jayawardene",
+    "name": "Mahela Jayawardene",
+    "team": "Punjab Kings",
+    "stats": {
+     "matches": 80,
+     "runs": 1802,
+     "strikeRate": 123.26,
+     "sixes": 39,
+     "highest": 110,
+     "wickets": 0,
+     "catches": 32
+    },
+    "photo": "/players/mahela-jayawardene.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "kane-williamson",
+    "name": "Kane Williamson",
+    "team": "Sunrisers Hyderabad",
+    "stats": {
+     "matches": 79,
+     "runs": 2128,
+     "strikeRate": 125.62,
+     "sixes": 64,
+     "highest": 89,
+     "wickets": 0,
+     "catches": 40
+    },
+    "photo": "/players/kane-williamson.jpg"
+   },
+   {
+    "id": "sachin-tendulkar",
+    "name": "Sachin Tendulkar",
+    "team": "Mumbai Indians",
+    "stats": {
+     "matches": 78,
+     "runs": 2334,
+     "strikeRate": 119.82,
+     "sixes": 29,
+     "highest": 100,
+     "wickets": 0,
+     "catches": 23
+    },
+    "photo": "/players/sachin-tendulkar.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "travis-head",
+    "name": "Travis Head",
+    "team": "Sunrisers Hyderabad",
+    "stats": {
+     "matches": 53,
+     "runs": 1556,
+     "strikeRate": 170.05,
+     "sixes": 78,
+     "highest": 102,
+     "wickets": 3,
+     "catches": 6
+    },
+    "photo": "/players/travis-head.jpg"
+   },
+   {
+    "id": "mitchell-starc",
+    "name": "Mitchell Starc",
+    "team": "Royal Challengers Bengaluru",
+    "stats": {
+     "matches": 58,
+     "runs": 111,
+     "strikeRate": 91.74,
+     "sixes": 0,
+     "highest": 29,
+     "wickets": 76,
+     "catches": 33
+    },
+    "photo": "/players/mitchell-starc.jpg"
+   },
+   {
+    "id": "michael-hussey",
+    "name": "Michael Hussey",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 59,
+     "runs": 1977,
+     "strikeRate": 122.64,
+     "sixes": 52,
+     "highest": 116,
+     "wickets": 0,
+     "catches": 26
+    },
+    "photo": "/players/michael-hussey.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "shane-warne",
+    "name": "Shane Warne",
+    "team": "Rajasthan Royals",
+    "stats": {
+     "matches": 55,
+     "runs": 198,
+     "strikeRate": 92.52,
+     "sixes": 6,
+     "highest": 34,
+     "wickets": 57,
+     "catches": 16
+    },
+    "photo": "/players/shane-warne.jpg",
+    "hsNotOut": true
+   },
+   {
+    "id": "matthew-hayden",
+    "name": "Matthew Hayden",
+    "team": "Chennai Super Kings",
+    "stats": {
+     "matches": 32,
+     "runs": 1107,
+     "strikeRate": 137.52,
+     "sixes": 44,
+     "highest": 93,
+     "wickets": 0,
+     "catches": 11
+    },
+    "photo": "/players/matthew-hayden.jpg"
+   },
+   {
+    "id": "sourav-ganguly",
+    "name": "Sourav Ganguly",
+    "team": "Kolkata Knight Riders",
+    "stats": {
+     "matches": 59,
+     "runs": 1349,
+     "strikeRate": 106.81,
+     "sixes": 42,
+     "highest": 91,
+     "wickets": 10,
+     "catches": 22
+    },
+    "photo": "/players/sourav-ganguly.jpg"
+   }
+  ]
+ }
+]

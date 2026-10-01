@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { FORMATS } from './types'
+import { FORMATS, SHOWDOWN_FORMATS } from './types'
 
 const itemSchema = z.object({
   label: z.string(),
@@ -51,3 +51,20 @@ export const questionSchema = z.union([
     accept: z.array(z.string().min(1)).optional(),
   }),
 ])
+
+const cardSchema = z.strictObject({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  team: z.string().min(1),
+  photo: z.string().regex(/^\/players\/[a-z0-9-]+\.(jpg|webp)$/).optional(),
+  stats: z.record(z.string(), z.number().nonnegative()),
+  hsNotOut: z.boolean().optional(),
+})
+
+export const deckSchema = z.strictObject({
+  format: z.enum(SHOWDOWN_FORMATS),
+  asOf: z.string(),
+  source: z.object({ name: z.string(), url: z.string(), license: z.string() }),
+  stats: z.array(z.strictObject({ key: z.string(), label: z.string(), short: z.string(), decimals: z.number().optional() })).min(5),
+  cards: z.array(cardSchema),
+})

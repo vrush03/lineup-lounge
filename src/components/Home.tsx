@@ -4,7 +4,11 @@ export type ModeCard = {
   tagline: string
   /** Today's daily: not started, or finished with a short result like "Solved in 3". */
   status: string | null
+  /** Replaces the daily wording for a mode with no daily round, e.g. "Won 7 of 12". */
+  pill?: string
   streak: number
+  /** What the streak counts; "day streak" unless set. */
+  streakLabel?: string
   icon: React.ReactNode
 }
 
@@ -28,11 +32,11 @@ export function Home({ modes }: { modes: ModeCard[] }) {
                   <span
                     className={`rounded-full px-2 py-0.5 ${m.status ? 'bg-correct/15 text-correct-ink' : 'bg-near/20 text-ink'}`}
                   >
-                    {m.status ? `Today: ${m.status}` : 'Today’s daily is ready'}
+                    {m.pill ?? (m.status ? `Today: ${m.status}` : 'Today’s daily is ready')}
                   </span>
                   {m.streak > 0 && (
                     <span className="text-muted">
-                      <span aria-hidden>🔥</span> {m.streak} day streak
+                      <span aria-hidden>🔥</span> {m.streak} {m.streakLabel ?? 'day streak'}
                     </span>
                   )}
                 </span>

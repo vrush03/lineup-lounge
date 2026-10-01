@@ -1,4 +1,4 @@
-import type { Puzzle, Question } from './types'
+import type { Deck, Puzzle, Question } from './types'
 
 /**
  * The puzzle set lives in its own chunk so the app shell paints first.
@@ -13,4 +13,10 @@ export async function loadPuzzles(): Promise<Puzzle[]> {
 export async function loadQuestions(): Promise<Question[]> {
   const mod = await import('../data/quiz.json')
   return mod.default as Question[]
+}
+
+/** Showdown decks, validated in tests (showdown.test.ts). */
+export async function loadDecks(): Promise<Deck[]> {
+  const mod = await import('../data/cards.json')
+  return mod.default as Deck[]
 }

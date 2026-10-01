@@ -3,12 +3,25 @@ import { useEffect, useState } from 'react'
 import { Home, type ModeCard } from './components/Home'
 import { LineupMode } from './components/LineupMode'
 import { QuizMode } from './components/QuizMode'
+import { ShowdownMode } from './components/ShowdownMode'
 import { StatsDialog } from './components/StatsDialog'
 import { dayNumber, puzzleIndex } from './lib/daily'
 import { loadPuzzles } from './lib/puzzles'
 import { MAX_POINTS, QUIZ_LENGTH } from './lib/quiz'
-import { liveStreak, loadPref, loadQuizStats, loadStats, quizLiveStreak, recordQuiz, recordResult, savePref } from './lib/storage'
-import type { Puzzle } from './lib/types'
+import { HAND } from './lib/showdown'
+import {
+  liveStreak,
+  loadPref,
+  loadQuizStats,
+  loadShowdownStats,
+  loadStats,
+  quizLiveStreak,
+  recordQuiz,
+  recordResult,
+  recordShowdown,
+  savePref,
+} from './lib/storage'
+import { SHOWDOWN_FORMATS, type Puzzle } from './lib/types'
 
 type Theme = 'system' | 'light' | 'dark'
 
@@ -41,14 +54,16 @@ export default function App() {
   )
 }
 
-type Route = 'home' | 'lineup' | 'quiz'
+type Route = 'home' | 'lineup' | 'quiz' | 'showdown'
+
+const TITLE: Record<Route, string> = { home: 'Daily cricket games', lineup: 'Lineup', quiz: 'Quiz', showdown: 'Showdown' }
 
 function routeFromHash(): Route {
   const h = location.hash.slice(1)
-  return h === 'lineup' || h === 'quiz' ? h : 'home'
+  return h === 'lineup' || h === 'quiz' || h === 'showdown' ? h : 'home'
 }
 
-/** Hash routes (#lineup, #quiz) so the browser back button returns to the mode list. */
+/** Hash routes (#lineup, #quiz, #showdown) so the browser back button returns to the mode list. */
 function useRoute(): Route {
   const [route, setRoute] = useState(routeFromHash)
   useEffect(() => {
@@ -71,6 +86,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   const page = route === 'home' ? '/' : `/${route}`
   const [stats, setStats] = useState(loadStats)
   const [quizStats, setQuizStats] = useState(loadQuizStats)
+  const [showdownStats, setShowdownStats] = useState(loadShowdownStats)
   const [statsOpen, setStatsOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(() => loadPref('theme', 'system'))
 
@@ -82,7 +98,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
 
   const lineupStreak = liveStreak(stats, day)
   const quizStreak = quizLiveStreak(quizStats, day)
-  const streak = route === 'quiz' ? quizStreak : lineupStreak
+  const streak = route === 'quiz' ? quizStreak : route === 'showdown' ? showdownStats.streak : lineupStreak
   const dateLabel = today.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' })
 
   const modes: ModeCard[] = [
@@ -107,6 +123,16 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
       streak: quizStreak,
       icon: <QuizIcon />,
     },
+    {
+      href: '#showdown',
+      name: 'Showdown',
+      tagline: `Stat cards against the computer. Win all ${2 * HAND} to take the game.`,
+      status: null,
+      pill: showdownStats.played ? `Won ${showdownStats.won} of ${showdownStats.played}` : 'Play any time',
+      streak: showdownStats.streak,
+      streakLabel: 'win streak',
+      icon: <ShowdownIcon />,
+    },
   ]
 
   return (
@@ -117,7 +143,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           <div>
             <h1 className="whitespace-nowrap font-display text-[22px] font-extrabold uppercase leading-none tracking-wide sm:text-[26px]">Lineup Lounge</h1>
             <p className="mt-0.5 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.2em] text-muted sm:text-[11px]">
-              {route === 'home' ? 'Daily cricket games' : route === 'quiz' ? 'Quiz' : 'Lineup'}
+              {TITLE[route]}
             </p>
           </div>
         </a>
@@ -125,7 +151,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           {route !== 'home' && (
             <>
               <span
-                title="Current streak"
+                title={route === 'showdown' ? 'Wins in a row' : 'Current streak'}
                 className="flex h-8 items-center gap-1 rounded-full border border-line bg-surface px-2.5 font-display text-lg font-bold tabular-nums sm:h-9"
               >
                 <span aria-hidden>🔥</span>
@@ -175,8 +201,10 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
             dateLabel={dateLabel}
             onFinishDaily={(solved, n) => setStats(recordResult(day, solved, n))}
           />
-        ) : (
+        ) : route === 'quiz' ? (
           <QuizMode puzzles={puzzles} day={day} dateLabel={dateLabel} onFinishDaily={(points) => setQuizStats(recordQuiz(day, points))} />
+        ) : (
+          <ShowdownMode onFinish={(format, won) => setShowdownStats(recordShowdown(format, won))} />
         )}
       </main>
 
@@ -202,7 +230,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           Wikipedia
         </a>
         <br />
-        Team names and logos are trademarks of their respective owners. Unofficial fan game.
+        Team names and logos are trademarks of their respective owners, and player photos belong to theirs. Unofficial fan game.
       </footer>
 
       {/* Hash routes don't change the path, so report each game as its own page. */}
@@ -222,6 +250,21 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           distTitle="Daily points"
           dist={quizStats.pointsDist.map((n, i) => [`${i * 100}+`, n] as [string, number]).reverse()}
           note="Each question scores up to 100 points, so a daily quiz is out of 500. Daily quizzes count towards your stats; practice rounds don’t. The streak counts days you finish the quiz."
+        />
+      ) : route === 'showdown' ? (
+        <StatsDialog
+          open={statsOpen}
+          onClose={() => setStatsOpen(false)}
+          title="Showdown stats"
+          tiles={[
+            ['Played', showdownStats.played],
+            ['Win %', showdownStats.played ? Math.round((100 * showdownStats.won) / showdownStats.played) : 0],
+            ['Streak', showdownStats.streak],
+            ['Best', showdownStats.maxStreak],
+          ]}
+          distTitle="Wins by format"
+          dist={SHOWDOWN_FORMATS.map((f) => [f, showdownStats.wins[f] ?? 0] as [string, number])}
+          note={`A game counts once one side holds all ${2 * HAND} cards. The streak is games won in a row.`}
         />
       ) : (
         <StatsDialog
@@ -283,6 +326,15 @@ function QuizIcon() {
       <circle cx="12" cy="12" r="9" />
       <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6" />
       <path d="M12 17h.01" />
+    </svg>
+  )
+}
+
+function ShowdownIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="3.5" y="5" width="10" height="14" rx="2" transform="rotate(-10 8.5 12)" />
+      <rect x="10.5" y="5" width="10" height="14" rx="2" transform="rotate(10 15.5 12)" fill="currentColor" fillOpacity="0.18" />
     </svg>
   )
 }

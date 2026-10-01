@@ -57,3 +57,36 @@ export type NumberQuestion = QuestionBase & {
 }
 
 export type Question = NameQuestion | NumberQuestion
+
+export const SHOWDOWN_FORMATS = ['ODI', 'T20I', 'Test', 'IPL'] as const
+export type ShowdownFormat = (typeof SHOWDOWN_FORMATS)[number]
+
+/** One line on a card. Every stat is "higher wins". */
+export type StatDef = {
+  key: string
+  label: string
+  /** Label for narrow cards, e.g. "Wkts". */
+  short: string
+  /** Decimal places to print, for averages and strike rates. */
+  decimals?: number
+}
+
+export type Card = {
+  id: string
+  name: string
+  /** Country, or the IPL franchise the player turned out for most. */
+  team: string
+  /** Portrait in /public; cards without one show initials on the team colour. */
+  photo?: string
+  stats: Record<string, number>
+  hsNotOut?: boolean
+}
+
+/** A Showdown deck: every card carries the deck's stats for that one format. */
+export type Deck = {
+  format: ShowdownFormat
+  asOf: string
+  source: { name: string; url: string; license: string }
+  stats: StatDef[]
+  cards: Card[]
+}

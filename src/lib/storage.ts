@@ -167,3 +167,51 @@ export function recordQuiz(day: number, points: number): QuizStats {
 export function quizLiveStreak(s: QuizStats, today: number): number {
   return s.lastPlayedDay !== null && s.lastPlayedDay >= today - 1 ? s.streak : 0
 }
+
+/** A Showdown game in progress, one per format. The caller checks it against the deck (`isGame`). */
+export const loadShowdown = (format: string): unknown => read<unknown>(`showdown:${format}`)
+export const saveShowdown = (format: string, game: unknown) => write(`showdown:${format}`, game)
+export function clearShowdown(format: string) {
+  try {
+    localStorage.removeItem(`showdown:${format}`)
+  } catch {
+    /* storage unavailable */
+  }
+}
+
+export type ShowdownStats = {
+  played: number
+  won: number
+  /** Consecutive games won. */
+  streak: number
+  maxStreak: number
+  /** Games won per format, e.g. { ODI: 3 }. */
+  wins: Record<string, number>
+}
+
+export function loadShowdownStats(): ShowdownStats {
+  const s = read<Partial<ShowdownStats>>('stats:showdown') ?? {}
+  const wins = s.wins && typeof s.wins === 'object' && !Array.isArray(s.wins) ? s.wins : {}
+  return {
+    played: num(s.played, 0),
+    won: num(s.won, 0),
+    streak: num(s.streak, 0),
+    maxStreak: num(s.maxStreak, 0),
+    wins: Object.fromEntries(Object.entries(wins).filter(([, n]) => typeof n === 'number')),
+  }
+}
+
+/** Record a finished Showdown game. A draw counts as played and ends the winning streak. */
+export function recordShowdown(format: string, won: boolean): ShowdownStats {
+  const s = loadShowdownStats()
+  const streak = won ? s.streak + 1 : 0
+  const next: ShowdownStats = {
+    played: s.played + 1,
+    won: s.won + (won ? 1 : 0),
+    streak,
+    maxStreak: Math.max(s.maxStreak, streak),
+    wins: won ? { ...s.wins, [format]: (s.wins[format] ?? 0) + 1 } : s.wins,
+  }
+  write('stats:showdown', next)
+  return next
+}

@@ -1,0 +1,81 @@
+{
+  "_comment": "Who is in each Showdown deck, by display name. International stats come from the career table in the player's Wikipedia infobox; the IPL deck is matched to Cricsheet by display name and computed from ball-by-ball data. overrides: wiki = page title when it isn't the name, cricsheet = the name names.py gives that player, team = country when the infobox lists more than one.",
+  "decks": {
+    "Test": [
+      "Sachin Tendulkar", "Ricky Ponting", "Jacques Kallis", "Rahul Dravid", "Alastair Cook", "Kumar Sangakkara",
+      "Brian Lara", "Joe Root", "Steve Smith", "Virat Kohli", "Kane Williamson", "Younis Khan", "Sunil Gavaskar",
+      "Viv Richards", "Don Bradman", "Mahela Jayawardene", "Shivnarine Chanderpaul", "Allan Border",
+      "Steve Waugh", "Hashim Amla", "Graeme Smith", "AB de Villiers", "Virender Sehwag", "VVS Laxman",
+      "Matthew Hayden", "Kevin Pietersen", "David Warner", "Inzamam-ul-Haq", "Javed Miandad", "Graham Gooch",
+      "Garfield Sobers", "Adam Gilchrist", "Sourav Ganguly", "Cheteshwar Pujara", "Ross Taylor",
+      "Angelo Mathews", "Justin Langer", "Mark Waugh", "Greg Chappell", "Clive Lloyd", "Gordon Greenidge",
+      "Desmond Haynes", "David Gower", "Geoffrey Boycott", "Len Hutton", "Wally Hammond", "Jack Hobbs",
+      "Michael Hussey", "Andrew Strauss", "Chris Gayle", "Brendon McCullum", "MS Dhoni", "Babar Azam",
+      "Rohit Sharma", "Marnus Labuschagne", "Travis Head", "Rishabh Pant", "Ajinkya Rahane", "Martin Crowe",
+      "Andy Flower", "Aravinda de Silva", "Mohammad Azharuddin", "Dilip Vengsarkar", "Sanath Jayasuriya",
+      "Shane Warne", "Muttiah Muralitharan", "James Anderson", "Anil Kumble", "Glenn McGrath", "Stuart Broad",
+      "Courtney Walsh", "Nathan Lyon", "Ravichandran Ashwin", "Dale Steyn", "Kapil Dev", "Richard Hadlee",
+      "Wasim Akram", "Waqar Younis", "Curtly Ambrose", "Malcolm Marshall", "Imran Khan", "Ian Botham",
+      "Dennis Lillee", "Shaun Pollock", "Harbhajan Singh", "Rangana Herath", "Daniel Vettori", "Tim Southee",
+      "Mitchell Starc", "Pat Cummins", "Kagiso Rabada", "Jasprit Bumrah", "Ravindra Jadeja", "Ben Stokes",
+      "Shakib Al Hasan", "Zaheer Khan", "Trent Boult", "Andrew Flintoff", "Brett Lee", "Allan Donald"
+    ],
+    "ODI": [
+      "Sachin Tendulkar", "Virat Kohli", "Ricky Ponting", "Kumar Sangakkara", "Sanath Jayasuriya",
+      "Mahela Jayawardene", "Inzamam-ul-Haq", "Jacques Kallis", "Sourav Ganguly", "Rahul Dravid", "Rohit Sharma",
+      "MS Dhoni", "AB de Villiers", "Chris Gayle", "Brian Lara", "Viv Richards", "Babar Azam",
+      "Tillakaratne Dilshan", "Ross Taylor", "Hashim Amla", "Tamim Iqbal", "Joe Root", "Kane Williamson",
+      "Martin Guptill", "Mushfiqur Rahim", "Quinton de Kock", "Eoin Morgan", "Yuvraj Singh", "Shikhar Dhawan",
+      "Shakib Al Hasan", "David Warner", "Saeed Anwar", "Desmond Haynes", "Mark Waugh", "Steve Waugh",
+      "Aravinda de Silva", "Mohammad Azharuddin", "Virender Sehwag", "Adam Gilchrist", "Herschelle Gibbs",
+      "Gary Kirsten", "Stephen Fleming", "Shivnarine Chanderpaul", "Matthew Hayden", "Michael Bevan",
+      "Michael Hussey", "Andrew Symonds", "Shane Watson", "Aaron Finch", "Steve Smith", "Glenn Maxwell",
+      "Jos Buttler", "Ben Stokes", "Kevin Pietersen", "Faf du Plessis", "Graeme Smith", "David Miller",
+      "Brendon McCullum", "Shoaib Malik", "Javed Miandad", "KL Rahul", "Shubman Gill", "Arjuna Ranatunga",
+      "Paul Stirling", "Andy Flower", "Wasim Akram", "Waqar Younis", "Muttiah Muralitharan", "Glenn McGrath",
+      "Shane Warne", "Shahid Afridi", "Brett Lee", "Lasith Malinga", "Kapil Dev", "Shaun Pollock",
+      "Chaminda Vaas", "Anil Kumble", "Javagal Srinath", "Daniel Vettori", "Allan Donald", "Shoaib Akhtar",
+      "Saqlain Mushtaq", "Mitchell Starc", "Trent Boult", "Tim Southee", "Dale Steyn", "Zaheer Khan",
+      "Harbhajan Singh", "Ravindra Jadeja", "Jasprit Bumrah", "Rashid Khan", "Imran Khan", "Ian Botham",
+      "Richard Hadlee", "Curtly Ambrose", "Courtney Walsh", "Adil Rashid", "Lance Klusener", "Kagiso Rabada",
+      "Shaheen Afridi"
+    ],
+    "T20I": [
+      "Babar Azam", "Jos Buttler", "Rohit Sharma", "Virat Kohli", "Martin Guptill", "David Warner",
+      "Suryakumar Yadav", "Paul Stirling", "Aaron Finch", "Quinton de Kock", "Sikandar Raza", "Glenn Maxwell",
+      "David Miller", "Pathum Nissanka", "Kane Williamson", "Kusal Mendis", "Reeza Hendricks", "Liton Das",
+      "Mohammad Hafeez", "Eoin Morgan", "Shoaib Malik", "Rovman Powell", "Kusal Perera", "Shakib Al Hasan",
+      "Mitchell Marsh", "Mahmudullah", "Hardik Pandya", "Nicholas Pooran", "Brendon McCullum", "KL Rahul",
+      "Andrew Balbirnie", "Alex Hales", "Dasun Shanaka", "Ross Taylor", "Aiden Markram", "Chris Gayle",
+      "JP Duminy", "Dawid Malan", "Phil Salt", "Devon Conway", "Shikhar Dhawan", "Tillakaratne Dilshan",
+      "Shai Hope", "Jonny Bairstow", "AB de Villiers", "MS Dhoni", "Suresh Raina", "Kieron Pollard", "Jason Roy",
+      "Faf du Plessis", "Shane Watson", "Travis Head", "Yuvraj Singh", "Kumar Sangakkara", "Adil Rashid",
+      "Ish Sodhi", "Tim Southee", "Wanindu Hasaranga", "Mustafizur Rahman", "Adam Zampa", "Shaheen Afridi",
+      "Jasprit Bumrah", "Lasith Malinga", "Yuzvendra Chahal", "Shahid Afridi", "Kuldeep Yadav",
+      "Bhuvneshwar Kumar", "Mitchell Starc", "Trent Boult", "Dwayne Bravo", "Kagiso Rabada", "Pat Cummins",
+      "Rashid Khan", "Mohammad Nabi", "Andre Russell", "Stuart Broad", "Dale Steyn", "Ravindra Jadeja"
+    ],
+    "IPL": [
+      "Virat Kohli", "Rohit Sharma", "MS Dhoni", "Ravindra Jadeja", "Shikhar Dhawan", "Ravichandran Ashwin",
+      "Ajinkya Rahane", "Bhuvneshwar Kumar", "Robin Uthappa", "Suresh Raina", "Sunil Narine", "Sanju Samson",
+      "Yuzvendra Chahal", "Kieron Pollard", "David Warner", "AB de Villiers", "Suryakumar Yadav",
+      "Harbhajan Singh", "Hardik Pandya", "Amit Mishra", "Dwayne Bravo", "KL Rahul", "Jasprit Bumrah",
+      "Gautam Gambhir", "Faf du Plessis", "Rashid Khan", "David Miller", "Shane Watson", "Chris Gayle",
+      "Glenn Maxwell", "Rishabh Pant", "Andre Russell", "Jos Buttler", "Shubman Gill", "Yuvraj Singh",
+      "Mohammed Shami", "Trent Boult", "Lasith Malinga", "Quinton de Kock", "Ishant Sharma", "Kuldeep Yadav",
+      "Brendon McCullum", "Nicholas Pooran", "Virender Sehwag", "Steve Smith", "Kagiso Rabada", "Zaheer Khan",
+      "Jacques Kallis", "Dale Steyn", "Aaron Finch", "Rahul Dravid", "Eoin Morgan", "JP Duminy", "Pat Cummins",
+      "Adam Gilchrist", "Mahela Jayawardene", "Kane Williamson", "Sachin Tendulkar", "Travis Head",
+      "Mitchell Starc", "Michael Hussey", "Shane Warne", "Matthew Hayden", "Sourav Ganguly"
+    ]
+  },
+  "overrides": {
+    "Eoin Morgan": {"team": "England"},
+    "Steve Smith": {"wiki": "Steve Smith (cricketer)"},
+    "David Warner": {"wiki": "David Warner (cricketer)"},
+    "David Miller": {"wiki": "David Miller (South African cricketer)"},
+    "James Anderson": {"wiki": "James Anderson (cricketer)"},
+    "Ravichandran Ashwin": {"cricsheet": "Ravi Ashwin"},
+    "JP Duminy": {"cricsheet": "Jean-Paul Duminy"}
+  }
+}
