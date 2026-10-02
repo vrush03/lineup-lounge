@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { Game } from './Game'
-import { Tabs } from './Tabs'
 import { loadPref, savePref } from '../lib/storage'
 import { FORMATS, type Format, type Puzzle } from '../lib/types'
 
@@ -58,12 +57,7 @@ export function LineupMode({ puzzles, daily, day, dateLabel, onFinishDaily }: Pr
 
   return (
     <>
-      <Tabs
-        value={round}
-        options={[['daily', `Daily #${day + 1}`], ['practice', 'Practice']]}
-        onChange={(r) => (r === 'practice' ? goPractice() : setRound('daily'))}
-      />
-      <div className="mt-6">
+      <div>
         {round === 'daily' ? (
           <>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted">{dateLabel}</p>
@@ -78,6 +72,12 @@ export function LineupMode({ puzzles, daily, day, dateLabel, onFinishDaily }: Pr
           </>
         ) : (
           <>
+            <button
+              onClick={() => setRound('daily')}
+              className="mb-4 text-sm font-semibold text-muted underline-offset-4 hover:text-ink hover:underline"
+            >
+              ← Back to daily #{day + 1}
+            </button>
             <div className="-mx-4 mb-5 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
               {(['All', ...FORMATS] as const).map((f) => (
                 <button

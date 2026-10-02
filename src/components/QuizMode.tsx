@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Quiz } from './Quiz'
-import { Tabs } from './Tabs'
 import { loadQuestions } from '../lib/puzzles'
 import { dailyQuestions, nameDictionary, randomQuestions } from '../lib/quiz'
 import type { Puzzle, Question } from '../lib/types'
@@ -45,12 +44,7 @@ function QuizRounds({ questions, puzzles, day, dateLabel, onFinishDaily }: Props
 
   return (
     <>
-      <Tabs
-        value={round}
-        options={[['daily', `Daily #${day + 1}`], ['practice', 'Practice']]}
-        onChange={(r) => (r === 'practice' && !practice ? newPractice() : setRound(r))}
-      />
-      <div className="mt-6">
+      <div>
         {round === 'daily' ? (
           <>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted">{dateLabel}</p>
@@ -65,7 +59,15 @@ function QuizRounds({ questions, puzzles, day, dateLabel, onFinishDaily }: Props
             />
           </>
         ) : (
-          practice && <Quiz key={`practice:${practice.n}`} questions={practice.questions} names={names} onNext={newPractice} />
+          <>
+            <button
+              onClick={() => setRound('daily')}
+              className="mb-4 text-sm font-semibold text-muted underline-offset-4 hover:text-ink hover:underline"
+            >
+              ← Back to daily #{day + 1}
+            </button>
+            {practice && <Quiz key={`practice:${practice.n}`} questions={practice.questions} names={names} onNext={newPractice} />}
+          </>
         )}
       </div>
     </>
