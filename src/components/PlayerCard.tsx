@@ -156,22 +156,22 @@ function Photo({ card, bg, fg }: { card: Card; bg: string; fg: string }) {
 }
 
 /** The back every card shares: club-tie stripes and the ball. */
-function CardBack() {
+export function CardBack({ small = false }: { small?: boolean }) {
   return (
     <div
       aria-hidden
-      className="absolute inset-0 rounded-[18px] bg-[linear-gradient(150deg,#e8c56a,#8a6417_45%,#f1d68e_70%,#6b4c10)] p-[3px] shadow-[0_14px_30px_-14px_rgb(0_0_0/0.7)] [backface-visibility:hidden] [transform:rotateY(180deg)]"
+      className={`absolute inset-0 rounded-[18px] bg-[linear-gradient(150deg,#e8c56a,#8a6417_45%,#f1d68e_70%,#6b4c10)] p-[3px] shadow-[0_14px_30px_-14px_rgb(0_0_0/0.7)] ${small ? '' : '[backface-visibility:hidden] [transform:rotateY(180deg)]'}`}
     >
       <div className="relative grid h-full place-items-center overflow-hidden rounded-[15px] bg-pitch-deep bg-[repeating-linear-gradient(135deg,rgb(255_255_255/0.05)_0_10px,transparent_10px_20px)]">
         <div className="absolute inset-2 rounded-xl border border-gold/40" />
         <div className="text-center">
-          <svg viewBox="0 0 64 64" className="mx-auto h-16 w-16 drop-shadow-lg sm:h-24 sm:w-24">
+          <svg viewBox="0 0 64 64" className={`mx-auto drop-shadow-lg ${small ? 'h-9 w-9' : 'h-16 w-16 sm:h-24 sm:w-24'}`}>
             <circle cx="32" cy="32" r="28" fill="#b3202a" />
             <circle cx="24" cy="22" r="10" fill="#fff" opacity="0.12" />
             <path d="M14 13c9 9 9 29 0 38M50 13c-9 9-9 29 0 38" fill="none" stroke="#f6efe2" strokeWidth="2.5" strokeDasharray="3 3" strokeLinecap="round" />
           </svg>
-          <p className="mt-3 font-display text-lg font-extrabold uppercase leading-none tracking-[0.2em] text-gold sm:text-2xl">Showdown</p>
-          <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/50 sm:text-[10px]">Lineup Lounge</p>
+          <p className={`font-display font-extrabold uppercase leading-none text-gold ${small ? 'mt-1.5 text-xs tracking-[0.12em]' : 'mt-3 text-lg tracking-[0.2em] sm:text-2xl'}`}>Showdown</p>
+          {!small && <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/50 sm:text-[10px]">Lineup Lounge</p>}
         </div>
       </div>
     </div>

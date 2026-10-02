@@ -76,6 +76,8 @@
   --animate-fade: fade 0.4s ease-out both;
   --animate-deal: deal 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   --animate-sheen: sheen 1.1s ease-out 0.25s both;
+  --animate-riffle: riffle 0.8s ease-in-out both;
+  --animate-deal-out: deal-out 0.5s cubic-bezier(0.25, 0.8, 0.3, 1) both;
   --animate-stamp: stamp 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both;
 
   @keyframes shake {
@@ -106,6 +108,19 @@
   @keyframes sheen {
     from { transform: translateX(-130%) skewX(-18deg); }
     to { transform: translateX(230%) skewX(-18deg); }
+  }
+  /* Showdown intro: the pack splits in two and the halves are riffled back together. */
+  @keyframes riffle {
+    0% { transform: translateX(0) rotate(0); }
+    30% { transform: translateX(calc(var(--dir) * var(--split))) rotate(calc(var(--dir) * -7deg)) translateY(-10px); }
+    55% { transform: translateX(calc(var(--dir) * calc(var(--split) * 0.45))) rotate(calc(var(--dir) * -3deg)) translateY(-18px); }
+    100% { transform: translateX(0) rotate(0) translateY(0); }
+  }
+  /* A card flying from the pack to a player's pile, face down. */
+  @keyframes deal-out {
+    0% { transform: translate(0, 0) rotate(0) scale(1); }
+    60% { transform: translate(calc(var(--dir) * var(--dx) * 0.7), calc(var(--dy) * 0.4)) rotate(calc(var(--dir) * 14deg)) scale(1.05); }
+    100% { transform: translate(calc(var(--dir) * var(--dx)), var(--dy)) rotate(var(--tilt)) scale(1); }
   }
   @keyframes stamp {
     from { opacity: 0; transform: scale(1.6) rotate(-10deg); }

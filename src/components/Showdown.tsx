@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { PlayerCard, type CardResult } from './PlayerCard'
+import { CardBack, PlayerCard, type CardResult } from './PlayerCard'
 import {
   compare,
   cpuPick,
@@ -29,7 +29,9 @@ type Props = {
   onNewGame: () => void
 }
 
-const CPU_THINKS_MS = 1100
+const CPU_THINKS_MS = 2600
+const SHUFFLE_MS = 2500
+const DEAL_MS = 2700
 
 /** One game against the computer: 15 rounds, 10 points a round, most points wins. */
 export function Showdown({ deck, onFinish, onNewGame }: Props) {
@@ -38,10 +40,12 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
     const saved = loadShowdown(deck.format)
     return isGame(saved, deck) && !winner(saved) ? saved : deal(deck)
   })
+  // A new game opens with the shuffle and deal; a resumed one (always at least a round in) skips it.
+  const [dealing, setDealing] = useState(() => game.log.length === 0)
   const [played, setPlayed] = useState<Played | null>(null)
   const next = useRef<HTMLButtonElement>(null)
   const result = winner(game)
-  const cpuToPick = !played && !result && turnOf(game) === 'cpu'
+  const cpuToPick = !dealing && !played && !result && turnOf(game) === 'cpu'
 
   function play(stat: string) {
     if (played || result) return
@@ -80,6 +84,8 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
   // `game` has already moved on to the next round while the played cards are on the table.
   const round = played ? roundOf(game) - 1 : roundOf(game)
   const points = score(game)
+
+  if (dealing) return <DealIntro onDone={() => setDealing(false)} />
 
   return (
     <div className="animate-rise">
@@ -174,6 +180,82 @@ export function Showdown({ deck, onFinish, onNewGame }: Props) {
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+const PACK = 12
+const FLIGHTS = 10
+
+/** Opening ceremony: the pack is riffle-shuffled, then dealt face down, one for you and one for the computer. */
+function DealIntro({ onDone }: { onDone: () => void }) {
+  const [phase, setPhase] = useState<'shuffle' | 'deal'>('shuffle')
+  useEffect(() => {
+    const t = setTimeout(() => (phase === 'shuffle' ? setPhase('deal') : onDone()), phase === 'shuffle' ? SHUFFLE_MS : DEAL_MS)
+    return () => clearTimeout(t)
+  }, [phase, onDone])
+
+  const slot = 'absolute left-1/2 top-0 -ml-[3.25rem] h-36 w-[6.5rem] sm:-ml-14 sm:h-40 sm:w-28'
+  return (
+    <div className="animate-rise">
+      <p role="status" className="text-center">
+        <span className="block font-display text-2xl font-extrabold uppercase leading-none tracking-wide text-ink">
+          {phase === 'shuffle' ? 'Shuffling the deck' : 'Dealing the cards'}
+        </span>
+        <span className="mt-1 block text-sm font-medium text-muted">Everyone gets a hand, face down.</span>
+      </p>
+
+      <div className="relative mx-auto mt-10 h-[22rem] max-w-md [--dx:7.5rem] [--dy:11rem] [--split:4.5rem] sm:h-96 sm:[--dx:10rem] sm:[--dy:12rem] sm:[--split:6rem]">
+        {phase === 'shuffle'
+          ? Array.from({ length: PACK }, (_, i) => (
+              <div
+                key={i}
+                aria-hidden
+                className={`${slot} animate-riffle [animation-iteration-count:3]`}
+                style={{
+                  ['--dir' as string]: i % 2 === 0 ? -1 : 1,
+                  animationDelay: `${i * 45}ms`,
+                  top: `${(PACK - i) * -1.5}px`,
+                  zIndex: i,
+                }}
+              >
+                <CardBack small />
+              </div>
+            ))
+          : (
+            <>
+              <div aria-hidden className={slot} style={{ zIndex: 0 }}>
+                <CardBack small />
+              </div>
+              {Array.from({ length: FLIGHTS * 2 }, (_, i) => {
+                const side = i % 2 === 0 ? -1 : 1
+                const n = Math.floor(i / 2)
+                return (
+                  <div
+                    key={i}
+                    aria-hidden
+                    className={`${slot} animate-deal-out`}
+                    style={{
+                      ['--dir' as string]: side,
+                      ['--tilt' as string]: `${side * (n % 3 - 1) * 3}deg`,
+                      animationDelay: `${i * 110}ms`,
+                      top: `${-n * 1.5}px`,
+                      zIndex: 10 + i,
+                    }}
+                  >
+                    <CardBack small />
+                  </div>
+                )
+              })}
+              <span className="absolute left-1/2 bottom-0 -ml-[calc(var(--dx)+3rem)] w-24 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">You</span>
+              <span className="absolute left-1/2 bottom-0 ml-[calc(var(--dx)-3rem)] w-24 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">Computer</span>
+            </>
+          )}
+      </div>
+
+      <button onClick={onDone} className="mx-auto mt-4 block text-sm font-semibold text-muted underline-offset-4 hover:text-ink hover:underline">
+        Skip
+      </button>
     </div>
   )
 }
