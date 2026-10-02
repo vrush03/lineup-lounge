@@ -48,6 +48,10 @@ describe('number answers', () => {
     expect(parseNumber('82 km')).toBe(82)
     expect(parseNumber('.5')).toBe(0.5)
     expect(parseNumber('lots')).toBeNull()
+    expect(parseNumber('2 bn')).toBe(2e9)
+    expect(parseNumber('3 billion')).toBe(3e9)
+    expect(parseNumber('2 crores')).toBe(2e7)
+    expect(parseNumber('₹27 crore')).toBe(2.7e8)
   })
   it('scores 100 when exact, 75 at the edge of the margin, and 0 from three margins off', () => {
     if (km.kind !== 'number') throw new Error()

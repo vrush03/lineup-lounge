@@ -81,11 +81,12 @@ export type QuizSaved = { ids: string[]; guesses: string[][] }
 
 const strings = (a: unknown): a is string[] => Array.isArray(a) && a.every((x) => typeof x === 'string')
 
-export function loadQuiz(key: string): QuizSaved | null {
-  const s = read<QuizSaved>(`quiz:${key}`)
+function loadRound(key: string): QuizSaved | null {
+  const s = read<QuizSaved>(key)
   if (!s || !strings(s.ids) || !Array.isArray(s.guesses) || !s.guesses.every(strings)) return null
   return s
 }
+export const loadQuiz = (key: string) => loadRound(`quiz:${key}`)
 export const saveQuiz = (key: string, s: QuizSaved) => write(`quiz:${key}`, s)
 
 export type QuizStats = {
@@ -167,6 +168,62 @@ export function recordQuiz(day: number, points: number): QuizStats {
 export function quizLiveStreak(s: QuizStats, today: number): number {
   return s.lastPlayedDay !== null && s.lastPlayedDay >= today - 1 ? s.streak : 0
 }
+
+/** A daily Ballpark round in progress: the same shape as a quiz, one guess per question. */
+export const loadBallpark = (key: string) => loadRound(`ballpark:${key}`)
+export const saveBallpark = (key: string, s: QuizSaved) => write(`ballpark:${key}`, s)
+
+export type BallparkStats = {
+  played: number
+  /** Consecutive days with the daily round finished, whatever the score. */
+  streak: number
+  maxStreak: number
+  lastPlayedDay: number | null
+  lastPoints: number | null
+  bestPoints: number
+  totalPoints: number
+  /** pointsDist[n] = daily rounds that scored n*100 to n*100+99 (a perfect 300 goes in the last bucket) */
+  pointsDist: number[]
+}
+const BALLPARK_DIST = 3
+
+export function loadBallparkStats(): BallparkStats {
+  const s = read<Partial<BallparkStats>>('stats:ballpark') ?? {}
+  return {
+    played: num(s.played, 0),
+    streak: num(s.streak, 0),
+    maxStreak: num(s.maxStreak, 0),
+    lastPlayedDay: typeof s.lastPlayedDay === 'number' ? s.lastPlayedDay : null,
+    lastPoints: typeof s.lastPoints === 'number' ? s.lastPoints : null,
+    bestPoints: num(s.bestPoints, 0),
+    totalPoints: num(s.totalPoints, 0),
+    pointsDist: counts(s.pointsDist, BALLPARK_DIST),
+  }
+}
+
+/** Record a finished daily Ballpark round's points. Recording the same day twice is ignored. */
+export function recordBallpark(day: number, points: number): BallparkStats {
+  const s = loadBallparkStats()
+  if (s.lastPlayedDay === day) return s
+  const streak = s.lastPlayedDay === day - 1 ? s.streak + 1 : 1
+  const pointsDist = [...s.pointsDist]
+  pointsDist[Math.max(0, Math.min(BALLPARK_DIST - 1, Math.floor(points / 100)))] += 1
+  const next: BallparkStats = {
+    played: s.played + 1,
+    streak,
+    maxStreak: Math.max(s.maxStreak, streak),
+    lastPlayedDay: day,
+    lastPoints: points,
+    bestPoints: Math.max(s.bestPoints, points),
+    totalPoints: s.totalPoints + points,
+    pointsDist,
+  }
+  write('stats:ballpark', next)
+  return next
+}
+
+export const ballparkLiveStreak = (s: BallparkStats, today: number) =>
+  s.lastPlayedDay !== null && s.lastPlayedDay >= today - 1 ? s.streak : 0
 
 /** A Showdown game in progress, one per format. The caller checks it against the deck (`isGame`). */
 export const loadShowdown = (format: string): unknown => read<unknown>(`showdown:${format}`)

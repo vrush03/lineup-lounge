@@ -6,6 +6,8 @@ type Props = {
   names?: string[]
   /** For a number answer: its unit, shown in the field. */
   unit?: string
+  /** For a number answer: the full keyboard, so suffixes like "25k" or "1.5 lakh" can be typed. */
+  words?: boolean
   /** Footer text under the field, e.g. how close a number must be. */
   note: string
   onSubmit: (guess: string) => void
@@ -15,7 +17,7 @@ type Props = {
 }
 
 /** Answer box: free text with name suggestions (ARIA combobox), or a number. */
-export function AnswerInput({ names, unit, note, onSubmit, shake, tries }: Props) {
+export function AnswerInput({ names, unit, words, note, onSubmit, shake, tries }: Props) {
   const numeric = !names
   const [text, setText] = useState('')
   const [active, setActive] = useState(-1)
@@ -68,7 +70,7 @@ export function AnswerInput({ names, unit, note, onSubmit, shake, tries }: Props
               onBlur={() => setOpen(false)}
               onFocus={() => setOpen(true)}
               {...(numeric
-                ? { inputMode: 'decimal' as const, placeholder: 'Your estimate' }
+                ? { inputMode: words ? ('text' as const) : ('decimal' as const), placeholder: 'Your estimate' }
                 : {
                     role: 'combobox',
                     'aria-expanded': options.length > 0,
