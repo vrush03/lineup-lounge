@@ -15,7 +15,7 @@ npm run build    # tsc -b && vite build
 ```
 
 Run lint, test and build before calling a change done; CI (`.github/workflows/ci.yml`) runs the
-same three on every PR and on `main`. Node version is pinned in `.nvmrc`.
+same three, as separate `lint`, `test` and `build` jobs, on every PR and on `main`. Node version is pinned in `.nvmrc`.
 
 ## Layout
 
@@ -100,5 +100,7 @@ same three on every PR and on `main`. Node version is pinned in `.nvmrc`.
 - Vercel deploys production from `main` only; other branches do not deploy (`vercel.json`).
   Don't add preview-deploy workflows or change that file without being asked.
 - Dependabot opens weekly PRs for npm and GitHub Actions (`.github/dependabot.yml`).
-- Commit and push straight to `main`. Only use a branch and PR when explicitly asked. Merged
-  branches are deleted automatically.
+- `main` is protected: changes from anyone else go through a PR that needs 1 approval and passing
+  `lint`, `test` and `build` checks. The owner (vrush03) can bypass this and push straight to `main`;
+  the owner prefers that, so only use a branch and PR when explicitly asked. Merged branches are
+  deleted automatically.
