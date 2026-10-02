@@ -113,7 +113,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     {
       href: '#lineup',
       name: 'Lineup',
-      tagline: 'Rank five players, teams or records in order.',
+      tagline: 'Rank five cricket picks in order.',
       status: stats.lastPlayedDay === day ? (stats.lastWonDay === day ? 'solved' : 'bowled out') : null,
       streak: lineupStreak,
       icon: <LineupIcon />,
@@ -121,7 +121,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     {
       href: '#quiz',
       name: 'Quiz',
-      tagline: 'Five cricket questions, up to 100 points each.',
+      tagline: 'Five questions, up to 100 points each.',
       status:
         quizStats.lastPlayedDay !== day
           ? null
@@ -134,7 +134,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     {
       href: '#ballpark',
       name: 'Ballpark',
-      tagline: 'Three cricket numbers to estimate. The closer you get, the more points.',
+      tagline: 'Estimate three cricket numbers.',
       status:
         ballparkStats.lastPlayedDay === day && ballparkStats.lastPoints !== null
           ? `${ballparkStats.lastPoints}/${BALLPARK_LENGTH * MAX_POINTS}`
@@ -145,9 +145,10 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
     {
       href: '#showdown',
       name: 'Showdown',
-      tagline: `Stat cards against the computer. ${ROUNDS} rounds, most points wins.`,
+      tagline: `Stat cards vs the computer, ${ROUNDS} rounds.`,
       status: null,
-      pill: showdownStats.played ? `Won ${showdownStats.won} of ${showdownStats.played}` : 'Play any time',
+      anytime: true,
+      pill: showdownStats.played ? `Won ${showdownStats.won} of ${showdownStats.played}` : undefined,
       streak: showdownStats.streak,
       streakLabel: 'win streak',
       icon: <ShowdownIcon />,
