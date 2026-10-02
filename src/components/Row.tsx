@@ -92,9 +92,9 @@ function MoveButton({ dir, enabled, onMove, label }: { dir: -1 | 1; enabled: boo
       onClick={() => onMove(dir)}
       onKeyDown={(e) => e.stopPropagation()}
       aria-label={`Move ${label} ${dir < 0 ? 'up' : 'down'}`}
-      className="grid h-6 w-7 place-items-center rounded-md text-muted transition hover:bg-ink/5 hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
+      className="grid h-7 w-10 place-items-center rounded-md text-muted transition hover:bg-ink/5 hover:text-ink disabled:opacity-25 disabled:hover:bg-transparent"
     >
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
+      <svg width="20" height="20" viewBox="0 0 12 12" fill="none" aria-hidden>
         <path
           d={dir < 0 ? 'M2.5 7.5 6 4l3.5 3.5' : 'M2.5 4.5 6 8l3.5-3.5'}
           stroke="currentColor"
