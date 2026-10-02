@@ -1,17 +1,12 @@
 # Lineup Lounge
 
-Cricket games. The home screen lists the modes; Lineup, Quiz and Ballpark each have a daily round
+Cricket games. The home screen lists the modes; Lineup and Ballpark each have a daily round
 (with its own stats and streak) and a practice mode, and Showdown is free play.
 
 - **Lineup**: put five players, teams or records in order. Five attempts; each attempt marks every
   row as in the right spot (green), one place off (amber) or further away. Practice is unlimited
   and filtered by format (IPL, Test, ODI, T20I, World Cup, T20 World Cup).
-- **Quiz**: five questions a day, each worth up to 100 points, so a day is out of 500. Some want a
-  player or team name (typed, with autocomplete): 100 on the first try, or 50 on a second try after
-  a hint. Others want a ballpark number ("how many km has Kohli run between the wickets?"): one
-  guess, scored by how close it is (100 if exact, 75 at the question's margin, 0 from three margins
-  off), with a number line showing where it landed.
-- **Ballpark**: three estimation questions a day, out of 300, across all of cricket: careers,
+- **Ballpark**: five estimation questions a day, out of 500, across all of cricket: careers,
   record books, crowds, dates and size-it-up sums ("how many cricket balls would fill an Olympic
   pool?"). One guess each, scored by how many times off it is: 100 within 5%, 70 at 2× off, 52 at
   3×, 0 at 10×, the same whether too high or too low. The reveal shows a log number line.
@@ -29,7 +24,7 @@ npm run build
 
 ## Data
 
-`src/data/cricket.json`, `src/data/quiz.json` and `src/data/cards.json` are generated; don't edit
+`src/data/cricket.json`, `src/data/ballpark.json` and `src/data/cards.json` are generated; don't edit
 them by hand. Sources:
 
 | Source | Used for | Licence |
@@ -63,7 +58,6 @@ python3 scripts/data/parse_cricsheet.py   # per-match / per-player-match records
 python3 scripts/data/gen_ipl.py           # ranked IPL lists
 python3 scripts/data/gen_wiki.py          # Wikipedia record puzzles + tournament lists
 python3 scripts/data/build.py             # pick 5 items per list, shuffle, validate -> src/data/cricket.json
-python3 scripts/data/gen_quiz.py          # IPL questions from Cricsheet + scripts/data/quiz_manual.json -> src/data/quiz.json
 python3 scripts/data/gen_ballpark.py      # Cricsheet totals + worked sums + scripts/data/ballpark_manual.json -> src/data/ballpark.json
 python3 scripts/data/gen_cards.py         # Showdown decks -> src/data/cards.json (add --refresh to re-fetch Wikipedia)
 npm test
@@ -73,23 +67,13 @@ npm test
 already solved, or a player name still in initials form. For the last one, add the full name to
 `scripts/data/name_overrides.json` (keyed by Cricsheet identifier) after checking it.
 
-`gen_quiz.py` computes the IPL questions (so the numbers refresh with each season) and takes the
-international ones from `scripts/data/quiz_manual.json`. Every number and claim in that file, hints
-and facts included, is checked against its linked Wikipedia page or ESPNcricinfo Statsguru before it
-goes in; if a fact can't be sourced, the question is reworded around one that can (Sachin's Test
-fours aren't recorded anywhere checkable, so the "pitch lengths" question uses his ODI career).
-
-The script deals questions into daily sets of five: two name questions and three numbers, mixing IPL
-and international, never two that share a `topic`, and never a day where one question's prompt,
-hint or earlier fact contains another's answer. It fails if the data moves under a hint (a new IPL
-leader, a "not out" that no longer holds), or if the questions can't fill whole days.
-
 `gen_ballpark.py` takes careers, records and crowds from `scripts/data/ballpark_manual.json` (each
-checked against its linked page, like the quiz), works out the size-it-up sums and date spans from
+checked against its linked page or Statsguru before it goes in; if a fact can't be sourced, the
+question is reworded around one that can), works out the size-it-up sums and date spans from
 sourced figures (the Laws' pitch, ball and stumps; the Equator; Everest) so the arithmetic can't
 drift, and computes totals from Cricsheet: the IPL, and the 2011 World Cup, the most recent one
-Cricsheet covers in full. It deals the questions into days of three from three different families,
-with no shared topic and at most one IPL question, and fails if a question is also in the quiz.
+Cricsheet covers in full. It deals the questions into days of five with at most two of a family,
+no shared topic, no question that gives another's answer away and at most one IPL question.
 
 `gen_cards.py` builds one Showdown deck per format from the players listed in
 `scripts/data/cards_players.json`. Test, ODI and T20I figures are read from the career table in each

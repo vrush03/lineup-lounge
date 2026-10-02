@@ -26,32 +26,6 @@ export const puzzleSchema = z.object({
   asOf: z.string().nullable().optional(),
 })
 
-const questionBase = {
-  id: z.string(),
-  prompt: z.string(),
-  hint: z.string().min(1),
-  fact: z.string().optional(),
-  format: z.enum(FORMATS).optional(),
-  source: z.object({ name: z.string(), url: z.string(), license: z.string() }).optional(),
-}
-
-export const questionSchema = z.union([
-  z.strictObject({
-    ...questionBase,
-    kind: z.literal('number'),
-    answer: z.number(),
-    margin: z.number().nonnegative(),
-    unit: z.string().optional(),
-    plain: z.boolean().optional(),
-  }),
-  z.strictObject({
-    ...questionBase,
-    kind: z.literal('name').optional(),
-    answer: z.string().min(1),
-    accept: z.array(z.string().min(1)).optional(),
-  }),
-])
-
 const sourceSchema = z.object({ name: z.string().min(1), url: z.string().url(), license: z.string().min(1) })
 
 /** A question built only from figures in its own prompt has no source, but must show its working. */

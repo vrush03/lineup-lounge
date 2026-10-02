@@ -1,8 +1,46 @@
-import { MAX_POINTS, parseNumber, withUnit } from './quiz'
+import type { Mark } from './score'
 import type { EstimateFamily, EstimateQuestion } from './types'
 
 /** Questions in a Ballpark round; a daily is out of BALLPARK_LENGTH * MAX_POINTS. */
-export const BALLPARK_LENGTH = 3
+export const BALLPARK_LENGTH = 5
+/** Points for a question. */
+export const MAX_POINTS = 100
+/** A guess of '' means the player gave up on the question. */
+export const PASS = ''
+
+const SCALE: Record<string, number> = {
+  k: 1e3, thousand: 1e3,
+  lakh: 1e5, lakhs: 1e5, lac: 1e5, lacs: 1e5,
+  m: 1e6, mn: 1e6, mil: 1e6, million: 1e6,
+  cr: 1e7, crore: 1e7, crores: 1e7,
+  b: 1e9, bn: 1e9, billion: 1e9,
+}
+
+/**
+ * "7,275", "7.3k", "1.5 lakh", "2 bn", "1e6", "$4m", "82 km" -> a number; null if there isn't one.
+ * A leading currency sign is dropped; a word after the number scales it if it is a scale word.
+ */
+export function parseNumber(s: string): number | null {
+  const m = s.replace(/,/g, '').trim().toLowerCase().replace(/^[$₹£€]\s*/, '').match(/^(-?\d*\.?\d+(?:e[+-]?\d+)?)\s*([a-z]*)/)
+  if (!m) return null
+  return Number(m[1]) * (SCALE[m[2]] ?? 1)
+}
+
+const withUnit = (n: string, unit?: string) => (!unit ? n : unit === '%' ? `${n}%` : `${n} ${unit}`)
+
+/** Colour band for a question's points: 75+ is inside the green band. */
+export const pointsMark = (points: number): Mark => (points >= 75 ? 'correct' : points >= 25 ? 'near' : 'wrong')
+
+/** A round's total; open questions count as 0. */
+export const sumPoints = (points: (number | null)[]) => points.reduce<number>((a, p) => a + (p ?? 0), 0)
+
+/** The day's questions: consecutive runs through the list, so every question comes up before any repeats. */
+export function dailyQuestions<T>(questions: T[], day: number, length = BALLPARK_LENGTH): T[] {
+  const n = questions.length
+  const count = Math.min(length, n)
+  const start = (((day * count) % n) + n) % n
+  return Array.from({ length: count }, (_, k) => questions[(start + k) % n])
+}
 /** A guess within 5% of the answer, either way, scores full points. */
 const SPOT_ON = 0.05
 /** Points fall to 75 this many powers of ten off (about 1.8 times), the edge of the green band. */

@@ -7,8 +7,8 @@ Three sources:
 - Totals computed from Cricsheet ball-by-ball data: the IPL (complete from 2008) and the 2011 World
   Cup (all 49 matches covered). Other World Cups are left out: Cricsheet is missing some of their matches.
 
-Questions are dealt into days of three (the app shows days in order, `day % days`; practice plays a
-random day): three different families, no shared topic, no question whose prompt, working or fact
+Questions are dealt into days of five (the app shows days in order, `day % days`; practice plays a
+random day): at most two of one family, no shared topic, no question whose prompt, working or fact
 states another's answer, and at most one IPL question, so the mode covers all of cricket.
 """
 import datetime
@@ -28,9 +28,9 @@ HERE = os.path.dirname(__file__)
 ROOT = os.path.join(HERE, '..', '..', 'data-raw', 'cricsheet')
 OUT = os.path.join(HERE, '..', '..', 'src', 'data', 'ballpark.json')
 MANUAL = os.path.join(HERE, 'ballpark_manual.json')
-QUIZ = os.path.join(HERE, '..', '..', 'src', 'data', 'quiz.json')
 
-DAY = 3
+DAY = 5
+PER_FAMILY = 2  # at most this many of one family in a day
 FAMILIES = ['scale', 'career', 'records', 'time', 'crowds']
 
 # Figures from the Laws of Cricket, via Wikipedia (Cricket pitch, Wicket, Cricket ball, Cricket bat).
@@ -259,14 +259,14 @@ def gives_away(q, other):
 
 
 def deal(questions, seed='ballpark'):
-    """Order questions into days of three; see the module docstring for the rules."""
+    """Order questions into days of five; see the module docstring for the rules."""
     assert len(questions) % DAY == 0, f'{len(questions)} questions: need a multiple of {DAY} (whole days)'
     n_days = len(questions) // DAY
     count = Counter(q['family'] for q in questions)
-    assert max(count.values()) <= n_days, f'too many questions in one family for {n_days} days: {dict(count)}'
+    assert max(count.values()) <= n_days * PER_FAMILY, f'too many questions in one family for {n_days} days: {dict(count)}'
 
     def fits(day, q):
-        return (len(day) < DAY and all(x['family'] != q['family'] for x in day)
+        return (len(day) < DAY and sum(x['family'] == q['family'] for x in day) < PER_FAMILY
                 and not {t for x in day for t in topics(x)} & set(topics(q))
                 and not (q.get('format') == 'IPL' and any(x.get('format') == 'IPL' for x in day))
                 and not any(gives_away(q, x) or gives_away(x, q) for x in day))
@@ -299,8 +299,6 @@ def main():
     questions = manual + worked_questions() + cricsheet_questions()
     ids = [q['id'] for q in questions]
     assert len(set(ids)) == len(ids), 'duplicate ids'
-    asked = {q['prompt'] for q in json.load(open(QUIZ))}
-    assert not [q['id'] for q in questions if q['prompt'] in asked], 'a question is already in the Quiz'
     for q in questions:
         assert q['family'] in FAMILIES, q['id']
         assert q['answer'] > 0, q['id']

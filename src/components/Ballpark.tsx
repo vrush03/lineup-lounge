@@ -6,24 +6,26 @@ import { MARK_FILL, NEXT_BUTTON } from './roundStyles'
 import {
   FAMILY_LABEL,
   GREEN_ORDERS,
+  PASS,
   answerText,
   estimatePoints,
   guessText,
   parseGuess,
+  pointsMark,
   roundPoints,
+  sumPoints,
   timesOffText,
 } from '../lib/ballpark'
-import { PASS, pointsMark, quizPoints } from '../lib/quiz'
 import { loadBallpark, saveBallpark } from '../lib/storage'
 import type { EstimateQuestion } from '../lib/types'
 
 /** [minimum points, headline] for the summary, best first. */
 const HEADLINES: [number, string][] = [
-  [300, 'Bang on!'],
-  [240, 'Sharp eye'],
-  [180, 'In the ballpark'],
-  [120, 'Getting warmer'],
-  [60, 'Way off the mark'],
+  [400, 'Bang on!'],
+  [320, 'Sharp eye'],
+  [240, 'In the ballpark'],
+  [160, 'Getting warmer'],
+  [80, 'Way off the mark'],
   [0, 'Lost in the crowd'],
 ]
 
@@ -69,7 +71,7 @@ export function Ballpark({ questions, storageKey, day, onFinish, onNext }: Props
     const next = guesses.map((g, i) => (i === pos ? [text] : g))
     setGuesses(next)
     const all = roundPoints(questions, next)
-    if (all.every((p) => p !== null)) onFinish?.(quizPoints(all))
+    if (all.every((p) => p !== null)) onFinish?.(sumPoints(all))
   }
 
   function advance() {
@@ -100,7 +102,7 @@ export function Ballpark({ questions, storageKey, day, onFinish, onNext }: Props
           count={questions.length}
           question={questions[pos]}
           guess={guesses[pos][0]}
-          total={quizPoints(points)}
+          total={sumPoints(points)}
           shake={shake}
           onGuess={guess}
           onNext={advance}
@@ -156,7 +158,6 @@ function QuestionCard({ n, count, question: q, guess, total, shake, last, onGues
             note="One guess. Within 2× scores 70; 10× off scores nothing. Try 25k, 1.5 lakh or 2 million."
             onSubmit={onGuess}
             shake={shake}
-            tries={1}
           />
           <button
             onClick={() => onGuess(PASS)}

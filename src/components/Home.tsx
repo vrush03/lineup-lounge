@@ -25,7 +25,7 @@ export function Home({ modes }: { modes: ModeCard[] }) {
           const badge = m.anytime ? 'Any time' : done ? m.status : 'Daily'
           const note = m.pill ?? (m.streak > 0 ? `🔥 ${m.streak} ${m.streakLabel ?? 'day streak'}` : null)
           return (
-            <li key={m.href} className="flex">
+            <li key={m.href} className="flex last:odd:col-span-2">
               <a
                 href={m.href}
                 className="group flex w-full flex-col rounded-3xl border border-line bg-surface p-4 shadow-[var(--shadow)] transition hover:border-pitch/50 active:scale-[0.99]"

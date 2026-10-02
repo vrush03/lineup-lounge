@@ -17,7 +17,11 @@ describe('ballpark stats', () => {
     recordBallpark(11, 300)
     const s = loadBallparkStats()
     expect(s).toMatchObject({ played: 2, streak: 2, maxStreak: 2, lastPlayedDay: 11, lastPoints: 300, bestPoints: 300, totalPoints: 487 })
-    expect(s.pointsDist).toEqual([0, 1, 1])
+    expect(s.pointsDist).toEqual([0, 1, 0, 1, 0])
+  })
+  it('keeps the counts from when a round was out of 300', () => {
+    localStorage.setItem('stats:ballpark', JSON.stringify({ played: 3, pointsDist: [1, 1, 1] }))
+    expect(loadBallparkStats().pointsDist).toEqual([1, 1, 1, 0, 0])
   })
   it('restarts the streak after a missed day and drops it from the header once it lapses', () => {
     recordBallpark(1, 50)
@@ -28,7 +32,7 @@ describe('ballpark stats', () => {
   })
   it('discards stored stats and saves of the wrong shape', () => {
     localStorage.setItem('stats:ballpark', JSON.stringify({ played: 'lots', pointsDist: [1] }))
-    expect(loadBallparkStats()).toMatchObject({ played: 0, pointsDist: [0, 0, 0] })
+    expect(loadBallparkStats()).toMatchObject({ played: 0, pointsDist: [0, 0, 0, 0, 0] })
     localStorage.setItem('ballpark:cricket:3', JSON.stringify({ ids: ['a'], guesses: [[1]] }))
     expect(loadBallpark('cricket:3')).toBeNull()
     saveBallpark('cricket:3', { ids: ['a'], guesses: [['250']] })

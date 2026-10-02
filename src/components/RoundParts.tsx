@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { MarkIcon } from './MarkIcon'
 import { Countdown } from './ResultPanel'
-import { MAX_POINTS, pointsMark, quizPoints } from '../lib/quiz'
+import { MAX_POINTS, pointsMark, sumPoints } from '../lib/ballpark'
 import type { Mark } from '../lib/score'
-import { quizShareText } from '../lib/share'
+import { roundShareText } from '../lib/share'
 import { MARK_TEXT, NEXT_BUTTON } from './roundStyles'
 
-/** Shared by the question-a-screen modes (Quiz, Ballpark): progress, points, the round summary. */
+/** The Ballpark round's progress bar, points badge and summary. */
 
 export function Progress({ marks, pos }: { marks: (Mark | null)[]; pos: number }) {
   return (
@@ -38,7 +38,7 @@ type SummaryProps = {
   rows: SummaryRow[]
   /** [minimum points, headline], best first. */
   headlines: [number, string][]
-  /** Shown at the start of the share text, e.g. "Lineup Lounge Quiz". */
+  /** Shown at the start of the share text, e.g. "Lineup Lounge Ballpark". */
   shareTitle: string
   /** Legend text for the green band, e.g. "75+". */
   greenLabel: string
@@ -51,7 +51,7 @@ export function RoundSummary({ rows, headlines, shareTitle, greenLabel, day, onN
   const [copied, setCopied] = useState(false)
   const next = useRef<HTMLButtonElement>(null)
   const points = rows.map((r) => r.points)
-  const total = quizPoints(points)
+  const total = sumPoints(points)
   const max = rows.length * MAX_POINTS
   const good = total >= max / 2
   const daily = day !== undefined
@@ -61,7 +61,7 @@ export function RoundSummary({ rows, headlines, shareTitle, greenLabel, day, onN
   }, [justFinished])
 
   async function share() {
-    const text = quizShareText(shareTitle, points, day)
+    const text = roundShareText(shareTitle, points, day)
     try {
       if (navigator.share && matchMedia('(pointer: coarse)').matches) await navigator.share({ text })
       else await navigator.clipboard.writeText(text)

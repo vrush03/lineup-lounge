@@ -1,20 +1,26 @@
 import { describe, expect, it } from 'vitest'
 import { z } from 'zod'
 import ballpark from '../data/ballpark.json'
-import quiz from '../data/quiz.json'
 import { estimateSchema } from './puzzleSchema'
 import type { EstimateQuestion } from './types'
 import {
   BALLPARK_LENGTH,
+  PASS,
   answerText,
+  dailyQuestions,
   estimatePoints,
   formatAmount,
   guessText,
   parseGuess,
+  parseNumber,
+  pointsMark,
   roundPoints,
+  sumPoints,
   timesOffText,
 } from './ballpark'
-import { dailyQuestions, normalize, PASS } from './quiz'
+import { roundShareText } from './share'
+
+const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim()
 
 const questions = z.array(estimateSchema).parse(ballpark) as EstimateQuestion[]
 const q: EstimateQuestion = {
@@ -96,10 +102,11 @@ describe('text', () => {
 })
 
 describe('question selection', () => {
-  const many = Array.from({ length: 9 }, (_, i) => ({ ...q, id: `q${i}` }))
-  it('deals three consecutive questions a day', () => {
-    expect(dailyQuestions(many, 0, BALLPARK_LENGTH).map((x) => x.id)).toEqual(['q0', 'q1', 'q2'])
-    expect(dailyQuestions(many, 4, BALLPARK_LENGTH).map((x) => x.id)).toEqual(['q3', 'q4', 'q5'])
+  const many = Array.from({ length: 12 }, (_, i) => ({ ...q, id: `q${i}` }))
+  it('deals five consecutive questions a day', () => {
+    expect(dailyQuestions(many, 0).map((x) => x.id)).toEqual(['q0', 'q1', 'q2', 'q3', 'q4'])
+    expect(dailyQuestions(many, 2).map((x) => x.id)).toEqual(['q10', 'q11', 'q0', 'q1', 'q2'])
+    expect(dailyQuestions(many, -1)).toHaveLength(BALLPARK_LENGTH)
   })
 })
 
@@ -110,22 +117,40 @@ describe('ballpark dataset', () => {
     expect(new Set(questions.map((x) => x.id)).size).toBe(questions.length)
     expect(new Set(questions.map((x) => normalize(x.prompt))).size).toBe(questions.length)
   })
-  it('gives every day three different families and at most one IPL question', () => {
+  it('gives every day at most two questions of a family and at most one IPL question', () => {
     for (let day = 0; day < questions.length / BALLPARK_LENGTH; day++) {
-      const set = dailyQuestions(questions, day, BALLPARK_LENGTH)
-      expect(new Set(set.map((x) => x.family)).size).toBe(BALLPARK_LENGTH)
+      const set = dailyQuestions(questions, day)
+      for (const f of new Set(set.map((x) => x.family))) expect(set.filter((x) => x.family === f).length).toBeLessThanOrEqual(2)
       expect(set.filter((x) => x.format === 'IPL').length).toBeLessThanOrEqual(1)
     }
   })
   it('covers more than the IPL', () => {
     expect(questions.filter((x) => x.format === 'IPL').length).toBeLessThanOrEqual(questions.length / 4)
   })
-  it('never repeats a Quiz question', () => {
-    const asked = new Set((quiz as { prompt: string }[]).map((x) => normalize(x.prompt)))
-    expect(questions.filter((x) => asked.has(normalize(x.prompt)))).toEqual([])
-  })
   it.each(questions.map((x) => [x.id, x] as const))('%s scores 100 for its own answer', (_, x) => {
     expect(estimatePoints(x, String(x.answer))).toBe(100)
     expect(estimatePoints(x, answerText(x))).toBe(100)
+  })
+})
+
+describe('number parsing', () => {
+  it('reads suffixes, currency signs and commas', () => {
+    expect(parseNumber('7,275')).toBe(7275)
+    expect(parseNumber('7.3k')).toBeCloseTo(7300)
+    expect(parseNumber('1.5 lakh')).toBe(150000)
+    expect(parseNumber('2 bn')).toBe(2e9)
+    expect(parseNumber('$4m')).toBe(4e6)
+    expect(parseNumber('abc')).toBeNull()
+  })
+})
+
+describe('round totals and sharing', () => {
+  it('colours points by band and sums open questions as zero', () => {
+    expect([100, 75, 74, 25, 24, 0].map(pointsMark)).toEqual(['correct', 'correct', 'near', 'near', 'wrong', 'wrong'])
+    expect(sumPoints([100, null, 50])).toBe(150)
+  })
+  it('shares the total out of the round and a square per question', () => {
+    expect(roundShareText('Lineup Lounge Ballpark', [100, 50, 0, 80, 20], 11)).toBe('🏏 Lineup Lounge Ballpark #12 250/500\n🟩🟨🟥🟩🟥')
+    expect(roundShareText('Lineup Lounge Ballpark', [100], undefined)).toBe('🏏 Lineup Lounge Ballpark (practice) 100/100\n🟩')
   })
 })

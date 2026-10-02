@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Ballpark } from './Ballpark'
-import { BALLPARK_LENGTH } from '../lib/ballpark'
+import { BALLPARK_LENGTH, dailyQuestions } from '../lib/ballpark'
 import { loadEstimates } from '../lib/puzzles'
-import { dailyQuestions } from '../lib/quiz'
 import type { EstimateQuestion } from '../lib/types'
 
 type Round = 'daily' | 'practice'
@@ -13,7 +12,7 @@ type Props = {
   onFinishDaily: (points: number) => void
 }
 
-/** Estimation mode: a daily round of three, plus practice rounds. */
+/** Estimation mode: a daily round of five, plus practice rounds. */
 export function BallparkMode({ day, dateLabel, onFinishDaily }: Props) {
   const [questions, setQuestions] = useState<EstimateQuestion[] | null>(null)
   const [failed, setFailed] = useState(false)
@@ -35,8 +34,8 @@ function Rounds({ questions, day, dateLabel, onFinishDaily }: Props & { question
   const [practice, setPractice] = useState<{ questions: EstimateQuestion[]; n: number } | null>(null)
   const daily = useMemo(() => dailyQuestions(questions, day, BALLPARK_LENGTH), [questions, day])
 
-  // Practice plays a random other day from the dealt list, so it keeps the daily's rules: three
-  // families, no two questions that give each other away, at most one IPL question.
+  // Practice plays a random other day from the dealt list, so it keeps the daily's rules: no
+  // more than two of a family, no two questions that give each other away, at most one IPL question.
   function newPractice() {
     const days = Math.floor(questions.length / BALLPARK_LENGTH)
     const today = ((day % days) + days) % days

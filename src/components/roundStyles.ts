@@ -1,6 +1,6 @@
 import type { Mark } from '../lib/score'
 
-/** Class names shared by the question-a-screen modes (Quiz, Ballpark). */
+/** Class names shared by the Ballpark screens. */
 
 export const MARK_TEXT: Record<Mark, string> = { correct: 'text-correct-ink', near: 'text-near-ink', wrong: 'text-wrong-ink' }
 export const MARK_FILL: Record<Mark, string> = { correct: 'fill-correct', near: 'fill-near', wrong: 'fill-wrong' }

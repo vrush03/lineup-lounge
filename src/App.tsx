@@ -3,25 +3,20 @@ import { useEffect, useState } from 'react'
 import { BallparkMode } from './components/BallparkMode'
 import { Home, type ModeCard } from './components/Home'
 import { LineupMode } from './components/LineupMode'
-import { QuizMode } from './components/QuizMode'
 import { ShowdownMode } from './components/ShowdownMode'
 import { StatsDialog } from './components/StatsDialog'
-import { BALLPARK_LENGTH } from './lib/ballpark'
+import { BALLPARK_LENGTH, MAX_POINTS } from './lib/ballpark'
 import { dayNumber, puzzleIndex } from './lib/daily'
 import { loadPuzzles } from './lib/puzzles'
-import { MAX_POINTS, QUIZ_LENGTH } from './lib/quiz'
 import { ROUNDS } from './lib/showdown'
 import {
   ballparkLiveStreak,
   liveStreak,
   loadBallparkStats,
   loadPref,
-  loadQuizStats,
   loadShowdownStats,
   loadStats,
-  quizLiveStreak,
   recordBallpark,
-  recordQuiz,
   recordResult,
   recordShowdown,
   savePref,
@@ -59,16 +54,16 @@ export default function App() {
   )
 }
 
-type Route = 'home' | 'lineup' | 'quiz' | 'ballpark' | 'showdown'
+type Route = 'home' | 'lineup' | 'ballpark' | 'showdown'
 
-const TITLE: Record<Route, string> = { home: 'Daily cricket games', lineup: 'Lineup', quiz: 'Quiz', ballpark: 'Ballpark', showdown: 'Showdown' }
+const TITLE: Record<Route, string> = { home: 'Daily cricket games', lineup: 'Lineup', ballpark: 'Ballpark', showdown: 'Showdown' }
 
 function routeFromHash(): Route {
   const h = location.hash.slice(1)
-  return h === 'lineup' || h === 'quiz' || h === 'ballpark' || h === 'showdown' ? h : 'home'
+  return h === 'lineup' || h === 'ballpark' || h === 'showdown' ? h : 'home'
 }
 
-/** Hash routes (#lineup, #quiz, #ballpark, #showdown) so the browser back button returns to the mode list. */
+/** Hash routes (#lineup, #ballpark, #showdown) so the browser back button returns to the mode list. */
 function useRoute(): Route {
   const [route, setRoute] = useState(routeFromHash)
   useEffect(() => {
@@ -90,7 +85,6 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   const route = useRoute()
   const page = route === 'home' ? '/' : `/${route}`
   const [stats, setStats] = useState(loadStats)
-  const [quizStats, setQuizStats] = useState(loadQuizStats)
   const [ballparkStats, setBallparkStats] = useState(loadBallparkStats)
   const [showdownStats, setShowdownStats] = useState(loadShowdownStats)
   const [statsOpen, setStatsOpen] = useState(false)
@@ -103,10 +97,9 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   }, [theme])
 
   const lineupStreak = liveStreak(stats, day)
-  const quizStreak = quizLiveStreak(quizStats, day)
   const ballparkStreak = ballparkLiveStreak(ballparkStats, day)
   const streak =
-    route === 'quiz' ? quizStreak : route === 'ballpark' ? ballparkStreak : route === 'showdown' ? showdownStats.streak : lineupStreak
+    route === 'ballpark' ? ballparkStreak : route === 'showdown' ? showdownStats.streak : lineupStreak
   const dateLabel = today.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' })
 
   const modes: ModeCard[] = [
@@ -119,22 +112,9 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
       icon: <LineupIcon />,
     },
     {
-      href: '#quiz',
-      name: 'Quiz',
-      tagline: 'Five questions, up to 100 points each.',
-      status:
-        quizStats.lastPlayedDay !== day
-          ? null
-          : quizStats.lastPoints !== null
-            ? `${quizStats.lastPoints}/${QUIZ_LENGTH * MAX_POINTS}`
-            : `${quizStats.lastScore ?? 0}/${QUIZ_LENGTH}`,
-      streak: quizStreak,
-      icon: <QuizIcon />,
-    },
-    {
       href: '#ballpark',
       name: 'Ballpark',
-      tagline: 'Estimate three cricket numbers.',
+      tagline: 'Estimate five cricket numbers.',
       status:
         ballparkStats.lastPlayedDay === day && ballparkStats.lastPoints !== null
           ? `${ballparkStats.lastPoints}/${BALLPARK_LENGTH * MAX_POINTS}`
@@ -221,8 +201,6 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
             dateLabel={dateLabel}
             onFinishDaily={(solved, n) => setStats(recordResult(day, solved, n))}
           />
-        ) : route === 'quiz' ? (
-          <QuizMode puzzles={puzzles} day={day} dateLabel={dateLabel} onFinishDaily={(points) => setQuizStats(recordQuiz(day, points))} />
         ) : route === 'ballpark' ? (
           <BallparkMode day={day} dateLabel={dateLabel} onFinishDaily={(points) => setBallparkStats(recordBallpark(day, points))} />
         ) : (
@@ -258,22 +236,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
       {/* Hash routes don't change the path, so report each game as its own page. */}
       <Analytics route={page} path={page} />
 
-      {route === 'quiz' ? (
-        <StatsDialog
-          open={statsOpen}
-          onClose={() => setStatsOpen(false)}
-          title="Quiz stats"
-          tiles={[
-            ['Played', quizStats.played],
-            ['Avg', quizStats.pointsPlayed ? Math.round(quizStats.totalPoints / quizStats.pointsPlayed) : 0],
-            ['Streak', quizStreak],
-            ['Best', quizStats.bestPoints],
-          ]}
-          distTitle="Daily points"
-          dist={quizStats.pointsDist.map((n, i) => [`${i * 100}+`, n] as [string, number]).reverse()}
-          note="Each question scores up to 100 points, so a daily quiz is out of 500. Daily quizzes count towards your stats; practice rounds don’t. The streak counts days you finish the quiz."
-        />
-      ) : route === 'ballpark' ? (
+      {route === 'ballpark' ? (
         <StatsDialog
           open={statsOpen}
           onClose={() => setStatsOpen(false)}
@@ -353,16 +316,6 @@ function LineupIcon() {
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
       <path d="M9 6h11M9 12h11M9 18h11" />
       <path d="M4 5v2M3.5 11h1.5l-1.5 2h1.5M3.5 17h1.5v2h-1.5" strokeWidth="1.5" />
-    </svg>
-  )
-}
-
-function QuizIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6" />
-      <path d="M12 17h.01" />
     </svg>
   )
 }

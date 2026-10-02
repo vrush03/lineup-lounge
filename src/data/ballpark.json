@@ -1,119 +1,5 @@
 [
  {
-  "id": "b-odi-aggregate",
-  "family": "records",
-  "format": "ODI",
-  "prompt": "What is the most runs scored in a single ODI, by both teams together?",
-  "answer": 872,
-  "unit": "runs",
-  "fact": "Australia made 434 for 4 and South Africa chased it, 438 for 9, at Johannesburg on 12 March 2006.",
-  "sources": [
-   {
-    "name": "Wikipedia: List of One Day International cricket records",
-    "url": "https://en.wikipedia.org/wiki/List_of_One_Day_International_cricket_records",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-sachin-test-days",
-  "family": "time",
-  "format": "Test",
-  "prompt": "How many days passed between Sachin Tendulkar's first Test and his last?",
-  "answer": 8765,
-  "unit": "days",
-  "working": "From 15 November 1989, against Pakistan, to 14 November 2013, against West Indies.",
-  "sources": [
-   {
-    "name": "Wikipedia: Sachin Tendulkar",
-    "url": "https://en.wikipedia.org/wiki/Sachin_Tendulkar",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-kallis-runs",
-  "family": "career",
-  "prompt": "How many runs did Jacques Kallis score in Tests and ODIs combined?",
-  "answer": 24868,
-  "unit": "runs",
-  "fact": "13,289 in Tests and 11,579 in ODIs, with 292 and 273 wickets.",
-  "sources": [
-   {
-    "name": "Wikipedia: Jacques Kallis",
-    "url": "https://en.wikipedia.org/wiki/Jacques_Kallis",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-marathon-laps",
-  "family": "scale",
-  "prompt": "How many laps of the boundary rope would you need to run a marathon, on a round field whose boundary is 70 m from the centre?",
-  "answer": 96,
-  "unit": "laps",
-  "working": "The rope is 2 × π × 70 ≈ 440 m round; a marathon is 42,195 m.",
-  "sources": [
-   {
-    "name": "Wikipedia: Marathon",
-    "url": "https://en.wikipedia.org/wiki/Marathon",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-nms-ipl-final",
-  "family": "crowds",
-  "format": "IPL",
-  "prompt": "The 2022 IPL final, Gujarat Titans against Rajasthan Royals, drew the biggest crowd in the Narendra Modi Stadium's history. How many people?",
-  "answer": 104859,
-  "unit": "people",
-  "sources": [
-   {
-    "name": "Wikipedia: Narendra Modi Stadium",
-    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-wc2011-sixes",
-  "family": "records",
-  "format": "World Cup",
-  "prompt": "How many sixes were hit at the 2011 World Cup in India, Sri Lanka and Bangladesh?",
-  "answer": 258,
-  "unit": "sixes",
-  "fact": "Across all 49 matches, with 1,902 fours.",
-  "sources": [
-   {
-    "name": "Cricsheet ball-by-ball data",
-    "url": "https://cricsheet.org/",
-    "license": "ODC-By 1.0"
-   }
-  ]
- },
- {
-  "id": "b-mithali-odi-runs",
-  "family": "career",
-  "format": "ODI",
-  "prompt": "Mithali Raj retired in 2022 as the leading run-scorer in women's ODIs. How many ODI runs did she make?",
-  "answer": 7805,
-  "unit": "runs",
-  "fact": "In 232 ODIs. She retired from international cricket in June 2022.",
-  "sources": [
-   {
-    "name": "Wikipedia: Mithali Raj",
-    "url": "https://en.wikipedia.org/wiki/Mithali_Raj",
-    "license": "CC BY-SA 4.0"
-   },
-   {
-    "name": "Wikipedia: List of women's One Day International cricket records",
-    "url": "https://en.wikipedia.org/wiki/List_of_women%27s_One_Day_International_cricket_records",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
   "id": "b-kallis-test-days",
   "family": "time",
   "format": "Test",
@@ -130,12 +16,58 @@
   ]
  },
  {
-  "id": "b-ipl-run-outs",
+  "id": "b-624-partnership",
+  "family": "records",
+  "format": "Test",
+  "prompt": "Kumar Sangakkara and Mahela Jayawardene put on the highest partnership in Test cricket, against South Africa in 2006. How many runs?",
+  "answer": 624,
+  "unit": "runs",
+  "fact": "Sangakkara made 287 and Jayawardene 374. No other first-class partnership has passed 600.",
+  "sources": [
+   {
+    "name": "Wikipedia: Kumar Sangakkara",
+    "url": "https://en.wikipedia.org/wiki/Kumar_Sangakkara",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-mcg-boxing-day",
+  "family": "crowds",
+  "format": "Test",
+  "prompt": "The first day of the 2025 Boxing Day Test against England set a new record crowd for cricket at the MCG. How many people?",
+  "answer": 94199,
+  "unit": "people",
+  "sources": [
+   {
+    "name": "Wikipedia: Melbourne Cricket Ground",
+    "url": "https://en.wikipedia.org/wiki/Melbourne_Cricket_Ground",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-nms-seats-line",
+  "family": "scale",
+  "prompt": "If every seat in the 132,000-capacity Narendra Modi Stadium were set in one straight line, 50 cm apart, how many km long would it be?",
+  "answer": 66,
+  "unit": "km",
+  "working": "132,000 × 0.5 m = 66,000 m.",
+  "sources": [
+   {
+    "name": "Wikipedia: Narendra Modi Stadium",
+    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-ipl-fifties",
   "family": "records",
   "format": "IPL",
-  "prompt": "How many run-outs have there been in the IPL (to the end of IPL 2026)?",
-  "answer": 1185,
-  "unit": "run-outs",
+  "prompt": "How many times has a batter scored 50 to 99 in an IPL innings (to the end of IPL 2026)?",
+  "answer": 1990,
+  "unit": "innings",
   "fact": "Across 1,243 matches, super overs left out.",
   "sources": [
    {
@@ -146,17 +78,35 @@
   ]
  },
  {
-  "id": "b-nz-women-491",
-  "family": "records",
-  "format": "ODI",
-  "prompt": "What is the highest team total in women's ODIs, made by New Zealand against Ireland in Dublin in 2018?",
-  "answer": 491,
-  "unit": "runs",
-  "fact": "491 for 4 in 50 overs.",
+  "id": "b-lords-capacity",
+  "family": "crowds",
+  "prompt": "How many spectators can Lord's hold?",
+  "answer": 31100,
+  "unit": "people",
   "sources": [
    {
-    "name": "Wikipedia: List of women's One Day International cricket records",
-    "url": "https://en.wikipedia.org/wiki/List_of_women%27s_One_Day_International_cricket_records",
+    "name": "Wikipedia: Lord's",
+    "url": "https://en.wikipedia.org/wiki/Lord%27s",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-stumps-everest",
+  "family": "scale",
+  "prompt": "How many stumps, stacked end on end, would reach the top of Mount Everest?",
+  "answer": 12442,
+  "unit": "stumps",
+  "working": "Everest is 8,848.86 m high; a stump stands 71.12 cm (28 in).",
+  "sources": [
+   {
+    "name": "Wikipedia: Mount Everest",
+    "url": "https://en.wikipedia.org/wiki/Mount_Everest",
+    "license": "CC BY-SA 4.0"
+   },
+   {
+    "name": "Wikipedia: Wicket",
+    "url": "https://en.wikipedia.org/wiki/Wicket",
     "license": "CC BY-SA 4.0"
    }
   ]
@@ -187,37 +137,6 @@
   ]
  },
  {
-  "id": "b-mcg-capacity",
-  "family": "crowds",
-  "prompt": "How many people can the Melbourne Cricket Ground hold, seated and standing?",
-  "answer": 100024,
-  "unit": "people",
-  "fact": "95,000 seats plus 5,000 standing.",
-  "sources": [
-   {
-    "name": "Wikipedia: Melbourne Cricket Ground",
-    "url": "https://en.wikipedia.org/wiki/Melbourne_Cricket_Ground",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-warne-test-days",
-  "family": "time",
-  "format": "Test",
-  "prompt": "How many days passed between Shane Warne's first Test and his last?",
-  "answer": 5479,
-  "unit": "days",
-  "working": "From 2 January 1992 to 2 January 2007: fifteen years to the day.",
-  "sources": [
-   {
-    "name": "Wikipedia: Shane Warne",
-    "url": "https://en.wikipedia.org/wiki/Shane_Warne",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
   "id": "b-ipl-noballs",
   "family": "records",
   "format": "IPL",
@@ -234,16 +153,32 @@
   ]
  },
  {
-  "id": "b-pitches-in-field",
-  "family": "scale",
-  "prompt": "How many 22-yard pitches would fit, side by side, inside a round field whose boundary is 70 m from the centre?",
-  "answer": 251,
-  "unit": "pitches",
-  "working": "π × 70² ≈ 15,394 m² of field. A pitch is 20.12 m by 3.05 m, about 61.37 m².",
+  "id": "b-victoria-1107",
+  "family": "records",
+  "prompt": "What is the highest team total in first-class cricket, made by Victoria against New South Wales in 1926–27?",
+  "answer": 1107,
+  "unit": "runs",
+  "fact": "At Melbourne.",
   "sources": [
    {
-    "name": "Wikipedia: Cricket pitch",
-    "url": "https://en.wikipedia.org/wiki/Cricket_pitch",
+    "name": "Wikipedia: List of first-class cricket records",
+    "url": "https://en.wikipedia.org/wiki/List_of_first-class_cricket_records",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-walsh-ducks",
+  "family": "career",
+  "format": "Test",
+  "prompt": "Courtney Walsh holds the record for the most ducks in Test cricket. How many?",
+  "answer": 43,
+  "unit": "ducks",
+  "fact": "He also took 519 wickets in 132 Tests.",
+  "sources": [
+   {
+    "name": "Wikipedia: Courtney Walsh",
+    "url": "https://en.wikipedia.org/wiki/Courtney_Walsh",
     "license": "CC BY-SA 4.0"
    }
   ]
@@ -269,294 +204,16 @@
   ]
  },
  {
-  "id": "b-durban-aggregate",
-  "family": "records",
-  "format": "Test",
-  "prompt": "The 1939 Timeless Test at Durban ran for twelve days. How many runs were scored in the match?",
-  "answer": 1981,
-  "unit": "runs",
-  "fact": "The most in any Test. It was abandoned as a draw with England 654 for 5, chasing 696, so they could catch the boat home.",
-  "sources": [
-   {
-    "name": "Wikipedia: List of Test cricket records",
-    "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records",
-    "license": "CC BY-SA 4.0"
-   },
-   {
-    "name": "Wikipedia: Timeless Test",
-    "url": "https://en.wikipedia.org/wiki/Timeless_Test",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-balls-tonne",
-  "family": "scale",
-  "prompt": "How many cricket balls, at the 156 g the Laws allow at the lightest, make up one tonne?",
-  "answer": 6410,
-  "unit": "balls",
-  "working": "1,000,000 g ÷ 156 g.",
-  "sources": [
-   {
-    "name": "Wikipedia: Cricket ball",
-    "url": "https://en.wikipedia.org/wiki/Cricket_ball",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-pitches-equator",
-  "family": "scale",
-  "prompt": "How many 22-yard pitches, laid end to end, would go once round the Equator?",
-  "answer": 1990000,
-  "unit": "pitches",
-  "working": "The Equator is 40,075 km, or 40,075,000 m; a pitch is 20.12 m.",
-  "sources": [
-   {
-    "name": "Wikipedia: Equator",
-    "url": "https://en.wikipedia.org/wiki/Equator",
-    "license": "CC BY-SA 4.0"
-   },
-   {
-    "name": "Wikipedia: Cricket pitch",
-    "url": "https://en.wikipedia.org/wiki/Cricket_pitch",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-ipl-ducks",
-  "family": "records",
-  "format": "IPL",
-  "prompt": "How many times has a batter been out for a duck in the IPL (to the end of IPL 2026)?",
-  "answer": 1486,
-  "unit": "ducks",
-  "fact": "Across 1,243 matches, super overs left out.",
-  "sources": [
-   {
-    "name": "Cricsheet ball-by-ball data",
-    "url": "https://cricsheet.org/",
-    "license": "ODC-By 1.0"
-   }
-  ]
- },
- {
-  "id": "b-wc2023-final-crowd",
+  "id": "b-mcg-women-final",
   "family": "crowds",
-  "format": "World Cup",
-  "prompt": "How many spectators watched the 2023 World Cup final between India and Australia in Ahmedabad?",
-  "answer": 92453,
+  "prompt": "How many people watched the 2020 Women's T20 World Cup final at the MCG, a record crowd for women's cricket?",
+  "answer": 86174,
   "unit": "people",
-  "sources": [
-   {
-    "name": "Wikipedia: Narendra Modi Stadium",
-    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-shoes-field",
-  "family": "scale",
-  "prompt": "How many pairs of shoes, laid flat side by side, would cover a round cricket field whose boundary is 70 m from the centre? Take a pair as 30 cm by 22 cm.",
-  "answer": 233000,
-  "unit": "pairs",
-  "working": "The field is a circle of radius 70 m: π × 70² ≈ 15,394 m². A pair covers 0.066 m², so 15,394 ÷ 0.066.",
-  "sources": []
- },
- {
-  "id": "b-walsh-ducks",
-  "family": "career",
-  "format": "Test",
-  "prompt": "Courtney Walsh holds the record for the most ducks in Test cricket. How many?",
-  "answer": 43,
-  "unit": "ducks",
-  "fact": "He also took 519 wickets in 132 Tests.",
-  "sources": [
-   {
-    "name": "Wikipedia: Courtney Walsh",
-    "url": "https://en.wikipedia.org/wiki/Courtney_Walsh",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-ipl-fifties",
-  "family": "records",
-  "format": "IPL",
-  "prompt": "How many times has a batter scored 50 to 99 in an IPL innings (to the end of IPL 2026)?",
-  "answer": 1990,
-  "unit": "innings",
-  "fact": "Across 1,243 matches, super overs left out.",
-  "sources": [
-   {
-    "name": "Cricsheet ball-by-ball data",
-    "url": "https://cricsheet.org/",
-    "license": "ODC-By 1.0"
-   }
-  ]
- },
- {
-  "id": "b-bats-km",
-  "family": "scale",
-  "prompt": "How many full-length cricket bats, laid end to end, would stretch one kilometre?",
-  "answer": 1036,
-  "unit": "bats",
-  "working": "The Laws allow a bat up to 96.5 cm (38 in) long: 1,000 m ÷ 0.965 m.",
-  "sources": [
-   {
-    "name": "Wikipedia: Cricket bat",
-    "url": "https://en.wikipedia.org/wiki/Cricket_bat",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-sachin-intl-runs",
-  "family": "career",
-  "prompt": "How many runs did Sachin Tendulkar score in international cricket, across Tests, ODIs and T20Is?",
-  "answer": 34357,
-  "unit": "runs",
-  "fact": "In 664 international matches.",
-  "sources": [
-   {
-    "name": "Wikipedia: Sachin Tendulkar",
-    "url": "https://en.wikipedia.org/wiki/Sachin_Tendulkar",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-eden-capacity",
-  "family": "crowds",
-  "prompt": "How many people can Eden Gardens in Kolkata hold?",
-  "answer": 68000,
-  "unit": "people",
-  "fact": "The ground was established in 1864.",
-  "sources": [
-   {
-    "name": "Wikipedia: Eden Gardens",
-    "url": "https://en.wikipedia.org/wiki/Eden_Gardens",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-dhoni-intl-matches",
-  "family": "career",
-  "prompt": "How many international matches did MS Dhoni play, across Tests, ODIs and T20Is?",
-  "answer": 538,
-  "unit": "matches",
-  "fact": "90 Tests, 350 ODIs and 98 T20Is.",
-  "sources": [
-   {
-    "name": "Wikipedia: MS Dhoni",
-    "url": "https://en.wikipedia.org/wiki/MS_Dhoni",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-wc2011-hours",
-  "family": "time",
-  "format": "World Cup",
-  "prompt": "If every delivery took 40 seconds, how many hours would it take to watch every ball of the 2011 World Cup?",
-  "answer": 289,
-  "unit": "hours",
-  "working": "26,036 deliveries in 49 matches, wides and no-balls included, × 40 seconds.",
-  "sources": [
-   {
-    "name": "Cricsheet ball-by-ball data",
-    "url": "https://cricsheet.org/",
-    "license": "ODC-By 1.0"
-   }
-  ]
- },
- {
-  "id": "b-ashes-series",
-  "family": "records",
-  "prompt": "How many Ashes series have England and Australia played, counting the first in 1882–83, up to 2026?",
-  "answer": 74,
-  "unit": "series",
-  "sources": [
-   {
-    "name": "Wikipedia: The Ashes",
-    "url": "https://en.wikipedia.org/wiki/The_Ashes",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-lords-capacity",
-  "family": "crowds",
-  "prompt": "How many spectators can Lord's hold?",
-  "answer": 31100,
-  "unit": "people",
-  "sources": [
-   {
-    "name": "Wikipedia: Lord's",
-    "url": "https://en.wikipedia.org/wiki/Lord%27s",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-ipl-fours",
-  "family": "records",
-  "format": "IPL",
-  "prompt": "How many fours have been hit in the IPL (to the end of IPL 2026)?",
-  "answer": 34399,
-  "unit": "fours",
-  "fact": "Across 1,243 matches, super overs left out.",
-  "sources": [
-   {
-    "name": "Cricsheet ball-by-ball data",
-    "url": "https://cricsheet.org/",
-    "license": "ODC-By 1.0"
-   }
-  ]
- },
- {
-  "id": "b-sangakkara-runs",
-  "family": "career",
-  "prompt": "How many international runs did Kumar Sangakkara score across all formats?",
-  "answer": 28016,
-  "unit": "runs",
-  "fact": "Including 63 centuries.",
-  "sources": [
-   {
-    "name": "Wikipedia: Kumar Sangakkara",
-    "url": "https://en.wikipedia.org/wiki/Kumar_Sangakkara",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-mcg-boxing-day",
-  "family": "crowds",
-  "format": "Test",
-  "prompt": "The first day of the 2025 Boxing Day Test against England set a new record crowd for cricket at the MCG. How many people?",
-  "answer": 94199,
-  "unit": "people",
+  "fact": "Australia beat India by 85 runs, on International Women's Day.",
   "sources": [
    {
     "name": "Wikipedia: Melbourne Cricket Ground",
     "url": "https://en.wikipedia.org/wiki/Melbourne_Cricket_Ground",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-rhodes-fc-wickets",
-  "family": "career",
-  "prompt": "Wilfred Rhodes took more first-class wickets than anyone, playing from 1898 to 1930. How many?",
-  "answer": 4204,
-  "unit": "wickets",
-  "fact": "For Yorkshire and England.",
-  "sources": [
-   {
-    "name": "Wikipedia: List of first-class cricket records",
-    "url": "https://en.wikipedia.org/wiki/List_of_first-class_cricket_records",
     "license": "CC BY-SA 4.0"
    }
   ]
@@ -569,122 +226,6 @@
   "answer": 9720,
   "unit": "catches",
   "fact": "Across 1,243 matches, super overs left out.",
-  "sources": [
-   {
-    "name": "Cricsheet ball-by-ball data",
-    "url": "https://cricsheet.org/",
-    "license": "ODC-By 1.0"
-   }
-  ]
- },
- {
-  "id": "b-test-to-odi-days",
-  "family": "time",
-  "prompt": "How many days passed between the first Test match and the first ODI?",
-  "answer": 34263,
-  "unit": "days",
-  "working": "The first Test began at the MCG on 15 March 1877; the first ODI was played there on 5 January 1971.",
-  "sources": [
-   {
-    "name": "Wikipedia: Test cricket",
-    "url": "https://en.wikipedia.org/wiki/Test_cricket",
-    "license": "CC BY-SA 4.0"
-   },
-   {
-    "name": "Wikipedia: One Day International",
-    "url": "https://en.wikipedia.org/wiki/One_Day_International",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-boucher-dismissals",
-  "family": "career",
-  "prompt": "Mark Boucher holds the record for dismissals by a wicketkeeper across all international cricket. How many catches and stumpings?",
-  "answer": 998,
-  "unit": "dismissals",
-  "fact": "555 of them in Tests, also a record.",
-  "sources": [
-   {
-    "name": "Wikipedia: Mark Boucher",
-    "url": "https://en.wikipedia.org/wiki/Mark_Boucher",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-nms-seats-line",
-  "family": "scale",
-  "prompt": "If every seat in the 132,000-capacity Narendra Modi Stadium were set in one straight line, 50 cm apart, how many km long would it be?",
-  "answer": 66,
-  "unit": "km",
-  "working": "132,000 × 0.5 m = 66,000 m.",
-  "sources": [
-   {
-    "name": "Wikipedia: Narendra Modi Stadium",
-    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-balls-along-pitch",
-  "family": "scale",
-  "prompt": "How many cricket balls, touching in a row, would stretch from one set of stumps to the other?",
-  "answer": 279,
-  "unit": "balls",
-  "working": "The pitch is 20.12 m and a ball is about 7.2 cm across (22.4 to 22.9 cm round).",
-  "sources": [
-   {
-    "name": "Wikipedia: Cricket pitch",
-    "url": "https://en.wikipedia.org/wiki/Cricket_pitch",
-    "license": "CC BY-SA 4.0"
-   },
-   {
-    "name": "Wikipedia: Cricket ball",
-    "url": "https://en.wikipedia.org/wiki/Cricket_ball",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-wc2023-prize",
-  "family": "crowds",
-  "format": "World Cup",
-  "prompt": "How much prize money did Australia receive for winning the 2023 World Cup, in US dollars?",
-  "answer": 4000000,
-  "unit": "US dollars",
-  "sources": [
-   {
-    "name": "Wikipedia: 2023 Cricket World Cup",
-    "url": "https://en.wikipedia.org/wiki/2023_Cricket_World_Cup",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-victoria-1107",
-  "family": "records",
-  "prompt": "What is the highest team total in first-class cricket, made by Victoria against New South Wales in 1926–27?",
-  "answer": 1107,
-  "unit": "runs",
-  "fact": "At Melbourne.",
-  "sources": [
-   {
-    "name": "Wikipedia: List of first-class cricket records",
-    "url": "https://en.wikipedia.org/wiki/List_of_first-class_cricket_records",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-ipl-finals-hours",
-  "family": "time",
-  "format": "IPL",
-  "prompt": "If every delivery took 40 seconds, how many hours would it take to watch every ball of every IPL final (to the end of IPL 2026)?",
-  "answer": 51,
-  "unit": "hours",
-  "working": "4,571 deliveries in 19 finals, wides and no-balls included, × 40 seconds.",
   "sources": [
    {
     "name": "Cricsheet ball-by-ball data",
@@ -710,48 +251,12 @@
   ]
  },
  {
-  "id": "b-balls-fill-pool",
-  "family": "scale",
-  "prompt": "How many cricket balls would fill an Olympic swimming pool?",
-  "answer": 8150000,
-  "unit": "balls",
-  "working": "The pool holds 2,500 m³. A ball 7.2 cm across takes up 196 cm³, and poured balls fill about 64% of a space.",
-  "sources": [
-   {
-    "name": "Wikipedia: Olympic-size swimming pool",
-    "url": "https://en.wikipedia.org/wiki/Olympic-size_swimming_pool",
-    "license": "CC BY-SA 4.0"
-   },
-   {
-    "name": "Wikipedia: Cricket ball",
-    "url": "https://en.wikipedia.org/wiki/Cricket_ball",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-wc2023-attendance",
-  "family": "crowds",
-  "format": "World Cup",
-  "prompt": "How many spectators attended the 2023 men's ODI World Cup in India, across all 48 matches?",
-  "answer": 1250307,
-  "unit": "people",
-  "fact": "The most at any Cricket World Cup.",
-  "sources": [
-   {
-    "name": "Wikipedia: 2023 Cricket World Cup",
-    "url": "https://en.wikipedia.org/wiki/2023_Cricket_World_Cup",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-ipl-runs",
+  "id": "b-ipl-ducks",
   "family": "records",
   "format": "IPL",
-  "prompt": "How many runs have been scored in the IPL, all told (to the end of IPL 2026)?",
-  "answer": 401423,
-  "unit": "runs",
+  "prompt": "How many times has a batter been out for a duck in the IPL (to the end of IPL 2026)?",
+  "answer": 1486,
+  "unit": "ducks",
   "fact": "Across 1,243 matches, super overs left out.",
   "sources": [
    {
@@ -762,61 +267,67 @@
   ]
  },
  {
-  "id": "b-warne-test-balls",
-  "family": "career",
-  "format": "Test",
-  "prompt": "How many balls did Shane Warne bowl in Test cricket?",
-  "answer": 40705,
-  "unit": "balls",
-  "fact": "708 wickets in 145 Tests.",
-  "sources": [
-   {
-    "name": "Wikipedia: Shane Warne",
-    "url": "https://en.wikipedia.org/wiki/Shane_Warne",
-    "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-sl-952",
+  "id": "b-durban-aggregate",
   "family": "records",
   "format": "Test",
-  "prompt": "What is the highest team total in Test cricket, made by Sri Lanka against India in Colombo in 1997?",
-  "answer": 952,
+  "prompt": "The 1939 Timeless Test at Durban ran for twelve days. How many runs were scored in the match?",
+  "answer": 1981,
   "unit": "runs",
-  "fact": "952 for 6 declared, at the R. Premadasa Stadium.",
+  "fact": "The most in any Test. It was abandoned as a draw with England 654 for 5, chasing 696, so they could catch the boat home.",
   "sources": [
    {
     "name": "Wikipedia: List of Test cricket records",
     "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records",
     "license": "CC BY-SA 4.0"
-   }
-  ]
- },
- {
-  "id": "b-edwards-intl-runs",
-  "family": "career",
-  "prompt": "Until Mithali Raj passed her in 2021, England's Charlotte Edwards held the record for runs in women's international cricket. What was her total?",
-  "answer": 10273,
-  "unit": "runs",
-  "sources": [
+   },
    {
-    "name": "Wikipedia: Mithali Raj",
-    "url": "https://en.wikipedia.org/wiki/Mithali_Raj",
+    "name": "Wikipedia: Timeless Test",
+    "url": "https://en.wikipedia.org/wiki/Timeless_Test",
     "license": "CC BY-SA 4.0"
    }
   ]
  },
  {
-  "id": "b-nms-capacity",
-  "family": "crowds",
-  "prompt": "How many people can the Narendra Modi Stadium in Ahmedabad hold?",
-  "answer": 132000,
-  "unit": "people",
+  "id": "b-sachin-intl-runs",
+  "family": "career",
+  "prompt": "How many runs did Sachin Tendulkar score in international cricket, across Tests, ODIs and T20Is?",
+  "answer": 34357,
+  "unit": "runs",
+  "fact": "In 664 international matches.",
   "sources": [
    {
-    "name": "Wikipedia: Narendra Modi Stadium",
-    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
+    "name": "Wikipedia: Sachin Tendulkar",
+    "url": "https://en.wikipedia.org/wiki/Sachin_Tendulkar",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-wc2023-prize",
+  "family": "crowds",
+  "format": "World Cup",
+  "prompt": "How much prize money did Australia receive for winning the 2023 World Cup, in US dollars?",
+  "answer": 4000000,
+  "unit": "US dollars",
+  "sources": [
+   {
+    "name": "Wikipedia: 2023 Cricket World Cup",
+    "url": "https://en.wikipedia.org/wiki/2023_Cricket_World_Cup",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-pitches-in-field",
+  "family": "scale",
+  "prompt": "How many 22-yard pitches would fit, side by side, inside a round field whose boundary is 70 m from the centre?",
+  "answer": 251,
+  "unit": "pitches",
+  "working": "π × 70² ≈ 15,394 m² of field. A pitch is 20.12 m by 3.05 m, about 61.37 m².",
+  "sources": [
+   {
+    "name": "Wikipedia: Cricket pitch",
+    "url": "https://en.wikipedia.org/wiki/Cricket_pitch",
     "license": "CC BY-SA 4.0"
    }
   ]
@@ -838,16 +349,33 @@
   ]
  },
  {
-  "id": "b-mcg-women-final",
-  "family": "crowds",
-  "prompt": "How many people watched the 2020 Women's T20 World Cup final at the MCG, a record crowd for women's cricket?",
-  "answer": 86174,
-  "unit": "people",
-  "fact": "Australia beat India by 85 runs, on International Women's Day.",
+  "id": "b-warne-test-days",
+  "family": "time",
+  "format": "Test",
+  "prompt": "How many days passed between Shane Warne's first Test and his last?",
+  "answer": 5479,
+  "unit": "days",
+  "working": "From 2 January 1992 to 2 January 2007: fifteen years to the day.",
   "sources": [
    {
-    "name": "Wikipedia: Melbourne Cricket Ground",
-    "url": "https://en.wikipedia.org/wiki/Melbourne_Cricket_Ground",
+    "name": "Wikipedia: Shane Warne",
+    "url": "https://en.wikipedia.org/wiki/Shane_Warne",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-odi-aggregate",
+  "family": "records",
+  "format": "ODI",
+  "prompt": "What is the most runs scored in a single ODI, by both teams together?",
+  "answer": 872,
+  "unit": "runs",
+  "fact": "Australia made 434 for 4 and South Africa chased it, 438 for 9, at Johannesburg on 12 March 2006.",
+  "sources": [
+   {
+    "name": "Wikipedia: List of One Day International cricket records",
+    "url": "https://en.wikipedia.org/wiki/List_of_One_Day_International_cricket_records",
     "license": "CC BY-SA 4.0"
    }
   ]
@@ -868,13 +396,229 @@
   ]
  },
  {
-  "id": "b-624-partnership",
+  "id": "b-marathon-laps",
+  "family": "scale",
+  "prompt": "How many laps of the boundary rope would you need to run a marathon, on a round field whose boundary is 70 m from the centre?",
+  "answer": 96,
+  "unit": "laps",
+  "working": "The rope is 2 × π × 70 ≈ 440 m round; a marathon is 42,195 m.",
+  "sources": [
+   {
+    "name": "Wikipedia: Marathon",
+    "url": "https://en.wikipedia.org/wiki/Marathon",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-ipl-finals-hours",
+  "family": "time",
+  "format": "IPL",
+  "prompt": "If every delivery took 40 seconds, how many hours would it take to watch every ball of every IPL final (to the end of IPL 2026)?",
+  "answer": 51,
+  "unit": "hours",
+  "working": "4,571 deliveries in 19 finals, wides and no-balls included, × 40 seconds.",
+  "sources": [
+   {
+    "name": "Cricsheet ball-by-ball data",
+    "url": "https://cricsheet.org/",
+    "license": "ODC-By 1.0"
+   }
+  ]
+ },
+ {
+  "id": "b-shoes-field",
+  "family": "scale",
+  "prompt": "How many pairs of shoes, laid flat side by side, would cover a round cricket field whose boundary is 70 m from the centre? Take a pair as 30 cm by 22 cm.",
+  "answer": 233000,
+  "unit": "pairs",
+  "working": "The field is a circle of radius 70 m: π × 70² ≈ 15,394 m². A pair covers 0.066 m², so 15,394 ÷ 0.066.",
+  "sources": []
+ },
+ {
+  "id": "b-murali-odi-balls",
+  "family": "career",
+  "format": "ODI",
+  "prompt": "How many balls did Muttiah Muralitharan bowl in ODIs?",
+  "answer": 18811,
+  "unit": "balls",
+  "fact": "He took 534 ODI wickets, the most by anyone.",
+  "sources": [
+   {
+    "name": "Wikipedia: Muttiah Muralitharan",
+    "url": "https://en.wikipedia.org/wiki/Muttiah_Muralitharan",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-pitches-equator",
+  "family": "scale",
+  "prompt": "How many 22-yard pitches, laid end to end, would go once round the Equator?",
+  "answer": 1990000,
+  "unit": "pitches",
+  "working": "The Equator is 40,075 km, or 40,075,000 m; a pitch is 20.12 m.",
+  "sources": [
+   {
+    "name": "Wikipedia: Equator",
+    "url": "https://en.wikipedia.org/wiki/Equator",
+    "license": "CC BY-SA 4.0"
+   },
+   {
+    "name": "Wikipedia: Cricket pitch",
+    "url": "https://en.wikipedia.org/wiki/Cricket_pitch",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-ashes-series",
   "family": "records",
+  "prompt": "How many Ashes series have England and Australia played, counting the first in 1882–83, up to 2026?",
+  "answer": 74,
+  "unit": "series",
+  "sources": [
+   {
+    "name": "Wikipedia: The Ashes",
+    "url": "https://en.wikipedia.org/wiki/The_Ashes",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-mcg-capacity",
+  "family": "crowds",
+  "prompt": "How many people can the Melbourne Cricket Ground hold, seated and standing?",
+  "answer": 100024,
+  "unit": "people",
+  "fact": "95,000 seats plus 5,000 standing.",
+  "sources": [
+   {
+    "name": "Wikipedia: Melbourne Cricket Ground",
+    "url": "https://en.wikipedia.org/wiki/Melbourne_Cricket_Ground",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-wc2011-sixes",
+  "family": "records",
+  "format": "World Cup",
+  "prompt": "How many sixes were hit at the 2011 World Cup in India, Sri Lanka and Bangladesh?",
+  "answer": 258,
+  "unit": "sixes",
+  "fact": "Across all 49 matches, with 1,902 fours.",
+  "sources": [
+   {
+    "name": "Cricsheet ball-by-ball data",
+    "url": "https://cricsheet.org/",
+    "license": "ODC-By 1.0"
+   }
+  ]
+ },
+ {
+  "id": "b-wc2023-final-crowd",
+  "family": "crowds",
+  "format": "World Cup",
+  "prompt": "How many spectators watched the 2023 World Cup final between India and Australia in Ahmedabad?",
+  "answer": 92453,
+  "unit": "people",
+  "sources": [
+   {
+    "name": "Wikipedia: Narendra Modi Stadium",
+    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-boucher-dismissals",
+  "family": "career",
+  "prompt": "Mark Boucher holds the record for dismissals by a wicketkeeper across all international cricket. How many catches and stumpings?",
+  "answer": 998,
+  "unit": "dismissals",
+  "fact": "555 of them in Tests, also a record.",
+  "sources": [
+   {
+    "name": "Wikipedia: Mark Boucher",
+    "url": "https://en.wikipedia.org/wiki/Mark_Boucher",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-warne-test-balls",
+  "family": "career",
   "format": "Test",
-  "prompt": "Kumar Sangakkara and Mahela Jayawardene put on the highest partnership in Test cricket, against South Africa in 2006. How many runs?",
-  "answer": 624,
+  "prompt": "How many balls did Shane Warne bowl in Test cricket?",
+  "answer": 40705,
+  "unit": "balls",
+  "fact": "708 wickets in 145 Tests.",
+  "sources": [
+   {
+    "name": "Wikipedia: Shane Warne",
+    "url": "https://en.wikipedia.org/wiki/Shane_Warne",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-balls-fill-pool",
+  "family": "scale",
+  "prompt": "How many cricket balls would fill an Olympic swimming pool?",
+  "answer": 8150000,
+  "unit": "balls",
+  "working": "The pool holds 2,500 m³. A ball 7.2 cm across takes up 196 cm³, and poured balls fill about 64% of a space.",
+  "sources": [
+   {
+    "name": "Wikipedia: Olympic-size swimming pool",
+    "url": "https://en.wikipedia.org/wiki/Olympic-size_swimming_pool",
+    "license": "CC BY-SA 4.0"
+   },
+   {
+    "name": "Wikipedia: Cricket ball",
+    "url": "https://en.wikipedia.org/wiki/Cricket_ball",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-nms-capacity",
+  "family": "crowds",
+  "prompt": "How many people can the Narendra Modi Stadium in Ahmedabad hold?",
+  "answer": 132000,
+  "unit": "people",
+  "sources": [
+   {
+    "name": "Wikipedia: Narendra Modi Stadium",
+    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-ipl-maidens",
+  "family": "records",
+  "format": "IPL",
+  "prompt": "How many maiden overs have been bowled in the IPL (to the end of IPL 2026)?",
+  "answer": 361,
+  "unit": "maidens",
+  "fact": "Across 1,243 matches, super overs left out.",
+  "sources": [
+   {
+    "name": "Cricsheet ball-by-ball data",
+    "url": "https://cricsheet.org/",
+    "license": "ODC-By 1.0"
+   }
+  ]
+ },
+ {
+  "id": "b-sangakkara-runs",
+  "family": "career",
+  "prompt": "How many international runs did Kumar Sangakkara score across all formats?",
+  "answer": 28016,
   "unit": "runs",
-  "fact": "Sangakkara made 287 and Jayawardene 374. No other first-class partnership has passed 600.",
+  "fact": "Including 63 centuries.",
   "sources": [
    {
     "name": "Wikipedia: Kumar Sangakkara",
@@ -884,16 +628,42 @@
   ]
  },
  {
-  "id": "b-lords-slope",
-  "family": "scale",
-  "prompt": "Lord's famously slopes from one side to the other. How many centimetres does the ground drop?",
-  "answer": 249,
-  "unit": "cm",
-  "fact": "About 8 ft 2 in, from the Grand Stand in the north down to the Tavern and Mound Stands in the south.",
+  "id": "b-test-to-odi-days",
+  "family": "time",
+  "prompt": "How many days passed between the first Test match and the first ODI?",
+  "answer": 34263,
+  "unit": "days",
+  "working": "The first Test began at the MCG on 15 March 1877; the first ODI was played there on 5 January 1971.",
   "sources": [
    {
-    "name": "Wikipedia: Lord's",
-    "url": "https://en.wikipedia.org/wiki/Lord%27s",
+    "name": "Wikipedia: Test cricket",
+    "url": "https://en.wikipedia.org/wiki/Test_cricket",
+    "license": "CC BY-SA 4.0"
+   },
+   {
+    "name": "Wikipedia: One Day International",
+    "url": "https://en.wikipedia.org/wiki/One_Day_International",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-mithali-odi-runs",
+  "family": "career",
+  "format": "ODI",
+  "prompt": "Mithali Raj retired in 2022 as the leading run-scorer in women's ODIs. How many ODI runs did she make?",
+  "answer": 7805,
+  "unit": "runs",
+  "fact": "In 232 ODIs. She retired from international cricket in June 2022.",
+  "sources": [
+   {
+    "name": "Wikipedia: Mithali Raj",
+    "url": "https://en.wikipedia.org/wiki/Mithali_Raj",
+    "license": "CC BY-SA 4.0"
+   },
+   {
+    "name": "Wikipedia: List of women's One Day International cricket records",
+    "url": "https://en.wikipedia.org/wiki/List_of_women%27s_One_Day_International_cricket_records",
     "license": "CC BY-SA 4.0"
    }
   ]
@@ -919,12 +689,27 @@
   ]
  },
  {
-  "id": "b-ipl-maidens",
+  "id": "b-kallis-runs",
+  "family": "career",
+  "prompt": "How many runs did Jacques Kallis score in Tests and ODIs combined?",
+  "answer": 24868,
+  "unit": "runs",
+  "fact": "13,289 in Tests and 11,579 in ODIs, with 292 and 273 wickets.",
+  "sources": [
+   {
+    "name": "Wikipedia: Jacques Kallis",
+    "url": "https://en.wikipedia.org/wiki/Jacques_Kallis",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-ipl-run-outs",
   "family": "records",
   "format": "IPL",
-  "prompt": "How many maiden overs have been bowled in the IPL (to the end of IPL 2026)?",
-  "answer": 361,
-  "unit": "maidens",
+  "prompt": "How many run-outs have there been in the IPL (to the end of IPL 2026)?",
+  "answer": 1185,
+  "unit": "run-outs",
   "fact": "Across 1,243 matches, super overs left out.",
   "sources": [
    {
@@ -935,37 +720,252 @@
   ]
  },
  {
-  "id": "b-stumps-everest",
-  "family": "scale",
-  "prompt": "How many stumps, stacked end on end, would reach the top of Mount Everest?",
-  "answer": 12442,
-  "unit": "stumps",
-  "working": "Everest is 8,848.86 m high; a stump stands 71.12 cm (28 in).",
+  "id": "b-eden-capacity",
+  "family": "crowds",
+  "prompt": "How many people can Eden Gardens in Kolkata hold?",
+  "answer": 68000,
+  "unit": "people",
+  "fact": "The ground was established in 1864.",
   "sources": [
    {
-    "name": "Wikipedia: Mount Everest",
-    "url": "https://en.wikipedia.org/wiki/Mount_Everest",
-    "license": "CC BY-SA 4.0"
-   },
-   {
-    "name": "Wikipedia: Wicket",
-    "url": "https://en.wikipedia.org/wiki/Wicket",
+    "name": "Wikipedia: Eden Gardens",
+    "url": "https://en.wikipedia.org/wiki/Eden_Gardens",
     "license": "CC BY-SA 4.0"
    }
   ]
  },
  {
-  "id": "b-murali-odi-balls",
+  "id": "b-edwards-intl-runs",
   "family": "career",
-  "format": "ODI",
-  "prompt": "How many balls did Muttiah Muralitharan bowl in ODIs?",
-  "answer": 18811,
-  "unit": "balls",
-  "fact": "He took 534 ODI wickets, the most by anyone.",
+  "prompt": "Until Mithali Raj passed her in 2021, England's Charlotte Edwards held the record for runs in women's international cricket. What was her total?",
+  "answer": 10273,
+  "unit": "runs",
   "sources": [
    {
-    "name": "Wikipedia: Muttiah Muralitharan",
-    "url": "https://en.wikipedia.org/wiki/Muttiah_Muralitharan",
+    "name": "Wikipedia: Mithali Raj",
+    "url": "https://en.wikipedia.org/wiki/Mithali_Raj",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-sl-952",
+  "family": "records",
+  "format": "Test",
+  "prompt": "What is the highest team total in Test cricket, made by Sri Lanka against India in Colombo in 1997?",
+  "answer": 952,
+  "unit": "runs",
+  "fact": "952 for 6 declared, at the R. Premadasa Stadium.",
+  "sources": [
+   {
+    "name": "Wikipedia: List of Test cricket records",
+    "url": "https://en.wikipedia.org/wiki/List_of_Test_cricket_records",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-nms-ipl-final",
+  "family": "crowds",
+  "format": "IPL",
+  "prompt": "The 2022 IPL final, Gujarat Titans against Rajasthan Royals, drew the biggest crowd in the Narendra Modi Stadium's history. How many people?",
+  "answer": 104859,
+  "unit": "people",
+  "sources": [
+   {
+    "name": "Wikipedia: Narendra Modi Stadium",
+    "url": "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-nz-women-491",
+  "family": "records",
+  "format": "ODI",
+  "prompt": "What is the highest team total in women's ODIs, made by New Zealand against Ireland in Dublin in 2018?",
+  "answer": 491,
+  "unit": "runs",
+  "fact": "491 for 4 in 50 overs.",
+  "sources": [
+   {
+    "name": "Wikipedia: List of women's One Day International cricket records",
+    "url": "https://en.wikipedia.org/wiki/List_of_women%27s_One_Day_International_cricket_records",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-balls-along-pitch",
+  "family": "scale",
+  "prompt": "How many cricket balls, touching in a row, would stretch from one set of stumps to the other?",
+  "answer": 279,
+  "unit": "balls",
+  "working": "The pitch is 20.12 m and a ball is about 7.2 cm across (22.4 to 22.9 cm round).",
+  "sources": [
+   {
+    "name": "Wikipedia: Cricket pitch",
+    "url": "https://en.wikipedia.org/wiki/Cricket_pitch",
+    "license": "CC BY-SA 4.0"
+   },
+   {
+    "name": "Wikipedia: Cricket ball",
+    "url": "https://en.wikipedia.org/wiki/Cricket_ball",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-bats-km",
+  "family": "scale",
+  "prompt": "How many full-length cricket bats, laid end to end, would stretch one kilometre?",
+  "answer": 1036,
+  "unit": "bats",
+  "working": "The Laws allow a bat up to 96.5 cm (38 in) long: 1,000 m ÷ 0.965 m.",
+  "sources": [
+   {
+    "name": "Wikipedia: Cricket bat",
+    "url": "https://en.wikipedia.org/wiki/Cricket_bat",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-balls-tonne",
+  "family": "scale",
+  "prompt": "How many cricket balls, at the 156 g the Laws allow at the lightest, make up one tonne?",
+  "answer": 6410,
+  "unit": "balls",
+  "working": "1,000,000 g ÷ 156 g.",
+  "sources": [
+   {
+    "name": "Wikipedia: Cricket ball",
+    "url": "https://en.wikipedia.org/wiki/Cricket_ball",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-sachin-test-days",
+  "family": "time",
+  "format": "Test",
+  "prompt": "How many days passed between Sachin Tendulkar's first Test and his last?",
+  "answer": 8765,
+  "unit": "days",
+  "working": "From 15 November 1989, against Pakistan, to 14 November 2013, against West Indies.",
+  "sources": [
+   {
+    "name": "Wikipedia: Sachin Tendulkar",
+    "url": "https://en.wikipedia.org/wiki/Sachin_Tendulkar",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-ipl-fours",
+  "family": "records",
+  "format": "IPL",
+  "prompt": "How many fours have been hit in the IPL (to the end of IPL 2026)?",
+  "answer": 34399,
+  "unit": "fours",
+  "fact": "Across 1,243 matches, super overs left out.",
+  "sources": [
+   {
+    "name": "Cricsheet ball-by-ball data",
+    "url": "https://cricsheet.org/",
+    "license": "ODC-By 1.0"
+   }
+  ]
+ },
+ {
+  "id": "b-rhodes-fc-wickets",
+  "family": "career",
+  "prompt": "Wilfred Rhodes took more first-class wickets than anyone, playing from 1898 to 1930. How many?",
+  "answer": 4204,
+  "unit": "wickets",
+  "fact": "For Yorkshire and England.",
+  "sources": [
+   {
+    "name": "Wikipedia: List of first-class cricket records",
+    "url": "https://en.wikipedia.org/wiki/List_of_first-class_cricket_records",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-lords-slope",
+  "family": "scale",
+  "prompt": "Lord's famously slopes from one side to the other. How many centimetres does the ground drop?",
+  "answer": 249,
+  "unit": "cm",
+  "fact": "About 8 ft 2 in, from the Grand Stand in the north down to the Tavern and Mound Stands in the south.",
+  "sources": [
+   {
+    "name": "Wikipedia: Lord's",
+    "url": "https://en.wikipedia.org/wiki/Lord%27s",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-wc2011-hours",
+  "family": "time",
+  "format": "World Cup",
+  "prompt": "If every delivery took 40 seconds, how many hours would it take to watch every ball of the 2011 World Cup?",
+  "answer": 289,
+  "unit": "hours",
+  "working": "26,036 deliveries in 49 matches, wides and no-balls included, × 40 seconds.",
+  "sources": [
+   {
+    "name": "Cricsheet ball-by-ball data",
+    "url": "https://cricsheet.org/",
+    "license": "ODC-By 1.0"
+   }
+  ]
+ },
+ {
+  "id": "b-dhoni-intl-matches",
+  "family": "career",
+  "prompt": "How many international matches did MS Dhoni play, across Tests, ODIs and T20Is?",
+  "answer": 538,
+  "unit": "matches",
+  "fact": "90 Tests, 350 ODIs and 98 T20Is.",
+  "sources": [
+   {
+    "name": "Wikipedia: MS Dhoni",
+    "url": "https://en.wikipedia.org/wiki/MS_Dhoni",
+    "license": "CC BY-SA 4.0"
+   }
+  ]
+ },
+ {
+  "id": "b-ipl-runs",
+  "family": "records",
+  "format": "IPL",
+  "prompt": "How many runs have been scored in the IPL, all told (to the end of IPL 2026)?",
+  "answer": 401423,
+  "unit": "runs",
+  "fact": "Across 1,243 matches, super overs left out.",
+  "sources": [
+   {
+    "name": "Cricsheet ball-by-ball data",
+    "url": "https://cricsheet.org/",
+    "license": "ODC-By 1.0"
+   }
+  ]
+ },
+ {
+  "id": "b-wc2023-attendance",
+  "family": "crowds",
+  "format": "World Cup",
+  "prompt": "How many spectators attended the 2023 men's ODI World Cup in India, across all 48 matches?",
+  "answer": 1250307,
+  "unit": "people",
+  "fact": "The most at any Cricket World Cup.",
+  "sources": [
+   {
+    "name": "Wikipedia: 2023 Cricket World Cup",
+    "url": "https://en.wikipedia.org/wiki/2023_Cricket_World_Cup",
     "license": "CC BY-SA 4.0"
    }
   ]

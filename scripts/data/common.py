@@ -1,4 +1,4 @@
-"""Helpers shared by the question generators (gen_quiz.py, gen_ballpark.py)."""
+"""Helpers for the Ballpark question generator (gen_ballpark.py)."""
 import urllib.parse
 
 CRICSHEET = {'name': 'Cricsheet ball-by-ball data', 'url': 'https://cricsheet.org/', 'license': 'ODC-By 1.0'}

@@ -26,41 +26,9 @@ export type Puzzle = {
   asOf?: string | null
 }
 
-type QuestionBase = {
-  id: string
-  prompt: string
-  /** Shown after the first wrong guess. */
-  hint: string
-  /** Shown once the question is over, e.g. "15,921 runs in 200 Tests". */
-  fact?: string
-  format?: Format
-  source?: { name: string; url: string; license: string }
-}
-
-/** Answered by typing a player or team name. */
-export type NameQuestion = QuestionBase & {
-  kind?: 'name'
-  answer: string
-  /** Other spellings that also count, e.g. a surname or nickname. */
-  accept?: string[]
-}
-
-/** A ballpark estimate, scored by closeness: exact is 100 points, `margin` off is 75, three margins off is 0. */
-export type NumberQuestion = QuestionBase & {
-  kind: 'number'
-  answer: number
-  margin: number
-  /** Shown after numbers, e.g. "km" or "%". */
-  unit?: string
-  /** Print without thousands separators, e.g. a year. */
-  plain?: boolean
-}
-
-export type Question = NameQuestion | NumberQuestion
-
 export type Source = { name: string; url: string; license: string }
 
-/** Ballpark question families; a day never repeats one. */
+/** Ballpark question families; a day has at most two of one. */
 export const ESTIMATE_FAMILIES = ['scale', 'career', 'records', 'time', 'crowds'] as const
 export type EstimateFamily = (typeof ESTIMATE_FAMILIES)[number]
 
