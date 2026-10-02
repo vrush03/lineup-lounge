@@ -19,11 +19,20 @@ export function normalize(s: string): string {
     .trim()
 }
 
-const SCALE: Record<string, number> = { k: 1e3, thousand: 1e3, lakh: 1e5, lakhs: 1e5, m: 1e6, mn: 1e6, million: 1e6, cr: 1e7, crore: 1e7 }
+const SCALE: Record<string, number> = {
+  k: 1e3, thousand: 1e3,
+  lakh: 1e5, lakhs: 1e5, lac: 1e5, lacs: 1e5,
+  m: 1e6, mn: 1e6, mil: 1e6, million: 1e6,
+  cr: 1e7, crore: 1e7, crores: 1e7,
+  b: 1e9, bn: 1e9, billion: 1e9,
+}
 
-/** "7,275", "7.3k", "1.5 lakh", "82 km" -> a number; null if there isn't one. */
+/**
+ * "7,275", "7.3k", "1.5 lakh", "2 bn", "1e6", "$4m", "82 km" -> a number; null if there isn't one.
+ * A leading currency sign is dropped; a word after the number scales it if it is a scale word.
+ */
 export function parseNumber(s: string): number | null {
-  const m = s.replace(/,/g, '').trim().toLowerCase().match(/^(-?\d*\.?\d+)\s*([a-z]*)/)
+  const m = s.replace(/,/g, '').trim().toLowerCase().replace(/^[$₹£€]\s*/, '').match(/^(-?\d*\.?\d+(?:e[+-]?\d+)?)\s*([a-z]*)/)
   if (!m) return null
   return Number(m[1]) * (SCALE[m[2]] ?? 1)
 }
@@ -66,7 +75,7 @@ export function questionPoints(q: Question, guesses: string[]): number | null {
 /** Colour band for a question's points: 75+ is inside the margin (or a first-try name). */
 export const pointsMark = (points: number): Mark => (points >= 75 ? 'correct' : points >= 25 ? 'near' : 'wrong')
 
-const withUnit = (n: string, unit?: string) => (!unit ? n : unit === '%' ? `${n}%` : `${n} ${unit}`)
+export const withUnit = (n: string, unit?: string) => (!unit ? n : unit === '%' ? `${n}%` : `${n} ${unit}`)
 
 /** Round to what the margin makes meaningful: 81.75 ± 20 -> "82", 16.7 ± 3 -> "16.7". */
 export function formatNumber(n: number, margin: number, plain = false): string {
@@ -107,14 +116,14 @@ export function questionMark(q: Question, guesses: string[]): Mark | null {
 export const quizPoints = (points: (number | null)[]) => points.reduce<number>((a, p) => a + (p ?? 0), 0)
 
 /** The day's questions: consecutive runs through the list, so every question comes up before any repeats. */
-export function dailyQuestions(questions: Question[], day: number): Question[] {
+export function dailyQuestions<T>(questions: T[], day: number, length = QUIZ_LENGTH): T[] {
   const n = questions.length
-  const count = Math.min(QUIZ_LENGTH, n)
+  const count = Math.min(length, n)
   const start = (((day * count) % n) + n) % n
   return Array.from({ length: count }, (_, k) => questions[(start + k) % n])
 }
 
-export function randomQuestions(questions: Question[], random = Math.random): Question[] {
+export function randomQuestions<T>(questions: T[], random = Math.random): T[] {
   const pool = [...questions]
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(random() * (i + 1))

@@ -2,9 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnswerInput } from './AnswerInput'
 import { FormatBadge } from './FormatBadge'
 import { MarkIcon } from './MarkIcon'
-import { Countdown } from './ResultPanel'
+import { PointsBadge, Progress, RoundSummary } from './RoundParts'
+import { MARK_FILL, MARK_TEXT, NEXT_BUTTON } from './roundStyles'
 import {
-  MAX_POINTS,
   PASS,
   answerText,
   guessLimit,
@@ -18,8 +18,6 @@ import {
   quizPoints,
   scale,
 } from '../lib/quiz'
-import type { Mark } from '../lib/score'
-import { quizShareText } from '../lib/share'
 import { loadQuiz, saveQuiz } from '../lib/storage'
 import type { NumberQuestion, Question } from '../lib/types'
 
@@ -32,7 +30,6 @@ const HEADLINES: [number, string][] = [
   [100, 'Off the mark'],
   [0, 'Duck!'],
 ]
-const MARK_TEXT: Record<Mark, string> = { correct: 'text-correct-ink', near: 'text-near-ink', wrong: 'text-wrong-ink' }
 
 type Props = {
   questions: Question[]
@@ -98,6 +95,7 @@ export function Quiz({ questions, names, storageKey, day, onFinish, onNext }: Pr
     const next = marks.findIndex((m, i) => i > pos && m === null)
     if (next === -1) setJustFinished(true)
     setPos(next === -1 ? questions.length : next)
+    setShake(0)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -105,9 +103,17 @@ export function Quiz({ questions, names, storageKey, day, onFinish, onNext }: Pr
     <section className="animate-rise" aria-label="Quiz">
       <Progress marks={marks} pos={pos} />
       {over ? (
-        <Summary
-          questions={questions}
-          points={points as number[]}
+        <RoundSummary
+          rows={questions.map((q, i) => ({
+            id: q.id,
+            prompt: q.prompt,
+            answer: answerText(q),
+            points: points[i]!,
+            symbol: q.kind === 'number' ? '#' : pointsMark(points[i]!) === 'near' ? '✓' : undefined,
+          }))}
+          headlines={HEADLINES}
+          shareTitle="Lineup Lounge Quiz"
+          greenLabel="75+"
           day={day}
           onNext={onNext}
           justFinished={justFinished}
@@ -129,21 +135,6 @@ export function Quiz({ questions, names, storageKey, day, onFinish, onNext }: Pr
         />
       )}
     </section>
-  )
-}
-
-function Progress({ marks, pos }: { marks: (Mark | null)[]; pos: number }) {
-  return (
-    <ol className="mb-5 flex gap-1.5" aria-label={`${marks.filter(Boolean).length} of ${marks.length} answered`}>
-      {marks.map((m, i) => (
-        <li
-          key={i}
-          className={`h-1.5 flex-1 rounded-full transition-colors ${
-            m === 'correct' ? 'bg-correct' : m === 'near' ? 'bg-near' : m === 'wrong' ? 'bg-wrong' : i === pos ? 'bg-ink/40' : 'bg-line'
-          }`}
-        />
-      ))}
-    </ol>
   )
 }
 
@@ -237,7 +228,7 @@ function QuestionCard({ n, count, question: q, guesses, points, total, names, sh
           <button
             ref={next}
             onClick={onNext}
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-pitch-deep py-3.5 font-display text-xl font-bold uppercase tracking-wider text-white shadow-lg shadow-pitch-deep/25 transition hover:bg-pitch active:scale-[0.99]"
+            className={`${NEXT_BUTTON} mt-4 rounded-2xl`}
           >
             {last ? 'See your score' : 'Next question'}
             <span aria-hidden>→</span>
@@ -245,15 +236,6 @@ function QuestionCard({ n, count, question: q, guesses, points, total, names, sh
         </div>
       )}
     </div>
-  )
-}
-
-function PointsBadge({ points }: { points: number }) {
-  return (
-    <p className="flex items-baseline gap-1.5">
-      <span className={`font-display text-6xl font-extrabold leading-none tabular-nums ${MARK_TEXT[pointsMark(points)]}`}>{points}</span>
-      <span className="font-display text-xl font-bold text-muted">/ {MAX_POINTS}</span>
-    </p>
   )
 }
 
@@ -278,8 +260,6 @@ function NumberReveal({ question: q, guess, points }: { question: NumberQuestion
     </div>
   )
 }
-
-const MARK_FILL: Record<Mark, string> = { correct: 'fill-correct', near: 'fill-near', wrong: 'fill-wrong' }
 
 /** Number line: the answer, the band that scores 75+, and where the guess landed. */
 function ScaleBar({ question: q, guess, points }: { question: NumberQuestion; guess: number; points: number }) {
@@ -327,93 +307,6 @@ function NameReveal({ question: q, points }: { question: Question; points: numbe
       <span className={`shrink-0 font-display text-2xl font-extrabold tabular-nums ${MARK_TEXT[mark]}`}>
         {points ? `+${points}` : '0'}
       </span>
-    </div>
-  )
-}
-
-type SummaryProps = {
-  questions: Question[]
-  points: number[]
-  day?: number
-  onNext?: () => void
-  justFinished: boolean
-}
-
-function Summary({ questions, points, day, onNext, justFinished }: SummaryProps) {
-  const [copied, setCopied] = useState(false)
-  const next = useRef<HTMLButtonElement>(null)
-  const total = quizPoints(points)
-  const max = questions.length * MAX_POINTS
-  const good = total >= max / 2
-  const daily = day !== undefined
-
-  useEffect(() => {
-    if (justFinished) next.current?.focus({ preventScroll: true })
-  }, [justFinished])
-
-  async function share() {
-    const text = quizShareText('Lineup Lounge Quiz', points, day)
-    try {
-      if (navigator.share && matchMedia('(pointer: coarse)').matches) await navigator.share({ text })
-      else await navigator.clipboard.writeText(text)
-      setCopied(true)
-    } catch {
-      /* share sheet dismissed */
-    }
-  }
-
-  return (
-    <div className="animate-rise overflow-hidden rounded-3xl border border-line bg-surface shadow-[var(--shadow)]">
-      <div className={`px-5 pt-5 pb-4 ${good ? 'bg-correct/10' : 'bg-leather/8'}`}>
-        <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${good ? 'text-correct-ink' : 'text-muted'}`}>
-          {daily ? 'Today’s score' : 'Your score'}
-        </p>
-        <p className="mt-1 flex items-baseline gap-2">
-          <span className="font-display text-6xl font-extrabold leading-none tabular-nums">{total}</span>
-          <span className="font-display text-2xl font-bold text-muted">/ {max}</span>
-        </p>
-        <p className="mt-1 font-display text-2xl font-extrabold uppercase">{HEADLINES.find(([min]) => total >= min)![1]}</p>
-      </div>
-      <ol className="divide-y divide-line border-y border-line">
-        {questions.map((q, i) => (
-          <li key={q.id} className="flex items-start gap-3 px-5 py-3">
-            <MarkIcon
-              mark={pointsMark(points[i])}
-              symbol={q.kind === 'number' ? '#' : pointsMark(points[i]) === 'near' ? '✓' : undefined}
-              size={20}
-            />
-            <div className="min-w-0 flex-1">
-              <p className="text-sm text-muted">{q.prompt}</p>
-              <p className="font-semibold">{answerText(q)}</p>
-            </div>
-            <span className={`shrink-0 font-display text-xl font-bold tabular-nums ${MARK_TEXT[pointsMark(points[i])]}`}>{points[i]}</span>
-          </li>
-        ))}
-      </ol>
-      <p className="flex flex-wrap justify-center gap-x-4 gap-y-1 px-5 pt-3 text-xs text-muted">
-        <span className="flex items-center gap-1.5"><MarkIcon mark="correct" symbol="" size={12} /> 75+</span>
-        <span className="flex items-center gap-1.5"><MarkIcon mark="near" symbol="" size={12} /> 25–74</span>
-        <span className="flex items-center gap-1.5"><MarkIcon mark="wrong" symbol="" size={12} /> Under 25</span>
-      </p>
-      <div className="flex flex-col gap-2 p-4">
-        {onNext && (
-          <button
-            ref={next}
-            onClick={onNext}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-pitch-deep py-3.5 font-display text-xl font-bold uppercase tracking-wider text-white shadow-lg shadow-pitch-deep/25 transition hover:bg-pitch active:scale-[0.99]"
-          >
-            {daily ? 'Play a practice round' : 'New round'}
-            <span aria-hidden>→</span>
-          </button>
-        )}
-        <button
-          onClick={share}
-          className="w-full rounded-xl border border-line py-2.5 font-display text-base font-bold uppercase tracking-wider text-muted transition hover:text-ink active:scale-[0.99]"
-        >
-          {copied ? 'Copied to clipboard' : 'Share result'}
-        </button>
-      </div>
-      {daily && <Countdown day={day} />}
     </div>
   )
 }

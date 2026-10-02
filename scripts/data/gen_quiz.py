@@ -15,10 +15,10 @@ import os
 import calendar
 import random
 import sys
-import urllib.parse
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(__file__))
+from common import CRICSHEET, SECONDS_PER_BALL, topics, wiki  # noqa: E402
 from names import Names  # noqa: E402
 
 HERE = os.path.dirname(__file__)
@@ -27,16 +27,8 @@ OUT = os.path.join(HERE, '..', '..', 'src', 'data', 'quiz.json')
 MANUAL = os.path.join(HERE, 'quiz_manual.json')
 
 PITCH_KM = 22 * 0.9144 / 1000  # a run is 22 yards
-SECONDS_PER_BALL = 40
 DAY = 5
 NAMES_PER_DAY = 2
-CRICSHEET = {'name': 'Cricsheet ball-by-ball data', 'url': 'https://cricsheet.org/', 'license': 'ODC-By 1.0'}
-
-
-def wiki(title):
-    return {'name': f"Wikipedia: {title.replace('_', ' ')}",
-            'url': 'https://en.wikipedia.org/wiki/' + urllib.parse.quote(title),
-            'license': 'CC BY-SA 4.0'}
 
 
 # Franchise renames, so all-time totals aggregate per franchise (same map as parse_cricsheet.py).
@@ -368,11 +360,6 @@ def ipl_questions(names):
     assert min(len(s.first_innings[y]) for y in s.seasons) > 40, 'a season is missing matches'
     assert min(agg_totals) > 250, 'the aggregate hint no longer holds'
     return q
-
-
-def topics(q):
-    """A question's topics: one name, or a list when it mentions more than one subject."""
-    return q['topic'] if isinstance(q['topic'], list) else [q['topic']]
 
 
 def leaks(day):

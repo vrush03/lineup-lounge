@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { FORMATS, SHOWDOWN_FORMATS } from './types'
+import { ESTIMATE_FAMILIES, FORMATS, SHOWDOWN_FORMATS } from './types'
 
 const itemSchema = z.object({
   label: z.string(),
@@ -51,6 +51,23 @@ export const questionSchema = z.union([
     accept: z.array(z.string().min(1)).optional(),
   }),
 ])
+
+const sourceSchema = z.object({ name: z.string().min(1), url: z.string().url(), license: z.string().min(1) })
+
+/** A question built only from figures in its own prompt has no source, but must show its working. */
+export const estimateSchema = z
+  .strictObject({
+    id: z.string().min(1),
+    prompt: z.string().min(1),
+    answer: z.number().positive(),
+    unit: z.string().optional(),
+    family: z.enum(ESTIMATE_FAMILIES),
+    format: z.enum(FORMATS).optional(),
+    working: z.string().optional(),
+    fact: z.string().optional(),
+    sources: z.array(sourceSchema),
+  })
+  .refine((q) => q.sources.length > 0 || !!q.working, 'needs a source or its working')
 
 const cardSchema = z.strictObject({
   id: z.string().min(1),

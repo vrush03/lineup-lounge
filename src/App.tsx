@@ -1,21 +1,26 @@
 import { Analytics } from '@vercel/analytics/react'
 import { useEffect, useState } from 'react'
+import { BallparkMode } from './components/BallparkMode'
 import { Home, type ModeCard } from './components/Home'
 import { LineupMode } from './components/LineupMode'
 import { QuizMode } from './components/QuizMode'
 import { ShowdownMode } from './components/ShowdownMode'
 import { StatsDialog } from './components/StatsDialog'
+import { BALLPARK_LENGTH } from './lib/ballpark'
 import { dayNumber, puzzleIndex } from './lib/daily'
 import { loadPuzzles } from './lib/puzzles'
 import { MAX_POINTS, QUIZ_LENGTH } from './lib/quiz'
 import { ROUNDS } from './lib/showdown'
 import {
+  ballparkLiveStreak,
   liveStreak,
+  loadBallparkStats,
   loadPref,
   loadQuizStats,
   loadShowdownStats,
   loadStats,
   quizLiveStreak,
+  recordBallpark,
   recordQuiz,
   recordResult,
   recordShowdown,
@@ -54,16 +59,16 @@ export default function App() {
   )
 }
 
-type Route = 'home' | 'lineup' | 'quiz' | 'showdown'
+type Route = 'home' | 'lineup' | 'quiz' | 'ballpark' | 'showdown'
 
-const TITLE: Record<Route, string> = { home: 'Daily cricket games', lineup: 'Lineup', quiz: 'Quiz', showdown: 'Showdown' }
+const TITLE: Record<Route, string> = { home: 'Daily cricket games', lineup: 'Lineup', quiz: 'Quiz', ballpark: 'Ballpark', showdown: 'Showdown' }
 
 function routeFromHash(): Route {
   const h = location.hash.slice(1)
-  return h === 'lineup' || h === 'quiz' || h === 'showdown' ? h : 'home'
+  return h === 'lineup' || h === 'quiz' || h === 'ballpark' || h === 'showdown' ? h : 'home'
 }
 
-/** Hash routes (#lineup, #quiz, #showdown) so the browser back button returns to the mode list. */
+/** Hash routes (#lineup, #quiz, #ballpark, #showdown) so the browser back button returns to the mode list. */
 function useRoute(): Route {
   const [route, setRoute] = useState(routeFromHash)
   useEffect(() => {
@@ -86,6 +91,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   const page = route === 'home' ? '/' : `/${route}`
   const [stats, setStats] = useState(loadStats)
   const [quizStats, setQuizStats] = useState(loadQuizStats)
+  const [ballparkStats, setBallparkStats] = useState(loadBallparkStats)
   const [showdownStats, setShowdownStats] = useState(loadShowdownStats)
   const [statsOpen, setStatsOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(() => loadPref('theme', 'system'))
@@ -98,7 +104,9 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
 
   const lineupStreak = liveStreak(stats, day)
   const quizStreak = quizLiveStreak(quizStats, day)
-  const streak = route === 'quiz' ? quizStreak : route === 'showdown' ? showdownStats.streak : lineupStreak
+  const ballparkStreak = ballparkLiveStreak(ballparkStats, day)
+  const streak =
+    route === 'quiz' ? quizStreak : route === 'ballpark' ? ballparkStreak : route === 'showdown' ? showdownStats.streak : lineupStreak
   const dateLabel = today.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' })
 
   const modes: ModeCard[] = [
@@ -122,6 +130,17 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
             : `${quizStats.lastScore ?? 0}/${QUIZ_LENGTH}`,
       streak: quizStreak,
       icon: <QuizIcon />,
+    },
+    {
+      href: '#ballpark',
+      name: 'Ballpark',
+      tagline: 'Three cricket numbers to estimate. The closer you get, the more points.',
+      status:
+        ballparkStats.lastPlayedDay === day && ballparkStats.lastPoints !== null
+          ? `${ballparkStats.lastPoints}/${BALLPARK_LENGTH * MAX_POINTS}`
+          : null,
+      streak: ballparkStreak,
+      icon: <BallparkIcon />,
     },
     {
       href: '#showdown',
@@ -203,6 +222,8 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           />
         ) : route === 'quiz' ? (
           <QuizMode puzzles={puzzles} day={day} dateLabel={dateLabel} onFinishDaily={(points) => setQuizStats(recordQuiz(day, points))} />
+        ) : route === 'ballpark' ? (
+          <BallparkMode day={day} dateLabel={dateLabel} onFinishDaily={(points) => setBallparkStats(recordBallpark(day, points))} />
         ) : (
           <ShowdownMode onFinish={(format, won) => setShowdownStats(recordShowdown(format, won))} />
         )}
@@ -250,6 +271,21 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           distTitle="Daily points"
           dist={quizStats.pointsDist.map((n, i) => [`${i * 100}+`, n] as [string, number]).reverse()}
           note="Each question scores up to 100 points, so a daily quiz is out of 500. Daily quizzes count towards your stats; practice rounds don’t. The streak counts days you finish the quiz."
+        />
+      ) : route === 'ballpark' ? (
+        <StatsDialog
+          open={statsOpen}
+          onClose={() => setStatsOpen(false)}
+          title="Ballpark stats"
+          tiles={[
+            ['Played', ballparkStats.played],
+            ['Avg', ballparkStats.played ? Math.round(ballparkStats.totalPoints / ballparkStats.played) : 0],
+            ['Streak', ballparkStreak],
+            ['Best', ballparkStats.bestPoints],
+          ]}
+          distTitle="Daily points"
+          dist={ballparkStats.pointsDist.map((n, i) => [`${i * 100}+`, n] as [string, number]).reverse()}
+          note={`Each question scores up to 100 points by how many times off your guess is, so a daily round is out of ${BALLPARK_LENGTH * MAX_POINTS}. Daily rounds count towards your stats; practice rounds don’t.`}
         />
       ) : route === 'showdown' ? (
         <StatsDialog
@@ -326,6 +362,15 @@ function QuizIcon() {
       <circle cx="12" cy="12" r="9" />
       <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6" />
       <path d="M12 17h.01" />
+    </svg>
+  )
+}
+
+function BallparkIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 18h18" />
+      <path d="M5 18v-3M9 18v-6M13 18V9M17 18V5" />
     </svg>
   )
 }

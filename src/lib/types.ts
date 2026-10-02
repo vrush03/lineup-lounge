@@ -58,6 +58,30 @@ export type NumberQuestion = QuestionBase & {
 
 export type Question = NameQuestion | NumberQuestion
 
+export type Source = { name: string; url: string; license: string }
+
+/** Ballpark question families; a day never repeats one. */
+export const ESTIMATE_FAMILIES = ['scale', 'career', 'records', 'time', 'crowds'] as const
+export type EstimateFamily = (typeof ESTIMATE_FAMILIES)[number]
+
+/** A Ballpark question: one guess at a quantity, scored by how many times off it is. */
+export type EstimateQuestion = {
+  id: string
+  prompt: string
+  /** Always positive: the score compares guess and answer as a ratio. */
+  answer: number
+  /** Shown after numbers, e.g. "runs" or "km". */
+  unit?: string
+  family: EstimateFamily
+  format?: Format
+  /** How the answer is worked out, for questions built from a sum. */
+  working?: string
+  /** Shown once the question is over. */
+  fact?: string
+  /** Empty only for a sum made from figures in the prompt, which then shows its working. */
+  sources: Source[]
+}
+
 export const SHOWDOWN_FORMATS = ['ODI', 'T20I', 'Test', 'IPL'] as const
 export type ShowdownFormat = (typeof SHOWDOWN_FORMATS)[number]
 
