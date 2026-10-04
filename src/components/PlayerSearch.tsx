@@ -24,6 +24,7 @@ export function PlayerSearch({ deck, exclude, onGuess }: Props) {
   }
 
   function onKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'Escape') return setQuery('')
     if (!matches.length) return
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       e.preventDefault()
@@ -31,7 +32,7 @@ export function PlayerSearch({ deck, exclude, onGuess }: Props) {
     } else if (e.key === 'Enter') {
       e.preventDefault()
       choose(matches[index])
-    } else if (e.key === 'Escape') setQuery('')
+    }
   }
 
   return (

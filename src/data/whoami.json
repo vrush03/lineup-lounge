@@ -16,6 +16,26 @@
      2010,
      2022
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, right-handed, with some slow left-arm orthodox on the side.",
+     "I made my ODI debut against Sri Lanka in 2013, and bowed out against New Zealand in 2022. I played in the 2015 World Cup final, on the winning side.",
+     "I played 104 ODIs alongside Glenn Maxwell. In the IPL I shared a dressing room with Suresh Raina at Gujarat Lions, for 25 matches.",
+     "I was born in Colac, Victoria, Australia in 1986 and played for Australia."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some slow left-arm orthodox on the side.",
+     "I made my T20I debut against England in 2011, and bowed out against Ireland in 2022. I played in the 2021 T20 World Cup final, on the winning side.",
+     "I played 80 T20Is alongside Glenn Maxwell. In the IPL I shared a dressing room with Suresh Raina at Gujarat Lions, for 25 matches.",
+     "I was born in Colac, Victoria, Australia in 1986 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some slow left-arm orthodox on the side.",
+     "I made my IPL debut against Kolkata Knight Riders in 2010, and bowed out in 2022. My highest IPL score, 88*, came against Delhi Capitals at Dubai International Cricket Stadium in 2014.",
+     "At Gujarat Lions I played 25 matches alongside Suresh Raina. Away from the IPL, Glenn Maxwell has been an international team-mate.",
+     "I was born in Colac, Victoria, Australia in 1986 and played most of my IPL cricket for Gujarat Lions."
+    ]
    }
   },
   "ab-de-villiers": {
@@ -38,6 +58,32 @@
      2008,
      2021
     ]
+   },
+   "hints": {
+    "Test": [
+     "I keep wicket and bat right-handed.",
+     "I made my Test debut against England in 2004, and bowed out against Australia in 2018. My highest Test score, 278*, came against Pakistan at Abu Dhabi in 2010.",
+     "Hashim Amla was a regular Test team-mate. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 154 matches.",
+     "I was born in Warmbad, Transvaal Province, South Africa in 1984 and played for South Africa."
+    ],
+    "ODI": [
+     "I keep wicket and bat right-handed.",
+     "I made my ODI debut against England in 2005, and bowed out against India in 2018. My highest ODI score, 176, came against Bangladesh at Paarl in 2017.",
+     "I played 152 ODIs alongside JP Duminy. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 154 matches.",
+     "I was born in Warmbad, Transvaal Province, South Africa in 1984 and played for South Africa."
+    ],
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against Australia in 2006, and bowed out against Bangladesh in 2017. My highest T20I score, 79*, came against Scotland at London in 2009.",
+     "I played 59 T20Is alongside JP Duminy. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 154 matches.",
+     "I was born in Warmbad, Transvaal Province, South Africa in 1984 and played for South Africa."
+    ],
+    "IPL": [
+     "I keep wicket and bat right-handed.",
+     "I made my IPL debut against Chennai Super Kings in 2008, and bowed out in 2021. I’ve played in 2 IPL finals and lost both.",
+     "At Royal Challengers Bengaluru I played 154 matches alongside Virat Kohli. Away from the IPL, Hashim Amla has been an international team-mate.",
+     "I was born in Warmbad, Transvaal Province, South Africa in 1984 and played most of my IPL cricket for Royal Challengers Bengaluru."
+    ]
    }
   },
   "adam-gilchrist": {
@@ -56,6 +102,26 @@
      2008,
      2013
     ]
+   },
+   "hints": {
+    "Test": [
+     "I keep wicket and bat left-handed.",
+     "I made my Test debut against Pakistan in 1999, and bowed out against India in 2008.",
+     "Matthew Hayden was a regular Test team-mate. In the IPL I shared a dressing room with Rohit Sharma at Deccan Chargers, for 45 matches.",
+     "They call me ‘Churchy’. I was born in Bellingen, New South Wales, Australia in 1971 and played for Australia."
+    ],
+    "ODI": [
+     "I keep wicket and bat left-handed.",
+     "I made my ODI debut against South Africa in 1996, and bowed out against India in 2008. I played in the World Cup finals of 2003 and 2007, and won both.",
+     "Ricky Ponting was a regular ODI team-mate. In the IPL I shared a dressing room with Rohit Sharma at Deccan Chargers, for 45 matches.",
+     "They call me ‘Churchy’. I was born in Bellingen, New South Wales, Australia in 1971 and played for Australia."
+    ],
+    "IPL": [
+     "I keep wicket and bat left-handed.",
+     "I made my IPL debut against Kolkata Knight Riders in 2008, and bowed out in 2013. I’ve played in one IPL final, and won it.",
+     "At Deccan Chargers I played 45 matches alongside Rohit Sharma. Away from the IPL, Ricky Ponting has been an international team-mate.",
+     "They call me ‘Churchy’. I was born in Bellingen, New South Wales, Australia in 1971 and played most of my IPL cricket for Deccan Chargers."
+    ]
    }
   },
   "adam-zampa": {
@@ -65,6 +131,14 @@
     "T20I": [
      2016,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my T20I debut against South Africa in 2016, and my most recent T20I came against Bangladesh in 2026. I played in the 2021 T20 World Cup final, on the winning side.",
+     "I played 83 T20Is alongside Glenn Maxwell. In the IPL I shared a dressing room with MS Dhoni at Rising Pune Supergiant, for 11 matches.",
+     "They call me ‘Zorba’. I was born in Shellharbour, New South Wales, Australia in 1992 and played for Australia."
     ]
    }
   },
@@ -80,6 +154,20 @@
      2009,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my ODI debut against Ireland in 2009, and my most recent ODI came against India in 2026. I played in the 2019 World Cup final.",
+     "I played 129 ODIs alongside Jos Buttler.",
+     "I was born in Bradford, West Yorkshire, England in 1988 and played for England."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my T20I debut against Netherlands in 2009, and my most recent T20I came against Sri Lanka in 2026. I played in the 2022 T20 World Cup final, on the winning side.",
+     "I played 115 T20Is alongside Jos Buttler.",
+     "I was born in Bradford, West Yorkshire, England in 1988 and played for England."
+    ]
    }
   },
   "aiden-markram": {
@@ -89,6 +177,14 @@
     "T20I": [
      2019,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Sri Lanka in 2019, and my most recent T20I came against New Zealand in 2026. I played in the 2024 T20 World Cup final, on the losing side.",
+     "I played 49 T20Is alongside David Miller. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 38 matches.",
+     "I was born in Centurion, Gauteng, South Africa in 1994 and played for South Africa."
     ]
    }
   },
@@ -104,6 +200,20 @@
      2008,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against Australia in 2013, and bowed out against West Indies in 2023. My highest Test score, 188, came against New Zealand at Indore in 2016.",
+     "I played 78 Tests alongside Virat Kohli. In the IPL I shared a dressing room with Shane Watson at Rajasthan Royals, for 54 matches.",
+     "I was born in Ashwi Khurd, Maharashtra, India in 1988 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Deccan Chargers in 2008, and my most recent match came in 2026. I’ve played in 3 IPL finals and won one of them.",
+     "At Rajasthan Royals I played 64 matches alongside Sanju Samson. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "I was born in Ashwi Khurd, Maharashtra, India in 1988 and played most of my IPL cricket for Rajasthan Royals."
+    ]
    }
   },
   "alastair-cook": {
@@ -113,6 +223,14 @@
     "Test": [
      2006,
      2018
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm slow seam on the side.",
+     "I made my Test debut against India in 2006, and bowed out against India in 2018. My highest Test score, 294, came against India at Birmingham in 2011.",
+     "I played 130 Tests alongside James Anderson.",
+     "They call me ‘Chef’. I was born in Gloucester, Gloucestershire, England in 1984 and played for England."
     ]
    }
   },
@@ -124,6 +242,14 @@
      2011,
      2022
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my T20I debut against India in 2011, and bowed out against Pakistan in 2022. I played in the 2022 T20 World Cup final, on the winning side.",
+     "I played 62 T20Is alongside Jos Buttler.",
+     "I was born in Hillingdon, London, England in 1989 and played for England."
+    ]
    }
   },
   "allan-border": {
@@ -133,6 +259,14 @@
     "Test": [
      1978,
      1994
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some slow left-arm orthodox on the side.",
+     "I made my Test debut against England in 1978, and bowed out against South Africa in 1994.",
+     "My Test years overlapped with Steve Waugh’s and Greg Chappell’s, in the same side.",
+     "I was born in Cremorne, New South Wales, Australia in 1955 and played for Australia."
     ]
    }
   },
@@ -148,6 +282,20 @@
      1991,
      2003
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against West Indies in 1992, and bowed out against Australia in 2002.",
+     "My Test years overlapped with Jacques Kallis’s and Shaun Pollock’s, in the same side.",
+     "They call me ‘White Lightning’. I was born in Bloemfontein, Orange Free State Province, South Africa in 1966 and played for South Africa."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against India in 1991, and bowed out against Canada in 2003. I wore number 10 on my back.",
+     "My ODI years overlapped with Gary Kirsten’s and Jacques Kallis’s, in the same side.",
+     "They call me ‘White Lightning’. I was born in Bloemfontein, Orange Free State Province, South Africa in 1966 and played for South Africa."
+    ]
    }
   },
   "amit-mishra": {
@@ -157,6 +305,14 @@
     "IPL": [
      2008,
      2024
+    ]
+   },
+   "hints": {
+    "IPL": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my IPL debut against Rajasthan Royals in 2008, and my most recent match came in 2024. My best IPL figures, 5/17, came against Deccan Chargers at Delhi in 2008.",
+     "At Delhi Capitals I played 52 matches alongside Rishabh Pant. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "I was born in Delhi, India in 1982 and played most of my IPL cricket for Delhi Capitals."
     ]
    }
   },
@@ -172,6 +328,20 @@
      2012,
      2025
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast.",
+     "I made my T20I debut against Pakistan in 2011, and my most recent T20I came against Australia in 2025. I played in the 2012 T20 World Cup final, on the winning side.",
+     "I played 50 T20Is alongside Dwayne Bravo. In the IPL I shared a dressing room with Robin Uthappa at Kolkata Knight Riders, for 55 matches.",
+     "I was born in Kingston, Jamaica in 1988 and played for West Indies."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast.",
+     "I made my IPL debut against Deccan Chargers in 2012, and my most recent match came in 2025. I’ve played in one IPL final, and won it.",
+     "At Kolkata Knight Riders I played 114 matches alongside Sunil Narine. Away from the IPL, Dwayne Bravo has been an international team-mate.",
+     "I was born in Kingston, Jamaica in 1988 and played most of my IPL cricket for Kolkata Knight Riders."
+    ]
    }
   },
   "andrew-balbirnie": {
@@ -181,6 +351,14 @@
     "T20I": [
      2015,
      2024
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Scotland in 2015, and my most recent T20I came against Pakistan in 2024. I wore number 63 on my back.",
+     "My T20I years overlapped with Paul Stirling’s, in the same side.",
+     "I was born in Dublin, Ireland in 1990 and played for Ireland."
     ]
    }
   },
@@ -192,6 +370,14 @@
      1998,
      2009
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my Test debut against South Africa in 1998, and bowed out against Australia in 2009. My highest Test score, 167, came against West Indies at Birmingham in 2004.",
+     "Kevin Pietersen was a regular Test team-mate.",
+     "They call me ‘Freddie’. I was born in Preston, Lancashire, England in 1977 and played for England."
+    ]
    }
   },
   "andrew-strauss": {
@@ -202,6 +388,14 @@
      2004,
      2012
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some left-arm medium on the side.",
+     "I made my Test debut against New Zealand in 2004, and bowed out against South Africa in 2012. My highest Test score, 177, came against New Zealand at Napier in 2008.",
+     "Kevin Pietersen was a regular Test team-mate.",
+     "I was born in Johannesburg, Transvaal Province, South Africa in 1977 and played for England."
+    ]
    }
   },
   "andrew-symonds": {
@@ -211,6 +405,14 @@
     "ODI": [
      1998,
      2009
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium.",
+     "I made my ODI debut against Pakistan in 1998, and bowed out against Pakistan in 2009. I played in the World Cup finals of 2003 and 2007, and won both.",
+     "Adam Gilchrist was a regular ODI team-mate. In the IPL I shared a dressing room with Rohit Sharma at Deccan Chargers, for 28 matches.",
+     "I was born in Birmingham, West Midlands, England in 1975 and played for Australia."
     ]
    }
   },
@@ -226,6 +428,20 @@
      1992,
      2003
     ]
+   },
+   "hints": {
+    "Test": [
+     "I keep wicket and bat left-handed.",
+     "I made my Test debut against India in 1992, and bowed out against Pakistan in 2002.",
+     "I was born in Cape Town, Cape Province, South Africa in 1968.",
+     "They call me ‘Petals’. I played for Zimbabwe."
+    ],
+    "ODI": [
+     "I keep wicket and bat left-handed.",
+     "I made my ODI debut against Sri Lanka in 1992, and bowed out against Sri Lanka in 2003. I wore number 33 on my back.",
+     "I was born in Cape Town, Cape Province, South Africa in 1968.",
+     "They call me ‘Petals’. I played for Zimbabwe."
+    ]
    }
   },
   "angelo-mathews": {
@@ -235,6 +451,14 @@
     "Test": [
      2009,
      2025
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium.",
+     "I made my Test debut against Pakistan in 2009, and my most recent Test came against Bangladesh in 2025. My highest Test score, 200*, came against Zimbabwe at Harare in 2020.",
+     "I played 55 Tests alongside Kusal Mendis. In the IPL I shared a dressing room with Robin Uthappa at Pune Warriors, for 20 matches.",
+     "I was born in Colombo, Sri Lanka in 1987 and played for Sri Lanka."
     ]
    }
   },
@@ -250,6 +474,20 @@
      1990,
      2007
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: leg break, and I bat right-handed.",
+     "I made my Test debut against England in 1990, and bowed out against Australia in 2008.",
+     "Rahul Dravid was a regular Test team-mate. In the IPL I shared a dressing room with Jacques Kallis at Royal Challengers Bengaluru, for 38 matches.",
+     "They call me ‘Jumbo’. I was born in Bangalore, Mysore State, India in 1970 and played for India."
+    ],
+    "ODI": [
+     "I’m a bowler: leg break, and I bat right-handed.",
+     "I made my ODI debut against Sri Lanka in 1990, and bowed out against Bermuda in 2007. I wore number 37 on my back.",
+     "Rahul Dravid was a regular ODI team-mate. In the IPL I shared a dressing room with Jacques Kallis at Royal Challengers Bengaluru, for 38 matches.",
+     "They call me ‘Jumbo’. I was born in Bangalore, Mysore State, India in 1970 and played for India."
+    ]
    }
   },
   "aravinda-de-silva": {
@@ -264,6 +502,20 @@
      1984,
      2003
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my Test debut against England in 1984, and bowed out against Bangladesh in 2002.",
+     "My Test years overlapped with Sanath Jayasuriya’s and Muttiah Muralitharan’s, in the same side.",
+     "They call me ‘Mad Max’. I was born in Colombo, Ceylon in 1965 and played for Sri Lanka."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my ODI debut against New Zealand in 1984, and bowed out against Australia in 2003.",
+     "My ODI years overlapped with Arjuna Ranatunga’s and Sanath Jayasuriya’s, in the same side.",
+     "They call me ‘Mad Max’. I was born in Colombo, Ceylon in 1965 and played for Sri Lanka."
+    ]
    }
   },
   "arjuna-ranatunga": {
@@ -273,6 +525,14 @@
     "ODI": [
      1982,
      1999
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against England in 1982, and bowed out against Kenya in 1999.",
+     "My ODI years overlapped with Aravinda de Silva’s and Sanath Jayasuriya’s, in the same side.",
+     "They call me ‘Captain Cool’. I was born in Gampaha, Ceylon in 1963 and played for Sri Lanka."
     ]
    }
   },
@@ -292,6 +552,26 @@
      2016,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against West Indies in 2016, and my most recent Test came against England in 2026. My highest Test score, 196, came against Australia at Karachi in 2022.",
+     "I played 31 Tests alongside Shaheen Afridi.",
+     "I was born in Lahore, Punjab, Pakistan in 1994 and played for Pakistan."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Zimbabwe in 2015, and my most recent ODI came against Sri Lanka in 2025. My highest ODI score, 158, came against England at Birmingham in 2021.",
+     "I played 68 ODIs alongside Shaheen Afridi.",
+     "I was born in Lahore, Punjab, Pakistan in 1994 and played for Pakistan."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against England in 2016, and my most recent T20I came against England in 2026. I played in the 2022 T20 World Cup final, on the losing side.",
+     "I played 79 T20Is alongside Shaheen Afridi.",
+     "I was born in Lahore, Punjab, Pakistan in 1994 and played for Pakistan."
+    ]
    }
   },
   "ben-stokes": {
@@ -306,6 +586,20 @@
      2011,
      2023
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm fast-medium.",
+     "I made my Test debut against Australia in 2013, and my most recent Test came against New Zealand in 2026. My highest Test score, 258, came against South Africa at Cape Town in 2016.",
+     "I played 120 Tests alongside Joe Root. In the IPL I shared a dressing room with Sanju Samson at Rajasthan Royals, for 29 matches.",
+     "I was born in Christchurch, New Zealand in 1991 and played for England."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm fast-medium.",
+     "I made my ODI debut against Ireland in 2011, and bowed out against Pakistan in 2023. I played in the 2019 World Cup final.",
+     "I played 98 ODIs alongside Jos Buttler. In the IPL I shared a dressing room with Sanju Samson at Rajasthan Royals, for 29 matches.",
+     "I was born in Christchurch, New Zealand in 1991 and played for England."
+    ]
    }
   },
   "bhuvneshwar-kumar": {
@@ -319,6 +613,20 @@
     "IPL": [
      2011,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a bowler: right-arm medium, and I bat right-handed.",
+     "I made my T20I debut against Pakistan in 2012, and bowed out against New Zealand in 2022. My best T20I figures, 5/24, came against South Africa at Johannesburg in 2018.",
+     "I played 68 T20Is alongside Rohit Sharma. In the IPL I shared a dressing room with David Warner at Sunrisers Hyderabad, for 81 matches.",
+     "They call me ‘Swing King’. I was born in Meerut, Uttar Pradesh, India in 1990 and played for India."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm medium, and I bat right-handed.",
+     "I made my IPL debut against Punjab Kings in 2011, and my most recent match came in 2026. I’ve played in 5 IPL finals and won 3 of them.",
+     "At Sunrisers Hyderabad I played 81 matches alongside David Warner. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "They call me ‘Swing King’. I was born in Meerut, Uttar Pradesh, India in 1990 and played most of my IPL cricket for Sunrisers Hyderabad."
     ]
    }
   },
@@ -342,6 +650,32 @@
      2008,
      2018
     ]
+   },
+   "hints": {
+    "Test": [
+     "I keep wicket and bat right-handed.",
+     "I made my Test debut against South Africa in 2004, and bowed out against Australia in 2016. My highest Test score, 302, came against India at Wellington in 2014.",
+     "Ross Taylor was a regular Test team-mate. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 28 matches.",
+     "I was born in Dunedin, Otago, New Zealand in 1981 and played for New Zealand."
+    ],
+    "ODI": [
+     "I keep wicket and bat right-handed.",
+     "I made my ODI debut against Australia in 2002, and bowed out against Australia in 2016. I played in the 2015 World Cup final, on the losing side.",
+     "Daniel Vettori was a regular ODI team-mate. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 28 matches.",
+     "I was born in Dunedin, Otago, New Zealand in 1981 and played for New Zealand."
+    ],
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against Australia in 2005, and bowed out against England in 2015. My highest T20I score, 123, came against Bangladesh at Pallekele International Cricket Stadium in 2012.",
+     "I played 57 T20Is alongside Ross Taylor. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 28 matches.",
+     "I was born in Dunedin, Otago, New Zealand in 1981 and played for New Zealand."
+    ],
+    "IPL": [
+     "I keep wicket and bat right-handed.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2008, and bowed out in 2018. My highest IPL score, 158*, came against Royal Challengers Bengaluru at Bangalore in 2008.",
+     "At Chennai Super Kings I played 28 matches alongside MS Dhoni. Away from the IPL, Ross Taylor has been an international team-mate.",
+     "I was born in Dunedin, Otago, New Zealand in 1981 and played most of my IPL cricket for Kolkata Knight Riders."
+    ]
    }
   },
   "brett-lee": {
@@ -355,6 +689,20 @@
     "ODI": [
      2000,
      2012
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against India in 1999, and bowed out against South Africa in 2008.",
+     "Ricky Ponting was a regular Test team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Kolkata Knight Riders, for 25 matches.",
+     "They call me ‘Binga’. I was born in Wollongong, New South Wales, Australia in 1976 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against Pakistan in 2000, and bowed out against England in 2012. I played in the 2003 World Cup final, on the winning side.",
+     "Ricky Ponting was a regular ODI team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Kolkata Knight Riders, for 25 matches.",
+     "They call me ‘Binga’. I was born in Wollongong, New South Wales, Australia in 1976 and played for Australia."
     ]
    }
   },
@@ -370,6 +718,20 @@
      1990,
      2007
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against Pakistan in 1990, and bowed out against Pakistan in 2006. My highest Test score, 400*, came against England at St John's in 2004.",
+     "My Test years overlapped with Shivnarine Chanderpaul’s and Courtney Walsh’s, in the same side.",
+     "I was born in Santa Cruz, Trinidad and Tobago in 1969 and played for West Indies."
+    ],
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against Pakistan in 1990, and bowed out against England in 2007. I wore number 9 on my back.",
+     "Chris Gayle was a regular ODI team-mate.",
+     "I was born in Santa Cruz, Trinidad and Tobago in 1969 and played for West Indies."
+    ]
    }
   },
   "chaminda-vaas": {
@@ -380,6 +742,14 @@
      1994,
      2008
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a bowler: left-arm fast medium, and I bat left-handed.",
+     "I made my ODI debut against India in 1994, and bowed out against India in 2008. I wore number 22 on my back.",
+     "My ODI years overlapped with Sanath Jayasuriya’s and Muttiah Muralitharan’s, in the same side.",
+     "I was born in Wattala, Sri Lanka in 1974 and played for Sri Lanka."
+    ]
    }
   },
   "cheteshwar-pujara": {
@@ -389,6 +759,14 @@
     "Test": [
      2010,
      2023
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against Australia in 2010, and bowed out against Australia in 2023. My highest Test score, 206*, came against England at Ahmedabad in 2012.",
+     "I played 93 Tests alongside Virat Kohli. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 14 matches.",
+     "I was born in Rajkot, Gujarat, India in 1988 and played for India."
     ]
    }
   },
@@ -412,6 +790,32 @@
      2009,
      2021
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm off break.",
+     "I made my Test debut against Zimbabwe in 2000, and bowed out against Bangladesh in 2014. My highest Test score, 333, came against Sri Lanka at Galle International Stadium in 2010.",
+     "Shivnarine Chanderpaul was a regular Test team-mate. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 82 matches.",
+     "I was born in Kingston, Jamaica in 1979 and played for West Indies."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm off break.",
+     "I made my ODI debut against India in 1999, and bowed out against India in 2019. My highest ODI score, 215, came against Zimbabwe at Canberra in 2015.",
+     "Dwayne Bravo was a regular ODI team-mate. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 82 matches.",
+     "I was born in Kingston, Jamaica in 1979 and played for West Indies."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm off break.",
+     "I made my T20I debut against New Zealand in 2006, and bowed out against Australia in 2021. I played in the 2012 T20 World Cup final, on the winning side.",
+     "I played 62 T20Is alongside Dwayne Bravo. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 82 matches.",
+     "I was born in Kingston, Jamaica in 1979 and played for West Indies."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm off break.",
+     "I made my IPL debut against Deccan Chargers in 2009, and bowed out in 2021. I’ve played in 2 IPL finals and lost both.",
+     "At Royal Challengers Bengaluru I played 82 matches alongside Virat Kohli. Away from the IPL, Dwayne Bravo has been an international team-mate.",
+     "I was born in Kingston, Jamaica in 1979 and played most of my IPL cricket for Royal Challengers Bengaluru."
+    ]
    }
   },
   "clive-lloyd": {
@@ -421,6 +825,14 @@
     "Test": [
      1966,
      1984
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my Test debut against India in 1966, and bowed out against Australia in 1984.",
+     "My Test years overlapped with Viv Richards’s and Gordon Greenidge’s, in the same side.",
+     "They call me ‘Big C’. I was born in Georgetown, British Guiana in 1944 and played for West Indies."
     ]
    }
   },
@@ -436,6 +848,20 @@
      1985,
      2000
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against Australia in 1984, and bowed out against South Africa in 2001.",
+     "My Test years overlapped with Curtly Ambrose’s and Brian Lara’s, in the same side.",
+     "I was born in Kingston, Jamaica in 1962 and played for West Indies."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against Sri Lanka in 1985, and bowed out against New Zealand in 2000. I wore number 12 on my back.",
+     "My ODI years overlapped with Curtly Ambrose’s and Brian Lara’s, in the same side.",
+     "I was born in Kingston, Jamaica in 1962 and played for West Indies."
+    ]
    }
   },
   "curtly-ambrose": {
@@ -449,6 +875,20 @@
     "ODI": [
      1988,
      2000
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat left-handed.",
+     "I made my Test debut against Pakistan in 1988, and bowed out against England in 2000.",
+     "My Test years overlapped with Courtney Walsh’s and Brian Lara’s, in the same side.",
+     "I was born in Swetes, Antigua and Barbuda in 1963 and played for West Indies."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat left-handed.",
+     "I made my ODI debut against Pakistan in 1988, and bowed out against Pakistan in 2000.",
+     "My ODI years overlapped with Courtney Walsh’s and Brian Lara’s, in the same side.",
+     "I was born in Swetes, Antigua and Barbuda in 1963 and played for West Indies."
     ]
    }
   },
@@ -472,6 +912,32 @@
      2008,
      2020
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against England in 2004, and bowed out against Sri Lanka in 2019. My best Test figures, 7/51, came against India at Nagpur in 2010.",
+     "I played 88 Tests alongside Hashim Amla. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 32 matches.",
+     "I was born in Phalaborwa, Transvaal Province, South Africa in 1983 and played for South Africa."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against Asia XI in 2005, and bowed out against Sri Lanka in 2019. My best ODI figures, 6/39, came against Pakistan at Port Elizabeth in 2013.",
+     "I played 100 ODIs alongside AB de Villiers. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 32 matches.",
+     "I was born in Phalaborwa, Transvaal Province, South Africa in 1983 and played for South Africa."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my T20I debut against New Zealand in 2007, and bowed out against Australia in 2020. My best T20I figures, 4/9, came against West Indies at Port Elizabeth in 2007.",
+     "I played 40 T20Is alongside JP Duminy. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 32 matches.",
+     "I was born in Phalaborwa, Transvaal Province, South Africa in 1983 and played for South Africa."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my IPL debut against Chennai Super Kings in 2008, and bowed out in 2020. I’ve been player of the match 5 times in the IPL.",
+     "At Royal Challengers Bengaluru I played 32 matches alongside Virat Kohli. Away from the IPL, AB de Villiers has been an international team-mate.",
+     "I was born in Phalaborwa, Transvaal Province, South Africa in 1983 and played most of my IPL cricket for Sunrisers Hyderabad."
+    ]
    }
   },
   "daniel-vettori": {
@@ -486,6 +952,20 @@
      1997,
      2015
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my Test debut against England in 1997, and bowed out against Pakistan in 2014. My highest Test score, 140, came against Sri Lanka at Colombo in 2009.",
+     "Brendon McCullum was a regular Test team-mate. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 22 matches.",
+     "I was born in Auckland, New Zealand in 1979 and played for New Zealand."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my ODI debut against Sri Lanka in 1997, and bowed out against Australia in 2015. I played in the 2015 World Cup final, on the losing side.",
+     "Brendon McCullum was a regular ODI team-mate. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 22 matches.",
+     "I was born in Auckland, New Zealand in 1979 and played for New Zealand."
+    ]
    }
   },
   "dasun-shanaka": {
@@ -496,6 +976,14 @@
      2015,
      2026
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium.",
+     "I made my T20I debut against Pakistan in 2015, and my most recent T20I came against Pakistan in 2026. My highest T20I score, 76*, came against Pakistan at Kandy in 2026.",
+     "I played 84 T20Is alongside Kusal Mendis.",
+     "They call me ‘Negombo Nailer’. I was born in Negombo, Sri Lanka in 1991 and played for Sri Lanka."
+    ]
    }
   },
   "david-gower": {
@@ -505,6 +993,14 @@
     "Test": [
      1978,
      1992
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my Test debut against Pakistan in 1978, and bowed out against Pakistan in 1992.",
+     "My Test years overlapped with Graham Gooch’s and Ian Botham’s, in the same side.",
+     "I was born in Tunbridge Wells, Kent, England in 1957 and played for England."
     ]
    }
   },
@@ -523,6 +1019,26 @@
     "IPL": [
      2012,
      2026
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against West Indies in 2010, and my most recent ODI came against Australia in 2026. I wore number 10 on my back.",
+     "I played 125 ODIs alongside Quinton de Kock. In the IPL I shared a dressing room with Glenn Maxwell at Punjab Kings, for 41 matches.",
+     "I was born in Pietermaritzburg, Natal Province, South Africa in 1989 and played for South Africa."
+    ],
+    "T20I": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against West Indies in 2010, and my most recent T20I came against New Zealand in 2026. I played in the 2024 T20 World Cup final, on the losing side.",
+     "I played 88 T20Is alongside Quinton de Kock. In the IPL I shared a dressing room with Glenn Maxwell at Punjab Kings, for 41 matches.",
+     "I was born in Pietermaritzburg, Natal Province, South Africa in 1989 and played for South Africa."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2012, and my most recent match came in 2026. I’ve played in 3 IPL finals and won one of them.",
+     "At Punjab Kings I played 41 matches alongside Glenn Maxwell. Away from the IPL, Quinton de Kock has been an international team-mate.",
+     "I was born in Pietermaritzburg, Natal Province, South Africa in 1989 and played most of my IPL cricket for Punjab Kings."
     ]
    }
   },
@@ -546,6 +1062,32 @@
      2009,
      2024
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against New Zealand in 2011, and my most recent Test came against Pakistan in 2024. My highest Test score, 335*, came against Pakistan at Adelaide in 2019.",
+     "I played 107 Tests alongside Nathan Lyon. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 81 matches.",
+     "They call me ‘Lloyd’. I was born in Paddington, New South Wales, Australia in 1986 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against South Africa in 2009, and bowed out against India in 2023. I played in the World Cup finals of 2015 and 2023, and won both.",
+     "I played 106 ODIs alongside Steve Smith. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 81 matches.",
+     "They call me ‘Lloyd’. I was born in Paddington, New South Wales, Australia in 1986 and played for Australia."
+    ],
+    "T20I": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my T20I debut against South Africa in 2009, and my most recent T20I came against India in 2024. I played in the T20 World Cup finals of 2010 and 2021, and won one of them.",
+     "I played 64 T20Is alongside Glenn Maxwell. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 81 matches.",
+     "They call me ‘Lloyd’. I was born in Paddington, New South Wales, Australia in 1986 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my IPL debut against Chennai Super Kings in 2009, and my most recent match came in 2024. I’ve played in one IPL final, and won it.",
+     "At Sunrisers Hyderabad I played 81 matches alongside Bhuvneshwar Kumar. Away from the IPL, Steve Smith has been an international team-mate.",
+     "They call me ‘Lloyd’. I was born in Paddington, New South Wales, Australia in 1986 and played most of my IPL cricket for Sunrisers Hyderabad."
+    ]
    }
   },
   "dawid-malan": {
@@ -556,6 +1098,14 @@
      2017,
      2023
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my T20I debut against South Africa in 2017, and bowed out against New Zealand in 2023. My highest T20I score, 103*, came against New Zealand at Napier in 2019.",
+     "I played 54 T20Is alongside Adil Rashid.",
+     "I was born in Roehampton, London, England in 1987 and played for England."
+    ]
    }
   },
   "dennis-lillee": {
@@ -565,6 +1115,14 @@
     "Test": [
      1971,
      1984
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against England in 1971, and bowed out against Pakistan in 1984.",
+     "My Test years overlapped with Greg Chappell’s and Allan Border’s, in the same side.",
+     "I was born in Subiaco, Western Australia in 1949 and played for Australia."
     ]
    }
   },
@@ -580,6 +1138,20 @@
      1978,
      1994
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against Australia in 1978, and bowed out against England in 1994.",
+     "My Test years overlapped with Viv Richards’s and Gordon Greenidge’s, in the same side.",
+     "I was born in Saint James, Barbados in 1956 and played for West Indies."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against Australia in 1978, and bowed out against England in 1994.",
+     "My ODI years overlapped with Viv Richards’s and Courtney Walsh’s, in the same side.",
+     "I was born in Saint James, Barbados in 1956 and played for West Indies."
+    ]
    }
   },
   "devon-conway": {
@@ -589,6 +1161,14 @@
     "T20I": [
      2020,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat left-handed.",
+     "I made my T20I debut against West Indies in 2020, and my most recent T20I came against South Africa in 2026. My highest T20I score, 99*, came against Australia at Christchurch in 2021.",
+     "I played 54 T20Is alongside Ish Sodhi. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 29 matches.",
+     "I was born in Johannesburg, Transvaal Province, South Africa in 1991 and played for New Zealand."
     ]
    }
   },
@@ -600,6 +1180,14 @@
      1976,
      1992
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against New Zealand in 1976, and bowed out against Australia in 1992.",
+     "My Test years overlapped with Kapil Dev’s and Sunil Gavaskar’s, in the same side.",
+     "I was born in Rajapur, Maharashtra, India in 1956 and played for India."
+    ]
    }
   },
   "don-bradman": {
@@ -609,6 +1197,14 @@
     "Test": [
      1928,
      1948
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against England in 1928, and bowed out against England in 1948.",
+     "I was born in Cootamundra, New South Wales, Australia in 1908.",
+     "They call me ‘The Boy from Bowral’. I played for Australia."
     ]
    }
   },
@@ -623,6 +1219,20 @@
     "IPL": [
      2008,
      2022
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium-fast.",
+     "I made my T20I debut against New Zealand in 2006, and bowed out against Australia in 2021. I played in the 2012 T20 World Cup final, on the winning side.",
+     "I played 62 T20Is alongside Kieron Pollard. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 114 matches.",
+     "I was born in Santa Cruz, Trinidad and Tobago in 1983 and played for West Indies."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium-fast.",
+     "I made my IPL debut against Chennai Super Kings in 2008, and bowed out in 2022. I’ve played in 7 IPL finals and won 3 of them.",
+     "At Chennai Super Kings I played 114 matches alongside MS Dhoni. Away from the IPL, Chris Gayle has been an international team-mate.",
+     "I was born in Santa Cruz, Trinidad and Tobago in 1983 and played most of my IPL cricket for Chennai Super Kings."
     ]
    }
   },
@@ -642,6 +1252,26 @@
      2010,
      2021
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a left-handed batter.",
+     "I made my ODI debut against Scotland in 2006, and bowed out against Netherlands in 2022. I played in the 2019 World Cup final.",
+     "Joe Root was a regular ODI team-mate. In the IPL I shared a dressing room with Sunil Narine at Kolkata Knight Riders, for 38 matches.",
+     "I was born in Dublin, Ireland in 1986 and played for England."
+    ],
+    "T20I": [
+     "I’m a left-handed batter.",
+     "I made my T20I debut against Netherlands in 2009, and bowed out against West Indies in 2022. I played in the 2010 T20 World Cup final, on the winning side.",
+     "I played 77 T20Is alongside Jos Buttler. In the IPL I shared a dressing room with Sunil Narine at Kolkata Knight Riders, for 38 matches.",
+     "I was born in Dublin, Ireland in 1986 and played for England."
+    ],
+    "IPL": [
+     "I’m a left-handed batter.",
+     "I made my IPL debut against Kolkata Knight Riders in 2010, and bowed out in 2021. I’ve played in one IPL final, and lost it.",
+     "At Kolkata Knight Riders I played 38 matches alongside Sunil Narine. Away from the IPL, Jos Buttler has been an international team-mate.",
+     "I was born in Dublin, Ireland in 1986 and played most of my IPL cricket for Kolkata Knight Riders."
+    ]
    }
   },
   "faf-du-plessis": {
@@ -660,6 +1290,26 @@
      2012,
      2025
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against India in 2011, and bowed out against Australia in 2019. My highest ODI score, 185, came against Sri Lanka at Cape Town in 2017.",
+     "I played 115 ODIs alongside Hashim Amla. In the IPL I shared a dressing room with Ravindra Jadeja at Chennai Super Kings, for 91 matches.",
+     "I was born in Pretoria, South Africa in 1984 and played for South Africa."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my T20I debut against England in 2012, and bowed out against England in 2020. My highest T20I score, 119, came against West Indies at Johannesburg in 2015.",
+     "I played 38 T20Is alongside David Miller. In the IPL I shared a dressing room with Ravindra Jadeja at Chennai Super Kings, for 91 matches.",
+     "I was born in Pretoria, South Africa in 1984 and played for South Africa."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my IPL debut against Mumbai Indians in 2012, and my most recent match came in 2025. I’ve played in 4 IPL finals and won 2 of them.",
+     "At Chennai Super Kings I played 91 matches alongside Ravindra Jadeja. Away from the IPL, Hashim Amla has been an international team-mate.",
+     "I was born in Pretoria, South Africa in 1984 and played most of my IPL cricket for Chennai Super Kings."
+    ]
    }
   },
   "garfield-sobers": {
@@ -669,6 +1319,14 @@
     "Test": [
      1954,
      1974
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl left-arm fast medium.",
+     "I made my Test debut against England in 1954, and bowed out against England in 1974.",
+     "My Test years overlapped with Clive Lloyd’s, in the same side.",
+     "I was born in Bridgetown, Colony of Barbados in 1936 and played for West Indies."
     ]
    }
   },
@@ -680,6 +1338,14 @@
      1993,
      2003
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Australia in 1993, and bowed out against Sri Lanka in 2003. I wore number 1 on my back.",
+     "My ODI years overlapped with Allan Donald’s and Jacques Kallis’s, in the same side.",
+     "I was born in Cape Town, Cape Province, South Africa in 1967 and played for South Africa."
+    ]
    }
   },
   "gautam-gambhir": {
@@ -690,6 +1356,14 @@
      2008,
      2018
     ]
+   },
+   "hints": {
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my IPL debut against Rajasthan Royals in 2008, and bowed out in 2018. I’ve played in 2 IPL finals and won both.",
+     "At Kolkata Knight Riders I played 82 matches alongside Sunil Narine. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "I was born in New Delhi, India in 1981 and played most of my IPL cricket for Kolkata Knight Riders."
+    ]
    }
   },
   "geoffrey-boycott": {
@@ -699,6 +1373,14 @@
     "Test": [
      1964,
      1982
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against Australia in 1964, and bowed out against India in 1982.",
+     "My Test years overlapped with Graham Gooch’s and Ian Botham’s, in the same side.",
+     "I was born in Fitzwilliam, West Riding of Yorkshire, England in 1940 and played for England."
     ]
    }
   },
@@ -718,6 +1400,26 @@
      2012,
      2025
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my ODI debut against Afghanistan in 2012, and my most recent ODI came against India in 2025. I played in the World Cup finals of 2015 and 2023, and won both.",
+     "I played 104 ODIs alongside Aaron Finch. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 52 matches.",
+     "They call me ‘The Big Show’. I was born in Kew, Victoria, Australia in 1988 and played for Australia."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my T20I debut against Pakistan in 2012, and my most recent T20I came against Oman in 2026. I played in the 2021 T20 World Cup final, on the winning side.",
+     "I played 83 T20Is alongside Adam Zampa. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 52 matches.",
+     "They call me ‘The Big Show’. I was born in Kew, Victoria, Australia in 1988 and played for Australia."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my IPL debut against Kolkata Knight Riders in 2012, and my most recent match came in 2025. I’ve played in one IPL final, and lost it.",
+     "At Royal Challengers Bengaluru I played 52 matches alongside Virat Kohli. Away from the IPL, Aaron Finch has been an international team-mate.",
+     "They call me ‘The Big Show’. I was born in Kew, Victoria, Australia in 1988 and played most of my IPL cricket for Punjab Kings."
+    ]
    }
   },
   "glenn-mcgrath": {
@@ -732,6 +1434,20 @@
      1993,
      2007
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast-medium, and I bat right-handed.",
+     "I made my Test debut against New Zealand in 1993, and bowed out against England in 2007.",
+     "Matthew Hayden was a regular Test team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Delhi Capitals, for 14 matches.",
+     "They call me ‘Pigeon’. I was born in Dubbo, New South Wales, Australia in 1970 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast-medium, and I bat right-handed.",
+     "I made my ODI debut against South Africa in 1993, and bowed out against Sri Lanka in 2007. I played in the World Cup finals of 2003 and 2007, and won both.",
+     "Ricky Ponting was a regular ODI team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Delhi Capitals, for 14 matches.",
+     "They call me ‘Pigeon’. I was born in Dubbo, New South Wales, Australia in 1970 and played for Australia."
+    ]
    }
   },
   "gordon-greenidge": {
@@ -741,6 +1457,14 @@
     "Test": [
      1974,
      1991
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against India in 1974, and bowed out against Australia in 1991.",
+     "My Test years overlapped with Viv Richards’s and Desmond Haynes’s, in the same side.",
+     "I was born in St Peter, Barbados in 1951 and played for West Indies."
     ]
    }
   },
@@ -756,6 +1480,20 @@
      2002,
      2013
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my Test debut against Australia in 2002, and bowed out against Australia in 2014. My highest Test score, 277, came against England at Birmingham in 2003.",
+     "Jacques Kallis was a regular Test team-mate. In the IPL I shared a dressing room with Shane Warne at Rajasthan Royals, for 25 matches.",
+     "They call me ‘Biff’. I was born in Johannesburg, Transvaal Province, South Africa in 1981 and played for South Africa."
+    ],
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Australia in 2002, and bowed out against Pakistan in 2013. My highest ODI score, 141, came against England at Centurion in 2009.",
+     "AB de Villiers was a regular ODI team-mate. In the IPL I shared a dressing room with Shane Warne at Rajasthan Royals, for 25 matches.",
+     "They call me ‘Biff’. I was born in Johannesburg, Transvaal Province, South Africa in 1981 and played for South Africa."
+    ]
    }
   },
   "graham-gooch": {
@@ -766,6 +1504,14 @@
      1975,
      1995
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against Australia in 1975, and bowed out against Australia in 1995.",
+     "My Test years overlapped with Ian Botham’s and David Gower’s, in the same side.",
+     "I was born in Whipps Cross, Essex, England in 1953 and played for England."
+    ]
    }
   },
   "greg-chappell": {
@@ -775,6 +1521,14 @@
     "Test": [
      1970,
      1984
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against England in 1970, and bowed out against Pakistan in 1984.",
+     "My Test years overlapped with Dennis Lillee’s and Allan Border’s, in the same side.",
+     "I was born in Unley, South Australia in 1948 and played for Australia."
     ]
    }
   },
@@ -794,6 +1548,26 @@
      2008,
      2021
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm off break, and I bat right-handed.",
+     "I made my Test debut against Australia in 1998, and bowed out against Sri Lanka in 2015.",
+     "Rahul Dravid was a regular Test team-mate. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 114 matches.",
+     "I was born in Jalandhar, Punjab, India in 1980 and played for India."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm off break, and I bat right-handed.",
+     "I made my ODI debut against New Zealand in 1998, and bowed out against South Africa in 2015. I played in the World Cup finals of 2003 and 2011, and won one of them.",
+     "MS Dhoni was a regular ODI team-mate. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 114 matches.",
+     "I was born in Jalandhar, Punjab, India in 1980 and played for India."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm off break, and I bat right-handed.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2008, and bowed out in 2021. I’ve played in 4 IPL finals and won 2 of them.",
+     "At Mumbai Indians I played 114 matches alongside Kieron Pollard. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "I was born in Jalandhar, Punjab, India in 1980 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "hardik-pandya": {
@@ -807,6 +1581,20 @@
     "IPL": [
      2015,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium-fast.",
+     "I made my T20I debut against Australia in 2016, and my most recent T20I came against New Zealand in 2026. I played in the T20 World Cup finals of 2024 and 2026, and won both.",
+     "I played 84 T20Is alongside Suryakumar Yadav. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 86 matches.",
+     "I was born in Choryasi, Gujarat, India in 1993 and played for India."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium-fast.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2015, and my most recent match came in 2026. I’ve played in 6 IPL finals and won 5 of them.",
+     "At Mumbai Indians I played 121 matches alongside Rohit Sharma. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "I was born in Choryasi, Gujarat, India in 1993 and played most of my IPL cricket for Mumbai Indians."
     ]
    }
   },
@@ -822,6 +1610,20 @@
      2008,
      2019
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against India in 2004, and bowed out against Sri Lanka in 2019. My highest Test score, 311*, came against England at London in 2012.",
+     "I played 95 Tests alongside AB de Villiers. In the IPL I shared a dressing room with Glenn Maxwell at Punjab Kings, for 13 matches.",
+     "I was born in Durban, Natal Province, South Africa in 1983 and played for South Africa."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Bangladesh in 2008, and bowed out against Sri Lanka in 2019. My highest ODI score, 159, came against Ireland at Canberra in 2015.",
+     "I played 144 ODIs alongside JP Duminy. In the IPL I shared a dressing room with Glenn Maxwell at Punjab Kings, for 13 matches.",
+     "I was born in Durban, Natal Province, South Africa in 1983 and played for South Africa."
+    ]
    }
   },
   "herschelle-gibbs": {
@@ -831,6 +1633,14 @@
     "ODI": [
      1996,
      2010
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against Kenya in 1996, and bowed out against India in 2010. My highest ODI score, 175, came against Australia at Johannesburg in 2006.",
+     "Jacques Kallis was a regular ODI team-mate. In the IPL I shared a dressing room with Adam Gilchrist at Deccan Chargers, for 33 matches.",
+     "I was born in Cape Town, Western Cape, South Africa in 1974 and played for South Africa."
     ]
    }
   },
@@ -846,6 +1656,20 @@
      1976,
      1992
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my Test debut against Australia in 1977, and bowed out against Pakistan in 1992.",
+     "My Test years overlapped with Graham Gooch’s and David Gower’s, in the same side.",
+     "They call me ‘Beefy’. I was born in Heswall, Cheshire, England in 1955 and played for England."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my ODI debut against West Indies in 1976, and bowed out against Pakistan in 1992.",
+     "I was born in Heswall, Cheshire, England in 1955.",
+     "They call me ‘Beefy’. I played for England."
+    ]
    }
   },
   "imran-khan": {
@@ -859,6 +1683,20 @@
     "ODI": [
      1974,
      1992
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast.",
+     "I made my Test debut against England in 1971, and bowed out against Sri Lanka in 1992.",
+     "My Test years overlapped with Javed Miandad’s and Wasim Akram’s, in the same side.",
+     "They call me ‘Kaptaan’. I was born in Lahore, West Punjab, Pakistan in 1952 and played for Pakistan."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast.",
+     "I made my ODI debut against England in 1974, and bowed out against England in 1992.",
+     "My ODI years overlapped with Javed Miandad’s and Wasim Akram’s, in the same side.",
+     "They call me ‘Kaptaan’. I was born in Lahore, West Punjab, Pakistan in 1952 and played for Pakistan."
     ]
    }
   },
@@ -874,6 +1712,20 @@
      1991,
      2007
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some slow left-arm orthodox on the side.",
+     "I made my Test debut against England in 1992, and bowed out against South Africa in 2007.",
+     "My Test years overlapped with Waqar Younis’s and Wasim Akram’s, in the same side.",
+     "They call me ‘Sultan of Multan’. I was born in Multan, Punjab, Pakistan in 1970 and played for Pakistan."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some slow left-arm orthodox on the side.",
+     "I made my ODI debut against West Indies in 1991, and bowed out against Zimbabwe in 2007. I wore number 8 on my back.",
+     "Shoaib Malik was a regular ODI team-mate.",
+     "They call me ‘Sultan of Multan’. I was born in Multan, Punjab, Pakistan in 1970 and played for Pakistan."
+    ]
    }
   },
   "ish-sodhi": {
@@ -883,6 +1735,14 @@
     "T20I": [
      2014,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my T20I debut against West Indies in 2014, and my most recent T20I came against Bangladesh in 2026. I played in the 2021 T20 World Cup final, on the losing side.",
+     "I played 78 T20Is alongside Tim Southee.",
+     "I was born in Ludhiana, Punjab, India in 1992 and played for New Zealand."
     ]
    }
   },
@@ -894,6 +1754,14 @@
      2008,
      2025
     ]
+   },
+   "hints": {
+    "IPL": [
+     "I’m a bowler: right-arm fast-medium, and I bat right-handed.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2008, and my most recent match came in 2025. My best IPL figures, 5/12, came against Kochi Tuskers Kerala at Kochi in 2011.",
+     "At Kolkata Knight Riders I played 31 matches alongside Sourav Ganguly. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "They call me ‘Lambu’. I was born in Delhi, India in 1988 and played most of my IPL cricket for Delhi Capitals."
+    ]
    }
   },
   "jack-hobbs": {
@@ -903,6 +1771,14 @@
     "Test": [
      1908,
      1930
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against Australia in 1908, and bowed out against Australia in 1930.",
+     "My Test years overlapped with Wally Hammond’s, in the same side.",
+     "They call me ‘The Master’. I was born in Cambridge, England in 1882 and played for England."
     ]
    }
   },
@@ -922,6 +1798,26 @@
      2008,
      2014
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my Test debut against England in 1995, and bowed out against India in 2013. My highest Test score, 224, came against Sri Lanka at Cape Town in 2012.",
+     "Graeme Smith was a regular Test team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Kolkata Knight Riders, for 56 matches.",
+     "They call me ‘Woogie’. I was born in Cape Town, Western Cape, South Africa in 1975 and played for South Africa."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my ODI debut against England in 1996, and bowed out against Sri Lanka in 2014. I wore number 3 on my back.",
+     "Graeme Smith was a regular ODI team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Kolkata Knight Riders, for 56 matches.",
+     "They call me ‘Woogie’. I was born in Cape Town, Western Cape, South Africa in 1975 and played for South Africa."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my IPL debut against Kolkata Knight Riders in 2008, and bowed out in 2014. I’ve played in 2 IPL finals and won one of them.",
+     "At Kolkata Knight Riders I played 56 matches alongside Gautam Gambhir. Away from the IPL, Graeme Smith has been an international team-mate.",
+     "They call me ‘Woogie’. I was born in Cape Town, Western Cape, South Africa in 1975 and played most of my IPL cricket for Kolkata Knight Riders."
+    ]
    }
   },
   "james-anderson": {
@@ -932,6 +1828,14 @@
      2003,
      2024
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast-medium, and I bat left-handed.",
+     "I made my Test debut against Zimbabwe in 2003, and my most recent Test came against West Indies in 2024. My best Test figures, 7/42, came against West Indies at London in 2017.",
+     "I played 138 Tests alongside Stuart Broad.",
+     "I was born in Burnley, Lancashire, England in 1982 and played for England."
+    ]
    }
   },
   "jason-roy": {
@@ -941,6 +1845,14 @@
     "T20I": [
      2014,
      2022
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my T20I debut against India in 2014, and bowed out against South Africa in 2022. My highest T20I score, 78, came against New Zealand at Delhi in 2016.",
+     "I played 55 T20Is alongside Adil Rashid.",
+     "I was born in Durban, South Africa in 1990 and played for England."
     ]
    }
   },
@@ -964,6 +1876,32 @@
      2013,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against South Africa in 2018, and my most recent Test came against South Africa in 2025. My best Test figures, 6/27, came against West Indies at Kingston in 2019.",
+     "I played 40 Tests alongside Rishabh Pant. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 111 matches.",
+     "I was born in Ahmedabad, Gujarat, India in 1993 and played for India."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against Australia in 2016, and my most recent ODI came against England in 2026. I played in the 2023 World Cup final, on the losing side.",
+     "I played 77 ODIs alongside Virat Kohli. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 111 matches.",
+     "I was born in Ahmedabad, Gujarat, India in 1993 and played for India."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my T20I debut against Australia in 2016, and my most recent T20I came against Afghanistan in 2026. I played in the T20 World Cup finals of 2024 and 2026, and won both.",
+     "I played 62 T20Is alongside Hardik Pandya. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 111 matches.",
+     "I was born in Ahmedabad, Gujarat, India in 1993 and played for India."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2013, and my most recent match came in 2026. I’ve played in 3 IPL finals and won them all.",
+     "At Mumbai Indians I played 147 matches alongside Rohit Sharma. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "I was born in Ahmedabad, Gujarat, India in 1993 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "javagal-srinath": {
@@ -973,6 +1911,14 @@
     "ODI": [
      1991,
      2003
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against Pakistan in 1991, and bowed out against Australia in 2003. I played in the 2003 World Cup final, on the losing side.",
+     "My ODI years overlapped with Sachin Tendulkar’s and Anil Kumble’s, in the same side.",
+     "I was born in Mysore, Mysore State, India in 1969 and played for India."
     ]
    }
   },
@@ -988,6 +1934,20 @@
      1975,
      1996
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against New Zealand in 1976, and bowed out against Zimbabwe in 1993.",
+     "My Test years overlapped with Imran Khan’s and Wasim Akram’s, in the same side.",
+     "I was born in Karachi, Federal Capital Territory, Pakistan in 1957 and played for Pakistan."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against West Indies in 1975, and bowed out against India in 1996.",
+     "My ODI years overlapped with Imran Khan’s and Wasim Akram’s, in the same side.",
+     "I was born in Karachi, Federal Capital Territory, Pakistan in 1957 and played for Pakistan."
+    ]
    }
   },
   "joe-root": {
@@ -1002,6 +1962,20 @@
      2013,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against India in 2012, and my most recent Test came against Pakistan in 2026. My highest Test score, 262, came against Pakistan at Multan in 2024.",
+     "I played 120 Tests alongside Ben Stokes.",
+     "I was born in Sheffield, South Yorkshire, England in 1990 and played for England."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against India in 2013, and my most recent ODI came against Sri Lanka in 2026. I played in the 2019 World Cup final.",
+     "I played 170 ODIs alongside Jos Buttler.",
+     "I was born in Sheffield, South Yorkshire, England in 1990 and played for England."
+    ]
    }
   },
   "jonny-bairstow": {
@@ -1011,6 +1985,14 @@
     "T20I": [
      2011,
      2024
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against West Indies in 2011, and my most recent T20I came against India in 2024. My highest T20I score, 90, came against South Africa at Bristol in 2022.",
+     "I played 63 T20Is alongside Jos Buttler. In the IPL I shared a dressing room with Rashid Khan at Sunrisers Hyderabad, for 28 matches.",
+     "They call me ‘Bluey’. I was born in Bradford, West Yorkshire, England in 1989 and played for England."
     ]
    }
   },
@@ -1030,6 +2012,26 @@
      2016,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I keep wicket and bat right-handed.",
+     "I made my ODI debut against Pakistan in 2012, and my most recent ODI came against Sri Lanka in 2026. I played in the 2019 World Cup final.",
+     "I played 170 ODIs alongside Joe Root. In the IPL I shared a dressing room with Sanju Samson at Rajasthan Royals, for 81 matches.",
+     "I was born in Taunton, Somerset, England in 1990 and played for England."
+    ],
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against India in 2011, and my most recent T20I came against Sri Lanka in 2026. I played in the 2022 T20 World Cup final, on the winning side.",
+     "I played 115 T20Is alongside Adil Rashid. In the IPL I shared a dressing room with Sanju Samson at Rajasthan Royals, for 81 matches.",
+     "I was born in Taunton, Somerset, England in 1990 and played for England."
+    ],
+    "IPL": [
+     "I keep wicket and bat right-handed.",
+     "I made my IPL debut against Rising Pune Supergiant in 2016, and my most recent match came in 2026. I’ve played in 2 IPL finals and lost both.",
+     "At Rajasthan Royals I played 81 matches alongside Sanju Samson. Away from the IPL, Adil Rashid has been an international team-mate.",
+     "I was born in Taunton, Somerset, England in 1990 and played most of my IPL cricket for Rajasthan Royals."
+    ]
    }
   },
   "jp-duminy": {
@@ -1044,6 +2046,20 @@
      2009,
      2018
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm off break.",
+     "I made my T20I debut against West Indies in 2007, and bowed out against Sri Lanka in 2019. My highest T20I score, 96*, came against Zimbabwe at Kimberley in 2010.",
+     "I played 59 T20Is alongside AB de Villiers. In the IPL I shared a dressing room with Amit Mishra at Delhi Capitals, for 22 matches.",
+     "I was born in Strandfontein, Cape Town, Cape Province, South Africa in 1984 and played for South Africa."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm off break.",
+     "I made my IPL debut against Chennai Super Kings in 2009, and bowed out in 2018. I’ve played in one IPL final, and lost it.",
+     "At Delhi Capitals I played 22 matches alongside Amit Mishra. Away from the IPL, AB de Villiers has been an international team-mate.",
+     "I was born in Strandfontein, Cape Town, Cape Province, South Africa in 1984 and played most of my IPL cricket for Delhi Capitals."
+    ]
    }
   },
   "justin-langer": {
@@ -1053,6 +2069,14 @@
     "Test": [
      1993,
      2007
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my Test debut against West Indies in 1993, and bowed out against England in 2007. My highest Test score, 250, came against England at Melbourne in 2002.",
+     "Matthew Hayden was a regular Test team-mate.",
+     "They call me ‘Alfie’. I was born in Perth, Western Australia in 1970 and played for Australia."
     ]
    }
   },
@@ -1076,6 +2100,32 @@
      2017,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat left-handed.",
+     "I made my Test debut against India in 2015, and my most recent Test came against Pakistan in 2025. My best Test figures, 7/112, came against England at Centurion in 2016.",
+     "I played 46 Tests alongside Aiden Markram. In the IPL I shared a dressing room with Rishabh Pant at Delhi Capitals, for 47 matches.",
+     "I was born in Johannesburg, Gauteng, South Africa in 1995 and played for South Africa."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat left-handed.",
+     "I made my ODI debut against Bangladesh in 2015, and my most recent ODI came against New Zealand in 2025. My best ODI figures, 6/16, came against Bangladesh at Mirpur in 2015.",
+     "I played 84 ODIs alongside Quinton de Kock. In the IPL I shared a dressing room with Rishabh Pant at Delhi Capitals, for 47 matches.",
+     "I was born in Johannesburg, Gauteng, South Africa in 1995 and played for South Africa."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm fast, and I bat left-handed.",
+     "I made my T20I debut against Australia in 2014, and my most recent T20I came against England in 2025. I played in the 2024 T20 World Cup final, on the losing side.",
+     "I played 63 T20Is alongside David Miller. In the IPL I shared a dressing room with Rishabh Pant at Delhi Capitals, for 47 matches.",
+     "I was born in Johannesburg, Gauteng, South Africa in 1995 and played for South Africa."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm fast, and I bat left-handed.",
+     "I made my IPL debut against Mumbai Indians in 2017, and my most recent match came in 2026. I’ve played in 2 IPL finals and lost both.",
+     "At Delhi Capitals I played 47 matches alongside Rishabh Pant. Away from the IPL, Quinton de Kock has been an international team-mate.",
+     "I was born in Johannesburg, Gauteng, South Africa in 1995 and played most of my IPL cricket for Delhi Capitals."
+    ]
    }
   },
   "kane-williamson": {
@@ -1098,6 +2148,32 @@
      2015,
      2024
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against India in 2010, and my most recent Test came against England in 2026. My highest Test score, 251, came against West Indies at Hamilton in 2020.",
+     "I played 88 Tests alongside Tim Southee. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 59 matches.",
+     "I was born in Tauranga, New Zealand in 1990 and played for New Zealand."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against India in 2010, and my most recent ODI came against England in 2025. I played in the World Cup finals of 2015 and 2019.",
+     "I played 131 ODIs alongside Martin Guptill. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 59 matches.",
+     "I was born in Tauranga, New Zealand in 1990 and played for New Zealand."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Zimbabwe in 2011, and my most recent T20I came against Papua New Guinea in 2024. I played in the 2021 T20 World Cup final, on the losing side.",
+     "I played 66 T20Is alongside Tim Southee. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 59 matches.",
+     "I was born in Tauranga, New Zealand in 1990 and played for New Zealand."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Chennai Super Kings in 2015, and my most recent match came in 2024. I’ve played in one IPL final, and lost it.",
+     "At Sunrisers Hyderabad I played 59 matches alongside Bhuvneshwar Kumar. Away from the IPL, Tim Southee has been an international team-mate.",
+     "I was born in Tauranga, New Zealand in 1990 and played most of my IPL cricket for Sunrisers Hyderabad."
+    ]
    }
   },
   "kapil-dev": {
@@ -1111,6 +2187,20 @@
     "ODI": [
      1978,
      1994
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my Test debut against Pakistan in 1978, and bowed out against New Zealand in 1994.",
+     "My Test years overlapped with Dilip Vengsarkar’s and Mohammad Azharuddin’s, in the same side.",
+     "They call me ‘The Haryana Hurricane’. I was born in Chandigarh, East Punjab, India in 1959 and played for India."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my ODI debut against Pakistan in 1978, and bowed out against West Indies in 1994.",
+     "My ODI years overlapped with Mohammad Azharuddin’s and Sachin Tendulkar’s, in the same side.",
+     "They call me ‘The Haryana Hurricane’. I was born in Chandigarh, East Punjab, India in 1959 and played for India."
     ]
    }
   },
@@ -1126,6 +2216,20 @@
      2004,
      2013
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against Australia in 2005, and bowed out against Australia in 2014. My highest Test score, 227, came against Australia at Adelaide Oval in 2010.",
+     "I played 95 Tests alongside Alastair Cook. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 13 matches.",
+     "I was born in Pietermaritzburg, South Africa in 1980 and played for England."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Zimbabwe in 2004, and bowed out against Australia in 2013. My highest ODI score, 130, came against Pakistan at Dubai International Cricket Stadium in 2012.",
+     "James Anderson was a regular ODI team-mate. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 13 matches.",
+     "I was born in Pietermaritzburg, South Africa in 1980 and played for England."
+    ]
    }
   },
   "kieron-pollard": {
@@ -1139,6 +2243,20 @@
     "IPL": [
      2010,
      2022
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium.",
+     "I made my T20I debut against Australia in 2008, and bowed out against India in 2022. I played in the 2012 T20 World Cup final, on the winning side.",
+     "I played 62 T20Is alongside Dwayne Bravo. In the IPL I shared a dressing room with Rohit Sharma at Mumbai Indians, for 169 matches.",
+     "I was born in Tacarigua, Trinidad and Tobago in 1987 and played for West Indies."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium.",
+     "I made my IPL debut against Delhi Capitals in 2010, and bowed out in 2022. I’ve played in 6 IPL finals and won 5 of them.",
+     "At Mumbai Indians I played 169 matches alongside Rohit Sharma. Away from the IPL, Dwayne Bravo has been an international team-mate.",
+     "I was born in Tacarigua, Trinidad and Tobago in 1987 and played most of my IPL cricket for Mumbai Indians."
     ]
    }
   },
@@ -1158,6 +2276,26 @@
      2013,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I keep wicket and bat right-handed.",
+     "I made my ODI debut against Zimbabwe in 2016, and my most recent ODI came against England in 2026. I played in the 2023 World Cup final, on the losing side.",
+     "I played 80 ODIs alongside Virat Kohli. In the IPL I shared a dressing room with Chris Gayle at Punjab Kings, for 40 matches.",
+     "I was born in Bangalore, Karnataka, India in 1992 and played for India."
+    ],
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against Zimbabwe in 2016, and bowed out against England in 2022. My highest T20I score, 110*, came against West Indies at Lauderhill in 2016.",
+     "I played 53 T20Is alongside Rohit Sharma. In the IPL I shared a dressing room with Chris Gayle at Punjab Kings, for 40 matches.",
+     "I was born in Bangalore, Karnataka, India in 1992 and played for India."
+    ],
+    "IPL": [
+     "I keep wicket and bat right-handed.",
+     "I made my IPL debut against Kolkata Knight Riders in 2013, and my most recent match came in 2026. I’ve played in one IPL final, and lost it.",
+     "At Punjab Kings I played 41 matches alongside Mohammed Shami. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "I was born in Bangalore, Karnataka, India in 1992 and played most of my IPL cricket for Punjab Kings."
+    ]
    }
   },
   "kuldeep-yadav": {
@@ -1171,6 +2309,20 @@
     "IPL": [
      2016,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a bowler: left-arm wrist spin, and I bat left-handed.",
+     "I made my T20I debut against West Indies in 2017, and my most recent T20I came against Pakistan in 2026. I played in the 2024 T20 World Cup final, on the winning side.",
+     "Hardik Pandya was a regular T20I team-mate. In the IPL I shared a dressing room with Sunil Narine at Kolkata Knight Riders, for 40 matches.",
+     "I was born in Unnao, Uttar Pradesh, India in 1994 and played for India."
+    ],
+    "IPL": [
+     "I’m a bowler: left-arm wrist spin, and I bat left-handed.",
+     "I made my IPL debut against Mumbai Indians in 2016, and my most recent match came in 2026. My best IPL figures, 4/14, came against Kolkata Knight Riders at Mumbai in 2022.",
+     "At Kolkata Knight Riders I played 40 matches alongside Sunil Narine. Away from the IPL, Rohit Sharma has been an international team-mate.",
+     "I was born in Unnao, Uttar Pradesh, India in 1994 and played most of my IPL cricket for Delhi Capitals."
     ]
    }
   },
@@ -1190,6 +2342,26 @@
      2006,
      2014
     ]
+   },
+   "hints": {
+    "Test": [
+     "I keep wicket and bat left-handed.",
+     "I made my Test debut against South Africa in 2000, and bowed out against India in 2015. My highest Test score, 319, came against Bangladesh at Chittagong in 2014.",
+     "Mahela Jayawardene was a regular Test team-mate. In the IPL I shared a dressing room with Yuvraj Singh at Punjab Kings, for 37 matches.",
+     "I was born in Matale, Sri Lanka in 1977 and played for Sri Lanka."
+    ],
+    "ODI": [
+     "I keep wicket and bat left-handed.",
+     "I made my ODI debut against Pakistan in 2000, and bowed out against South Africa in 2015. I played in the World Cup finals of 2007 and 2011, and lost both.",
+     "Mahela Jayawardene was a regular ODI team-mate. In the IPL I shared a dressing room with Yuvraj Singh at Punjab Kings, for 37 matches.",
+     "I was born in Matale, Sri Lanka in 1977 and played for Sri Lanka."
+    ],
+    "T20I": [
+     "I keep wicket and bat left-handed.",
+     "I made my T20I debut against England in 2006, and bowed out against India in 2014. I played in the T20 World Cup finals of 2009 and 2012, and lost both.",
+     "I played 52 T20Is alongside Tillakaratne Dilshan. In the IPL I shared a dressing room with Yuvraj Singh at Punjab Kings, for 37 matches.",
+     "I was born in Matale, Sri Lanka in 1977 and played for Sri Lanka."
+    ]
    }
   },
   "kusal-mendis": {
@@ -1199,6 +2371,14 @@
     "T20I": [
      2016,
      2025
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against England in 2016, and my most recent T20I came against India in 2025. My highest T20I score, 86, came against Bangladesh at Sylhet in 2024.",
+     "I played 84 T20Is alongside Dasun Shanaka.",
+     "I was born in Moratuwa, Sri Lanka in 1995 and played for Sri Lanka."
     ]
    }
   },
@@ -1210,6 +2390,14 @@
      2013,
      2025
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat left-handed.",
+     "I made my T20I debut against Australia in 2013, and my most recent T20I came against India in 2025. My highest T20I score, 101, came against New Zealand at Nelson in 2025.",
+     "I played 56 T20Is alongside Dasun Shanaka.",
+     "I was born in Kalubowila, Sri Lanka in 1990 and played for Sri Lanka."
+    ]
    }
   },
   "lance-klusener": {
@@ -1219,6 +2407,14 @@
     "ODI": [
      1996,
      2004
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm fast-medium.",
+     "I made my ODI debut against England in 1996, and bowed out against West Indies in 2004. I wore number 69 on my back.",
+     "My ODI years overlapped with Jacques Kallis’s and Shaun Pollock’s, in the same side.",
+     "They call me ‘Zulu’. I was born in Durban, Natal Province, South Africa in 1971 and played for South Africa."
     ]
    }
   },
@@ -1238,6 +2434,26 @@
      2009,
      2019
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against UAE in 2004, and bowed out against Bangladesh in 2019. I played in the World Cup finals of 2007 and 2011, and lost both.",
+     "Tillakaratne Dilshan was a regular ODI team-mate. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 104 matches.",
+     "I was born in Galle, Sri Lanka in 1983 and played for Sri Lanka."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my T20I debut against England in 2006, and bowed out against West Indies in 2020. I played in the T20 World Cup finals of 2009 and 2012, and lost both.",
+     "I played 58 T20Is alongside Tillakaratne Dilshan. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 104 matches.",
+     "I was born in Galle, Sri Lanka in 1983 and played for Sri Lanka."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my IPL debut against Chennai Super Kings in 2009, and bowed out in 2019. I’ve played in 5 IPL finals and won 4 of them.",
+     "At Mumbai Indians I played 104 matches alongside Kieron Pollard. Away from the IPL, Tillakaratne Dilshan has been an international team-mate.",
+     "I was born in Galle, Sri Lanka in 1983 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "len-hutton": {
@@ -1248,6 +2464,14 @@
      1937,
      1955
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against New Zealand in 1937, and bowed out against New Zealand in 1955.",
+     "My Test years overlapped with Wally Hammond’s, in the same side.",
+     "I was born in Fulneck, Pudsey, Yorkshire, England in 1916 and played for England."
+    ]
    }
   },
   "liton-das": {
@@ -1257,6 +2481,14 @@
     "T20I": [
      2015,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against South Africa in 2015, and my most recent T20I came against New Zealand in 2026. My highest T20I score, 83, came against Ireland at Chattogram in 2023.",
+     "Mustafizur Rahman was a regular T20I team-mate.",
+     "I was born in Dinajpur, Bangladesh in 1994 and played for Bangladesh."
     ]
    }
   },
@@ -1276,6 +2508,26 @@
      2008,
      2013
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against India in 1997, and bowed out against Pakistan in 2014. My highest Test score, 374, came against South Africa at Colombo in 2006.",
+     "Kumar Sangakkara was a regular Test team-mate. In the IPL I shared a dressing room with Yuvraj Singh at Punjab Kings, for 36 matches.",
+     "I was born in Colombo, Sri Lanka in 1977 and played for Sri Lanka."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against Zimbabwe in 1998, and bowed out against South Africa in 2015. I played in the World Cup finals of 2007 and 2011, and lost both.",
+     "Kumar Sangakkara was a regular ODI team-mate. In the IPL I shared a dressing room with Yuvraj Singh at Punjab Kings, for 36 matches.",
+     "I was born in Colombo, Sri Lanka in 1977 and played for Sri Lanka."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my IPL debut against Rajasthan Royals in 2008, and bowed out in 2013. My highest IPL score, 110*, came against Kolkata Knight Riders at Kolkata in 2010.",
+     "At Punjab Kings I played 36 matches alongside Yuvraj Singh. Away from the IPL, Kumar Sangakkara has been an international team-mate.",
+     "I was born in Colombo, Sri Lanka in 1977 and played most of my IPL cricket for Punjab Kings."
+    ]
    }
   },
   "mahmudullah": {
@@ -1286,6 +2538,14 @@
      2007,
      2024
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Kenya in 2007, and my most recent T20I came against India in 2024. My highest T20I score, 64*, came against West Indies at Mirpur in 2012.",
+     "Shakib Al Hasan was a regular T20I team-mate.",
+     "They call me ‘Riyad’. I was born in Mymensingh, Bangladesh in 1986 and played for Bangladesh."
+    ]
    }
   },
   "malcolm-marshall": {
@@ -1295,6 +2555,14 @@
     "Test": [
      1978,
      1991
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against India in 1978, and bowed out against England in 1991.",
+     "My Test years overlapped with Viv Richards’s and Desmond Haynes’s, in the same side.",
+     "I was born in Bridgetown, Barbados in 1958 and played for West Indies."
     ]
    }
   },
@@ -1310,6 +2578,20 @@
      1988,
      2002
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium.",
+     "I made my Test debut against England in 1991, and bowed out against Pakistan in 2002.",
+     "My Test years overlapped with Shane Warne’s and Glenn McGrath’s, in the same side.",
+     "They call me ‘Junior’. I was born in Campsie, New South Wales, Australia in 1965 and played for Australia."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm medium.",
+     "I made my ODI debut against Pakistan in 1988, and bowed out against South Africa in 2002. I wore number 6 on my back.",
+     "My ODI years overlapped with Glenn McGrath’s and Shane Warne’s, in the same side.",
+     "They call me ‘Junior’. I was born in Campsie, New South Wales, Australia in 1965 and played for Australia."
+    ]
    }
   },
   "marnus-labuschagne": {
@@ -1320,6 +2602,14 @@
      2018,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium-fast on the side.",
+     "I made my Test debut against Pakistan in 2018, and my most recent Test came against Bangladesh in 2026. My highest Test score, 215, came against New Zealand at Sydney in 2020.",
+     "I played 60 Tests alongside Travis Head.",
+     "I was born in Klerksdorp, South Africa in 1994 and played for Australia."
+    ]
    }
   },
   "martin-crowe": {
@@ -1329,6 +2619,14 @@
     "Test": [
      1982,
      1995
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against Australia in 1982, and bowed out against India in 1995.",
+     "My Test years overlapped with Richard Hadlee’s, in the same side.",
+     "I was born in Henderson, New Zealand in 1962 and played for New Zealand."
     ]
    }
   },
@@ -1343,6 +2641,20 @@
     "T20I": [
      2009,
      2022
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against West Indies in 2009, and bowed out against Australia in 2022. I played in the World Cup finals of 2015 and 2019.",
+     "I played 149 ODIs alongside Ross Taylor.",
+     "They call me ‘Two Toes’. I was born in Auckland, New Zealand in 1986 and played for New Zealand."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Australia in 2009, and bowed out against Bangladesh in 2022. I played in the 2021 T20 World Cup final, on the losing side.",
+     "I played 76 T20Is alongside Tim Southee.",
+     "They call me ‘Two Toes’. I was born in Auckland, New Zealand in 1986 and played for New Zealand."
     ]
    }
   },
@@ -1362,6 +2674,26 @@
      2008,
      2010
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm fast-medium on the side.",
+     "I made my Test debut against South Africa in 1994, and bowed out against South Africa in 2009. My highest Test score, 380, came against Zimbabwe at Perth in 2003.",
+     "Ricky Ponting was a regular Test team-mate. In the IPL I shared a dressing room with Suresh Raina at Chennai Super Kings, for 32 matches.",
+     "They call me ‘Unit’. I was born in Kingaroy, Queensland, Australia in 1971 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm fast-medium on the side.",
+     "I made my ODI debut against England in 1993, and bowed out against India in 2008. I played in the World Cup finals of 2003 and 2007, and won both.",
+     "Ricky Ponting was a regular ODI team-mate. In the IPL I shared a dressing room with Suresh Raina at Chennai Super Kings, for 32 matches.",
+     "They call me ‘Unit’. I was born in Kingaroy, Queensland, Australia in 1971 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm fast-medium on the side.",
+     "I made my IPL debut against Punjab Kings in 2008, and bowed out in 2010. I’ve played in one IPL final, and won it.",
+     "At Chennai Super Kings I played 32 matches alongside Suresh Raina. Away from the IPL, Ricky Ponting has been an international team-mate.",
+     "They call me ‘Unit’. I was born in Kingaroy, Queensland, Australia in 1971 and played most of my IPL cricket for Chennai Super Kings."
+    ]
    }
   },
   "michael-bevan": {
@@ -1371,6 +2703,14 @@
     "ODI": [
      1994,
      2004
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some slow left-arm wrist spin on the side.",
+     "I made my ODI debut against Sri Lanka in 1994, and bowed out against Sri Lanka in 2004. I played in the 2003 World Cup final, on the winning side.",
+     "Ricky Ponting was a regular ODI team-mate.",
+     "I was born in Belconnen, Australian Capital Territory in 1970 and played for Australia."
     ]
    }
   },
@@ -1390,6 +2730,26 @@
      2008,
      2015
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my Test debut against West Indies in 2005, and bowed out against Sri Lanka in 2013. My highest Test score, 195, came against England at Brisbane in 2010.",
+     "Ricky Ponting was a regular Test team-mate. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 50 matches.",
+     "They call me ‘Mr. Cricket’. I was born in Mount Lawley, Western Australia, Australia in 1975 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against India in 2004, and bowed out against Pakistan in 2012. I played in the 2007 World Cup final, on the winning side.",
+     "Ricky Ponting was a regular ODI team-mate. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 50 matches.",
+     "They call me ‘Mr. Cricket’. I was born in Mount Lawley, Western Australia, Australia in 1975 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my IPL debut against Punjab Kings in 2008, and bowed out in 2015. I’ve played in 4 IPL finals and won one of them.",
+     "At Chennai Super Kings I played 50 matches alongside MS Dhoni. Away from the IPL, Ricky Ponting has been an international team-mate.",
+     "They call me ‘Mr. Cricket’. I was born in Mount Lawley, Western Australia, Australia in 1975 and played most of my IPL cricket for Chennai Super Kings."
+    ]
    }
   },
   "mitchell-marsh": {
@@ -1399,6 +2759,14 @@
     "T20I": [
      2011,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my T20I debut against South Africa in 2011, and my most recent T20I came against Bangladesh in 2026. I played in the 2021 T20 World Cup final, on the winning side.",
+     "I played 71 T20Is alongside Adam Zampa. In the IPL I shared a dressing room with Rishabh Pant at Lucknow Super Giants, for 26 matches.",
+     "They call me ‘Bison’. I was born in Attadale, Western Australia in 1991 and played for Australia."
     ]
    }
   },
@@ -1422,6 +2790,32 @@
      2014,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: left-arm fast, and I bat left-handed.",
+     "I made my Test debut against New Zealand in 2011, and my most recent Test came against Bangladesh in 2026. My best Test figures, 7/58, came against England at Perth in 2025.",
+     "I played 98 Tests alongside Nathan Lyon. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 27 matches.",
+     "I was born in Baulkham Hills, New South Wales, Australia in 1990 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a bowler: left-arm fast, and I bat left-handed.",
+     "I made my ODI debut against India in 2010, and my most recent ODI came against South Africa in 2026. I played in the World Cup finals of 2015 and 2023, and won both.",
+     "I played 92 ODIs alongside Steve Smith. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 27 matches.",
+     "I was born in Baulkham Hills, New South Wales, Australia in 1990 and played for Australia."
+    ],
+    "T20I": [
+     "I’m a bowler: left-arm fast, and I bat left-handed.",
+     "I made my T20I debut against Pakistan in 2012, and my most recent T20I came against India in 2024. I played in the 2021 T20 World Cup final, on the winning side.",
+     "I played 50 T20Is alongside Glenn Maxwell. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 27 matches.",
+     "I was born in Baulkham Hills, New South Wales, Australia in 1990 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a bowler: left-arm fast, and I bat left-handed.",
+     "I made my IPL debut against Delhi Capitals in 2014, and my most recent match came in 2026. I’ve played in one IPL final, and won it.",
+     "At Royal Challengers Bengaluru I played 27 matches alongside AB de Villiers. Away from the IPL, David Warner has been an international team-mate.",
+     "I was born in Baulkham Hills, New South Wales, Australia in 1990 and played most of my IPL cricket for Royal Challengers Bengaluru."
+    ]
    }
   },
   "mohammad-azharuddin": {
@@ -1436,6 +2830,20 @@
      1985,
      2000
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against England in 1984, and bowed out against South Africa in 2000.",
+     "My Test years overlapped with Sachin Tendulkar’s and Anil Kumble’s, in the same side.",
+     "I was born in Hyderabad, Telangana, India in 1963 and played for India."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against England in 1985, and bowed out against Pakistan in 2000.",
+     "My ODI years overlapped with Sachin Tendulkar’s and Anil Kumble’s, in the same side.",
+     "I was born in Hyderabad, Telangana, India in 1963 and played for India."
+    ]
    }
   },
   "mohammad-hafeez": {
@@ -1445,6 +2853,14 @@
     "T20I": [
      2006,
      2021
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my T20I debut against England in 2006, and bowed out against Australia in 2021. I played in the 2007 T20 World Cup final, on the losing side.",
+     "I played 71 T20Is alongside Shoaib Malik.",
+     "They call me ‘Chanda’. I was born in Sargodha, Punjab, Pakistan in 1980 and played for Pakistan."
     ]
    }
   },
@@ -1456,6 +2872,14 @@
      2010,
      2026
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my T20I debut against Ireland in 2010, and my most recent T20I came against Canada in 2026. I wore number 7 on my back.",
+     "My T20I years overlapped with Rashid Khan’s, in the same side.",
+     "They call me ‘The President’. I was born in Logar, Afghanistan in 1985 and played for Afghanistan."
+    ]
    }
   },
   "mohammed-shami": {
@@ -1465,6 +2889,14 @@
     "IPL": [
      2013,
      2026
+    ]
+   },
+   "hints": {
+    "IPL": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my IPL debut against Rajasthan Royals in 2013, and my most recent match came in 2026. I’ve played in 2 IPL finals and won one of them.",
+     "At Punjab Kings I played 41 matches alongside KL Rahul. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "They call me ‘Lala’. I was born in Amroha, Uttar Pradesh, India in 1990 and played most of my IPL cricket for Punjab Kings."
     ]
    }
   },
@@ -1488,6 +2920,32 @@
      2008,
      2025
     ]
+   },
+   "hints": {
+    "Test": [
+     "I keep wicket and bat right-handed.",
+     "I made my Test debut against Sri Lanka in 2005, and bowed out against Australia in 2014. My highest Test score, 224, came against Australia at Chennai in 2013.",
+     "I played 66 Tests alongside Sachin Tendulkar. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 114 matches.",
+     "They call me ‘Mahi’. I was born in Ranchi, Bihar, India in 1981 and played for India."
+    ],
+    "ODI": [
+     "I keep wicket and bat right-handed.",
+     "I made my ODI debut against Bangladesh in 2004, and bowed out against New Zealand in 2019. I played in the 2011 World Cup final, on the winning side.",
+     "Virat Kohli was a regular ODI team-mate. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 114 matches.",
+     "They call me ‘Mahi’. I was born in Ranchi, Bihar, India in 1981 and played for India."
+    ],
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against South Africa in 2006, and bowed out against Australia in 2019. I played in the 2007 T20 World Cup final, on the winning side.",
+     "I played 78 T20Is alongside Rohit Sharma. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 114 matches.",
+     "They call me ‘Mahi’. I was born in Ranchi, Bihar, India in 1981 and played for India."
+    ],
+    "IPL": [
+     "I keep wicket and bat right-handed.",
+     "I made my IPL debut against Punjab Kings in 2008, and my most recent match came in 2025. I’ve played in 11 IPL finals and won 5 of them.",
+     "At Chennai Super Kings I played 184 matches alongside Ravindra Jadeja. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "They call me ‘Mahi’. I was born in Ranchi, Bihar, India in 1981 and played most of my IPL cricket for Chennai Super Kings."
+    ]
    }
   },
   "mushfiqur-rahim": {
@@ -1498,6 +2956,14 @@
      2006,
      2025
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I keep wicket and bat right-handed.",
+     "I made my ODI debut against Zimbabwe in 2006, and my most recent ODI came against New Zealand in 2025. My highest ODI score, 144, came against Sri Lanka at Dubai International Cricket Stadium in 2018.",
+     "Tamim Iqbal was a regular ODI team-mate.",
+     "I was born in Bogura, Bangladesh in 1987 and played for Bangladesh."
+    ]
    }
   },
   "mustafizur-rahman": {
@@ -1507,6 +2973,14 @@
     "T20I": [
      2015,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a bowler: left-arm fast-medium, and I bat left-handed.",
+     "I made my T20I debut against Pakistan in 2015, and my most recent T20I came against Australia in 2026. I wore number 90 on my back.",
+     "Liton Das was a regular T20I team-mate. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 17 matches.",
+     "They call me ‘The Fizz’. I was born in Satkhira, Bangladesh in 1995 and played for Bangladesh."
     ]
    }
   },
@@ -1522,6 +2996,20 @@
      1993,
      2011
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm off break, and I bat right-handed.",
+     "I made my Test debut against Australia in 1992, and bowed out against India in 2010.",
+     "Mahela Jayawardene was a regular Test team-mate. In the IPL I shared a dressing room with Suresh Raina at Chennai Super Kings, for 40 matches.",
+     "I was born in Kandy, Ceylon in 1972 and played for Sri Lanka."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm off break, and I bat right-handed.",
+     "I made my ODI debut against India in 1993, and bowed out against India in 2011. I played in the World Cup finals of 2007 and 2011, and lost both.",
+     "Kumar Sangakkara was a regular ODI team-mate. In the IPL I shared a dressing room with Suresh Raina at Chennai Super Kings, for 40 matches.",
+     "I was born in Kandy, Ceylon in 1972 and played for Sri Lanka."
+    ]
    }
   },
   "nathan-lyon": {
@@ -1531,6 +3019,14 @@
     "Test": [
      2011,
      2026
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm off break, and I bat right-handed.",
+     "I made my Test debut against Sri Lanka in 2011, and my most recent Test came against Bangladesh in 2026. My best Test figures, 8/50, came against India at Bengaluru in 2017.",
+     "I played 111 Tests alongside Steve Smith.",
+     "They call me ‘The Goat’. I was born in Young, New South Wales, Australia in 1987 and played for Australia."
     ]
    }
   },
@@ -1545,6 +3041,20 @@
     "IPL": [
      2019,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat left-handed.",
+     "I made my T20I debut against Pakistan in 2016, and my most recent T20I came against Bangladesh in 2024. I wore number 29 on my back.",
+     "I played 69 T20Is alongside Rovman Powell. In the IPL I shared a dressing room with KL Rahul at Punjab Kings, for 33 matches.",
+     "I was born in Couva, Trinidad and Tobago in 1995 and played for West Indies."
+    ],
+    "IPL": [
+     "I keep wicket and bat left-handed.",
+     "I made my IPL debut against Rajasthan Royals in 2019, and my most recent match came in 2026. My highest IPL score, 87*, came against Kolkata Knight Riders at Kolkata in 2025.",
+     "At Punjab Kings I played 33 matches alongside KL Rahul. Away from the IPL, Shai Hope has been an international team-mate.",
+     "I was born in Couva, Trinidad and Tobago in 1995 and played most of my IPL cricket for Lucknow Super Giants."
     ]
    }
   },
@@ -1564,6 +3074,26 @@
      2014,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against South Africa in 2011, and my most recent Test came against Bangladesh in 2026. My best Test figures, 6/23, came against Sri Lanka at Brisbane in 2019.",
+     "I played 70 Tests alongside Nathan Lyon. In the IPL I shared a dressing room with Andre Russell at Kolkata Knight Riders, for 25 matches.",
+     "They call me ‘Silencer’. I was born in Westmead, New South Wales, Australia in 1993 and played for Australia."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my T20I debut against South Africa in 2011, and my most recent T20I came against India in 2024. I played in the 2021 T20 World Cup final, on the winning side.",
+     "I played 41 T20Is alongside Glenn Maxwell. In the IPL I shared a dressing room with Andre Russell at Kolkata Knight Riders, for 25 matches.",
+     "They call me ‘Silencer’. I was born in Westmead, New South Wales, Australia in 1993 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my IPL debut against Chennai Super Kings in 2014, and my most recent match came in 2026. I’ve played in one IPL final, and lost it.",
+     "At Sunrisers Hyderabad I played 36 matches alongside Travis Head. Away from the IPL, Steve Smith has been an international team-mate.",
+     "They call me ‘Silencer’. I was born in Westmead, New South Wales, Australia in 1993 and played most of my IPL cricket for Sunrisers Hyderabad."
+    ]
    }
   },
   "pathum-nissanka": {
@@ -1573,6 +3103,14 @@
     "T20I": [
      2021,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a right-handed batter.",
+     "I made my T20I debut against West Indies in 2021, and my most recent T20I came against Australia in 2026. My highest T20I score, 107, came against India at Dubai in 2025.",
+     "I played 77 T20Is alongside Dasun Shanaka. In the IPL I shared a dressing room with Kuldeep Yadav at Delhi Capitals, for 10 matches.",
+     "I was born in Galle, Sri Lanka in 1998 and played for Sri Lanka."
     ]
    }
   },
@@ -1588,6 +3126,20 @@
      2009,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against New Zealand in 2008, and my most recent ODI came against Afghanistan in 2026. I wore number 1 on my back.",
+     "I was born in Belfast, Northern Ireland in 1990.",
+     "I played for Ireland."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Pakistan in 2009, and my most recent T20I came against Australia in 2026. My highest T20I score, 115*, came against Zimbabwe at Bready in 2021.",
+     "My T20I years overlapped with Andrew Balbirnie’s, in the same side.",
+     "I was born in Belfast, Northern Ireland in 1990 and played for Ireland."
+    ]
    }
   },
   "phil-salt": {
@@ -1597,6 +3149,14 @@
     "T20I": [
      2022,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against West Indies in 2022, and my most recent T20I came against India in 2026. I wore number 61 on my back.",
+     "My T20I years overlapped with Jos Buttler’s and Adil Rashid’s, in the same side.",
+     "I was born in Bodelwyddan, Denbighshire, Wales in 1996 and played for England."
     ]
    }
   },
@@ -1616,6 +3176,26 @@
      2013,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I keep wicket and bat left-handed.",
+     "I made my ODI debut against New Zealand in 2013, and my most recent ODI came against Australia in 2026. My highest ODI score, 178, came against Australia at Centurion in 2016.",
+     "I played 125 ODIs alongside David Miller. In the IPL I shared a dressing room with Suryakumar Yadav at Mumbai Indians, for 46 matches.",
+     "I was born in Johannesburg, Transvaal, South Africa in 1992 and played for South Africa."
+    ],
+    "T20I": [
+     "I keep wicket and bat left-handed.",
+     "I made my T20I debut against New Zealand in 2012, and my most recent T20I came against New Zealand in 2026. I played in the 2024 T20 World Cup final, on the losing side.",
+     "I played 88 T20Is alongside David Miller. In the IPL I shared a dressing room with Suryakumar Yadav at Mumbai Indians, for 46 matches.",
+     "I was born in Johannesburg, Transvaal, South Africa in 1992 and played for South Africa."
+    ],
+    "IPL": [
+     "I keep wicket and bat left-handed.",
+     "I made my IPL debut against Pune Warriors in 2013, and my most recent match came in 2026. I’ve played in 2 IPL finals and won both.",
+     "At Mumbai Indians I played 46 matches alongside Suryakumar Yadav. Away from the IPL, David Miller has been an international team-mate.",
+     "I was born in Johannesburg, Transvaal, South Africa in 1992 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "rahul-dravid": {
@@ -1634,6 +3214,26 @@
      2008,
      2013
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against England in 1996, and bowed out against Australia in 2012. My highest Test score, 270, came against Pakistan at Rawalpindi in 2004.",
+     "VVS Laxman was a regular Test team-mate. In the IPL I shared a dressing room with Jacques Kallis at Royal Challengers Bengaluru, for 39 matches.",
+     "They call me ‘The Wall’. I was born in Indore, Madhya Pradesh, India in 1973 and played for India."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Sri Lanka in 1996, and bowed out against England in 2011. I played in the 2003 World Cup final, on the losing side.",
+     "Yuvraj Singh was a regular ODI team-mate. In the IPL I shared a dressing room with Jacques Kallis at Royal Challengers Bengaluru, for 39 matches.",
+     "They call me ‘The Wall’. I was born in Indore, Madhya Pradesh, India in 1973 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Kolkata Knight Riders in 2008, and bowed out in 2013. I’ve played in one IPL final, and lost it.",
+     "At Rajasthan Royals I played 43 matches alongside Ajinkya Rahane. Away from the IPL, Sachin Tendulkar has been an international team-mate.",
+     "They call me ‘The Wall’. I was born in Indore, Madhya Pradesh, India in 1973 and played most of my IPL cricket for Rajasthan Royals."
+    ]
    }
   },
   "rangana-herath": {
@@ -1643,6 +3243,14 @@
     "Test": [
      1999,
      2018
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: slow left-arm orthodox, and I bat left-handed.",
+     "I made my Test debut against Australia in 1999, and bowed out against England in 2018.",
+     "My Test years overlapped with Mahela Jayawardene’s and Kumar Sangakkara’s, in the same side.",
+     "I was born in Kurunegala, Sri Lanka in 1978 and played for Sri Lanka."
     ]
    }
   },
@@ -1662,6 +3270,26 @@
      2017,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl leg break googly.",
+     "I made my ODI debut against Zimbabwe in 2015, and my most recent ODI came against Ireland in 2026. I wore number 19 on my back.",
+     "In the IPL I shared a dressing room with Shubman Gill at Gujarat Titans, for 76 matches.",
+     "I was born in Nangarhar Province, Afghanistan in 1998 and played for Afghanistan."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl leg break googly.",
+     "I made my T20I debut against Zimbabwe in 2015, and my most recent T20I came against Canada in 2026. I wore number 19 on my back.",
+     "My T20I years overlapped with Mohammad Nabi’s, in the same side. In the IPL I shared a dressing room with Shubman Gill at Gujarat Titans, for 76 matches.",
+     "I was born in Nangarhar Province, Afghanistan in 1998 and played for Afghanistan."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl leg break googly.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2017, and my most recent match came in 2026. I’ve played in 4 IPL finals and won one of them.",
+     "At Gujarat Titans I played 76 matches alongside Shubman Gill.",
+     "I was born in Nangarhar Province, Afghanistan in 1998 and played most of my IPL cricket for Gujarat Titans."
+    ]
    }
   },
   "ravichandran-ashwin": {
@@ -1675,6 +3303,20 @@
     "IPL": [
      2009,
      2025
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my Test debut against West Indies in 2011, and my most recent Test came against Australia in 2024. My highest Test score, 124, came against West Indies at Kolkata in 2013.",
+     "I played 93 Tests alongside Virat Kohli. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 57 matches.",
+     "I was born in Madras, Tamil Nadu, India in 1986 and played for India."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my IPL debut against Mumbai Indians in 2009, and my most recent match came in 2025. I’ve played in 7 IPL finals and won 2 of them.",
+     "At Chennai Super Kings I played 102 matches alongside MS Dhoni. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "I was born in Madras, Tamil Nadu, India in 1986 and played most of my IPL cricket for Chennai Super Kings."
     ]
    }
   },
@@ -1698,6 +3340,32 @@
      2008,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my Test debut against England in 2012, and my most recent Test came against South Africa in 2025. My highest Test score, 175*, came against Sri Lanka at Chandigarh in 2022.",
+     "I played 71 Tests alongside Virat Kohli. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 106 matches.",
+     "They call me ‘Thalapathy’. I was born in Navagam Ghed, Gujarat, India in 1988 and played for India."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my ODI debut against Sri Lanka in 2009, and my most recent ODI came against West Indies in 2026. I played in the 2023 World Cup final, on the losing side.",
+     "I played 187 ODIs alongside Virat Kohli. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 106 matches.",
+     "They call me ‘Thalapathy’. I was born in Navagam Ghed, Gujarat, India in 1988 and played for India."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my T20I debut against Sri Lanka in 2009, and my most recent T20I came against South Africa in 2024. I played in the 2024 T20 World Cup final, on the winning side.",
+     "I played 61 T20Is alongside Rohit Sharma. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 106 matches.",
+     "They call me ‘Thalapathy’. I was born in Navagam Ghed, Gujarat, India in 1988 and played for India."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my IPL debut against Delhi Capitals in 2008, and my most recent match came in 2026. I’ve played in 8 IPL finals and won 4 of them.",
+     "At Chennai Super Kings I played 184 matches alongside MS Dhoni. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "They call me ‘Thalapathy’. I was born in Navagam Ghed, Gujarat, India in 1988 and played most of my IPL cricket for Chennai Super Kings."
+    ]
    }
   },
   "reeza-hendricks": {
@@ -1707,6 +3375,14 @@
     "T20I": [
      2014,
      2025
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Australia in 2014, and my most recent T20I came against India in 2025. I played in the 2024 T20 World Cup final, on the losing side.",
+     "I played 61 T20Is alongside David Miller.",
+     "I was born in Kimberley, Northern Cape, South Africa in 1989 and played for South Africa."
     ]
    }
   },
@@ -1722,6 +3398,20 @@
      1973,
      1990
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm fast.",
+     "I made my Test debut against Pakistan in 1973, and bowed out against England in 1990.",
+     "My Test years overlapped with Martin Crowe’s, in the same side.",
+     "They call me ‘Paddles’. I was born in St Albans, New Zealand in 1951 and played for New Zealand."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm fast.",
+     "I made my ODI debut against Pakistan in 1973, and bowed out against England in 1990.",
+     "I was born in St Albans, New Zealand in 1951.",
+     "They call me ‘Paddles’. I played for New Zealand."
+    ]
    }
   },
   "ricky-ponting": {
@@ -1735,6 +3425,20 @@
     "ODI": [
      1995,
      2012
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against Sri Lanka in 1995, and bowed out against South Africa in 2012.",
+     "Michael Hussey was a regular Test team-mate.",
+     "They call me ‘Punter’. I was born in Launceston, Tasmania, Australia in 1974 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against South Africa in 1995, and bowed out against India in 2012. I played in the World Cup finals of 2003 and 2007, and won both.",
+     "Michael Hussey was a regular ODI team-mate.",
+     "They call me ‘Punter’. I was born in Launceston, Tasmania, Australia in 1974 and played for Australia."
     ]
    }
   },
@@ -1750,6 +3454,20 @@
      2016,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I keep wicket and bat left-handed.",
+     "I made my Test debut against England in 2018, and my most recent Test came against Sri Lanka in 2026. My highest Test score, 159*, came against Australia at Sydney in 2019.",
+     "I played 40 Tests alongside Jasprit Bumrah. In the IPL I shared a dressing room with Kagiso Rabada at Delhi Capitals, for 47 matches.",
+     "I was born in Haridwar, Uttar Pradesh, India in 1997 and played for India."
+    ],
+    "IPL": [
+     "I keep wicket and bat left-handed.",
+     "I made my IPL debut against Gujarat Lions in 2016, and my most recent match came in 2026. I’ve played in one IPL final, and lost it.",
+     "At Delhi Capitals I played 52 matches alongside Amit Mishra. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "I was born in Haridwar, Uttar Pradesh, India in 1997 and played most of my IPL cricket for Delhi Capitals."
+    ]
    }
   },
   "robin-uthappa": {
@@ -1759,6 +3477,14 @@
     "IPL": [
      2008,
      2022
+    ]
+   },
+   "hints": {
+    "IPL": [
+     "I keep wicket and bat right-handed.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2008, and bowed out in 2022. I’ve played in 3 IPL finals and won 2 of them.",
+     "At Kolkata Knight Riders I played 75 matches alongside Sunil Narine. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "I was born in Kodagu, Karnataka, India in 1985 and played most of my IPL cricket for Kolkata Knight Riders."
     ]
    }
   },
@@ -1782,6 +3508,32 @@
      2008,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against West Indies in 2013, and my most recent Test came against Australia in 2024. My highest Test score, 212, came against South Africa at Ranchi in 2019.",
+     "I played 60 Tests alongside Virat Kohli. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 169 matches.",
+     "They call me ‘Hitman’. I was born in Nagpur, Maharashtra, India in 1987 and played for India."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Ireland in 2007, and my most recent ODI came against England in 2026. I played in the 2023 World Cup final, on the losing side.",
+     "I played 231 ODIs alongside Virat Kohli. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 169 matches.",
+     "They call me ‘Hitman’. I was born in Nagpur, Maharashtra, India in 1987 and played for India."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against England in 2007, and my most recent T20I came against South Africa in 2024. I played in the T20 World Cup finals of 2007 and 2024, and won both.",
+     "I played 101 T20Is alongside Virat Kohli. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 169 matches.",
+     "They call me ‘Hitman’. I was born in Nagpur, Maharashtra, India in 1987 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Kolkata Knight Riders in 2008, and my most recent match came in 2026. I’ve played in 6 IPL finals and won them all.",
+     "At Mumbai Indians I played 169 matches alongside Kieron Pollard. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "They call me ‘Hitman’. I was born in Nagpur, Maharashtra, India in 1987 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "ross-taylor": {
@@ -1800,6 +3552,26 @@
      2006,
      2025
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against South Africa in 2007, and bowed out against Bangladesh in 2022. My highest Test score, 290, came against Australia at Perth in 2015.",
+     "I played 79 Tests alongside Tim Southee. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 22 matches.",
+     "I was born in Lower Hutt, Wellington, New Zealand in 1984 and played for New Zealand."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against West Indies in 2006, and bowed out against Netherlands in 2022. I played in the World Cup finals of 2015 and 2019.",
+     "Martin Guptill was a regular ODI team-mate. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 22 matches.",
+     "I was born in Lower Hutt, Wellington, New Zealand in 1984 and played for New Zealand."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against Sri Lanka in 2006, and my most recent T20I came against UAE in 2025. My highest T20I score, 63, came against West Indies at Auckland in 2008.",
+     "I played 69 T20Is alongside Martin Guptill. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 22 matches.",
+     "I was born in Lower Hutt, Wellington, New Zealand in 1984 and played for New Zealand."
+    ]
    }
   },
   "rovman-powell": {
@@ -1809,6 +3581,14 @@
     "T20I": [
      2017,
      2025
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm medium-fast on the side.",
+     "I made my T20I debut against Pakistan in 2017, and my most recent T20I came against New Zealand in 2025. My highest T20I score, 107, came against England at Bridgetown in 2022.",
+     "I played 69 T20Is alongside Nicholas Pooran. In the IPL I shared a dressing room with Kuldeep Yadav at Delhi Capitals, for 17 matches.",
+     "I was born in Kingston, Jamaica in 1993 and played for West Indies."
     ]
    }
   },
@@ -1828,6 +3608,26 @@
      2008,
      2013
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against Pakistan in 1989, and bowed out against West Indies in 2013. My highest Test score, 248*, came against Bangladesh at Dhaka in 2004.",
+     "Virender Sehwag was a regular Test team-mate. In the IPL I shared a dressing room with Lasith Malinga at Mumbai Indians, for 65 matches.",
+     "They call me ‘Little Master’. I was born in Bombay, India in 1973 and played for India."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against Pakistan in 1989, and bowed out against Pakistan in 2012. I played in the World Cup finals of 2003 and 2011, and won one of them.",
+     "Yuvraj Singh was a regular ODI team-mate. In the IPL I shared a dressing room with Lasith Malinga at Mumbai Indians, for 65 matches.",
+     "They call me ‘Little Master’. I was born in Bombay, India in 1973 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my IPL debut against Chennai Super Kings in 2008, and bowed out in 2013. I’ve played in one IPL final, and lost it.",
+     "At Mumbai Indians I played 70 matches alongside Harbhajan Singh. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "They call me ‘Little Master’. I was born in Bombay, India in 1973 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "saeed-anwar": {
@@ -1837,6 +3637,14 @@
     "ODI": [
      1989,
      2003
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some slow left-arm orthodox on the side.",
+     "I made my ODI debut against West Indies in 1989, and bowed out against Zimbabwe in 2003. I wore number 1 on my back.",
+     "My ODI years overlapped with Wasim Akram’s and Waqar Younis’s, in the same side.",
+     "I was born in Karachi, Sindh, Pakistan in 1968 and played for Pakistan."
     ]
    }
   },
@@ -1852,6 +3660,20 @@
      1989,
      2011
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my Test debut against New Zealand in 1991, and bowed out against England in 2007.",
+     "My Test years overlapped with Muttiah Muralitharan’s and Aravinda de Silva’s, in the same side. In the IPL I shared a dressing room with Sachin Tendulkar at Mumbai Indians, for 23 matches.",
+     "They call me ‘Matara Hurricane’. I was born in Matara, Ceylon in 1969 and played for Sri Lanka."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my ODI debut against Australia in 1989, and bowed out against England in 2011. I played in the 2007 World Cup final, on the losing side.",
+     "Kumar Sangakkara was a regular ODI team-mate. In the IPL I shared a dressing room with Sachin Tendulkar at Mumbai Indians, for 23 matches.",
+     "They call me ‘Matara Hurricane’. I was born in Matara, Ceylon in 1969 and played for Sri Lanka."
+    ]
    }
   },
   "sanju-samson": {
@@ -1862,6 +3684,14 @@
      2013,
      2026
     ]
+   },
+   "hints": {
+    "IPL": [
+     "I keep wicket and bat right-handed.",
+     "I made my IPL debut against Punjab Kings in 2013, and my most recent match came in 2026. I’ve played in one IPL final, and lost it.",
+     "At Rajasthan Royals I played 81 matches alongside Jos Buttler. Away from the IPL, Suryakumar Yadav has been an international team-mate.",
+     "They call me ‘Chettan’. I was born in Pulluvila, Thiruvananthapuram, Keralam, India in 1994 and played most of my IPL cricket for Rajasthan Royals."
+    ]
    }
   },
   "saqlain-mushtaq": {
@@ -1871,6 +3701,14 @@
     "ODI": [
      1995,
      2003
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a bowler: right-arm off break, and I bat right-handed.",
+     "I made my ODI debut against Sri Lanka in 1995, and bowed out against South Africa in 2003. I wore number 9 on my back.",
+     "My ODI years overlapped with Inzamam-ul-Haq’s and Wasim Akram’s, in the same side.",
+     "I was born in Lahore, Punjab, Pakistan in 1976 and played for Pakistan."
     ]
    }
   },
@@ -1886,6 +3724,20 @@
      2018,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a bowler: left-arm fast, and I bat left-handed.",
+     "I made my ODI debut against Afghanistan in 2018, and my most recent ODI came against Australia in 2026. I wore number 10 on my back.",
+     "Babar Azam was a regular ODI team-mate.",
+     "They call me ‘The Eagle’. I was born in Landi Kotal, Khyber Pakhtunkhwa, Pakistan in 2000 and played for Pakistan."
+    ],
+    "T20I": [
+     "I’m a bowler: left-arm fast, and I bat left-handed.",
+     "I made my T20I debut against West Indies in 2018, and my most recent T20I came against Sri Lanka in 2026. I played in the 2022 T20 World Cup final, on the losing side.",
+     "I played 79 T20Is alongside Babar Azam.",
+     "They call me ‘The Eagle’. I was born in Landi Kotal, Khyber Pakhtunkhwa, Pakistan in 2000 and played for Pakistan."
+    ]
    }
   },
   "shahid-afridi": {
@@ -1900,6 +3752,20 @@
      2006,
      2018
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm leg break.",
+     "I made my ODI debut against Kenya in 1996, and bowed out against Australia in 2015. My highest ODI score, 124, came against Bangladesh at Rangiri Dambulla International Stadium in 2010.",
+     "Younis Khan was a regular ODI team-mate. In the IPL I shared a dressing room with Adam Gilchrist at Deccan Chargers, for 10 matches.",
+     "They call me ‘Boom Boom’. I was born in Tirah, Khyber Agency, Pakistan in 1980 and played for Pakistan."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm leg break.",
+     "I made my T20I debut against England in 2006, and bowed out against West Indies in 2018. I played in the T20 World Cup finals of 2007 and 2009, and won one of them.",
+     "I played 69 T20Is alongside Mohammad Hafeez. In the IPL I shared a dressing room with Adam Gilchrist at Deccan Chargers, for 10 matches.",
+     "They call me ‘Boom Boom’. I was born in Tirah, Khyber Agency, Pakistan in 1980 and played for Pakistan."
+    ]
    }
   },
   "shai-hope": {
@@ -1909,6 +3775,14 @@
     "T20I": [
      2017,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against New Zealand in 2017, and my most recent T20I came against Sri Lanka in 2026. My highest T20I score, 102*, came against Australia at Basseterre in 2025.",
+     "I played 56 T20Is alongside Rovman Powell.",
+     "I was born in Saint Michael, Barbados in 1993 and played for West Indies."
     ]
    }
   },
@@ -1928,6 +3802,26 @@
      2006,
      2024
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my Test debut against India in 2007, and my most recent Test came against India in 2024. My highest Test score, 217, came against New Zealand at Wellington in 2017.",
+     "I played 61 Tests alongside Mushfiqur Rahim. In the IPL I shared a dressing room with Gautam Gambhir at Kolkata Knight Riders, for 43 matches.",
+     "They call me ‘Faysal’. I was born in Magura, Bangladesh in 1987 and played for Bangladesh."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my ODI debut against Zimbabwe in 2006, and bowed out against Sri Lanka in 2023. I wore number 75 on my back.",
+     "Mushfiqur Rahim was a regular ODI team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Kolkata Knight Riders, for 43 matches.",
+     "They call me ‘Faysal’. I was born in Magura, Bangladesh in 1987 and played for Bangladesh."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat left-handed and bowl slow left-arm orthodox.",
+     "I made my T20I debut against Zimbabwe in 2006, and my most recent T20I came against Afghanistan in 2024. My highest T20I score, 84, came against Pakistan at Pallekele International Cricket Stadium in 2012.",
+     "Mahmudullah was a regular T20I team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Kolkata Knight Riders, for 43 matches.",
+     "They call me ‘Faysal’. I was born in Magura, Bangladesh in 1987 and played for Bangladesh."
+    ]
    }
   },
   "shane-warne": {
@@ -1945,6 +3839,26 @@
     "IPL": [
      2008,
      2011
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my Test debut against India in 1992, and bowed out against England in 2007.",
+     "Matthew Hayden was a regular Test team-mate. In the IPL I shared a dressing room with Ravindra Jadeja at Rajasthan Royals, for 27 matches.",
+     "They call me ‘The King’. I was born in Upper Ferntree Gully, Victoria, Australia in 1969 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my ODI debut against New Zealand in 1993, and bowed out against Asia XI in 2005. I wore number 23 on my back.",
+     "My ODI years overlapped with Glenn McGrath’s and Matthew Hayden’s, in the same side. In the IPL I shared a dressing room with Ravindra Jadeja at Rajasthan Royals, for 27 matches.",
+     "They call me ‘The King’. I was born in Upper Ferntree Gully, Victoria, Australia in 1969 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my IPL debut against Delhi Capitals in 2008, and bowed out in 2011. I’ve played in one IPL final, and won it.",
+     "At Rajasthan Royals I played 27 matches alongside Ravindra Jadeja. Away from the IPL, Matthew Hayden has been an international team-mate.",
+     "They call me ‘The King’. I was born in Upper Ferntree Gully, Victoria, Australia in 1969 and played most of my IPL cricket for Rajasthan Royals."
     ]
    }
   },
@@ -1964,6 +3878,26 @@
      2008,
      2020
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my ODI debut against South Africa in 2002, and bowed out against England in 2015. I played in the World Cup finals of 2007 and 2015, and won both.",
+     "Michael Hussey was a regular ODI team-mate. In the IPL I shared a dressing room with Ajinkya Rahane at Rajasthan Royals, for 54 matches.",
+     "I was born in Ipswich, Queensland, Australia in 1981 and played for Australia."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my T20I debut against South Africa in 2006, and bowed out against India in 2016. I played in the 2010 T20 World Cup final, on the losing side.",
+     "I played 47 T20Is alongside David Warner. In the IPL I shared a dressing room with Ajinkya Rahane at Rajasthan Royals, for 54 matches.",
+     "I was born in Ipswich, Queensland, Australia in 1981 and played for Australia."
+    ],
+    "IPL": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my IPL debut against Delhi Capitals in 2008, and bowed out in 2020. I’ve played in 4 IPL finals and won 2 of them.",
+     "At Rajasthan Royals I played 54 matches alongside Ajinkya Rahane. Away from the IPL, Michael Hussey has been an international team-mate.",
+     "I was born in Ipswich, Queensland, Australia in 1981 and played most of my IPL cricket for Rajasthan Royals."
+    ]
    }
   },
   "shaun-pollock": {
@@ -1977,6 +3911,20 @@
     "ODI": [
      1996,
      2008
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my Test debut against England in 1995, and bowed out against West Indies in 2008.",
+     "Graeme Smith was a regular Test team-mate. In the IPL I shared a dressing room with Robin Uthappa at Mumbai Indians, for 13 matches.",
+     "I was born in Port Elizabeth, Cape Province, South Africa in 1973 and played for South Africa."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm fast-medium.",
+     "I made my ODI debut against England in 1996, and bowed out against West Indies in 2008. My highest ODI score, 130, came against Asia XI at Bangalore in 2007.",
+     "Graeme Smith was a regular ODI team-mate. In the IPL I shared a dressing room with Robin Uthappa at Mumbai Indians, for 13 matches.",
+     "I was born in Port Elizabeth, Cape Province, South Africa in 1973 and played for South Africa."
     ]
    }
   },
@@ -1996,6 +3944,26 @@
      2008,
      2024
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Australia in 2010, and bowed out against Bangladesh in 2022. My highest ODI score, 143, came against Australia at Chandigarh in 2019.",
+     "I played 140 ODIs alongside Virat Kohli. In the IPL I shared a dressing room with David Warner at Sunrisers Hyderabad, for 59 matches.",
+     "They call me ‘Gabbar’. I was born in New Delhi, India in 1985 and played for India."
+    ],
+    "T20I": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against West Indies in 2011, and bowed out against Sri Lanka in 2021. My highest T20I score, 92, came against West Indies at Chennai in 2018.",
+     "I played 54 T20Is alongside Rohit Sharma. In the IPL I shared a dressing room with David Warner at Sunrisers Hyderabad, for 59 matches.",
+     "They call me ‘Gabbar’. I was born in New Delhi, India in 1985 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Rajasthan Royals in 2008, and my most recent match came in 2024. I’ve played in 4 IPL finals and won one of them.",
+     "At Sunrisers Hyderabad I played 70 matches alongside Bhuvneshwar Kumar. Away from the IPL, Virat Kohli has been an international team-mate.",
+     "They call me ‘Gabbar’. I was born in New Delhi, India in 1985 and played most of my IPL cricket for Sunrisers Hyderabad."
+    ]
    }
   },
   "shivnarine-chanderpaul": {
@@ -2010,6 +3978,20 @@
      1994,
      2011
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against England in 1994, and bowed out against England in 2015. My highest Test score, 203*, came against Bangladesh at Mirpur in 2012.",
+     "Chris Gayle was a regular Test team-mate.",
+     "I was born in Unity Village, Demerara-Mahaica, Guyana in 1974 and played for West Indies."
+    ],
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against India in 1994, and bowed out against Pakistan in 2011. I wore number 6 on my back.",
+     "Chris Gayle was a regular ODI team-mate.",
+     "I was born in Unity Village, Demerara-Mahaica, Guyana in 1974 and played for West Indies."
+    ]
    }
   },
   "shoaib-akhtar": {
@@ -2019,6 +4001,14 @@
     "ODI": [
      1998,
      2011
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against Zimbabwe in 1998, and bowed out against New Zealand in 2011. I wore number 14 on my back.",
+     "Shahid Afridi was a regular ODI team-mate.",
+     "They call me ‘Rawalpindi Express’. I was born in Rawalpindi, Punjab, Pakistan in 1975 and played for Pakistan."
     ]
    }
   },
@@ -2034,6 +4024,20 @@
      2006,
      2021
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my ODI debut against West Indies in 1999, and bowed out against India in 2019. I wore number 18 on my back.",
+     "Younis Khan was a regular ODI team-mate.",
+     "I was born in Sialkot, Punjab, Pakistan in 1982 and played for Pakistan."
+    ],
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my T20I debut against England in 2006, and bowed out against Bangladesh in 2021. I played in the T20 World Cup finals of 2007 and 2009, and won one of them.",
+     "I played 71 T20Is alongside Mohammad Hafeez.",
+     "I was born in Sialkot, Punjab, Pakistan in 1982 and played for Pakistan."
+    ]
    }
   },
   "shubman-gill": {
@@ -2048,6 +4052,20 @@
      2018,
      2026
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against New Zealand in 2019, and my most recent ODI came against England in 2026. I played in the 2023 World Cup final, on the losing side.",
+     "Kuldeep Yadav was a regular ODI team-mate. In the IPL I shared a dressing room with Rashid Khan at Gujarat Titans, for 76 matches.",
+     "They call me ‘Prince’. I was born in Fazilka, Punjab, India in 1999 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Sunrisers Hyderabad in 2018, and my most recent match came in 2026. I’ve played in 4 IPL finals and won one of them.",
+     "At Gujarat Titans I played 76 matches alongside Rashid Khan. Away from the IPL, Kuldeep Yadav has been an international team-mate.",
+     "They call me ‘Prince’. I was born in Fazilka, Punjab, India in 1999 and played most of my IPL cricket for Gujarat Titans."
+    ]
    }
   },
   "sikandar-raza": {
@@ -2057,6 +4075,14 @@
     "T20I": [
      2013,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm off break.",
+     "I made my T20I debut against Bangladesh in 2013, and my most recent T20I came against South Africa in 2026. My highest T20I score, 133*, came against Gambia at Nairobi in 2024.",
+     "I was born in Sialkot, Pakistan in 1986.",
+     "I played for Zimbabwe."
     ]
    }
   },
@@ -2076,6 +4102,26 @@
      2008,
      2012
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my Test debut against England in 1996, and bowed out against Australia in 2008. My highest Test score, 239, came against Pakistan at Bengaluru in 2007.",
+     "Rahul Dravid was a regular Test team-mate. In the IPL I shared a dressing room with Brendon McCullum at Kolkata Knight Riders, for 22 matches.",
+     "They call me ‘Dada’. I was born in Behala, Calcutta, West Bengal, India in 1972 and played for India."
+    ],
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against West Indies in 1992, and bowed out against Pakistan in 2007. I played in the 2003 World Cup final, on the losing side.",
+     "Yuvraj Singh was a regular ODI team-mate. In the IPL I shared a dressing room with Brendon McCullum at Kolkata Knight Riders, for 22 matches.",
+     "They call me ‘Dada’. I was born in Behala, Calcutta, West Bengal, India in 1972 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm medium on the side.",
+     "I made my IPL debut against Royal Challengers Bengaluru in 2008, and bowed out in 2012. My highest IPL score, 91, came against Deccan Chargers at Hyderabad in 2008.",
+     "At Kolkata Knight Riders I played 31 matches alongside Ishant Sharma. Away from the IPL, Rahul Dravid has been an international team-mate.",
+     "They call me ‘Dada’. I was born in Behala, Calcutta, West Bengal, India in 1972 and played most of my IPL cricket for Kolkata Knight Riders."
+    ]
    }
   },
   "stephen-fleming": {
@@ -2085,6 +4131,14 @@
     "ODI": [
      1994,
      2007
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some right-arm medium-slow on the side.",
+     "I made my ODI debut against India in 1994, and bowed out against Sri Lanka in 2007. My highest ODI score, 134*, came against South Africa at Johannesburg in 2003.",
+     "Brendon McCullum was a regular ODI team-mate. In the IPL I shared a dressing room with MS Dhoni at Chennai Super Kings, for 10 matches.",
+     "I was born in Christchurch, New Zealand in 1973 and played for New Zealand."
     ]
    }
   },
@@ -2104,6 +4158,26 @@
      2012,
      2021
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my Test debut against Pakistan in 2010, and my most recent Test came against Bangladesh in 2026. My highest Test score, 239, came against England at Perth in 2017.",
+     "I played 111 Tests alongside Nathan Lyon. In the IPL I shared a dressing room with Sanju Samson at Rajasthan Royals, for 47 matches.",
+     "I was born in Kogarah, New South Wales, Australia in 1989 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my ODI debut against West Indies in 2010, and my most recent ODI came against India in 2025. I played in the World Cup finals of 2015 and 2023, and won both.",
+     "I played 106 ODIs alongside David Warner. In the IPL I shared a dressing room with Sanju Samson at Rajasthan Royals, for 47 matches.",
+     "I was born in Kogarah, New South Wales, Australia in 1989 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm leg break on the side.",
+     "I made my IPL debut against Mumbai Indians in 2012, and bowed out in 2021. I’ve played in one IPL final, and lost it.",
+     "At Rajasthan Royals I played 47 matches alongside Sanju Samson. Away from the IPL, David Warner has been an international team-mate.",
+     "I was born in Kogarah, New South Wales, Australia in 1989 and played most of my IPL cricket for Rajasthan Royals."
+    ]
    }
   },
   "steve-waugh": {
@@ -2117,6 +4191,20 @@
     "ODI": [
      1986,
      2002
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against India in 1985, and bowed out against India in 2004.",
+     "My Test years overlapped with Shane Warne’s and Glenn McGrath’s, in the same side.",
+     "They call me ‘Tugga’. I was born in Campsie, New South Wales, Australia in 1965 and played for Australia."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against New Zealand in 1986, and bowed out against South Africa in 2002. I wore number 5 on my back.",
+     "My ODI years overlapped with Glenn McGrath’s and Shane Warne’s, in the same side.",
+     "They call me ‘Tugga’. I was born in Campsie, New South Wales, Australia in 1965 and played for Australia."
     ]
    }
   },
@@ -2132,6 +4220,20 @@
      2006,
      2014
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast-medium, and I bat left-handed.",
+     "I made my Test debut against Sri Lanka in 2007, and bowed out against Australia in 2023. My best Test figures, 8/15, came against Australia at Nottingham in 2015.",
+     "I played 138 Tests alongside James Anderson.",
+     "They call me ‘Malfoy’. I was born in Nottingham, Nottinghamshire, England in 1986 and played for England."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm fast-medium, and I bat left-handed.",
+     "I made my T20I debut against Pakistan in 2006, and bowed out against Netherlands in 2014. I played in the 2010 T20 World Cup final, on the winning side.",
+     "I played 38 T20Is alongside Eoin Morgan.",
+     "They call me ‘Malfoy’. I was born in Nottingham, Nottinghamshire, England in 1986 and played for England."
+    ]
    }
   },
   "sunil-gavaskar": {
@@ -2142,6 +4244,14 @@
      1971,
      1987
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a right-handed batter.",
+     "I made my Test debut against West Indies in 1971, and bowed out against Pakistan in 1987.",
+     "My Test years overlapped with Dilip Vengsarkar’s and Kapil Dev’s, in the same side.",
+     "They call me ‘Little Master’. I was born in Bombay, Dominion of India in 1949 and played for India."
+    ]
    }
   },
   "sunil-narine": {
@@ -2151,6 +4261,14 @@
     "IPL": [
      2012,
      2026
+    ]
+   },
+   "hints": {
+    "IPL": [
+     "I’m an all-rounder: I bat left-handed and bowl right-arm off break.",
+     "I made my IPL debut against Rajasthan Royals in 2012, and my most recent match came in 2026. I’ve played in 4 IPL finals and won 3 of them.",
+     "At Kolkata Knight Riders I played 114 matches alongside Andre Russell. Away from the IPL, Kieron Pollard has been an international team-mate.",
+     "I was born in Arima, Trinidad and Tobago in 1988 and played most of my IPL cricket for Kolkata Knight Riders."
     ]
    }
   },
@@ -2166,6 +4284,20 @@
      2008,
      2021
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against South Africa in 2006, and bowed out against England in 2018. My highest T20I score, 101, came against South Africa at St Lucia in 2010.",
+     "I played 67 T20Is alongside MS Dhoni. In the IPL I shared a dressing room with Dwayne Bravo at Chennai Super Kings, for 94 matches.",
+     "They call me ‘Sonu’. I was born in Muradnagar, Uttar Pradesh, India in 1986 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Punjab Kings in 2008, and bowed out in 2021. I’ve played in 8 IPL finals and won 3 of them.",
+     "At Chennai Super Kings I played 170 matches alongside MS Dhoni. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "They call me ‘Sonu’. I was born in Muradnagar, Uttar Pradesh, India in 1986 and played most of my IPL cricket for Chennai Super Kings."
+    ]
    }
   },
   "suryakumar-yadav": {
@@ -2180,6 +4312,20 @@
      2012,
      2026
     ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against England in 2021, and my most recent T20I came against New Zealand in 2026. I played in the T20 World Cup finals of 2024 and 2026, and won both.",
+     "I played 84 T20Is alongside Hardik Pandya. In the IPL I shared a dressing room with Kieron Pollard at Mumbai Indians, for 64 matches.",
+     "I was born in Bombay, Maharashtra, India in 1990 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Pune Warriors in 2012, and my most recent match came in 2026. I’ve played in 3 IPL finals and won them all.",
+     "At Mumbai Indians I played 113 matches alongside Rohit Sharma. Away from the IPL, Hardik Pandya has been an international team-mate.",
+     "I was born in Bombay, Maharashtra, India in 1990 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "tamim-iqbal": {
@@ -2189,6 +4335,14 @@
     "ODI": [
      2007,
      2023
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a left-handed batter.",
+     "I made my ODI debut against Zimbabwe in 2007, and bowed out against New Zealand in 2023. My highest ODI score, 158, came against Zimbabwe at Sylhet in 2020.",
+     "Mushfiqur Rahim was a regular ODI team-mate.",
+     "I was born in Chittagong, Bangladesh in 1989 and played for Bangladesh."
     ]
    }
   },
@@ -2203,6 +4357,20 @@
     "T20I": [
      2006,
      2016
+    ]
+   },
+   "hints": {
+    "ODI": [
+     "I keep wicket and bat right-handed.",
+     "I made my ODI debut against Zimbabwe in 1999, and bowed out against Australia in 2016. I played in the World Cup finals of 2007 and 2011, and lost both.",
+     "Kumar Sangakkara was a regular ODI team-mate. In the IPL I shared a dressing room with Gautam Gambhir at Delhi Capitals, for 26 matches.",
+     "They call me ‘Mr. Pallekele’. I was born in Kalutara, Sri Lanka in 1976 and played for Sri Lanka."
+    ],
+    "T20I": [
+     "I keep wicket and bat right-handed.",
+     "I made my T20I debut against England in 2006, and bowed out against Australia in 2016. I played in the T20 World Cup finals of 2009 and 2012, and lost both.",
+     "I played 60 T20Is alongside Angelo Mathews. In the IPL I shared a dressing room with Gautam Gambhir at Delhi Capitals, for 26 matches.",
+     "They call me ‘Mr. Pallekele’. I was born in Kalutara, Sri Lanka in 1976 and played for Sri Lanka."
     ]
    }
   },
@@ -2222,6 +4390,26 @@
      2008,
      2024
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm medium-fast, and I bat right-handed.",
+     "I made my Test debut against England in 2008, and my most recent Test came against England in 2024. My best Test figures, 7/64, came against India at Bangalore in 2012.",
+     "I played 88 Tests alongside Kane Williamson. In the IPL I shared a dressing room with Rohit Sharma at Mumbai Indians, for 14 matches.",
+     "I was born in Whangārei, New Zealand in 1988 and played for New Zealand."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm medium-fast, and I bat right-handed.",
+     "I made my ODI debut against England in 2008, and bowed out against India in 2023. I played in the 2015 World Cup final, on the losing side.",
+     "Ross Taylor was a regular ODI team-mate. In the IPL I shared a dressing room with Rohit Sharma at Mumbai Indians, for 14 matches.",
+     "I was born in Whangārei, New Zealand in 1988 and played for New Zealand."
+    ],
+    "T20I": [
+     "I’m a bowler: right-arm medium-fast, and I bat right-handed.",
+     "I made my T20I debut against England in 2008, and my most recent T20I came against Papua New Guinea in 2024. I played in the 2021 T20 World Cup final, on the losing side.",
+     "I played 78 T20Is alongside Ish Sodhi. In the IPL I shared a dressing room with Rohit Sharma at Mumbai Indians, for 14 matches.",
+     "I was born in Whangārei, New Zealand in 1988 and played for New Zealand."
+    ]
    }
   },
   "travis-head": {
@@ -2239,6 +4427,26 @@
     "IPL": [
      2016,
      2026
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my Test debut against Pakistan in 2018, and my most recent Test came against Bangladesh in 2026. My highest Test score, 175, came against West Indies at Adelaide in 2022.",
+     "I played 61 Tests alongside Mitchell Starc. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 15 matches.",
+     "I was born in Adelaide, South Australia in 1993 and played for Australia."
+    ],
+    "T20I": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my T20I debut against India in 2016, and my most recent T20I came against Oman in 2026. My highest T20I score, 91, came against South Africa at Durban in 2023.",
+     "I played 34 T20Is alongside Adam Zampa. In the IPL I shared a dressing room with Bhuvneshwar Kumar at Sunrisers Hyderabad, for 15 matches.",
+     "I was born in Adelaide, South Australia in 1993 and played for Australia."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Mumbai Indians in 2016, and my most recent match came in 2026. I’ve played in one IPL final, and lost it.",
+     "At Sunrisers Hyderabad I played 36 matches alongside Pat Cummins. Away from the IPL, Mitchell Starc has been an international team-mate.",
+     "I was born in Adelaide, South Australia in 1993 and played most of my IPL cricket for Sunrisers Hyderabad."
     ]
    }
   },
@@ -2262,6 +4470,32 @@
      2015,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: left-arm fast-medium, and I bat right-handed.",
+     "I made my Test debut against Australia in 2011, and bowed out against England in 2022. My best Test figures, 6/30, came against Sri Lanka at Christchurch in 2018.",
+     "I played 71 Tests alongside Kane Williamson. In the IPL I shared a dressing room with Suryakumar Yadav at Mumbai Indians, for 50 matches.",
+     "I was born in Rotorua, New Zealand in 1989 and played for New Zealand."
+    ],
+    "ODI": [
+     "I’m a bowler: left-arm fast-medium, and I bat right-handed.",
+     "I made my ODI debut against West Indies in 2012, and bowed out against India in 2023. I played in the World Cup finals of 2015 and 2019.",
+     "I played 87 ODIs alongside Kane Williamson. In the IPL I shared a dressing room with Suryakumar Yadav at Mumbai Indians, for 50 matches.",
+     "I was born in Rotorua, New Zealand in 1989 and played for New Zealand."
+    ],
+    "T20I": [
+     "I’m a bowler: left-arm fast-medium, and I bat right-handed.",
+     "I made my T20I debut against England in 2013, and my most recent T20I came against Papua New Guinea in 2024. I played in the 2021 T20 World Cup final, on the losing side.",
+     "I played 48 T20Is alongside Kane Williamson. In the IPL I shared a dressing room with Suryakumar Yadav at Mumbai Indians, for 50 matches.",
+     "I was born in Rotorua, New Zealand in 1989 and played for New Zealand."
+    ],
+    "IPL": [
+     "I’m a bowler: left-arm fast-medium, and I bat right-handed.",
+     "I made my IPL debut against Chennai Super Kings in 2015, and my most recent match came in 2026. I’ve played in 2 IPL finals and won one of them.",
+     "At Mumbai Indians I played 50 matches alongside Suryakumar Yadav. Away from the IPL, Kane Williamson has been an international team-mate.",
+     "I was born in Rotorua, New Zealand in 1989 and played most of my IPL cricket for Mumbai Indians."
+    ]
    }
   },
   "virat-kohli": {
@@ -2284,6 +4518,32 @@
      2008,
      2026
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against West Indies in 2011, and my most recent Test came against Australia in 2025. My highest Test score, 254*, came against South Africa at Pune in 2019.",
+     "I played 93 Tests alongside Cheteshwar Pujara. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 154 matches.",
+     "They call me ‘Cheeku’. I was born in New Delhi, India in 1988 and played for India."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my ODI debut against Sri Lanka in 2008, and my most recent ODI came against West Indies in 2026. I played in the World Cup finals of 2011 and 2023, and won one of them.",
+     "I played 231 ODIs alongside Rohit Sharma. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 154 matches.",
+     "They call me ‘Cheeku’. I was born in New Delhi, India in 1988 and played for India."
+    ],
+    "T20I": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my T20I debut against Zimbabwe in 2010, and my most recent T20I came against South Africa in 2024. I played in the 2024 T20 World Cup final, on the winning side.",
+     "Rohit Sharma was a regular T20I team-mate. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 154 matches.",
+     "They call me ‘Cheeku’. I was born in New Delhi, India in 1988 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my IPL debut against Kolkata Knight Riders in 2008, and my most recent match came in 2026. I’ve played in 5 IPL finals and won 2 of them.",
+     "At Royal Challengers Bengaluru I played 154 matches alongside AB de Villiers. Away from the IPL, Rohit Sharma has been an international team-mate.",
+     "They call me ‘Cheeku’. I was born in New Delhi, India in 1988 and played most of my IPL cricket for Royal Challengers Bengaluru."
+    ]
    }
   },
   "virender-sehwag": {
@@ -2302,6 +4562,26 @@
      2008,
      2015
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against South Africa in 2001, and bowed out against Australia in 2013. My highest Test score, 319, came against South Africa at Chennai in 2008.",
+     "Sachin Tendulkar was a regular Test team-mate. In the IPL I shared a dressing room with David Warner at Delhi Capitals, for 43 matches.",
+     "I was born in Najafgarh, Delhi, India in 1978 and played for India."
+    ],
+    "ODI": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my ODI debut against Pakistan in 1999, and bowed out against Pakistan in 2013. I played in the World Cup finals of 2003 and 2011, and won one of them.",
+     "Yuvraj Singh was a regular ODI team-mate. In the IPL I shared a dressing room with David Warner at Delhi Capitals, for 43 matches.",
+     "I was born in Najafgarh, Delhi, India in 1978 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my IPL debut against Rajasthan Royals in 2008, and bowed out in 2015. I’ve played in one IPL final, and lost it.",
+     "At Delhi Capitals I played 43 matches alongside David Warner. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "I was born in Najafgarh, Delhi, India in 1978 and played most of my IPL cricket for Delhi Capitals."
+    ]
    }
   },
   "viv-richards": {
@@ -2316,6 +4596,20 @@
      1975,
      1991
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm slow seam.",
+     "I made my Test debut against India in 1974, and bowed out against England in 1991.",
+     "My Test years overlapped with Gordon Greenidge’s and Desmond Haynes’s, in the same side.",
+     "They call me ‘Master Blaster’. I was born in St. John's, British Leeward Islands in 1952 and played for West Indies."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm slow seam.",
+     "I made my ODI debut against Sri Lanka in 1975, and bowed out against England in 1991.",
+     "My ODI years overlapped with Desmond Haynes’s and Courtney Walsh’s, in the same side.",
+     "They call me ‘Master Blaster’. I was born in St. John's, British Leeward Islands in 1952 and played for West Indies."
+    ]
    }
   },
   "vvs-laxman": {
@@ -2325,6 +4619,14 @@
     "Test": [
      1996,
      2012
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm off break on the side.",
+     "I made my Test debut against South Africa in 1996, and bowed out against Australia in 2012.",
+     "Rahul Dravid was a regular Test team-mate. In the IPL I shared a dressing room with Adam Gilchrist at Deccan Chargers, for 17 matches.",
+     "They call me ‘Very Very Special’. I was born in Hyderabad, Andhra Pradesh, India in 1974 and played for India."
     ]
    }
   },
@@ -2336,6 +4638,14 @@
      1927,
      1947
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm fast-medium on the side.",
+     "I made my Test debut against South Africa in 1927, and bowed out against New Zealand in 1947.",
+     "My Test years overlapped with Len Hutton’s and Jack Hobbs’s, in the same side.",
+     "I was born in Dover, Kent, England in 1903 and played for England."
+    ]
    }
   },
   "wanindu-hasaranga": {
@@ -2345,6 +4655,14 @@
     "T20I": [
      2019,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m an all-rounder: I bat right-handed and bowl right-arm leg break.",
+     "I made my T20I debut against New Zealand in 2019, and my most recent T20I came against West Indies in 2026. My highest T20I score, 71, came against Ireland at Abu Dhabi in 2021.",
+     "Dasun Shanaka was a regular T20I team-mate. In the IPL I shared a dressing room with Virat Kohli at Royal Challengers Bengaluru, for 26 matches.",
+     "I was born in Galle, Sri Lanka in 1997 and played for Sri Lanka."
     ]
    }
   },
@@ -2360,6 +4678,20 @@
      1989,
      2003
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my Test debut against India in 1989, and bowed out against South Africa in 2003.",
+     "My Test years overlapped with Wasim Akram’s and Inzamam-ul-Haq’s, in the same side.",
+     "They call me ‘Toe Crusher’. I was born in Vehari, Punjab, Pakistan in 1971 and played for Pakistan."
+    ],
+    "ODI": [
+     "I’m a bowler: right-arm fast, and I bat right-handed.",
+     "I made my ODI debut against West Indies in 1989, and bowed out against Zimbabwe in 2003. I wore number 99 on my back.",
+     "My ODI years overlapped with Wasim Akram’s and Saeed Anwar’s, in the same side.",
+     "They call me ‘Toe Crusher’. I was born in Vehari, Punjab, Pakistan in 1971 and played for Pakistan."
+    ]
    }
   },
   "wasim-akram": {
@@ -2374,6 +4706,20 @@
      1984,
      2003
     ]
+   },
+   "hints": {
+    "Test": [
+     "I’m an all-rounder: I bat left-handed and bowl left-arm fast.",
+     "I made my Test debut against New Zealand in 1985, and bowed out against Bangladesh in 2002.",
+     "My Test years overlapped with Waqar Younis’s and Inzamam-ul-Haq’s, in the same side.",
+     "They call me ‘Sultan of Swing’. I was born in Lahore, West Pakistan in 1966 and played for Pakistan."
+    ],
+    "ODI": [
+     "I’m an all-rounder: I bat left-handed and bowl left-arm fast.",
+     "I made my ODI debut against New Zealand in 1984, and bowed out against Zimbabwe in 2003. I wore number 3 on my back.",
+     "My ODI years overlapped with Waqar Younis’s and Saeed Anwar’s, in the same side.",
+     "They call me ‘Sultan of Swing’. I was born in Lahore, West Pakistan in 1966 and played for Pakistan."
+    ]
    }
   },
   "younis-khan": {
@@ -2383,6 +4729,14 @@
     "Test": [
      2000,
      2017
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a batter, right-handed, with some right-arm medium on the side.",
+     "I made my Test debut against Sri Lanka in 2000, and bowed out against West Indies in 2017. My highest Test score, 313, came against Sri Lanka at Karachi in 2009.",
+     "Mohammad Hafeez was a regular Test team-mate.",
+     "I was born in Mardan, Khyber Pakhtunkhwa, Pakistan in 1977 and played for Pakistan."
     ]
    }
   },
@@ -2402,6 +4756,26 @@
      2008,
      2019
     ]
+   },
+   "hints": {
+    "ODI": [
+     "I’m a batter, left-handed, with some slow left-arm orthodox on the side.",
+     "I made my ODI debut against Kenya in 2000, and bowed out against West Indies in 2017. I played in the World Cup finals of 2003 and 2011, and won one of them.",
+     "MS Dhoni was a regular ODI team-mate. In the IPL I shared a dressing room with Kumar Sangakkara at Punjab Kings, for 37 matches.",
+     "I was born in Chandigarh, India in 1981 and played for India."
+    ],
+    "T20I": [
+     "I’m a batter, left-handed, with some slow left-arm orthodox on the side.",
+     "I made my T20I debut against Scotland in 2007, and bowed out against England in 2017. I played in the 2007 T20 World Cup final, on the winning side.",
+     "MS Dhoni was a regular T20I team-mate. In the IPL I shared a dressing room with Kumar Sangakkara at Punjab Kings, for 37 matches.",
+     "I was born in Chandigarh, India in 1981 and played for India."
+    ],
+    "IPL": [
+     "I’m a batter, left-handed, with some slow left-arm orthodox on the side.",
+     "I made my IPL debut against Chennai Super Kings in 2008, and bowed out in 2019. I’ve played in one IPL final, and won it.",
+     "At Punjab Kings I played 37 matches alongside Kumar Sangakkara. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "I was born in Chandigarh, India in 1981 and played most of my IPL cricket for Punjab Kings."
+    ]
    }
   },
   "yuzvendra-chahal": {
@@ -2415,6 +4789,20 @@
     "IPL": [
      2013,
      2026
+    ]
+   },
+   "hints": {
+    "T20I": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my T20I debut against Zimbabwe in 2016, and bowed out against West Indies in 2023. My best T20I figures, 6/25, came against England at Bangalore in 2017.",
+     "I played 51 T20Is alongside Hardik Pandya. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 106 matches.",
+     "I was born in Jind, Haryana, India in 1990 and played for India."
+    ],
+    "IPL": [
+     "I’m a bowler: right-arm leg break, and I bat right-handed.",
+     "I made my IPL debut against Kolkata Knight Riders in 2013, and my most recent match came in 2026. I’ve played in 3 IPL finals and lost them all.",
+     "At Royal Challengers Bengaluru I played 110 matches alongside Virat Kohli. Away from the IPL, Rohit Sharma has been an international team-mate.",
+     "I was born in Jind, Haryana, India in 1990 and played most of my IPL cricket for Royal Challengers Bengaluru."
     ]
    }
   },
@@ -2433,6 +4821,26 @@
     "IPL": [
      2008,
      2017
+    ]
+   },
+   "hints": {
+    "Test": [
+     "I’m a bowler: left-arm fast-medium, and I bat right-handed.",
+     "I made my Test debut against Bangladesh in 2000, and bowed out against New Zealand in 2014.",
+     "Sachin Tendulkar was a regular Test team-mate. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 32 matches.",
+     "They call me ‘Zippy’. I was born in Shrirampur, Maharashtra, India in 1978 and played for India."
+    ],
+    "ODI": [
+     "I’m a bowler: left-arm fast-medium, and I bat right-handed.",
+     "I made my ODI debut against Kenya in 2000, and bowed out against Sri Lanka in 2012. I played in the World Cup finals of 2003 and 2011, and won one of them.",
+     "Yuvraj Singh was a regular ODI team-mate. In the IPL I shared a dressing room with AB de Villiers at Royal Challengers Bengaluru, for 32 matches.",
+     "They call me ‘Zippy’. I was born in Shrirampur, Maharashtra, India in 1978 and played for India."
+    ],
+    "IPL": [
+     "I’m a bowler: left-arm fast-medium, and I bat right-handed.",
+     "I made my IPL debut against Kolkata Knight Riders in 2008, and bowed out in 2017. I’ve played in 2 IPL finals and lost both.",
+     "At Royal Challengers Bengaluru I played 42 matches alongside Virat Kohli. Away from the IPL, MS Dhoni has been an international team-mate.",
+     "They call me ‘Zippy’. I was born in Shrirampur, Maharashtra, India in 1978 and played most of my IPL cricket for Royal Challengers Bengaluru."
     ]
    }
   }

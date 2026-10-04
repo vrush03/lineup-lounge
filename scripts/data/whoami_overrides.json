@@ -1,9 +1,32 @@
 {
- "_comment": "Who Am I? fields for players whose Wikipedia infobox has no Role row, by display name. role is read the same way as an infobox role (see role() in gen_whoami.py), so check it against the player's page before adding one.",
+ "_comment": "Who Am I? fields the Wikipedia infobox gets wrong or leaves out, by display name. role: for an infobox with no Role row, read the same way as an infobox role (see role() in gen_whoami.py). nick: the nickname to use, or null to use none, where the first one in the infobox is a giveaway or isn't a name people use. Check either against the player's page before adding it.",
  "players": {
-  "Desmond Haynes": {"role": "Opening batsman"},
-  "Dilip Vengsarkar": {"role": "Batsman"},
-  "Saeed Anwar": {"role": "Opening batsman"},
-  "Saqlain Mushtaq": {"role": "Bowler"}
+  "Desmond Haynes": {
+   "role": "Opening batsman"
+  },
+  "Dilip Vengsarkar": {
+   "role": "Batsman"
+  },
+  "Saeed Anwar": {
+   "role": "Opening batsman"
+  },
+  "Saqlain Mushtaq": {
+   "role": "Bowler"
+  },
+  "Adil Rashid": {
+   "nick": null
+  },
+  "Ravichandran Ashwin": {
+   "nick": null
+  },
+  "Geoffrey Boycott": {
+   "nick": null
+  },
+  "Hardik Pandya": {
+   "nick": null
+  },
+  "Rovman Powell": {
+   "nick": null
+  }
  }
 }

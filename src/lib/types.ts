@@ -92,6 +92,8 @@ export type Bio = {
   bats: 'Right' | 'Left'
   /** Years of the first and last match, for each format the player has a card in. */
   span: Partial<Record<ShowdownFormat, [number, number]>>
+  /** Four hints for each of those cards, in the player's voice, weakest first. */
+  hints: Partial<Record<ShowdownFormat, string[]>>
 }
 
 /** Who Am I? data: a bio per card id, and the order each deck's cards come up as the daily. */

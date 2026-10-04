@@ -13,6 +13,7 @@ import {
   isRound,
   isSolved,
   MAX_GUESSES,
+  photoBlur,
   warmth,
   wrongLine,
   type Chips,
@@ -63,7 +64,8 @@ export function WhoAmI({ deck, bios, answer, storageKey, day, onFinish, onNext, 
     })
   const hints = hintsFor(card, deck, bios[answer])
   const shown = hintsShown(wrong.map((w) => w.warmth))
-  const photoHint = hints.slice(0, shown).some((h) => h.kind === 'photo')
+  // The last hint also brings the photo further into focus.
+  const photoHint = shown >= hints.length
   const last = wrong.at(-1)
 
   function guess(c: Card) {
@@ -126,7 +128,7 @@ export function WhoAmI({ deck, bios, answer, storageKey, day, onFinish, onNext, 
             card={card}
             deck={deck}
             owner={over ? 'The answer' : 'Mystery player'}
-            mystery={over ? null : photoHint ? 'blurred' : 'hidden'}
+            mystery={over ? null : { blur: photoBlur(wrong.map((w) => w.warmth), photoHint), initials: photoHint }}
           />
         </div>
       </div>
@@ -160,7 +162,7 @@ export function WhoAmI({ deck, bios, answer, storageKey, day, onFinish, onNext, 
           )}
           <PlayerSearch deck={deck} exclude={round.guesses} onGuess={guess} />
           <p className="mt-2 text-center text-xs text-muted">
-            Guess {round.guesses.length + 1} of {MAX_GUESSES}. A wrong guess earns a hint; a close one earns two.
+            Guess {round.guesses.length + 1} of {MAX_GUESSES}. A wrong guess earns a hint, a close one two; the photo clears as you get closer.
           </p>
         </div>
       )}
@@ -172,7 +174,7 @@ export function WhoAmI({ deck, bios, answer, storageKey, day, onFinish, onNext, 
             {hints.slice(0, shown).map((h, i) => (
               <li key={i} className="flex animate-rise gap-3 rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm">
                 <span className="font-display text-lg font-bold leading-none text-gold tabular-nums">{i + 1}</span>
-                <span>{h.kind === 'photo' ? (card.photo ? 'An out-of-focus photo, on the card.' : 'The initials, on the card.') : h.text}</span>
+                <span>{h}</span>
               </li>
             ))}
           </ol>

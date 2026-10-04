@@ -1,5 +1,4 @@
-import { statText, strength } from './showdown'
-import { SHOWDOWN_FORMATS, type Bio, type Card, type Deck, type ShowdownFormat, type StatDef, type WhoAmIData } from './types'
+import { SHOWDOWN_FORMATS, type Bio, type Card, type Deck, type ShowdownFormat, type WhoAmIData } from './types'
 
 export const MAX_GUESSES = 5
 
@@ -39,42 +38,36 @@ export function warmth(c: Chips): Warmth {
   return right >= 3 || (c.team && era) ? 'close' : right === 2 ? 'warm' : 'cold'
 }
 
-export type Hint = { kind: 'role' | 'rank'; text: string } | { kind: 'photo' }
-
-/** What each wrong guess can unlock, weakest first. */
+/** What each wrong guess can unlock, weakest first; the last one also brings the photo into focus. */
 export const HINTS = 4
 
-const ordinal = (n: number) => {
-  const tens = n % 100
-  const suffix = tens >= 11 && tens <= 13 ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th')
-  return `${n}${suffix}`
-}
-
-const SUPERLATIVE: Record<string, string> = { average: 'highest batting average', strikeRate: 'highest strike rate', highest: 'highest score' }
-
-/** "15,921 is the most runs of the 100 players in the Test deck." */
-export function rankText(card: Card, stat: StatDef, deck: Deck): string {
-  const v = card.stats[stat.key]
-  const rank = 1 + deck.cards.filter((c) => c.stats[stat.key] > v).length
-  const joint = deck.cards.some((c) => c.id !== card.id && c.stats[stat.key] === v)
-  const what = SUPERLATIVE[stat.key] ?? `most ${stat.label.toLowerCase()}`
-  const place = rank === 1 ? (joint ? 'joint ' : '') : `${joint ? 'joint ' : ''}${ordinal(rank)} `
-  return `${statText(card, stat)} is the ${place}${what} of the ${deck.cards.length} players in the ${deck.format} deck.`
-}
-
-/** The hint ladder for a card: role, its two strongest stats in the deck, then the photo. */
-export function hintsFor(card: Card, deck: Deck, bio: Bio | undefined): Hint[] {
-  const best = [...deck.stats].sort((a, b) => strength(card, b.key, deck) - strength(card, a.key, deck)).slice(0, 2)
-  return [
-    { kind: 'role', text: bio ? `${bio.role}, bats ${bio.bats.toLowerCase()}-handed.` : 'No role on record.' },
-    ...best.map((s): Hint => ({ kind: 'rank', text: rankText(card, s, deck) })),
-    { kind: 'photo' },
-  ]
+/**
+ * The hint ladder for a card, in the player's own voice: how they play, their debut and a highlight,
+ * the team-mates they kept, then nickname, birthplace and team. Written by scripts/data/whoami_hints.py.
+ */
+export function hintsFor(card: Card, deck: Deck, bio: Bio | undefined): string[] {
+  const hints = bio?.hints[deck.format]
+  if (hints?.length === HINTS) return hints
+  // Only if the data and the decks disagree: the card still gets a ladder.
+  const team = `I played for ${card.team}.`
+  return [bio ? `I’m a ${bio.role.toLowerCase()} who bats ${bio.bats.toLowerCase()}-handed.` : team, team, team, team]
 }
 
 /** Hints on show after these wrong guesses: one each, two for a close one, until the ladder runs out. */
 export function hintsShown(wrong: Warmth[]): number {
   return Math.min(HINTS, wrong.reduce((n, w) => n + (w === 'close' ? 2 : 1), 0))
+}
+
+/** Photo blur in px, from the first look to nearly clear. */
+const BLUR = [26, 20, 15, 11, 8, 6]
+
+/**
+ * How far out of focus the mystery photo is. It clears a step for a warm guess and two for a close
+ * one, and two more once the photo hint is unlocked; a cold guess leaves it as it was.
+ */
+export function photoBlur(wrong: Warmth[], photoHint: boolean): number {
+  const steps = wrong.reduce((n, w) => n + (w === 'close' ? 2 : w === 'warm' ? 1 : 0), photoHint ? 2 : 0)
+  return BLUR[Math.min(steps, BLUR.length - 1)]
 }
 
 const pick = <T,>(lines: T[], seed: number) => lines[((seed % lines.length) + lines.length) % lines.length]

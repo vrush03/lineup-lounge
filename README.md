@@ -14,10 +14,12 @@ round (with its own stats and streak) and a practice mode, and Showdown is free 
   from that format's deck (64 to 100 players) are dealt 15 each. Each round both sides play a card;
   you and the computer take turns naming a stat, and the higher number scores 10 points (5 each on
   a tie). Most points after 15 rounds wins. A game in progress is saved per format.
-- **Who Am I?**: a stat card with the name, team and photo hidden; name the player in five guesses,
-  picked from that format's deck. Each wrong guess shows what it shares with the answer (team, role,
-  era, batting hand) and unlocks a hint: the role, two of the card's standout stats, then a blurred
-  photo. A close guess unlocks two. The daily card's format rotates through ODI, T20I, Test and IPL;
+- **Who Am I?**: a stat card with the name and team hidden and the photo blurred; name the player in
+  five guesses, picked from that format's deck. Each wrong guess shows what it shares with the answer
+  (team, role, era, batting hand) and unlocks a hint in the player's own voice: how they play, their
+  debut and a career highlight, the team-mates they kept (one from a different team), then their
+  nickname, birthplace and team. A close guess unlocks two, and the photo clears a little with every
+  guess that gets closer. The daily card's format rotates through ODI, T20I, Test and IPL;
   practice lets you pick the format.
 
 ```bash
@@ -93,6 +95,11 @@ without one; they show initials on the team colour), so re-run it after adding p
 `gen_whoami.py` reads `cards.json` and the same cached infoboxes and writes `src/data/whoami.json`:
 each player's role (batter, bowler, all-rounder or wicketkeeper), batting hand, and the years of
 their first and last match in each format they have a card for (the infobox's debut and last-match
-rows; Cricsheet seasons for the IPL). The four infoboxes with no Role row are filled in from
+rows; Cricsheet for the IPL). `whoami_hints.py` writes four hints per card from the same infobox
+(bowling style, birthplace, nickname, shirt number, debut and farewell opponents) and from Cricsheet
+line-ups (team-mates, World Cup and IPL finals, best innings and bowling figures, IPL awards). Since
+Cricsheet has every IPL match but only some internationals, an international match count is quoted
+only when it has the player's whole career in that format, and a best innings only when it equals the
+highest score on the card; older players get team-mates from overlapping careers in the same side. The four infoboxes with no Role row are filled in from
 `scripts/data/whoami_overrides.json`. It also sets the order each deck's cards come up as the daily,
 arranged so nobody is the answer twice within 14 days. It never writes `cards.json`.

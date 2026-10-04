@@ -4,6 +4,8 @@ import { FORMAT_STYLE, teamStyle } from '../lib/teams'
 import type { Card, Deck } from '../lib/types'
 
 export type CardResult = 'win' | 'lose' | 'tie'
+/** `initials`: what a card without a photo shows instead of a question mark. */
+export type Mystery = { blur: number; initials?: boolean }
 
 type Props = {
   card: Card
@@ -16,8 +18,8 @@ type Props = {
   result?: CardResult | null
   /** Set when it is the player's turn: each stat becomes a button. */
   onPick?: (stat: string) => void
-  /** Who Am I?: keep the name and team off the card, with no photo or an out-of-focus one. */
-  mystery?: 'hidden' | 'blurred' | null
+  /** Who Am I?: keep the name and team off the card, with the photo this many px out of focus. */
+  mystery?: Mystery | null
 }
 
 const ROW: Record<CardResult, string> = {
@@ -50,8 +52,8 @@ export function PlayerCard({ card, deck, owner, faceDown = false, chosen, result
           style={{ background: frame }}
         >
           <div className="relative overflow-hidden rounded-[15px] bg-[#0a1210] text-white">
-            {/* With nothing to show yet, a mystery card is cut short so the guess box stays in reach. */}
-            <div className={`relative ${mystery === 'hidden' ? 'aspect-[10/6]' : 'aspect-[10/11]'}`}>
+            {/* A mystery card is cut a little short so the guess box stays in reach. */}
+            <div className={`relative ${mystery ? 'aspect-[10/8]' : 'aspect-[10/11]'}`}>
               <Photo card={card} bg={team.bg} fg={team.fg} mystery={mystery} />
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgb(10_18_16/0.35),transparent_22%,transparent_48%,rgb(10_18_16/0.92)_88%,#0a1210)]" />
               <div className="absolute inset-x-2 top-2 flex items-start justify-between gap-1">
@@ -130,11 +132,10 @@ export function PlayerCard({ card, deck, owner, faceDown = false, chosen, result
 }
 
 /** The portrait on a team-colour backdrop, which shows behind cut-out photos; initials if there is no photo. */
-function Photo({ card, bg, fg, mystery }: { card: Card; bg: string; fg: string; mystery?: 'hidden' | 'blurred' | null }) {
+function Photo({ card, bg, fg, mystery }: { card: Card; bg: string; fg: string; mystery?: Mystery | null }) {
   const [broken, setBroken] = useState(false)
-  // A hidden card shows a question mark; a blurred one without a photo falls back to the initials.
   const initials =
-    mystery === 'hidden'
+    mystery && !mystery.initials
       ? '?'
       : card.name
           .split(/\s+/)
@@ -147,14 +148,15 @@ function Photo({ card, bg, fg, mystery }: { card: Card; bg: string; fg: string; 
       className="absolute inset-0 grid place-items-center overflow-hidden pb-8"
       style={{ background: `radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, ${bg} 62%, white), ${bg} 55%, color-mix(in srgb, ${bg} 45%, black))` }}
     >
-      {card.photo && !broken && mystery !== 'hidden' ? (
+      {card.photo && !broken ? (
         <img
           src={card.photo}
           alt=""
           decoding="async"
           draggable={false}
           onError={() => setBroken(true)}
-          className={`absolute inset-0 h-full w-full object-cover object-top ${mystery ? 'scale-110 blur-[14px]' : ''}`}
+          className={`absolute inset-0 h-full w-full object-cover object-top ${mystery ? 'scale-125' : ''} transition-[filter] duration-700`}
+          style={mystery ? { filter: `blur(${mystery.blur}px)` } : undefined}
         />
       ) : (
         <span className="font-display text-[84px] font-extrabold leading-none opacity-30 sm:text-[120px]" style={{ color: fg }}>

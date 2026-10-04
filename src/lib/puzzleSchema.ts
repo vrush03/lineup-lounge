@@ -62,6 +62,7 @@ export const deckSchema = z.strictObject({
 
 const spanSchema = z.tuple([z.number().int(), z.number().int()])
 const ids = z.array(z.string().min(1))
+const hintsSchema = z.array(z.string().min(1)).length(4)
 
 export const whoamiSchema = z.strictObject({
   players: z.record(
@@ -70,6 +71,7 @@ export const whoamiSchema = z.strictObject({
       role: z.enum(ROLES),
       bats: z.enum(['Right', 'Left']),
       span: z.strictObject({ ODI: spanSchema, T20I: spanSchema, Test: spanSchema, IPL: spanSchema }).partial(),
+      hints: z.strictObject({ ODI: hintsSchema, T20I: hintsSchema, Test: hintsSchema, IPL: hintsSchema }).partial(),
     }),
   ),
   order: z.strictObject({ ODI: ids, T20I: ids, Test: ids, IPL: ids }),

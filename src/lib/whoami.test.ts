@@ -16,7 +16,7 @@ import {
   isRound,
   isSolved,
   MAX_GUESSES,
-  rankText,
+  photoBlur,
   search,
   warmth,
   wrongLine,
@@ -36,7 +36,12 @@ const tiny: Deck = {
   ],
   cards: [card('a', 'India', 9000, 3), card('b', 'India', 500, 300), card('c', 'Australia', 9000, 150), card('d', 'England', 100, 20)],
 }
-const bio = (role: Bio['role'], bats: Bio['bats'], from: number, to: number): Bio => ({ role, bats, span: { ODI: [from, to] } })
+const bio = (role: Bio['role'], bats: Bio['bats'], from: number, to: number): Bio => ({
+  role,
+  bats,
+  span: { ODI: [from, to] },
+  hints: { ODI: ['how I play', 'my story', 'my team-mates', 'where I am from'] },
+})
 const bios: Record<string, Bio> = {
   a: bio('Batter', 'Right', 1990, 2005),
   b: bio('Bowler', 'Right', 2000, 2012),
@@ -68,17 +73,24 @@ describe('hints', () => {
     expect(hintsShown(['close', 'close', 'close'])).toBe(HINTS)
     expect(HINTS).toBe(MAX_GUESSES - 1)
   })
-  it('give the role, the card’s two strongest stats, then the photo', () => {
-    const hints = hintsFor(b, tiny, bios.b)
-    expect(hints).toHaveLength(HINTS)
-    expect(hints[0]).toEqual({ kind: 'role', text: 'Bowler, bats right-handed.' })
-    expect(hints[1]).toEqual({ kind: 'rank', text: '300 is the most wickets of the 4 players in the ODI deck.' })
-    expect(hints[2]).toEqual({ kind: 'rank', text: '500 is the 3rd most runs of the 4 players in the ODI deck.' })
-    expect(hints[3]).toEqual({ kind: 'photo' })
+  it('clear the photo as guesses get closer, and never for a cold one', () => {
+    expect(photoBlur([], false)).toBe(26)
+    expect(photoBlur(['cold', 'cold'], false)).toBe(26)
+    expect(photoBlur(['warm'], false)).toBe(20)
+    expect(photoBlur(['cold', 'close'], false)).toBe(15)
+    expect(photoBlur(['warm', 'close'], false)).toBeLessThan(photoBlur(['close'], false))
+    expect(photoBlur(['cold', 'cold', 'cold', 'cold'], true)).toBe(15)
+    expect(photoBlur(['close', 'close', 'close', 'close'], true)).toBe(6)
   })
-  it('say when a rank is shared', () => {
-    expect(rankText(a, tiny.stats[0], tiny)).toBe('9,000 is the joint most runs of the 4 players in the ODI deck.')
-    expect(rankText(d, tiny.stats[1], tiny)).toBe('20 is the 3rd most wickets of the 4 players in the ODI deck.')
+  it('come from the card’s own ladder, with a plain one if the data has none', () => {
+    expect(hintsFor(b, tiny, bios.b)).toEqual(['how I play', 'my story', 'my team-mates', 'where I am from'])
+    expect(hintsFor(b, { ...tiny, format: 'IPL' }, bios.b)).toEqual([
+      'I’m a bowler who bats right-handed.',
+      'I played for India.',
+      'I played for India.',
+      'I played for India.',
+    ])
+    expect(hintsFor(b, tiny, undefined)).toHaveLength(HINTS)
   })
 })
 
@@ -134,6 +146,13 @@ describe('who am i data', () => {
       const span = data.players[x.id]?.span[format]
       expect(span, x.name).toBeDefined()
       expect(span![0], x.name).toBeLessThanOrEqual(span![1])
+      const hints = data.players[x.id].hints[format]
+      expect(hints, x.name).toHaveLength(HINTS)
+      expect(hintsFor(x, deck, data.players[x.id])).toBe(hints)
+      // The first three never name the player; the last may all but say it.
+      const words = x.name.toLowerCase().split(/[^a-z]+/).filter((w) => w.length >= 3)
+      for (const h of hints!.slice(0, 3)) expect(words.filter((w) => h.toLowerCase().split(/[^a-z]+/).includes(w)), `${x.name}: ${h}`).toEqual([])
+      expect(hints![3], x.name).toContain(x.team)
     }
     expect([...data.order[format]].sort()).toEqual(deck.cards.map((x) => x.id).sort())
   })
@@ -149,8 +168,5 @@ describe('who am i data', () => {
       expect(day - (last.get(id) ?? -99), `${id} on day ${day}`).toBeGreaterThanOrEqual(14)
       last.set(id, day)
     }
-  })
-  it('gives every card four hints', () => {
-    for (const deck of decks) for (const x of deck.cards) expect(hintsFor(x, deck, data.players[x.id])).toHaveLength(HINTS)
   })
 })
