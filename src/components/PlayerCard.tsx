@@ -16,6 +16,8 @@ type Props = {
   result?: CardResult | null
   /** Set when it is the player's turn: each stat becomes a button. */
   onPick?: (stat: string) => void
+  /** Who Am I?: keep the name and team off the card, with no photo or an out-of-focus one. */
+  mystery?: 'hidden' | 'blurred' | null
 }
 
 const ROW: Record<CardResult, string> = {
@@ -30,8 +32,9 @@ const GLOW: Record<CardResult, string> = {
 }
 
 /** A stat card. It is always dark, like a printed card, whatever the page theme. */
-export function PlayerCard({ card, deck, owner, faceDown = false, chosen, result, onPick }: Props) {
-  const team = teamStyle(card.team)
+export function PlayerCard({ card, deck, owner, faceDown = false, chosen, result, onPick, mystery }: Props) {
+  // A mystery card wears neutral colours: the team's would give it away.
+  const team = teamStyle(mystery ? undefined : card.team, '?')
   // A metallic frame in the team's colour: light catches the top-left edge, shade the bottom.
   const frame = `linear-gradient(150deg, ${team.bg}, color-mix(in srgb, ${team.bg} 40%, white) 32%, ${team.bg} 58%, color-mix(in srgb, ${team.bg} 55%, black))`
 
@@ -41,14 +44,15 @@ export function PlayerCard({ card, deck, owner, faceDown = false, chosen, result
         className={`relative transition-transform duration-700 [transform-style:preserve-3d] ${faceDown ? '[transform:rotateY(180deg)]' : ''}`}
       >
         <article
-          aria-label={faceDown ? undefined : `${owner}: ${card.name}, ${card.team}`}
+          aria-label={faceDown ? undefined : mystery ? owner : `${owner}: ${card.name}, ${card.team}`}
           aria-hidden={faceDown}
           className={`relative rounded-[18px] p-[3px] transition duration-500 [backface-visibility:hidden] ${result ? GLOW[result] : 'shadow-[0_14px_30px_-14px_rgb(0_0_0/0.7)]'}`}
           style={{ background: frame }}
         >
           <div className="relative overflow-hidden rounded-[15px] bg-[#0a1210] text-white">
-            <div className="relative aspect-[10/11]">
-              <Photo card={card} bg={team.bg} fg={team.fg} />
+            {/* With nothing to show yet, a mystery card is cut short so the guess box stays in reach. */}
+            <div className={`relative ${mystery === 'hidden' ? 'aspect-[10/6]' : 'aspect-[10/11]'}`}>
+              <Photo card={card} bg={team.bg} fg={team.fg} mystery={mystery} />
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgb(10_18_16/0.35),transparent_22%,transparent_48%,rgb(10_18_16/0.92)_88%,#0a1210)]" />
               <div className="absolute inset-x-2 top-2 flex items-start justify-between gap-1">
                 <span
@@ -66,9 +70,11 @@ export function PlayerCard({ card, deck, owner, faceDown = false, chosen, result
               </div>
               <div className="absolute inset-x-2.5 bottom-1.5">
                 <h3 className="font-display text-[21px] font-extrabold uppercase leading-[0.95] tracking-wide text-balance drop-shadow-[0_1px_2px_rgb(0_0_0/0.8)] sm:text-[28px]">
-                  {card.name}
+                  {mystery ? 'Who am I?' : card.name}
                 </h3>
-                <p className="mt-0.5 truncate text-[10px] font-semibold uppercase tracking-[0.16em] text-white/65 sm:text-[11px]">{card.team}</p>
+                <p className="mt-0.5 truncate text-[10px] font-semibold uppercase tracking-[0.16em] text-white/65 sm:text-[11px]">
+                  {mystery ? `One of ${deck.cards.length} in the ${deck.format} deck` : card.team}
+                </p>
               </div>
             </div>
 
@@ -124,27 +130,31 @@ export function PlayerCard({ card, deck, owner, faceDown = false, chosen, result
 }
 
 /** The portrait on a team-colour backdrop, which shows behind cut-out photos; initials if there is no photo. */
-function Photo({ card, bg, fg }: { card: Card; bg: string; fg: string }) {
+function Photo({ card, bg, fg, mystery }: { card: Card; bg: string; fg: string; mystery?: 'hidden' | 'blurred' | null }) {
   const [broken, setBroken] = useState(false)
-  const initials = card.name
-    .split(/\s+/)
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 3)
+  // A hidden card shows a question mark; a blurred one without a photo falls back to the initials.
+  const initials =
+    mystery === 'hidden'
+      ? '?'
+      : card.name
+          .split(/\s+/)
+          .map((w) => w[0])
+          .join('')
+          .slice(0, 3)
   return (
     <div
       aria-hidden
-      className="absolute inset-0 grid place-items-center pb-8"
+      className="absolute inset-0 grid place-items-center overflow-hidden pb-8"
       style={{ background: `radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, ${bg} 62%, white), ${bg} 55%, color-mix(in srgb, ${bg} 45%, black))` }}
     >
-      {card.photo && !broken ? (
+      {card.photo && !broken && mystery !== 'hidden' ? (
         <img
           src={card.photo}
           alt=""
           decoding="async"
           draggable={false}
           onError={() => setBroken(true)}
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          className={`absolute inset-0 h-full w-full object-cover object-top ${mystery ? 'scale-110 blur-[14px]' : ''}`}
         />
       ) : (
         <span className="font-display text-[84px] font-extrabold leading-none opacity-30 sm:text-[120px]" style={{ color: fg }}>

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { ballparkLiveStreak, loadBallpark, loadBallparkStats, recordBallpark, saveBallpark } from './storage'
+import { ballparkLiveStreak, loadBallpark, loadBallparkStats, loadStats, loadWhoAmI, loadWhoAmIStats, recordBallpark, recordWhoAmI, saveBallpark, saveWhoAmI } from './storage'
 
 beforeEach(() => {
   const store = new Map<string, string>()
@@ -37,5 +37,21 @@ describe('ballpark stats', () => {
     expect(loadBallpark('cricket:3')).toBeNull()
     saveBallpark('cricket:3', { ids: ['a'], guesses: [['250']] })
     expect(loadBallpark('cricket:3')).toEqual({ ids: ['a'], guesses: [['250']] })
+  })
+})
+
+describe('who am i stats', () => {
+  it('are kept apart from Lineup’s, with a streak of days solved', () => {
+    recordWhoAmI(4, true, 2)
+    recordWhoAmI(5, true, 5)
+    expect(recordWhoAmI(5, false, 5).won).toBe(2)
+    expect(loadWhoAmIStats()).toMatchObject({ played: 2, won: 2, streak: 2, lastWonDay: 5, dist: [0, 1, 0, 0, 1] })
+    expect(recordWhoAmI(6, false, 5)).toMatchObject({ played: 3, streak: 0, maxStreak: 2 })
+    expect(loadStats().played).toBe(0)
+  })
+  it('hands back whatever round was saved for the caller to check', () => {
+    expect(loadWhoAmI('cricket:3')).toBeNull()
+    saveWhoAmI('cricket:3', { id: 'a', guesses: ['b'] })
+    expect(loadWhoAmI('cricket:3')).toEqual({ id: 'a', guesses: ['b'] })
   })
 })

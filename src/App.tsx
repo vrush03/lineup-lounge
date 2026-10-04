@@ -5,6 +5,7 @@ import { Home, type ModeCard } from './components/Home'
 import { LineupMode } from './components/LineupMode'
 import { ShowdownMode } from './components/ShowdownMode'
 import { StatsDialog } from './components/StatsDialog'
+import { WhoAmIMode } from './components/WhoAmIMode'
 import { BALLPARK_LENGTH, MAX_POINTS } from './lib/ballpark'
 import { dayNumber, puzzleIndex } from './lib/daily'
 import { loadPuzzles } from './lib/puzzles'
@@ -16,12 +17,15 @@ import {
   loadPref,
   loadShowdownStats,
   loadStats,
+  loadWhoAmIStats,
   recordBallpark,
   recordResult,
   recordShowdown,
+  recordWhoAmI,
   savePref,
 } from './lib/storage'
 import { SHOWDOWN_FORMATS, type Puzzle } from './lib/types'
+import { MAX_GUESSES } from './lib/whoami'
 
 type Theme = 'system' | 'light' | 'dark'
 
@@ -54,16 +58,16 @@ export default function App() {
   )
 }
 
-type Route = 'home' | 'lineup' | 'ballpark' | 'showdown'
+type Route = 'home' | 'lineup' | 'ballpark' | 'showdown' | 'whoami'
 
-const TITLE: Record<Route, string> = { home: 'Daily cricket games', lineup: 'Lineup', ballpark: 'Ballpark', showdown: 'Showdown' }
+const TITLE: Record<Route, string> = { home: 'Daily cricket games', lineup: 'Lineup', ballpark: 'Ballpark', showdown: 'Showdown', whoami: 'Who Am I?' }
 
 function routeFromHash(): Route {
   const h = location.hash.slice(1)
-  return h === 'lineup' || h === 'ballpark' || h === 'showdown' ? h : 'home'
+  return h === 'lineup' || h === 'ballpark' || h === 'showdown' || h === 'whoami' ? h : 'home'
 }
 
-/** Hash routes (#lineup, #ballpark, #showdown) so the browser back button returns to the mode list. */
+/** Hash routes (#lineup, #ballpark, #showdown, #whoami) so the browser back button returns to the mode list. */
 function useRoute(): Route {
   const [route, setRoute] = useState(routeFromHash)
   useEffect(() => {
@@ -87,6 +91,7 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
   const [stats, setStats] = useState(loadStats)
   const [ballparkStats, setBallparkStats] = useState(loadBallparkStats)
   const [showdownStats, setShowdownStats] = useState(loadShowdownStats)
+  const [whoamiStats, setWhoamiStats] = useState(loadWhoAmIStats)
   const [statsOpen, setStatsOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(() => loadPref('theme', 'system'))
 
@@ -98,8 +103,9 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
 
   const lineupStreak = liveStreak(stats, day)
   const ballparkStreak = ballparkLiveStreak(ballparkStats, day)
+  const whoamiStreak = liveStreak(whoamiStats, day)
   const streak =
-    route === 'ballpark' ? ballparkStreak : route === 'showdown' ? showdownStats.streak : lineupStreak
+    route === 'ballpark' ? ballparkStreak : route === 'showdown' ? showdownStats.streak : route === 'whoami' ? whoamiStreak : lineupStreak
   const dateLabel = today.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' })
 
   const modes: ModeCard[] = [
@@ -132,6 +138,14 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
       streak: showdownStats.streak,
       streakLabel: 'win streak',
       icon: <ShowdownIcon />,
+    },
+    {
+      href: '#whoami',
+      name: 'Who Am I?',
+      tagline: `Name the player from a stat card in ${MAX_GUESSES} guesses.`,
+      status: whoamiStats.lastPlayedDay === day ? (whoamiStats.lastWonDay === day ? 'solved' : 'bowled') : null,
+      streak: whoamiStreak,
+      icon: <WhoAmIIcon />,
     },
   ]
 
@@ -203,8 +217,10 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           />
         ) : route === 'ballpark' ? (
           <BallparkMode day={day} dateLabel={dateLabel} onFinishDaily={(points) => setBallparkStats(recordBallpark(day, points))} />
-        ) : (
+        ) : route === 'showdown' ? (
           <ShowdownMode onFinish={(format, won) => setShowdownStats(recordShowdown(format, won))} />
+        ) : (
+          <WhoAmIMode day={day} dateLabel={dateLabel} onFinishDaily={(solved, n) => setWhoamiStats(recordWhoAmI(day, solved, n))} />
         )}
       </main>
 
@@ -265,6 +281,21 @@ function Lounge({ puzzles }: { puzzles: Puzzle[] }) {
           distTitle="Wins by format"
           dist={SHOWDOWN_FORMATS.map((f) => [f, showdownStats.wins[f] ?? 0] as [string, number])}
           note={`A game counts once all ${ROUNDS} rounds are played. The streak is games won in a row; a draw ends it.`}
+        />
+      ) : route === 'whoami' ? (
+        <StatsDialog
+          open={statsOpen}
+          onClose={() => setStatsOpen(false)}
+          title="Who Am I? stats"
+          tiles={[
+            ['Played', whoamiStats.played],
+            ['Win %', whoamiStats.played ? Math.round((100 * whoamiStats.won) / whoamiStats.played) : 0],
+            ['Streak', whoamiStreak],
+            ['Best', whoamiStats.maxStreak],
+          ]}
+          distTitle="Guesses to solve"
+          dist={whoamiStats.dist.map((n, i) => [String(i + 1), n] as [string, number])}
+          note="The streak is daily players named in a row. Daily rounds count towards your stats; practice rounds don’t."
         />
       ) : (
         <StatsDialog
@@ -334,6 +365,16 @@ function ShowdownIcon() {
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       <rect x="3.5" y="5" width="10" height="14" rx="2" transform="rotate(-10 8.5 12)" />
       <rect x="10.5" y="5" width="10" height="14" rx="2" transform="rotate(10 15.5 12)" fill="currentColor" fillOpacity="0.18" />
+    </svg>
+  )
+}
+
+function WhoAmIIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="5" y="3" width="14" height="18" rx="2.5" />
+      <path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2 1-1.2 1.9" />
+      <path d="M12 16.8v.1" />
     </svg>
   )
 }

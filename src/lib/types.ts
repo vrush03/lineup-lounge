@@ -82,3 +82,20 @@ export type Deck = {
   stats: StatDef[]
   cards: Card[]
 }
+
+export const ROLES = ['Batter', 'Bowler', 'All-rounder', 'Wicketkeeper'] as const
+export type Role = (typeof ROLES)[number]
+
+/** What Who Am I? knows about a player beyond their cards. */
+export type Bio = {
+  role: Role
+  bats: 'Right' | 'Left'
+  /** Years of the first and last match, for each format the player has a card in. */
+  span: Partial<Record<ShowdownFormat, [number, number]>>
+}
+
+/** Who Am I? data: a bio per card id, and the order each deck's cards come up as the daily. */
+export type WhoAmIData = {
+  players: Record<string, Bio>
+  order: Record<ShowdownFormat, string[]>
+}

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ESTIMATE_FAMILIES, FORMATS, SHOWDOWN_FORMATS } from './types'
+import { ESTIMATE_FAMILIES, FORMATS, ROLES, SHOWDOWN_FORMATS } from './types'
 
 const itemSchema = z.object({
   label: z.string(),
@@ -58,4 +58,19 @@ export const deckSchema = z.strictObject({
   source: z.object({ name: z.string(), url: z.string(), license: z.string() }),
   stats: z.array(z.strictObject({ key: z.string(), label: z.string(), short: z.string(), decimals: z.number().optional() })).min(5),
   cards: z.array(cardSchema),
+})
+
+const spanSchema = z.tuple([z.number().int(), z.number().int()])
+const ids = z.array(z.string().min(1))
+
+export const whoamiSchema = z.strictObject({
+  players: z.record(
+    z.string(),
+    z.strictObject({
+      role: z.enum(ROLES),
+      bats: z.enum(['Right', 'Left']),
+      span: z.strictObject({ ODI: spanSchema, T20I: spanSchema, Test: spanSchema, IPL: spanSchema }).partial(),
+    }),
+  ),
+  order: z.strictObject({ ODI: ids, T20I: ids, Test: ids, IPL: ids }),
 })

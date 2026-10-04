@@ -43,14 +43,13 @@ export type Stats = {
 }
 const emptyStats: Stats = { played: 0, won: 0, streak: 0, maxStreak: 0, lastWonDay: null, lastPlayedDay: null, dist: [0, 0, 0, 0, 0] }
 
-export function loadStats(): Stats {
-  const s = read<Partial<Stats>>('stats') ?? {}
+function statsAt(key: string): Stats {
+  const s = read<Partial<Stats>>(key) ?? {}
   return { ...emptyStats, ...s, dist: s.dist?.length === 5 ? s.dist : [...emptyStats.dist] }
 }
 
-/** Record a finished daily puzzle. Recording the same day twice is ignored. */
-export function recordResult(day: number, solved: boolean, attempts: number): Stats {
-  const s = loadStats()
+function recordAt(key: string, day: number, solved: boolean, attempts: number): Stats {
+  const s = statsAt(key)
   if (s.lastPlayedDay === day) return s
   const streak = solved ? (s.lastWonDay === day - 1 ? s.streak + 1 : 1) : 0
   const dist = [...s.dist]
@@ -64,9 +63,13 @@ export function recordResult(day: number, solved: boolean, attempts: number): St
     lastPlayedDay: day,
     dist,
   }
-  write('stats', next)
+  write(key, next)
   return next
 }
+
+export const loadStats = () => statsAt('stats')
+/** Record a finished daily puzzle. Recording the same day twice is ignored. */
+export const recordResult = (day: number, solved: boolean, attempts: number) => recordAt('stats', day, solved, attempts)
 
 /** Streak shown in the header: a streak is broken if yesterday wasn't won. */
 export function liveStreak(s: Stats, today: number): number {
@@ -192,3 +195,11 @@ export function recordShowdown(format: string, won: boolean): ShowdownStats {
   write('stats:showdown', next)
   return next
 }
+
+/** A Who Am I? round in progress. The caller checks it against the deck (`isRound`). */
+export const loadWhoAmI = (key: string): unknown => read<unknown>(`whoami:${key}`)
+export const saveWhoAmI = (key: string, round: unknown) => write(`whoami:${key}`, round)
+
+/** Who Am I? keeps the same counts as Lineup: five guesses, and a streak of days solved. */
+export const loadWhoAmIStats = () => statsAt('stats:whoami')
+export const recordWhoAmI = (day: number, solved: boolean, guesses: number) => recordAt('stats:whoami', day, solved, guesses)

@@ -1,0 +1,2792 @@
+{
+ "players": {
+  "aaron-finch": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2013,
+     2022
+    ],
+    "T20I": [
+     2011,
+     2022
+    ],
+    "IPL": [
+     2010,
+     2022
+    ]
+   }
+  },
+  "ab-de-villiers": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2004,
+     2018
+    ],
+    "ODI": [
+     2005,
+     2018
+    ],
+    "T20I": [
+     2006,
+     2017
+    ],
+    "IPL": [
+     2008,
+     2021
+    ]
+   }
+  },
+  "adam-gilchrist": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1999,
+     2008
+    ],
+    "ODI": [
+     1996,
+     2008
+    ],
+    "IPL": [
+     2008,
+     2013
+    ]
+   }
+  },
+  "adam-zampa": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2016,
+     2026
+    ]
+   }
+  },
+  "adil-rashid": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2009,
+     2026
+    ],
+    "T20I": [
+     2009,
+     2026
+    ]
+   }
+  },
+  "aiden-markram": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2019,
+     2026
+    ]
+   }
+  },
+  "ajinkya-rahane": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2013,
+     2023
+    ],
+    "IPL": [
+     2008,
+     2026
+    ]
+   }
+  },
+  "alastair-cook": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2006,
+     2018
+    ]
+   }
+  },
+  "alex-hales": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2011,
+     2022
+    ]
+   }
+  },
+  "allan-border": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1978,
+     1994
+    ]
+   }
+  },
+  "allan-donald": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1992,
+     2002
+    ],
+    "ODI": [
+     1991,
+     2003
+    ]
+   }
+  },
+  "amit-mishra": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "IPL": [
+     2008,
+     2024
+    ]
+   }
+  },
+  "andre-russell": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2011,
+     2025
+    ],
+    "IPL": [
+     2012,
+     2025
+    ]
+   }
+  },
+  "andrew-balbirnie": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2015,
+     2024
+    ]
+   }
+  },
+  "andrew-flintoff": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1998,
+     2009
+    ]
+   }
+  },
+  "andrew-strauss": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2004,
+     2012
+    ]
+   }
+  },
+  "andrew-symonds": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1998,
+     2009
+    ]
+   }
+  },
+  "andy-flower": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1992,
+     2002
+    ],
+    "ODI": [
+     1992,
+     2003
+    ]
+   }
+  },
+  "angelo-mathews": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2009,
+     2025
+    ]
+   }
+  },
+  "anil-kumble": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1990,
+     2008
+    ],
+    "ODI": [
+     1990,
+     2007
+    ]
+   }
+  },
+  "aravinda-de-silva": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1984,
+     2002
+    ],
+    "ODI": [
+     1984,
+     2003
+    ]
+   }
+  },
+  "arjuna-ranatunga": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     1982,
+     1999
+    ]
+   }
+  },
+  "babar-azam": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2016,
+     2026
+    ],
+    "ODI": [
+     2015,
+     2025
+    ],
+    "T20I": [
+     2016,
+     2026
+    ]
+   }
+  },
+  "ben-stokes": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2013,
+     2026
+    ],
+    "ODI": [
+     2011,
+     2023
+    ]
+   }
+  },
+  "bhuvneshwar-kumar": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2012,
+     2022
+    ],
+    "IPL": [
+     2011,
+     2026
+    ]
+   }
+  },
+  "brendon-mccullum": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2004,
+     2016
+    ],
+    "ODI": [
+     2002,
+     2016
+    ],
+    "T20I": [
+     2005,
+     2015
+    ],
+    "IPL": [
+     2008,
+     2018
+    ]
+   }
+  },
+  "brett-lee": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1999,
+     2008
+    ],
+    "ODI": [
+     2000,
+     2012
+    ]
+   }
+  },
+  "brian-lara": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1990,
+     2006
+    ],
+    "ODI": [
+     1990,
+     2007
+    ]
+   }
+  },
+  "chaminda-vaas": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     1994,
+     2008
+    ]
+   }
+  },
+  "cheteshwar-pujara": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2010,
+     2023
+    ]
+   }
+  },
+  "chris-gayle": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2000,
+     2014
+    ],
+    "ODI": [
+     1999,
+     2019
+    ],
+    "T20I": [
+     2006,
+     2021
+    ],
+    "IPL": [
+     2009,
+     2021
+    ]
+   }
+  },
+  "clive-lloyd": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1966,
+     1984
+    ]
+   }
+  },
+  "courtney-walsh": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1984,
+     2001
+    ],
+    "ODI": [
+     1985,
+     2000
+    ]
+   }
+  },
+  "curtly-ambrose": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1988,
+     2000
+    ],
+    "ODI": [
+     1988,
+     2000
+    ]
+   }
+  },
+  "dale-steyn": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2004,
+     2019
+    ],
+    "ODI": [
+     2005,
+     2019
+    ],
+    "T20I": [
+     2007,
+     2020
+    ],
+    "IPL": [
+     2008,
+     2020
+    ]
+   }
+  },
+  "daniel-vettori": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1997,
+     2014
+    ],
+    "ODI": [
+     1997,
+     2015
+    ]
+   }
+  },
+  "dasun-shanaka": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2015,
+     2026
+    ]
+   }
+  },
+  "david-gower": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1978,
+     1992
+    ]
+   }
+  },
+  "david-miller": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     2010,
+     2026
+    ],
+    "T20I": [
+     2010,
+     2026
+    ],
+    "IPL": [
+     2012,
+     2026
+    ]
+   }
+  },
+  "david-warner": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2011,
+     2024
+    ],
+    "ODI": [
+     2009,
+     2023
+    ],
+    "T20I": [
+     2009,
+     2024
+    ],
+    "IPL": [
+     2009,
+     2024
+    ]
+   }
+  },
+  "dawid-malan": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2017,
+     2023
+    ]
+   }
+  },
+  "dennis-lillee": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1971,
+     1984
+    ]
+   }
+  },
+  "desmond-haynes": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1978,
+     1994
+    ],
+    "ODI": [
+     1978,
+     1994
+    ]
+   }
+  },
+  "devon-conway": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2020,
+     2026
+    ]
+   }
+  },
+  "dilip-vengsarkar": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1976,
+     1992
+    ]
+   }
+  },
+  "don-bradman": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1928,
+     1948
+    ]
+   }
+  },
+  "dwayne-bravo": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2006,
+     2021
+    ],
+    "IPL": [
+     2008,
+     2022
+    ]
+   }
+  },
+  "eoin-morgan": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     2006,
+     2022
+    ],
+    "T20I": [
+     2009,
+     2022
+    ],
+    "IPL": [
+     2010,
+     2021
+    ]
+   }
+  },
+  "faf-du-plessis": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2011,
+     2019
+    ],
+    "T20I": [
+     2012,
+     2020
+    ],
+    "IPL": [
+     2012,
+     2025
+    ]
+   }
+  },
+  "garfield-sobers": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1954,
+     1974
+    ]
+   }
+  },
+  "gary-kirsten": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     1993,
+     2003
+    ]
+   }
+  },
+  "gautam-gambhir": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "IPL": [
+     2008,
+     2018
+    ]
+   }
+  },
+  "geoffrey-boycott": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1964,
+     1982
+    ]
+   }
+  },
+  "glenn-maxwell": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2012,
+     2025
+    ],
+    "T20I": [
+     2012,
+     2026
+    ],
+    "IPL": [
+     2012,
+     2025
+    ]
+   }
+  },
+  "glenn-mcgrath": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1993,
+     2007
+    ],
+    "ODI": [
+     1993,
+     2007
+    ]
+   }
+  },
+  "gordon-greenidge": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1974,
+     1991
+    ]
+   }
+  },
+  "graeme-smith": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2002,
+     2014
+    ],
+    "ODI": [
+     2002,
+     2013
+    ]
+   }
+  },
+  "graham-gooch": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1975,
+     1995
+    ]
+   }
+  },
+  "greg-chappell": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1970,
+     1984
+    ]
+   }
+  },
+  "harbhajan-singh": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1998,
+     2015
+    ],
+    "ODI": [
+     1998,
+     2015
+    ],
+    "IPL": [
+     2008,
+     2021
+    ]
+   }
+  },
+  "hardik-pandya": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2016,
+     2026
+    ],
+    "IPL": [
+     2015,
+     2026
+    ]
+   }
+  },
+  "hashim-amla": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2004,
+     2019
+    ],
+    "ODI": [
+     2008,
+     2019
+    ]
+   }
+  },
+  "herschelle-gibbs": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1996,
+     2010
+    ]
+   }
+  },
+  "ian-botham": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1977,
+     1992
+    ],
+    "ODI": [
+     1976,
+     1992
+    ]
+   }
+  },
+  "imran-khan": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1971,
+     1992
+    ],
+    "ODI": [
+     1974,
+     1992
+    ]
+   }
+  },
+  "inzamam-ul-haq": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1992,
+     2007
+    ],
+    "ODI": [
+     1991,
+     2007
+    ]
+   }
+  },
+  "ish-sodhi": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2014,
+     2026
+    ]
+   }
+  },
+  "ishant-sharma": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "IPL": [
+     2008,
+     2025
+    ]
+   }
+  },
+  "jack-hobbs": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1908,
+     1930
+    ]
+   }
+  },
+  "jacques-kallis": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1995,
+     2013
+    ],
+    "ODI": [
+     1996,
+     2014
+    ],
+    "IPL": [
+     2008,
+     2014
+    ]
+   }
+  },
+  "james-anderson": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2003,
+     2024
+    ]
+   }
+  },
+  "jason-roy": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2014,
+     2022
+    ]
+   }
+  },
+  "jasprit-bumrah": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2018,
+     2025
+    ],
+    "ODI": [
+     2016,
+     2026
+    ],
+    "T20I": [
+     2016,
+     2026
+    ],
+    "IPL": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "javagal-srinath": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1991,
+     2003
+    ]
+   }
+  },
+  "javed-miandad": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1976,
+     1993
+    ],
+    "ODI": [
+     1975,
+     1996
+    ]
+   }
+  },
+  "joe-root": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2012,
+     2026
+    ],
+    "ODI": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "jonny-bairstow": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2011,
+     2024
+    ]
+   }
+  },
+  "jos-buttler": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2012,
+     2026
+    ],
+    "T20I": [
+     2011,
+     2026
+    ],
+    "IPL": [
+     2016,
+     2026
+    ]
+   }
+  },
+  "jp-duminy": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2007,
+     2019
+    ],
+    "IPL": [
+     2009,
+     2018
+    ]
+   }
+  },
+  "justin-langer": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1993,
+     2007
+    ]
+   }
+  },
+  "kagiso-rabada": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2015,
+     2025
+    ],
+    "ODI": [
+     2015,
+     2025
+    ],
+    "T20I": [
+     2014,
+     2025
+    ],
+    "IPL": [
+     2017,
+     2026
+    ]
+   }
+  },
+  "kane-williamson": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2010,
+     2026
+    ],
+    "ODI": [
+     2010,
+     2025
+    ],
+    "T20I": [
+     2011,
+     2024
+    ],
+    "IPL": [
+     2015,
+     2024
+    ]
+   }
+  },
+  "kapil-dev": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1978,
+     1994
+    ],
+    "ODI": [
+     1978,
+     1994
+    ]
+   }
+  },
+  "kevin-pietersen": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2005,
+     2014
+    ],
+    "ODI": [
+     2004,
+     2013
+    ]
+   }
+  },
+  "kieron-pollard": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2008,
+     2022
+    ],
+    "IPL": [
+     2010,
+     2022
+    ]
+   }
+  },
+  "kl-rahul": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2016,
+     2026
+    ],
+    "T20I": [
+     2016,
+     2022
+    ],
+    "IPL": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "kuldeep-yadav": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2017,
+     2026
+    ],
+    "IPL": [
+     2016,
+     2026
+    ]
+   }
+  },
+  "kumar-sangakkara": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2000,
+     2015
+    ],
+    "ODI": [
+     2000,
+     2015
+    ],
+    "T20I": [
+     2006,
+     2014
+    ]
+   }
+  },
+  "kusal-mendis": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2016,
+     2025
+    ]
+   }
+  },
+  "kusal-perera": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2013,
+     2025
+    ]
+   }
+  },
+  "lance-klusener": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     1996,
+     2004
+    ]
+   }
+  },
+  "lasith-malinga": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2004,
+     2019
+    ],
+    "T20I": [
+     2006,
+     2020
+    ],
+    "IPL": [
+     2009,
+     2019
+    ]
+   }
+  },
+  "len-hutton": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1937,
+     1955
+    ]
+   }
+  },
+  "liton-das": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2015,
+     2026
+    ]
+   }
+  },
+  "mahela-jayawardene": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1997,
+     2014
+    ],
+    "ODI": [
+     1998,
+     2015
+    ],
+    "IPL": [
+     2008,
+     2013
+    ]
+   }
+  },
+  "mahmudullah": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2007,
+     2024
+    ]
+   }
+  },
+  "malcolm-marshall": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1978,
+     1991
+    ]
+   }
+  },
+  "mark-waugh": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1991,
+     2002
+    ],
+    "ODI": [
+     1988,
+     2002
+    ]
+   }
+  },
+  "marnus-labuschagne": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2018,
+     2026
+    ]
+   }
+  },
+  "martin-crowe": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1982,
+     1995
+    ]
+   }
+  },
+  "martin-guptill": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2009,
+     2022
+    ],
+    "T20I": [
+     2009,
+     2022
+    ]
+   }
+  },
+  "matthew-hayden": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1994,
+     2009
+    ],
+    "ODI": [
+     1993,
+     2008
+    ],
+    "IPL": [
+     2008,
+     2010
+    ]
+   }
+  },
+  "michael-bevan": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     1994,
+     2004
+    ]
+   }
+  },
+  "michael-hussey": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2005,
+     2013
+    ],
+    "ODI": [
+     2004,
+     2012
+    ],
+    "IPL": [
+     2008,
+     2015
+    ]
+   }
+  },
+  "mitchell-marsh": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2011,
+     2026
+    ]
+   }
+  },
+  "mitchell-starc": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2011,
+     2026
+    ],
+    "ODI": [
+     2010,
+     2026
+    ],
+    "T20I": [
+     2012,
+     2024
+    ],
+    "IPL": [
+     2014,
+     2026
+    ]
+   }
+  },
+  "mohammad-azharuddin": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1984,
+     2000
+    ],
+    "ODI": [
+     1985,
+     2000
+    ]
+   }
+  },
+  "mohammad-hafeez": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2006,
+     2021
+    ]
+   }
+  },
+  "mohammad-nabi": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2010,
+     2026
+    ]
+   }
+  },
+  "mohammed-shami": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "IPL": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "ms-dhoni": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2005,
+     2014
+    ],
+    "ODI": [
+     2004,
+     2019
+    ],
+    "T20I": [
+     2006,
+     2019
+    ],
+    "IPL": [
+     2008,
+     2025
+    ]
+   }
+  },
+  "mushfiqur-rahim": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2006,
+     2025
+    ]
+   }
+  },
+  "mustafizur-rahman": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2015,
+     2026
+    ]
+   }
+  },
+  "muttiah-muralitharan": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1992,
+     2010
+    ],
+    "ODI": [
+     1993,
+     2011
+    ]
+   }
+  },
+  "nathan-lyon": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2011,
+     2026
+    ]
+   }
+  },
+  "nicholas-pooran": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2016,
+     2024
+    ],
+    "IPL": [
+     2019,
+     2026
+    ]
+   }
+  },
+  "pat-cummins": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2011,
+     2026
+    ],
+    "T20I": [
+     2011,
+     2024
+    ],
+    "IPL": [
+     2014,
+     2026
+    ]
+   }
+  },
+  "pathum-nissanka": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2021,
+     2026
+    ]
+   }
+  },
+  "paul-stirling": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2008,
+     2026
+    ],
+    "T20I": [
+     2009,
+     2026
+    ]
+   }
+  },
+  "phil-salt": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2022,
+     2026
+    ]
+   }
+  },
+  "quinton-de-kock": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     2013,
+     2026
+    ],
+    "T20I": [
+     2012,
+     2026
+    ],
+    "IPL": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "rahul-dravid": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1996,
+     2012
+    ],
+    "ODI": [
+     1996,
+     2011
+    ],
+    "IPL": [
+     2008,
+     2013
+    ]
+   }
+  },
+  "rangana-herath": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1999,
+     2018
+    ]
+   }
+  },
+  "rashid-khan": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2015,
+     2026
+    ],
+    "T20I": [
+     2015,
+     2026
+    ],
+    "IPL": [
+     2017,
+     2026
+    ]
+   }
+  },
+  "ravichandran-ashwin": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2011,
+     2024
+    ],
+    "IPL": [
+     2009,
+     2025
+    ]
+   }
+  },
+  "ravindra-jadeja": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2012,
+     2025
+    ],
+    "ODI": [
+     2009,
+     2026
+    ],
+    "T20I": [
+     2009,
+     2024
+    ],
+    "IPL": [
+     2008,
+     2026
+    ]
+   }
+  },
+  "reeza-hendricks": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2014,
+     2025
+    ]
+   }
+  },
+  "richard-hadlee": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1973,
+     1990
+    ],
+    "ODI": [
+     1973,
+     1990
+    ]
+   }
+  },
+  "ricky-ponting": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1995,
+     2012
+    ],
+    "ODI": [
+     1995,
+     2012
+    ]
+   }
+  },
+  "rishabh-pant": {
+   "role": "Wicketkeeper",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2018,
+     2026
+    ],
+    "IPL": [
+     2016,
+     2026
+    ]
+   }
+  },
+  "robin-uthappa": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "IPL": [
+     2008,
+     2022
+    ]
+   }
+  },
+  "rohit-sharma": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2013,
+     2024
+    ],
+    "ODI": [
+     2007,
+     2026
+    ],
+    "T20I": [
+     2007,
+     2024
+    ],
+    "IPL": [
+     2008,
+     2026
+    ]
+   }
+  },
+  "ross-taylor": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2007,
+     2022
+    ],
+    "ODI": [
+     2006,
+     2022
+    ],
+    "T20I": [
+     2006,
+     2025
+    ]
+   }
+  },
+  "rovman-powell": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2017,
+     2025
+    ]
+   }
+  },
+  "sachin-tendulkar": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1989,
+     2013
+    ],
+    "ODI": [
+     1989,
+     2012
+    ],
+    "IPL": [
+     2008,
+     2013
+    ]
+   }
+  },
+  "saeed-anwar": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     1989,
+     2003
+    ]
+   }
+  },
+  "sanath-jayasuriya": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1991,
+     2007
+    ],
+    "ODI": [
+     1989,
+     2011
+    ]
+   }
+  },
+  "sanju-samson": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "IPL": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "saqlain-mushtaq": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1995,
+     2003
+    ]
+   }
+  },
+  "shaheen-afridi": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     2018,
+     2026
+    ],
+    "T20I": [
+     2018,
+     2026
+    ]
+   }
+  },
+  "shahid-afridi": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1996,
+     2015
+    ],
+    "T20I": [
+     2006,
+     2018
+    ]
+   }
+  },
+  "shai-hope": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2017,
+     2026
+    ]
+   }
+  },
+  "shakib-al-hasan": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2007,
+     2024
+    ],
+    "ODI": [
+     2006,
+     2023
+    ],
+    "T20I": [
+     2006,
+     2024
+    ]
+   }
+  },
+  "shane-warne": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1992,
+     2007
+    ],
+    "ODI": [
+     1993,
+     2005
+    ],
+    "IPL": [
+     2008,
+     2011
+    ]
+   }
+  },
+  "shane-watson": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2002,
+     2015
+    ],
+    "T20I": [
+     2006,
+     2016
+    ],
+    "IPL": [
+     2008,
+     2020
+    ]
+   }
+  },
+  "shaun-pollock": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1995,
+     2008
+    ],
+    "ODI": [
+     1996,
+     2008
+    ]
+   }
+  },
+  "shikhar-dhawan": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     2010,
+     2022
+    ],
+    "T20I": [
+     2011,
+     2021
+    ],
+    "IPL": [
+     2008,
+     2024
+    ]
+   }
+  },
+  "shivnarine-chanderpaul": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1994,
+     2015
+    ],
+    "ODI": [
+     1994,
+     2011
+    ]
+   }
+  },
+  "shoaib-akhtar": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1998,
+     2011
+    ]
+   }
+  },
+  "shoaib-malik": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1999,
+     2019
+    ],
+    "T20I": [
+     2006,
+     2021
+    ]
+   }
+  },
+  "shubman-gill": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     2019,
+     2026
+    ],
+    "IPL": [
+     2018,
+     2026
+    ]
+   }
+  },
+  "sikandar-raza": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "sourav-ganguly": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1996,
+     2008
+    ],
+    "ODI": [
+     1992,
+     2007
+    ],
+    "IPL": [
+     2008,
+     2012
+    ]
+   }
+  },
+  "stephen-fleming": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     1994,
+     2007
+    ]
+   }
+  },
+  "steve-smith": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2010,
+     2026
+    ],
+    "ODI": [
+     2010,
+     2025
+    ],
+    "IPL": [
+     2012,
+     2021
+    ]
+   }
+  },
+  "steve-waugh": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1985,
+     2004
+    ],
+    "ODI": [
+     1986,
+     2002
+    ]
+   }
+  },
+  "stuart-broad": {
+   "role": "Bowler",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2007,
+     2023
+    ],
+    "T20I": [
+     2006,
+     2014
+    ]
+   }
+  },
+  "sunil-gavaskar": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1971,
+     1987
+    ]
+   }
+  },
+  "sunil-narine": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "IPL": [
+     2012,
+     2026
+    ]
+   }
+  },
+  "suresh-raina": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "T20I": [
+     2006,
+     2018
+    ],
+    "IPL": [
+     2008,
+     2021
+    ]
+   }
+  },
+  "suryakumar-yadav": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2021,
+     2026
+    ],
+    "IPL": [
+     2012,
+     2026
+    ]
+   }
+  },
+  "tamim-iqbal": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     2007,
+     2023
+    ]
+   }
+  },
+  "tillakaratne-dilshan": {
+   "role": "Wicketkeeper",
+   "bats": "Right",
+   "span": {
+    "ODI": [
+     1999,
+     2016
+    ],
+    "T20I": [
+     2006,
+     2016
+    ]
+   }
+  },
+  "tim-southee": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2008,
+     2024
+    ],
+    "ODI": [
+     2008,
+     2023
+    ],
+    "T20I": [
+     2008,
+     2024
+    ]
+   }
+  },
+  "travis-head": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     2018,
+     2026
+    ],
+    "T20I": [
+     2016,
+     2026
+    ],
+    "IPL": [
+     2016,
+     2026
+    ]
+   }
+  },
+  "trent-boult": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2011,
+     2022
+    ],
+    "ODI": [
+     2012,
+     2023
+    ],
+    "T20I": [
+     2013,
+     2024
+    ],
+    "IPL": [
+     2015,
+     2026
+    ]
+   }
+  },
+  "virat-kohli": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2011,
+     2025
+    ],
+    "ODI": [
+     2008,
+     2026
+    ],
+    "T20I": [
+     2010,
+     2024
+    ],
+    "IPL": [
+     2008,
+     2026
+    ]
+   }
+  },
+  "virender-sehwag": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2001,
+     2013
+    ],
+    "ODI": [
+     1999,
+     2013
+    ],
+    "IPL": [
+     2008,
+     2015
+    ]
+   }
+  },
+  "viv-richards": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1974,
+     1991
+    ],
+    "ODI": [
+     1975,
+     1991
+    ]
+   }
+  },
+  "vvs-laxman": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1996,
+     2012
+    ]
+   }
+  },
+  "wally-hammond": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1927,
+     1947
+    ]
+   }
+  },
+  "wanindu-hasaranga": {
+   "role": "All-rounder",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2019,
+     2026
+    ]
+   }
+  },
+  "waqar-younis": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     1989,
+     2003
+    ],
+    "ODI": [
+     1989,
+     2003
+    ]
+   }
+  },
+  "wasim-akram": {
+   "role": "All-rounder",
+   "bats": "Left",
+   "span": {
+    "Test": [
+     1985,
+     2002
+    ],
+    "ODI": [
+     1984,
+     2003
+    ]
+   }
+  },
+  "younis-khan": {
+   "role": "Batter",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2000,
+     2017
+    ]
+   }
+  },
+  "yuvraj-singh": {
+   "role": "Batter",
+   "bats": "Left",
+   "span": {
+    "ODI": [
+     2000,
+     2017
+    ],
+    "T20I": [
+     2007,
+     2017
+    ],
+    "IPL": [
+     2008,
+     2019
+    ]
+   }
+  },
+  "yuzvendra-chahal": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "T20I": [
+     2016,
+     2023
+    ],
+    "IPL": [
+     2013,
+     2026
+    ]
+   }
+  },
+  "zaheer-khan": {
+   "role": "Bowler",
+   "bats": "Right",
+   "span": {
+    "Test": [
+     2000,
+     2014
+    ],
+    "ODI": [
+     2000,
+     2012
+    ],
+    "IPL": [
+     2008,
+     2017
+    ]
+   }
+  }
+ },
+ "order": {
+  "ODI": [
+   "virat-kohli",
+   "imran-khan",
+   "chaminda-vaas",
+   "allan-donald",
+   "rahul-dravid",
+   "shoaib-malik",
+   "shakib-al-hasan",
+   "sanath-jayasuriya",
+   "richard-hadlee",
+   "quinton-de-kock",
+   "jasprit-bumrah",
+   "faf-du-plessis",
+   "chris-gayle",
+   "tillakaratne-dilshan",
+   "mushfiqur-rahim",
+   "sachin-tendulkar",
+   "dale-steyn",
+   "brendon-mccullum",
+   "saeed-anwar",
+   "waqar-younis",
+   "zaheer-khan",
+   "joe-root",
+   "shane-warne",
+   "michael-hussey",
+   "mitchell-starc",
+   "shubman-gill",
+   "steve-smith",
+   "mohammad-azharuddin",
+   "desmond-haynes",
+   "michael-bevan",
+   "paul-stirling",
+   "aravinda-de-silva",
+   "lasith-malinga",
+   "virender-sehwag",
+   "kumar-sangakkara",
+   "kl-rahul",
+   "javagal-srinath",
+   "shaheen-afridi",
+   "ravindra-jadeja",
+   "gary-kirsten",
+   "arjuna-ranatunga",
+   "eoin-morgan",
+   "aaron-finch",
+   "andrew-symonds",
+   "daniel-vettori",
+   "trent-boult",
+   "mahela-jayawardene",
+   "ricky-ponting",
+   "ben-stokes",
+   "javed-miandad",
+   "rashid-khan",
+   "ab-de-villiers",
+   "harbhajan-singh",
+   "shaun-pollock",
+   "adam-gilchrist",
+   "martin-guptill",
+   "courtney-walsh",
+   "kagiso-rabada",
+   "shane-watson",
+   "herschelle-gibbs",
+   "brett-lee",
+   "shoaib-akhtar",
+   "ms-dhoni",
+   "brian-lara",
+   "hashim-amla",
+   "ross-taylor",
+   "jacques-kallis",
+   "anil-kumble",
+   "kapil-dev",
+   "david-warner",
+   "viv-richards",
+   "rohit-sharma",
+   "jos-buttler",
+   "shahid-afridi",
+   "babar-azam",
+   "kevin-pietersen",
+   "sourav-ganguly",
+   "david-miller",
+   "mark-waugh",
+   "shikhar-dhawan",
+   "curtly-ambrose",
+   "steve-waugh",
+   "muttiah-muralitharan",
+   "shivnarine-chanderpaul",
+   "yuvraj-singh",
+   "lance-klusener",
+   "tim-southee",
+   "inzamam-ul-haq",
+   "adil-rashid",
+   "andy-flower",
+   "glenn-mcgrath",
+   "wasim-akram",
+   "tamim-iqbal",
+   "graeme-smith",
+   "stephen-fleming",
+   "kane-williamson",
+   "matthew-hayden",
+   "glenn-maxwell",
+   "ian-botham",
+   "saqlain-mushtaq"
+  ],
+  "T20I": [
+   "mitchell-marsh",
+   "liton-das",
+   "ross-taylor",
+   "yuzvendra-chahal",
+   "david-warner",
+   "paul-stirling",
+   "dawid-malan",
+   "glenn-maxwell",
+   "rohit-sharma",
+   "sikandar-raza",
+   "jonny-bairstow",
+   "reeza-hendricks",
+   "devon-conway",
+   "shoaib-malik",
+   "kagiso-rabada",
+   "shane-watson",
+   "ms-dhoni",
+   "aiden-markram",
+   "chris-gayle",
+   "mitchell-starc",
+   "kieron-pollard",
+   "dale-steyn",
+   "trent-boult",
+   "kusal-mendis",
+   "wanindu-hasaranga",
+   "quinton-de-kock",
+   "kumar-sangakkara",
+   "dwayne-bravo",
+   "jp-duminy",
+   "brendon-mccullum",
+   "adam-zampa",
+   "travis-head",
+   "kane-williamson",
+   "rovman-powell",
+   "rashid-khan",
+   "babar-azam",
+   "nicholas-pooran",
+   "lasith-malinga",
+   "dasun-shanaka",
+   "martin-guptill",
+   "jasprit-bumrah",
+   "ish-sodhi",
+   "ravindra-jadeja",
+   "jason-roy",
+   "shakib-al-hasan",
+   "pat-cummins",
+   "stuart-broad",
+   "kl-rahul",
+   "tim-southee",
+   "shikhar-dhawan",
+   "aaron-finch",
+   "alex-hales",
+   "eoin-morgan",
+   "mohammad-hafeez",
+   "andre-russell",
+   "bhuvneshwar-kumar",
+   "virat-kohli",
+   "mahmudullah",
+   "shai-hope",
+   "adil-rashid",
+   "ab-de-villiers",
+   "hardik-pandya",
+   "tillakaratne-dilshan",
+   "andrew-balbirnie",
+   "mohammad-nabi",
+   "jos-buttler",
+   "pathum-nissanka",
+   "shahid-afridi",
+   "faf-du-plessis",
+   "suryakumar-yadav",
+   "mustafizur-rahman",
+   "david-miller",
+   "kuldeep-yadav",
+   "kusal-perera",
+   "suresh-raina",
+   "phil-salt",
+   "yuvraj-singh",
+   "shaheen-afridi"
+  ],
+  "Test": [
+   "brett-lee",
+   "matthew-hayden",
+   "ms-dhoni",
+   "brian-lara",
+   "jasprit-bumrah",
+   "ben-stokes",
+   "dilip-vengsarkar",
+   "andy-flower",
+   "jacques-kallis",
+   "ravindra-jadeja",
+   "kumar-sangakkara",
+   "ricky-ponting",
+   "ravichandran-ashwin",
+   "mitchell-starc",
+   "rohit-sharma",
+   "malcolm-marshall",
+   "garfield-sobers",
+   "younis-khan",
+   "sanath-jayasuriya",
+   "anil-kumble",
+   "brendon-mccullum",
+   "greg-chappell",
+   "babar-azam",
+   "mark-waugh",
+   "adam-gilchrist",
+   "kane-williamson",
+   "james-anderson",
+   "shaun-pollock",
+   "stuart-broad",
+   "glenn-mcgrath",
+   "ab-de-villiers",
+   "shivnarine-chanderpaul",
+   "justin-langer",
+   "david-warner",
+   "angelo-mathews",
+   "shakib-al-hasan",
+   "aravinda-de-silva",
+   "graham-gooch",
+   "graeme-smith",
+   "chris-gayle",
+   "imran-khan",
+   "don-bradman",
+   "nathan-lyon",
+   "steve-smith",
+   "inzamam-ul-haq",
+   "rahul-dravid",
+   "len-hutton",
+   "dennis-lillee",
+   "clive-lloyd",
+   "steve-waugh",
+   "travis-head",
+   "daniel-vettori",
+   "pat-cummins",
+   "sachin-tendulkar",
+   "desmond-haynes",
+   "allan-donald",
+   "waqar-younis",
+   "harbhajan-singh",
+   "rishabh-pant",
+   "geoffrey-boycott",
+   "andrew-strauss",
+   "kagiso-rabada",
+   "michael-hussey",
+   "dale-steyn",
+   "wasim-akram",
+   "gordon-greenidge",
+   "muttiah-muralitharan",
+   "richard-hadlee",
+   "sourav-ganguly",
+   "sunil-gavaskar",
+   "kevin-pietersen",
+   "mahela-jayawardene",
+   "wally-hammond",
+   "martin-crowe",
+   "ian-botham",
+   "david-gower",
+   "allan-border",
+   "tim-southee",
+   "javed-miandad",
+   "alastair-cook",
+   "kapil-dev",
+   "vvs-laxman",
+   "zaheer-khan",
+   "joe-root",
+   "cheteshwar-pujara",
+   "virat-kohli",
+   "courtney-walsh",
+   "trent-boult",
+   "shane-warne",
+   "viv-richards",
+   "mohammad-azharuddin",
+   "ross-taylor",
+   "curtly-ambrose",
+   "virender-sehwag",
+   "jack-hobbs",
+   "ajinkya-rahane",
+   "rangana-herath",
+   "marnus-labuschagne",
+   "andrew-flintoff",
+   "hashim-amla"
+  ],
+  "IPL": [
+   "yuvraj-singh",
+   "sachin-tendulkar",
+   "david-miller",
+   "dale-steyn",
+   "sanju-samson",
+   "shikhar-dhawan",
+   "trent-boult",
+   "nicholas-pooran",
+   "mohammed-shami",
+   "harbhajan-singh",
+   "andre-russell",
+   "jp-duminy",
+   "zaheer-khan",
+   "gautam-gambhir",
+   "pat-cummins",
+   "suryakumar-yadav",
+   "travis-head",
+   "rashid-khan",
+   "ab-de-villiers",
+   "matthew-hayden",
+   "kane-williamson",
+   "mahela-jayawardene",
+   "rishabh-pant",
+   "shane-watson",
+   "virender-sehwag",
+   "bhuvneshwar-kumar",
+   "glenn-maxwell",
+   "chris-gayle",
+   "suresh-raina",
+   "rohit-sharma",
+   "ravindra-jadeja",
+   "jacques-kallis",
+   "brendon-mccullum",
+   "quinton-de-kock",
+   "hardik-pandya",
+   "jasprit-bumrah",
+   "dwayne-bravo",
+   "jos-buttler",
+   "michael-hussey",
+   "virat-kohli",
+   "ravichandran-ashwin",
+   "faf-du-plessis",
+   "shane-warne",
+   "adam-gilchrist",
+   "amit-mishra",
+   "ajinkya-rahane",
+   "kuldeep-yadav",
+   "lasith-malinga",
+   "kagiso-rabada",
+   "sunil-narine",
+   "kl-rahul",
+   "ms-dhoni",
+   "kieron-pollard",
+   "mitchell-starc",
+   "shubman-gill",
+   "yuzvendra-chahal",
+   "robin-uthappa",
+   "steve-smith",
+   "aaron-finch",
+   "sourav-ganguly",
+   "eoin-morgan",
+   "rahul-dravid",
+   "ishant-sharma",
+   "david-warner"
+  ]
+ }
+}

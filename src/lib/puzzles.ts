@@ -1,4 +1,4 @@
-import type { Deck, EstimateQuestion, Puzzle } from './types'
+import type { Deck, EstimateQuestion, Puzzle, WhoAmIData } from './types'
 
 /**
  * The puzzle set lives in its own chunk so the app shell paints first.
@@ -19,4 +19,11 @@ export async function loadDecks(): Promise<Deck[]> {
 export async function loadEstimates(): Promise<EstimateQuestion[]> {
   const mod = await import('../data/ballpark.json')
   return mod.default as EstimateQuestion[]
+}
+
+/** Who Am I? bios and daily order, validated against the decks in tests (whoami.test.ts). */
+export async function loadWhoAmIData(): Promise<WhoAmIData> {
+  const mod = await import('../data/whoami.json')
+  // JSON types the year pairs as number[]; whoamiSchema checks they are pairs.
+  return mod.default as unknown as WhoAmIData
 }

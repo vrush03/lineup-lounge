@@ -1,0 +1,9 @@
+{
+ "_comment": "Who Am I? fields for players whose Wikipedia infobox has no Role row, by display name. role is read the same way as an infobox role (see role() in gen_whoami.py), so check it against the player's page before adding one.",
+ "players": {
+  "Desmond Haynes": {"role": "Opening batsman"},
+  "Dilip Vengsarkar": {"role": "Batsman"},
+  "Saeed Anwar": {"role": "Opening batsman"},
+  "Saqlain Mushtaq": {"role": "Bowler"}
+ }
+}

@@ -1,7 +1,7 @@
 # Lineup Lounge
 
-Cricket games. The home screen lists the modes; Lineup and Ballpark each have a daily round
-(with its own stats and streak) and a practice mode, and Showdown is free play.
+Cricket games. The home screen lists the modes; Lineup, Ballpark and Who Am I? each have a daily
+round (with its own stats and streak) and a practice mode, and Showdown is free play.
 
 - **Lineup**: put five players, teams or records in order. Five attempts; each attempt marks every
   row as in the right spot (green), one place off (amber) or further away. Practice is unlimited
@@ -14,6 +14,11 @@ Cricket games. The home screen lists the modes; Lineup and Ballpark each have a 
   from that format's deck (64 to 100 players) are dealt 15 each. Each round both sides play a card;
   you and the computer take turns naming a stat, and the higher number scores 10 points (5 each on
   a tie). Most points after 15 rounds wins. A game in progress is saved per format.
+- **Who Am I?**: a stat card with the name, team and photo hidden; name the player in five guesses,
+  picked from that format's deck. Each wrong guess shows what it shares with the answer (team, role,
+  era, batting hand) and unlocks a hint: the role, two of the card's standout stats, then a blurred
+  photo. A close guess unlocks two. The daily card's format rotates through ODI, T20I, Test and IPL;
+  practice lets you pick the format.
 
 ```bash
 npm install
@@ -24,7 +29,7 @@ npm run build
 
 ## Data
 
-`src/data/cricket.json`, `src/data/ballpark.json` and `src/data/cards.json` are generated; don't edit
+`src/data/cricket.json`, `src/data/ballpark.json`, `src/data/cards.json` and `src/data/whoami.json` are generated; don't edit
 them by hand. Sources:
 
 | Source | Used for | Licence |
@@ -33,8 +38,8 @@ them by hand. Sources:
 | Wikipedia record lists | International career/match records, World Cup timelines | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Wikidata | Full names for the few players Cricsheet only lists by initials | CC0 |
 | Wikipedia (non-free files) | IPL franchise logos in `public/logos/ipl/` | Trademarks of their owners; used only to identify the teams |
-| Wikipedia player infoboxes | Test, ODI and T20I career stats on the Showdown cards | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| Player photos in `public/players/` | Showdown cards | Each file's source and credit is in `scripts/data/player_photos.json` |
+| Wikipedia player infoboxes | Test, ODI and T20I career stats on the Showdown cards; roles, batting hands and career years for Who Am I? | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Player photos in `public/players/` | Showdown and Who Am I? cards | Each file's source and credit is in `scripts/data/player_photos.json` |
 
 Cricsheet is missing some international matches (withheld or not yet covered), so international
 puzzles come from Wikipedia's maintained record tables, not from Cricsheet aggregates.
@@ -60,6 +65,7 @@ python3 scripts/data/gen_wiki.py          # Wikipedia record puzzles + tournamen
 python3 scripts/data/build.py             # pick 5 items per list, shuffle, validate -> src/data/cricket.json
 python3 scripts/data/gen_ballpark.py      # Cricsheet totals + worked sums + scripts/data/ballpark_manual.json -> src/data/ballpark.json
 python3 scripts/data/gen_cards.py         # Showdown decks -> src/data/cards.json (add --refresh to re-fetch Wikipedia)
+python3 scripts/data/gen_whoami.py        # Who Am I? bios and daily order -> src/data/whoami.json (after gen_cards.py)
 npm test
 ```
 
@@ -83,3 +89,10 @@ lag a few matches behind, so each deck carries an "as of" date. Every stat is hi
 fails if a player has no column for the format or two cards have identical stats. A card gets a
 photo when `public/players/<name-in-lower-case-with-hyphens>.jpg` exists (the script lists the players
 without one; they show initials on the team colour), so re-run it after adding photos.
+
+`gen_whoami.py` reads `cards.json` and the same cached infoboxes and writes `src/data/whoami.json`:
+each player's role (batter, bowler, all-rounder or wicketkeeper), batting hand, and the years of
+their first and last match in each format they have a card for (the infobox's debut and last-match
+rows; Cricsheet seasons for the IPL). The four infoboxes with no Role row are filled in from
+`scripts/data/whoami_overrides.json`. It also sets the order each deck's cards come up as the daily,
+arranged so nobody is the answer twice within 14 days. It never writes `cards.json`.
