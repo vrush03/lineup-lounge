@@ -4,7 +4,7 @@ import cards from '../data/cards.json'
 import whoami from '../data/whoami.json'
 import { deckSchema, whoamiSchema } from './puzzleSchema'
 import { whoamiShareText } from './share'
-import { SHOWDOWN_FORMATS, type Bio, type Card, type Deck, type WhoAmIData } from './types'
+import { SHOWDOWN_FORMATS, type Bio, type Card, type Deck, type Hint, type WhoAmIData } from './types'
 import {
   closingLine,
   compareGuess,
@@ -36,12 +36,8 @@ const tiny: Deck = {
   ],
   cards: [card('a', 'India', 9000, 3), card('b', 'India', 500, 300), card('c', 'Australia', 9000, 150), card('d', 'England', 100, 20)],
 }
-const bio = (role: Bio['role'], bats: Bio['bats'], from: number, to: number): Bio => ({
-  role,
-  bats,
-  span: { ODI: [from, to] },
-  hints: { ODI: ['how I play', 'my story', 'my team-mates', 'where I am from'] },
-})
+const ladder: Hint[] = ['How I play', 'My story', 'Who I played with', 'Where I’m from'].map((title) => ({ title, facts: [{ label: 'l', value: 'v' }] }))
+const bio = (role: Bio['role'], bats: Bio['bats'], from: number, to: number): Bio => ({ role, bats, span: { ODI: [from, to] }, hints: { ODI: ladder } })
 const bios: Record<string, Bio> = {
   a: bio('Batter', 'Right', 1990, 2005),
   b: bio('Bowler', 'Right', 2000, 2012),
@@ -83,13 +79,11 @@ describe('hints', () => {
     expect(photoBlur(['close', 'close', 'close', 'close'], true)).toBe(6)
   })
   it('come from the card’s own ladder, with a plain one if the data has none', () => {
-    expect(hintsFor(b, tiny, bios.b)).toEqual(['how I play', 'my story', 'my team-mates', 'where I am from'])
-    expect(hintsFor(b, { ...tiny, format: 'IPL' }, bios.b)).toEqual([
-      'I’m a bowler who bats right-handed.',
-      'I played for India.',
-      'I played for India.',
-      'I played for India.',
-    ])
+    expect(hintsFor(b, tiny, bios.b)).toBe(ladder)
+    const plain = hintsFor(b, { ...tiny, format: 'IPL' }, bios.b)
+    expect(plain.map((h) => h.title)).toEqual(['How I play', 'Who I played for', 'Who I played for', 'Who I played for'])
+    expect(plain[0].facts).toEqual([{ label: 'Role', value: 'Bowler' }, { label: 'Bats', value: 'Right-handed' }])
+    expect(plain[1].facts).toEqual([{ label: 'IPL side', value: 'India', team: 'India' }])
     expect(hintsFor(b, tiny, undefined)).toHaveLength(HINTS)
   })
 })
@@ -151,8 +145,14 @@ describe('who am i data', () => {
       expect(hintsFor(x, deck, data.players[x.id])).toBe(hints)
       // The first three never name the player; the last may all but say it.
       const words = x.name.toLowerCase().split(/[^a-z]+/).filter((w) => w.length >= 3)
-      for (const h of hints!.slice(0, 3)) expect(words.filter((w) => h.toLowerCase().split(/[^a-z]+/).includes(w)), `${x.name}: ${h}`).toEqual([])
-      expect(hints![3], x.name).toContain(x.team)
+      for (const h of hints!.slice(0, 3))
+        for (const f of h.facts) {
+          const said = `${f.label} ${f.value} ${f.sub ?? ''}`.toLowerCase().split(/[^a-z]+/)
+          expect(words.filter((w) => said.includes(w)), `${x.name}: ${f.value}`).toEqual([])
+        }
+      expect(hints![3].facts.at(-1), x.name).toMatchObject({ value: x.team, team: x.team })
+      // A fact that shows a face names somebody with a card, and never the answer.
+      for (const f of hints!.flatMap((h) => h.facts)) if (f.player) expect(f.player !== x.id && f.player in data.players, `${x.name}: ${f.player}`).toBe(true)
     }
     expect([...data.order[format]].sort()).toEqual(deck.cards.map((x) => x.id).sort())
   })

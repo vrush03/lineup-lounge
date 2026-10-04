@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { WhoAmI } from './WhoAmI'
 import { loadDecks, loadWhoAmIData } from '../lib/puzzles'
 import { loadPref, savePref } from '../lib/storage'
@@ -41,6 +41,7 @@ function Rounds({ decks, data, day, dateLabel, onFinishDaily }: Props & { decks:
   const [seen] = useState(() => new Set<string>())
 
   const deckOf = (f: ShowdownFormat) => decks.find((d) => d.format === f)!
+  const faces = useMemo(() => Object.fromEntries(decks.flatMap((d) => d.cards.map((c) => [c.id, c.photo]))), [decks])
   const pick = dailyPick(day, data)
   const dailyDeck = deckOf(pick.format)
   // The order is generated from the decks; if the two ever disagree, still deal a card from the deck.
@@ -85,6 +86,7 @@ function Rounds({ decks, data, day, dateLabel, onFinishDaily }: Props & { decks:
         key={`daily:${day}`}
         deck={dailyDeck}
         bios={data.players}
+        faces={faces}
         answer={dailyId}
         storageKey={`cricket:${day}`}
         day={day}
@@ -118,6 +120,7 @@ function Rounds({ decks, data, day, dateLabel, onFinishDaily }: Props & { decks:
           key={`practice:${practice.n}`}
           deck={deckOf(practice.format)}
           bios={data.players}
+        faces={faces}
           answer={practice.id}
           onNext={() => nextPractice()}
           nextLabel="Next player"

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { PlayerCard } from './PlayerCard'
 import { PlayerSearch } from './PlayerSearch'
 import { NEXT_BUTTON } from './roundStyles'
+import { TeamBadge } from './TeamBadge'
 import { whoamiShareText } from '../lib/share'
 import { loadWhoAmI, saveWhoAmI } from '../lib/storage'
 import {
@@ -20,11 +21,13 @@ import {
   type Round,
   type Warmth,
 } from '../lib/whoami'
-import type { Bio, Card, Deck } from '../lib/types'
+import type { Bio, Card, Deck, HintFact } from '../lib/types'
 
 type Props = {
   deck: Deck
   bios: Record<string, Bio>
+  /** Photo by card id, for the team-mates a hint names. */
+  faces: Record<string, string | undefined>
   /** The mystery card's id in `deck`. */
   answer: string
   /** Set for the daily round: where it is saved, and its number for the share text. */
@@ -39,7 +42,7 @@ type Props = {
 const WARM_TEXT: Record<Warmth, string> = { cold: 'text-wrong-ink', warm: 'text-near-ink', close: 'text-correct-ink' }
 
 /** One mystery card: read the stat line, name the player in five guesses. Wrong guesses earn hints. */
-export function WhoAmI({ deck, bios, answer, storageKey, day, onFinish, onNext, nextLabel }: Props) {
+export function WhoAmI({ deck, bios, faces, answer, storageKey, day, onFinish, onNext, nextLabel }: Props) {
   const byId = useMemo(() => new Map(deck.cards.map((c) => [c.id, c])), [deck])
   const [round, setRound] = useState<Round>(() => {
     const saved = storageKey ? loadWhoAmI(storageKey) : null
@@ -170,11 +173,18 @@ export function WhoAmI({ deck, bios, answer, storageKey, day, onFinish, onNext, 
       {shown > 0 && (
         <section className="mt-6" aria-label="Hints">
           <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted">Hints</h3>
-          <ol className="space-y-1.5">
+          <ol className="space-y-2">
             {hints.slice(0, shown).map((h, i) => (
-              <li key={i} className="flex animate-rise gap-3 rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm">
-                <span className="font-display text-lg font-bold leading-none text-gold tabular-nums">{i + 1}</span>
-                <span>{h}</span>
+              <li key={i} className="animate-rise rounded-2xl border border-line bg-surface p-3 shadow-[var(--shadow)]">
+                <p className="mb-2 flex items-center gap-2">
+                  <span className="grid h-5 w-5 place-items-center rounded-full bg-gold font-display text-sm font-bold leading-none text-[#1b1406]">{i + 1}</span>
+                  <span className="font-display text-base font-bold uppercase leading-none tracking-wider">{h.title}</span>
+                </p>
+                <ul className="flex flex-wrap gap-1.5">
+                  {h.facts.map((f) => (
+                    <FactTile key={`${f.label}:${f.value}`} fact={f} face={f.player ? faces[f.player] : undefined} />
+                  ))}
+                </ul>
               </li>
             ))}
           </ol>
@@ -233,5 +243,34 @@ function GuessChips({ guess, chips, bio, deck }: { guess: Card; chips: Chips; bi
         </li>
       ))}
     </ul>
+  )
+}
+
+/** One fact of a hint: a small label, the value in the scoreboard face, and a line under it. */
+function FactTile({ fact, face }: { fact: HintFact; face?: string }) {
+  const [broken, setBroken] = useState(false)
+  const initials = fact.value
+    .split(/\s+/)
+    .map((w) => w[0])
+    .join('')
+    .slice(0, 2)
+  return (
+    <li className={`flex min-w-0 flex-1 gap-2.5 rounded-xl bg-surface-2 px-3 py-2 ${fact.player || fact.team ? 'items-center' : 'items-start'} ${fact.player ? 'basis-52' : 'basis-28'}`}>
+      {fact.player && (
+        <span aria-hidden className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-full bg-pitch-deep font-display text-sm font-bold text-white ring-2 ring-line">
+          {face && !broken ? (
+            <img src={face} alt="" loading="lazy" draggable={false} onError={() => setBroken(true)} className="h-full w-full object-cover object-top" />
+          ) : (
+            initials
+          )}
+        </span>
+      )}
+      {fact.team && <TeamBadge team={fact.team} label={fact.value} size={36} />}
+      <span className="min-w-0">
+        <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">{fact.label}</span>
+        <span className="block font-display text-xl font-bold leading-tight text-balance">{fact.value}</span>
+        {fact.sub && <span className="block text-xs leading-snug text-muted">{fact.sub}</span>}
+      </span>
+    </li>
   )
 }

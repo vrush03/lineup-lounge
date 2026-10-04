@@ -1,8 +1,9 @@
-"""The four hints on a Who Am I? card, written in the player's own voice.
+"""The four hints on a Who Am I? card. Each is a title and a few facts, shown as tiles.
 
 1. How I play: role, batting hand, bowling style.
-2. My story: debut, and one highlight (a final, a best innings or bowling figures, awards, a shirt number).
-3. The company I kept: a team-mate from the card's own side and one from a different team (an IPL
+2. My story: debut, last match, and one highlight (a final, a best innings or bowling figures,
+   awards, a shirt number).
+3. Who I played with: a team-mate from the card's own side and one from a different team (an IPL
    team-mate on an international card, an international team-mate on an IPL card).
 4. Where I'm from: nickname, birthplace and team.
 
@@ -115,28 +116,26 @@ class Careers:
         return self.cards[pid]['name']
 
 
+def fact(label, value, sub=None, **more):
+    """One tile of a hint: a small label, the value, and an optional line under it."""
+    return {'label': label, 'value': str(value), **({'sub': sub} if sub else {}), **more}
+
+
 def style(bio):
-    hand = f"{bio['bats'].lower()}-handed"
-    bowls = bio.get('bowls')
-    if bio['role'] == 'Bowler':
-        return f"I’m a bowler: {bowls}, and I bat {hand}." if bowls else f"I’m a bowler, and I bat {hand}."
-    if bio['role'] == 'All-rounder':
-        return f"I’m an all-rounder: I bat {hand} and bowl {bowls}." if bowls else f"I’m an all-rounder who bats {hand}."
-    if bio['role'] == 'Wicketkeeper':
-        return f"I keep wicket and bat {hand}."
-    return f"I’m a batter, {hand}, with some {bowls} on the side." if bowls else f"I’m a {hand} batter."
+    out = [fact('Role', bio['role']), fact('Bats', f"{bio['bats']}-handed")]
+    if bio.get('bowls'):
+        out.append(fact('Bowls', bio['bowls'][0].upper() + bio['bowls'][1:]))
+    return out
 
 
-def debut(fmt, span, against, farewell, as_of):
-    """farewell: the opponent in the last match, when the infobox names one."""
-    first = f"I made my {fmt} debut against {against} in {span[0]}"
-    versus = f" against {farewell}" if farewell else ''
-    if span[1] == span[0]:
-        return f"{first}, my only year in the format."
-    # Someone who last played a year or two ago may not be finished, so only older careers "bow out".
-    if span[1] >= as_of - 2:
-        return f"{first}, and my most recent {'match' if fmt == 'IPL' else fmt} came{versus} in {span[1]}."
-    return f"{first}, and bowed out{versus} in {span[1]}."
+def career(fmt, span, against, farewell, as_of):
+    """Debut and last match. farewell: the opponent in the last match, when the infobox names one."""
+    out = [fact(f'{fmt} debut', span[0], f'v {against}')]
+    if span[1] != span[0]:
+        # Someone who last played a year or two ago may not be finished, so only older careers have a "last".
+        which = 'Latest' if span[1] >= as_of - 2 else 'Last'
+        out.append(fact(f"{which} {'season' if fmt == 'IPL' else fmt}", span[1], f'v {farewell}' if farewell else None))
+    return out
 
 
 def place(m):
@@ -144,11 +143,13 @@ def place(m):
 
 
 def tally(won, n):
+    if n == 1:
+        return 'Won' if won else 'Lost'
     if won == n:
-        return 'won both' if n == 2 else 'won them all'
+        return 'Won both' if n == 2 else 'Won them all'
     if won == 0:
-        return 'lost both' if n == 2 else 'lost them all'
-    return f"won {'one' if won == 1 else won} of them"
+        return 'Lost both' if n == 2 else 'Lost them all'
+    return f"Won {'one' if won == 1 else won}"
 
 
 def finals(careers, pid, fmt, card):
@@ -157,9 +158,7 @@ def finals(careers, pid, fmt, card):
         if not rows:
             return None
         won = sum(careers.matches[r['mid']]['winner'] == r['team'] for r in rows)
-        n = len(rows)
-        return (f"I’ve played in {n} IPL finals and {tally(won, n)}." if n > 1
-                else f"I’ve played in one IPL final, and {'won' if won else 'lost'} it.")
+        return fact('IPL finals' if len(rows) > 1 else 'IPL final', len(rows), tally(won, len(rows)))
     if fmt not in WORLD_CUP:
         return None
     events, label = WORLD_CUP[fmt]
@@ -170,12 +169,9 @@ def finals(careers, pid, fmt, card):
     rows.sort(key=lambda r: careers.matches[r['mid']]['date'])
     years = [str(careers.matches[r['mid']]['year']) for r in rows]
     results = [careers.matches[r['mid']]['winner'] for r in rows]
-    if len(rows) == 1:
-        end = '' if results[0] is None else (', on the winning side' if results[0] == card['team'] else ', on the losing side')
-        return f"I played in the {years[0]} {label} final{end}."
-    known = all(results)
-    won = sum(w == card['team'] for w in results)
-    return f"I played in the {label} finals of {listing(years)}" + (f", and {tally(won, len(rows))}." if known else '.')
+    # A tied final has no winner in Cricsheet, so say nothing about the result.
+    won = tally(sum(w == card['team'] for w in results), len(rows)) if all(results) else None
+    return fact(f"{label} final{'s' if len(rows) > 1 else ''}", ', '.join(years), won)
 
 
 def best_innings(careers, pid, fmt, card, bio):
@@ -190,7 +186,7 @@ def best_innings(careers, pid, fmt, card, bio):
         return None
     m = careers.matches[hit[0]['mid']]
     against = [t for t in m['teams'] if t != hit[0]['team']][0]
-    return f"My highest {fmt} score, {high}{'*' if not_out else ''}, came against {against} at {place(m)} in {m['year']}."
+    return fact(f"The {high}{'*' if not_out else ''}", f'v {against}', f"{place(m)}, {m['year']}")
 
 
 def best_bowling(careers, pid, fmt, bio):
@@ -205,7 +201,7 @@ def best_bowling(careers, pid, fmt, bio):
         return None
     m = careers.matches[r['mid']]
     against = [t for t in m['teams'] if t != r['team']][0]
-    return f"My best {fmt} figures, {w}/{-neg}, came against {against} at {place(m)} in {m['year']}."
+    return fact('Best figures', f'{w}/{-neg}', f"v {against}, {place(m)}, {m['year']}")
 
 
 def awards(careers, pid, fmt):
@@ -213,7 +209,7 @@ def awards(careers, pid, fmt):
         return None
     cricsheet = {r['pid'] for r in careers.rows[pid]}
     n = sum(1 for r in careers.played(pid, 'IPL') if cricsheet & set(careers.matches[r['mid']]['pom'] or []))
-    return f"I’ve been player of the match {n} times in the IPL." if n >= 5 else None
+    return fact('Player of the match', n, 'IPL awards') if n >= 5 else None
 
 
 def company(careers, pid, fmt, card, bios):
@@ -224,20 +220,21 @@ def company(careers, pid, fmt, card, bios):
         club = careers.mates(pid, careers.played(pid, 'IPL'))
         if club and club.most_common(1)[0][1] >= 10:
             (other, team), n = club.most_common(1)[0]
-            out.append(f"At {team} I played {n} matches alongside {name(other)}.")
+            out.append(fact('IPL team-mate', name(other), f'{n} matches together', player=other))
         intl = Counter()
         for (other, _), n in careers.mates(pid, [r for r in careers.rows[pid] if careers.fmt(r) in INTL]).items():
             intl[other] += n
         if intl and intl.most_common(1)[0][1] >= 5:
-            out.append(f"Away from the IPL, {name(intl.most_common(1)[0][0])} has been an international team-mate.")
+            other = intl.most_common(1)[0][0]
+            out.append(fact('International team-mate', name(other), 'Away from the IPL', player=other))
         return out
 
     side = Counter({o: n for (o, t), n in careers.mates(pid, careers.played(pid, fmt, card['team'])).items()})
     top = side.most_common(1)
     if top and top[0][1] >= REGULAR:
         other, n = top[0]
-        out.append(f"I played {n} {PLURAL[fmt]} alongside {name(other)}." if careers.covered(pid, fmt)
-                   else f"{name(other)} was a regular {fmt} team-mate.")
+        out.append(fact(f'{fmt} team-mate', name(other),
+                        f'{n} {PLURAL[fmt]} together' if careers.covered(pid, fmt) else 'A regular in the same side', player=other))
     else:
         # Before Cricsheet's time: card players from the same side whose years in the format overlapped.
         mine, span = tokens(name(pid)), bios[pid]['span'][fmt]
@@ -249,10 +246,9 @@ def company(careers, pid, fmt, card, bios):
             a, b = bios[other]['span'][fmt]
             years = min(b, span[1]) - max(a, span[0])
             if years >= OVERLAP:
-                shared.append((years, c['stats']['matches'], p['name']))
-        picks = [n for _, _, n in sorted(shared, reverse=True)[:2]]
-        if picks:
-            out.append(f"My {fmt} years overlapped with {listing(n + '’s' for n in picks)}, in the same side.")
+                shared.append((years, c['stats']['matches'], other))
+        for _, _, other in sorted(shared, reverse=True)[:2]:
+            out.append(fact(f'{fmt} side of my era', name(other), 'Same side, overlapping years', player=other))
 
     # A team-mate from another country, met at an IPL franchise.
     club = careers.mates(pid, careers.played(pid, 'IPL'))
@@ -260,36 +256,35 @@ def company(careers, pid, fmt, card, bios):
     pick = (abroad or club).most_common(1)
     if pick and pick[0][1] >= 10:
         (other, team), n = pick[0]
-        out.append(f"In the IPL I shared a dressing room with {name(other)} at {team}, for {n} matches.")
+        out.append(fact('IPL team-mate', name(other), f'{n} matches at {team}', player=other))
     return out
 
 
-def origin(fmt, card, bio, nick, with_birth):
-    out = [f"They call me ‘{nick}’."] if nick else []
-    team = f"played most of my IPL cricket for {card['team']}" if fmt == 'IPL' else f"played for {card['team']}"
-    year, where = bio['born']
-    out.append(f"I was born in {where} in {year} and {team}." if with_birth else f"I {team}.")
-    return ' '.join(out)
-
-
 def hints(careers, pid, fmt, card, bios, extras, as_of):
-    """extras: {'nick', 'shirt': {format: number}} from the infobox."""
+    """Four hints, each a title and its facts. extras: {'nick', 'shirt': {format: number}} from the infobox."""
     bio = bios[pid]
     highlight = (finals(careers, pid, fmt, card)
                  or (best_bowling(careers, pid, fmt, bio) if bio['role'] == 'Bowler' else best_innings(careers, pid, fmt, card, bio))
                  or best_bowling(careers, pid, fmt, bio)
                  or awards(careers, pid, fmt)
-                 or (f"I wore number {extras['shirt'][fmt]} on my back." if fmt in extras['shirt'] else None))
-    story = debut(fmt, bio['span'][fmt], bio['debut'][fmt], bio['farewell'].get(fmt), as_of) + (f" {highlight}" if highlight else '')
+                 or (fact('Shirt number', extras['shirt'][fmt]) if fmt in extras['shirt'] else None))
+    story = career(fmt, bio['span'][fmt], bio['debut'][fmt], bio['farewell'].get(fmt), as_of) + ([highlight] if highlight else [])
     kept = company(careers, pid, fmt, card, bios)
     year, where = bio['born']
+    # Town and country are enough on a tile: 'Bloemfontein, South Africa'.
+    parts = where.split(', ')
+    born = fact('Born', year, where if len(parts) < 3 else f'{parts[0]}, {parts[-1]}')
+    home = ([fact('Nickname', f"‘{extras['nick']}’")] if extras['nick'] else []) + ([born] if kept else []) + [
+        fact('IPL side' if fmt == 'IPL' else 'Played for', card['team'], team=card['team'])]
     out = [
-        style(bio),
-        story,
-        ' '.join(kept) if kept else f"I was born in {where} in {year}.",
-        origin(fmt, card, bio, extras['nick'], with_birth=bool(kept)),
+        {'title': 'How I play', 'facts': style(bio)},
+        {'title': 'My story', 'facts': story},
+        {'title': 'Who I played with', 'facts': kept} if kept else {'title': 'Where I was born', 'facts': [born]},
+        {'title': 'Where I’m from' if kept else 'Who I played for', 'facts': home},
     ]
     mine = tokens(careers.name(pid))
     for h in out[:3]:
-        assert not (tokens(h) & mine), f'{careers.name(pid)} {fmt}: hint names the player: {h}'
+        for f in h['facts']:
+            said = f"{f['label']} {f['value']} {f.get('sub', '')}"
+            assert not (tokens(said) & mine), f'{careers.name(pid)} {fmt}: hint names the player: {said}'
     return out

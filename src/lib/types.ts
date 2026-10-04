@@ -83,6 +83,7 @@ export type Deck = {
   cards: Card[]
 }
 
+/* Who Am I? */
 export const ROLES = ['Batter', 'Bowler', 'All-rounder', 'Wicketkeeper'] as const
 export type Role = (typeof ROLES)[number]
 
@@ -92,9 +93,24 @@ export type Bio = {
   bats: 'Right' | 'Left'
   /** Years of the first and last match, for each format the player has a card in. */
   span: Partial<Record<ShowdownFormat, [number, number]>>
-  /** Four hints for each of those cards, in the player's voice, weakest first. */
-  hints: Partial<Record<ShowdownFormat, string[]>>
+  /** Four hints for each of those cards, weakest first. */
+  hints: Partial<Record<ShowdownFormat, Hint[]>>
 }
+
+/** One tile of a hint: "ODI debut" / "1999" / "v Pakistan". */
+export type HintFact = {
+  label: string
+  value: string
+  /** A smaller line under the value. */
+  sub?: string
+  /** Card id of a player the fact names, for their photo. */
+  player?: string
+  /** A team the fact names, for its badge. */
+  team?: string
+}
+
+/** A Who Am I? hint: a title in the player's voice ("My story") and a few facts. */
+export type Hint = { title: string; facts: HintFact[] }
 
 /** Who Am I? data: a bio per card id, and the order each deck's cards come up as the daily. */
 export type WhoAmIData = {

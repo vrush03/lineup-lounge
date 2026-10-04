@@ -1,4 +1,4 @@
-import { SHOWDOWN_FORMATS, type Bio, type Card, type Deck, type ShowdownFormat, type WhoAmIData } from './types'
+import { SHOWDOWN_FORMATS, type Bio, type Card, type Deck, type Hint, type ShowdownFormat, type WhoAmIData } from './types'
 
 export const MAX_GUESSES = 5
 
@@ -42,15 +42,16 @@ export function warmth(c: Chips): Warmth {
 export const HINTS = 4
 
 /**
- * The hint ladder for a card, in the player's own voice: how they play, their debut and a highlight,
- * the team-mates they kept, then nickname, birthplace and team. Written by scripts/data/whoami_hints.py.
+ * The hint ladder for a card: how they play, their debut and a highlight, the team-mates they kept,
+ * then nickname, birthplace and team. Written by scripts/data/whoami_hints.py.
  */
-export function hintsFor(card: Card, deck: Deck, bio: Bio | undefined): string[] {
+export function hintsFor(card: Card, deck: Deck, bio: Bio | undefined): Hint[] {
   const hints = bio?.hints[deck.format]
   if (hints?.length === HINTS) return hints
   // Only if the data and the decks disagree: the card still gets a ladder.
-  const team = `I played for ${card.team}.`
-  return [bio ? `I’m a ${bio.role.toLowerCase()} who bats ${bio.bats.toLowerCase()}-handed.` : team, team, team, team]
+  const team: Hint = { title: 'Who I played for', facts: [{ label: deck.format === 'IPL' ? 'IPL side' : 'Played for', value: card.team, team: card.team }] }
+  const play: Hint = bio ? { title: 'How I play', facts: [{ label: 'Role', value: bio.role }, { label: 'Bats', value: `${bio.bats}-handed` }] } : team
+  return [play, team, team, team]
 }
 
 /** Hints on show after these wrong guesses: one each, two for a close one, until the ladder runs out. */

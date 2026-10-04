@@ -62,7 +62,25 @@ export const deckSchema = z.strictObject({
 
 const spanSchema = z.tuple([z.number().int(), z.number().int()])
 const ids = z.array(z.string().min(1))
-const hintsSchema = z.array(z.string().min(1)).length(4)
+const hintsSchema = z
+  .array(
+    z.strictObject({
+      title: z.string().min(1),
+      facts: z
+        .array(
+          z.strictObject({
+            label: z.string().min(1),
+            value: z.string().min(1),
+            sub: z.string().min(1).optional(),
+            player: z.string().min(1).optional(),
+            team: z.string().min(1).optional(),
+          }),
+        )
+        .min(1)
+        .max(3),
+    }),
+  )
+  .length(4)
 
 export const whoamiSchema = z.strictObject({
   players: z.record(
